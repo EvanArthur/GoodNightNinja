@@ -842,3 +842,44 @@ LogConfig: Setting CVar [[r.setres:1280x720]]
 [2020.01.13-17.51.58:607][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Wood_Walnut_D.uasset" to "../../../../../../Users/justi/Desktop/GoodNightNinja/GoodNightNinja/Content/StarterContent/Textures/T_Wood_Walnut_D.uasset"
 [2020.01.13-17.51.58:612][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Wood_Walnut_N.uasset" to "../../../../../../Users/justi/Desktop/GoodNightNinja/GoodNightNinja/Content/StarterContent/Textures/T_Wood_Walnut_N.uasset"
 [2020.01.13-17.51.59:327][  0]LogRenderer: Reallocating scene render targets to support 256x256 Format 10 NumSamples 1 (Frame:1).
+[2020.01.13-17.52.00:136][  0]LogAudioMixer: Display: Audio Buffer Underrun detected.
+[2020.01.13-17.52.01:134][  0]LogSavePackage: Moving '../../../../../../Users/justi/Desktop/GoodNightNinja/GoodNightNinja/Saved/Floor_400x4005E6878A14464BC6D36F6BD9A5230C956.tmp' to '../../../../../../Users/justi/Desktop/GoodNightNinja/GoodNightNinja/Content/StarterContent/Architecture/Floor_400x400.uasset'
+[2020.01.13-17.52.01:139][  0]LogFeaturePack: Warning: Inserted 2 feature packs
+[2020.01.13-17.52.01:142][  0]Cmd: MAP LOAD FILE="../../../../../../Users/justi/Desktop/GoodNightNinja/GoodNightNinja/Content/2DSideScrollerBP/Maps/2DSideScrollerExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2020.01.13-17.52.01:142][  0]LightingResults: New page: Lighting Build
+[2020.01.13-17.52.01:144][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
+[2020.01.13-17.52.01:144][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2020.01.13-17.52.01:144][  0]MapCheck: New page: Map Check
+[2020.01.13-17.52.01:144][  0]LightingResults: New page: Lighting Build
+[2020.01.13-17.52.04:487][  0]LogUObjectHash: Compacting FUObjectHashTables data took   4.22ms
+[2020.01.13-17.52.05:140][  0]LogAIModule: Creating AISystem for world 2DSideScrollerExampleMap
+[2020.01.13-17.52.05:184][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2020.01.13-17.52.10:002][  0]LogUObjectHash: Compacting FUObjectHashTables data took   5.95ms
+[2020.01.13-17.52.10:004][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2020.01.13-17.52.10:005][  0]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 0.394ms to complete.
+[2020.01.13-17.52.10:005][  0]LogFileHelpers: Loading map '2DSideScrollerExampleMap' took 8.864
+[2020.01.13-17.52.10:362][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.01.13-17.52.10:400][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.01.13-17.52.10:425][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.01.13-17.52.10:450][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2020.01.13-17.52.10:475][  0]LogCollectionManager: Loaded 0 collections in 0.004659 seconds
+[2020.01.13-17.52.10:706][  0]LogFileCache: Scanning file cache for directory 'C:/Users/justi/Desktop/GoodNightNinja/GoodNightNinja/Saved/Collections/' took 0.01s
+[2020.01.13-17.52.10:706][  0]LogFileCache: Scanning file cache for directory 'C:/Users/justi/Desktop/GoodNightNinja/GoodNightNinja/Content/Developers/justi/Collections/' took 0.01s
+[2020.01.13-17.52.10:706][  0]LogFileCache: Scanning file cache for directory 'C:/Users/justi/Desktop/GoodNightNinja/GoodNightNinja/Content/Collections/' took 0.00s
+[2020.01.13-17.52.10:706][  0]LogContentBrowser: Native class hierarchy populated in 0.0259 seconds. Added 3015 classes and 717 folders.
+[2020.01.13-17.52.10:713][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0005 seconds. Added 0 classes and 0 folders.
+[2020.01.13-17.52.11:079][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0006 seconds. Added 0 classes and 0 folders.
+[2020.01.13-17.52.11:088][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0008 seconds. Added 2 classes and 3 folders.
+[2020.01.13-17.52.11:176][  0]LogSlate: Took 0.000475 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2020.01.13-17.52.11:183][  0]LogSlate: Took 0.000482 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2020.01.13-17.52.11:202][  0]LogSlate: Took 0.000567 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2020.01.13-17.52.11:416][  0]LogRenderer: Reallocating scene render targets to support 804x276 Format 10 NumSamples 1 (Frame:1).
+[2020.01.13-17.52.11:894][  0]LogSlate: Took 0.002275 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2020.01.13-17.52.12:236][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0008 seconds. Added 0 classes and 0 folders.
+[2020.01.13-17.52.12:236][  0]LogLoad: (Engine Initialization) Total time: 49.15 seconds
+[2020.01.13-17.52.12:236][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2020.01.13-17.52.12:270][  0]AssetCheck: New page: Asset Save: Floor_400x400
+[2020.01.13-17.52.12:271][  0]LogContentValidation: Display: Validating StaticMesh /Game/StarterContent/Architecture/Floor_400x400.Floor_400x400
+[2020.01.13-17.52.12:935][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2020.01.13-17.52.17:373][ 77]LogAssetRegistry: Asset discovery search completed in 37.6057 seconds
+[2020.01.13-17.52.17:397][ 77]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000026 seconds (updated 0 objects)
