@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends RigidBody2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -11,13 +11,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_PlayButton_pressed():
-	print("Play Button Pressed")
-	get_tree().change_scene("res://Levels/Level1.tscn")
-
-
-func _on_SettingsButton_pressed():
-	print("Settings Button Pressed")
-	get_tree().change_scene("res://StartScreen/SettingsScreen/SettingsScreen.tscn")
