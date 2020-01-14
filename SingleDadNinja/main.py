@@ -19,7 +19,7 @@ def main():
 	logo = pygame.image.load("resources/logo.png")
 	pygame.display.set_icon(logo)
 	# create and display screen
-	screen = pygame.display.set_mode((500, 100))
+	screen = pygame.display.set_mode((1000, 500))
 	# set caption of window
 	pygame.display.set_caption("Single Dad Ninja")
 	
