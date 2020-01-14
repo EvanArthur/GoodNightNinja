@@ -40,7 +40,7 @@ wait_time = 0.15
 one_shot = true
 
 [node name="Wall" type="StaticBody2D" parent="."]
-position = Vector2( 512, 448 )
+position = Vector2( 512.879, 448 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -51,3 +51,34 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 shape = SubResource( 3 )
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2( 450.499, 448.879 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Wall2"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+shape = SubResource( 3 )
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+position = Vector2( 383.726, 449.757 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Wall3"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+shape = SubResource( 3 )
+
+[node name="Middle Building" type="RigidBody2D" parent="."]
+position = Vector2( 383.726, 449.757 )
+
+[node name="Sprite" type="Sprite" parent="Middle Building"]
