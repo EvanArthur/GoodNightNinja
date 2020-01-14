@@ -46,8 +46,8 @@ var floor_h_velocity = 0.0
 var airborne_time = 1e20
 var shoot_time = 1e20
 
-var Bullet = preload("res://player/Bullet.tscn")
-var Enemy = preload("res://enemy/Enemy.tscn")
+var Bullet = preload("res://player/NinjaStar.tscn")
+#var Enemy = preload("res://enemy/Enemy.tscn")
 
 
 func _shot_bullet():
@@ -78,20 +78,20 @@ func _integrate_forces(s):
 	var new_siding_left = siding_left
 	
 	# Get the controls
-	var move_left = Input.is_action_pressed("move_left")
-	var move_right = Input.is_action_pressed("move_right")
-	var jump = Input.is_action_pressed("jump")
+	var move_left = Input.is_action_pressed("ui_left")
+	var move_right = Input.is_action_pressed("ui_right")
+	var jump = Input.is_action_pressed("ui_up")
 	var shoot = Input.is_action_pressed("shoot")
 	var spawn = Input.is_action_pressed("spawn")
 	
 	if spawn:
-		var e = Enemy.instance()
+#		var e = Enemy.instance()
 		var p = position
 		
 		p.y = p.y - 100
-		e.position = p
+#		e.position = p
 		
-		get_parent().add_child(e)
+#		get_parent().add_child(e)
 	
 	# Deapply prev floor velocity
 	lv.x -= floor_h_velocity
@@ -134,6 +134,7 @@ func _integrate_forces(s):
 			lv.y += STOP_JUMP_FORCE * step
 	
 	if on_floor:
+
 		# Process logic when character is on floor
 		if move_left and not move_right:
 			if lv.x > -WALK_MAX_VELOCITY:
@@ -144,6 +145,7 @@ func _integrate_forces(s):
 		else:
 			var xv = abs(lv.x)
 			xv -= WALK_DEACCEL * step
+
 			if xv < 0:
 				xv = 0
 			lv.x = sign(lv.x) * xv
@@ -182,7 +184,7 @@ func _integrate_forces(s):
 				lv.x += AIR_ACCEL * step
 		else:
 			var xv = abs(lv.x)
-			xv -= AIR_DEACCEL * step
+			xv = 0
 			
 			if xv < 0:
 				xv = 0
@@ -209,9 +211,9 @@ func _integrate_forces(s):
 		siding_left = new_siding_left
 	
 	# Change animation
-	if new_anim != anim:
-		anim = new_anim
-		($Anim as AnimationPlayer).play(anim)
+#	if new_anim != anim:
+#		anim = new_anim
+#		($Anim as AnimationPlayer).play(anim)
 	
 	shooting = shoot
 	

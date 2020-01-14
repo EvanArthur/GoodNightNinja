@@ -10,24 +10,18 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "RigidBody2D",
-"class": "Bullet",
-"language": "GDScript",
-"path": "res://Player/bullet.gd"
-}, {
-"base": "RigidBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Player/player.gd"
+"path": "res://Player/Ninja.gd"
 } ]
 _global_script_class_icons={
-"Bullet": "",
 "Player": ""
 }
 
 [application]
 
 config/name="GoodNightNinja"
-run/main_scene="res://StartScreen/MainMenu.tscn"
+run/main_scene="res://Player/Ninja.tscn"
 config/icon="res://icon.png"
 
 [rendering]
