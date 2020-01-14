@@ -25,7 +25,7 @@ class_name Player
       for moving platforms. """
 
 # Member variables
-const WALK_ACCEL = 800.0
+const WALK_ACCEL = 10000.0
 const WALK_DEACCEL = 800.0
 const WALK_MAX_VELOCITY = 200.0
 const AIR_ACCEL = 200.0
