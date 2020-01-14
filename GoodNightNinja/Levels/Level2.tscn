@@ -254,6 +254,32 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground19"]
 shape = SubResource( 1 )
 
+[node name="Ground20" type="StaticBody2D" parent="."]
+position = Vector2( 1255.87, -32.227 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ground20"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground20"]
+shape = SubResource( 1 )
+
+[node name="Ground21" type="StaticBody2D" parent="."]
+position = Vector2( 1320.5, -32.227 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ground21"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground21"]
+shape = SubResource( 1 )
+
 [node name="First Jump" type="StaticBody2D" parent="."]
 position = Vector2( 223.797, -98.3869 )
 scale = Vector2( 2, 1 )
@@ -282,8 +308,25 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="First Slide"]
 shape = SubResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 1040.57, -95.7912 )
+[node name="First Building" type="StaticBody2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1064.57, -383.663 )
+scale = Vector2( 7, 10 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Outer Structure" type="Sprite" parent="First Building"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 0, 0.0726776 )
+scale = Vector2( 1, 0.997729 )
+texture = ExtResource( 1 )
+
+[node name="First Building Level" type="StaticBody2D" parent="."]
+position = Vector2( 630.466, -271.753 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="First Building Level"]
+texture = ExtResource( 1 )
