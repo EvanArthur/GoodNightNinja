@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://BasicEnemy.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="BasicEnemy" type="RigidBody2D"]
+collision_mask = 0
+script = ExtResource( 1 )
+
+[node name="EnemyHitbox" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="."]
