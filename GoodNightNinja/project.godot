@@ -8,6 +8,11 @@
 
 config_version=4
 
+<<<<<<< HEAD
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+=======
 _global_script_classes=[ {
 "base": "RigidBody2D",
 "class": "Bullet",
@@ -22,12 +27,16 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Bullet": "",
 "Player": ""
+>>>>>>> 1f4fb949491d8f9f3e0c06cf1c463d6a47cb192f
 }
 
 [application]
 
 config/name="GoodNightNinja"
+<<<<<<< HEAD
+=======
 run/main_scene="res://StartScreen/MainMenu.tscn"
+>>>>>>> 1f4fb949491d8f9f3e0c06cf1c463d6a47cb192f
 config/icon="res://icon.png"
 
 [rendering]
