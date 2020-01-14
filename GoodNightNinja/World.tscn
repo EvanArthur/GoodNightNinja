@@ -40,6 +40,7 @@ wait_time = 0.15
 one_shot = true
 
 [node name="Wall" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 512.879, 448 )
 __meta__ = {
 "_edit_group_": true
@@ -53,6 +54,7 @@ texture = ExtResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Wall2" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 450.499, 448.879 )
 __meta__ = {
 "_edit_group_": true
@@ -66,6 +68,7 @@ texture = ExtResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Wall3" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 383.726, 449.757 )
 __meta__ = {
 "_edit_group_": true
@@ -79,6 +82,14 @@ texture = ExtResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Middle Building" type="RigidBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 383.726, 449.757 )
 
 [node name="Sprite" type="Sprite" parent="Middle Building"]
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+position = Vector2( 224, 448 )
+
+[node name="Sprite" type="Sprite" parent="Wall4"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
