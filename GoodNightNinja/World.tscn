@@ -15,7 +15,7 @@ extents = Vector2( 32, 32 )
 [node name="World" type="Node"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2( 0, -160 )
+position = Vector2( 512, 224 )
 mode = 2
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.5
@@ -40,7 +40,7 @@ wait_time = 0.15
 one_shot = true
 
 [node name="Wall" type="StaticBody2D" parent="."]
-position = Vector2( 0, 64 )
+position = Vector2( 512, 448 )
 __meta__ = {
 "_edit_group_": true
 }
