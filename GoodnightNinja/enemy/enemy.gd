@@ -3,7 +3,7 @@ extends RigidBody2D
 class_name Enemy
 
 # Member variables
-const WALK_SPEED = 10
+const WALK_SPEED = 100000
 const STATE_WALKING = 0
 const STATE_DYING = 1
 
