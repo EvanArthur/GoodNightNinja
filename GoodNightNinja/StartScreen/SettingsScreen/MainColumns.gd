@@ -13,11 +13,5 @@ func _ready():
 #	pass
 
 
-func _on_PlayButton_pressed():
-	print("Play Button Pressed")
-	get_tree().change_scene("res://Levels/Level1.tscn")
-
-
-func _on_SettingsButton_pressed():
-	print("Settings Button Pressed")
-	get_tree().change_scene("res://StartScreen/SettingsScreen/SettingsScreen.tscn")
+func _on_ReturnButton_pressed():
+	get_tree().change_scene("res://StartScreen/MainMenu.tscn")
