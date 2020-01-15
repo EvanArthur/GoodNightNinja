@@ -137,7 +137,6 @@ func _integrate_forces(s):
 			lv.y += STOP_JUMP_FORCE * step
 	
 	if on_floor:
-
 		# Process logic when character is on floor
 		if move_left and not move_right:
 			if lv.x > -WALK_MAX_VELOCITY:
@@ -146,6 +145,7 @@ func _integrate_forces(s):
 			if lv.x < WALK_MAX_VELOCITY:
 				lv.x += WALK_ACCEL * step
 		else:
+			$Sprite.stop()
 			var xv = abs(lv.x)
 			xv -= WALK_DEACCEL * step
 
@@ -214,9 +214,9 @@ func _integrate_forces(s):
 		siding_left = new_siding_left
 	
 	# Change animation
-#	if new_anim != anim:
-#		anim = new_anim
-#		($Anim as AnimationPlayer).play(anim)
+	if new_anim != anim:
+		anim = new_anim
+		$Sprite.play(anim)
 	
 	shooting = shoot
 	
