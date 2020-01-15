@@ -1,20 +1,40 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Ninja.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://Player/ninja-star.png" type="Texture" id=3]
+[ext_resource path="res://Player/NinjaIdle.png" type="Texture" id=2]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning1.png" type="Texture" id=3]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning2.png" type="Texture" id=4]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning3.png" type="Texture" id=5]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning4.png" type="Texture" id=6]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning5.png" type="Texture" id=7]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning6.png" type="Texture" id=8]
+[ext_resource path="res://Player/ninja-star.png" type="Texture" id=9]
+[ext_resource path="res://Player/CollisionPolygon2D.gd" type="Script" id=10]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "run_forwards",
+"speed": 15.0
+} ]
+
+[sub_resource type="ParticlesMaterial" id=3]
 flag_disable_z = true
 gravity = Vector3( 0, 98, 0 )
 angular_velocity = 1.05
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[sub_resource type="RayShape2D" id=3]
+[sub_resource type="RayShape2D" id=4]
 
 [node name="Ninja" type="RigidBody2D"]
 position = Vector2( 510.292, 210 )
@@ -24,32 +44,36 @@ physics_material_override = SubResource( 1 )
 custom_integrator = true
 contacts_reported = 3
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+[node name="Sprite" type="AnimatedSprite" parent="."]
+editor/display_folded = true
+position = Vector2( 0, -12.159 )
+scale = Vector2( 0.299416, 0.299416 )
+frames = SubResource( 2 )
+animation = "idle"
 
 [node name="Smoke" type="Particles2D" parent="Sprite"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 20.731, 3.212 )
+position = Vector2( 20.731, 3.21201 )
 rotation = -1.45735
 emitting = false
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
 local_coords = false
-process_material = SubResource( 2 )
-texture = ExtResource( 3 )
+process_material = SubResource( 3 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.292, -12.159 )
 scale = Vector2( 1, 1.765 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -0.138, 16.504, -19.902, -24.869, 19.362, -24.606 )
+position = Vector2( 5.50623, 6.00866 )
+scale = Vector2( 3.66722, 5.26209 )
+polygon = PoolVector2Array( -4.30795, 15.9616, -12.4885, -22.0461, 6.59949, -23.9465, 6.59949, 15.9616 )
+script = ExtResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -57,4 +81,4 @@ limit_left = 0
 limit_top = 0
 
 [node name="NinjaStarShoot" type="Position2D" parent="."]
-position = Vector2( 45.6124, 1.62901 )
+position = Vector2( 69.708, -37.2809 )
