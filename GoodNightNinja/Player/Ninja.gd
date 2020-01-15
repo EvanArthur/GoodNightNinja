@@ -49,7 +49,6 @@ var shoot_time = 1e20
 var NinjaStar = preload("res://player/NinjaStar.tscn")
 #var Enemy = preload("res://enemy/Enemy.tscn")
 
-
 func _shot_ninja_star():
 	shoot_time = 0
 	var bi = NinjaStar.instance()
@@ -176,7 +175,7 @@ func _integrate_forces(s):
 			if shoot_time < MAX_SHOOT_POSE_TIME:
 				new_anim = "run_weapon"
 			else:
-				new_anim = "run"
+				new_anim = "run_forwards"
 	else:
 		# Process logic when the character is in the air
 		if move_left and not move_right:
@@ -207,9 +206,9 @@ func _integrate_forces(s):
 	# Update siding
 	if new_siding_left != siding_left:
 		if new_siding_left:
-			($Sprite as Sprite).scale.x = -1
+			$Sprite.flip_h = true
 		else:
-			($Sprite as Sprite).scale.x = 1
+			$Sprite.flip_h = false
 		
 		siding_left = new_siding_left
 	
