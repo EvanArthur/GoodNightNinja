@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Player/Ninja.gd" type="Script" id=1]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning1.png" type="Texture" id=2]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning2.png" type="Texture" id=3]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning3.png" type="Texture" id=4]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning4.png" type="Texture" id=5]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning5.png" type="Texture" id=6]
+[ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning6.png" type="Texture" id=7]
+[ext_resource path="res://Player/ninja-star.png" type="Texture" id=8]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.0
+
+<<<<<<< HEAD
+=======
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
+} ]
+
+>>>>>>> e1cfd9e4e7565784a546fb161ce7841af1816ceb
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+angular_velocity = 1.05
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="RayShape2D" id=3]
+
+[node name="Ninja" type="RigidBody2D"]
+position = Vector2( 510.292, 210 )
+mode = 2
+mass = 21.4286
+physics_material_override = SubResource( 1 )
+custom_integrator = true
+contacts_reported = 3
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.339077, 0.339077 )
+frames = SubResource( 4 )
+animation = "idle"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Smoke" type="Particles2D" parent="Sprite"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 20.731, 3.21201 )
+rotation = -1.45735
+emitting = false
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+local_coords = false
+process_material = SubResource( 2 )
+<<<<<<< HEAD
+texture = ExtResource( 3 )
+=======
+texture = ExtResource( 8 )
+>>>>>>> e1cfd9e4e7565784a546fb161ce7841af1816ceb
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.292, -12.159 )
+scale = Vector2( 1, 1.765 )
+shape = SubResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0.291992, 20 )
+scale = Vector2( 3.50264, 4.57308 )
+polygon = PoolVector2Array( -0.138, 16.504, -19.902, -24.869, 19.362, -24.606 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+
+[node name="NinjaStarShoot" type="Position2D" parent="."]
+position = Vector2( 69.708, -37.2809 )
+__meta__ = {
+"_edit_group_": true
+}
