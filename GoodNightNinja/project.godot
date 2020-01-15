@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "RigidBody2D",
+"class": "BasicEnemy",
+"language": "GDScript",
+"path": "res://BasicEnemy.gd"
+}, {
+"base": "RigidBody2D",
 "class": "Ninja",
 "language": "GDScript",
 "path": "res://Player/Ninja.gd"
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://Player/NinjaStar.gd"
 } ]
 _global_script_class_icons={
+"BasicEnemy": "",
 "Ninja": "",
 "NinjaStar": ""
 }
