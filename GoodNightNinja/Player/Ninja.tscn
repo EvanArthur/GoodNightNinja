@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/Ninja.gd" type="Script" id=1]
 [ext_resource path="res://Player/NinjaIdle.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning5.png" type="Texture" id=7]
 [ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning6.png" type="Texture" id=8]
 [ext_resource path="res://Player/ninja-star.png" type="Texture" id=9]
-[ext_resource path="res://Player/CollisionPolygon2D.gd" type="Script" id=10]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -23,7 +22,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "run_forwards",
+"name": "run",
 "speed": 15.0
 } ]
 
@@ -47,10 +46,10 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 editor/display_folded = true
-position = Vector2( 0, -12.159 )
+position = Vector2( 0.291992, -20 )
 scale = Vector2( 0.299416, 0.299416 )
 frames = SubResource( 2 )
-animation = "idle"
+animation = "run"
 
 [node name="Smoke" type="Particles2D" parent="Sprite"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -69,11 +68,10 @@ position = Vector2( 0.292, -12.159 )
 scale = Vector2( 1, 1.765 )
 shape = SubResource( 4 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="IdleCollision" type="CollisionPolygon2D" parent="."]
 position = Vector2( 5.50623, 6.00866 )
 scale = Vector2( 3.66722, 5.26209 )
-polygon = PoolVector2Array( -4.30795, 15.9616, -12.4885, -22.0461, 6.59949, -23.9465, 6.59949, 15.9616 )
-script = ExtResource( 10 )
+polygon = PoolVector2Array( -9.76167, 14.0612, -12.4885, -22.0461, 9.32634, -23.9465, 12.0532, 14.0612 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -81,4 +79,4 @@ limit_left = 0
 limit_top = 0
 
 [node name="NinjaStarShoot" type="Position2D" parent="."]
-position = Vector2( 69.708, -37.2809 )
+position = Vector2( 49.708, -50 )

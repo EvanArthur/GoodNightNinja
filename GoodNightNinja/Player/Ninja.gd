@@ -26,10 +26,10 @@ class_name Ninja
 
 # Member variables
 const WALK_ACCEL = 800.0
-const WALK_DEACCEL = 800.0
+const WALK_DEACCEL = 1000.0
 const WALK_MAX_VELOCITY = 200.0
 const AIR_ACCEL = 200.0
-const AIR_DEACCEL = 200.0
+const AIR_DEACCEL = 1000.0
 const JUMP_VELOCITY = 460
 const STOP_JUMP_FORCE = 900.0
 const MAX_SHOOT_POSE_TIME = 0.3
@@ -157,7 +157,7 @@ func _integrate_forces(s):
 			lv.y = -JUMP_VELOCITY
 			jumping = true
 			stopping_jump = false
-			($SoundJump as AudioStreamPlayer2D).play()
+			#($SoundJump as AudioStreamPlayer2D).play()
 		
 		# Check siding
 		if lv.x < 0 and move_left:
@@ -175,7 +175,7 @@ func _integrate_forces(s):
 			if shoot_time < MAX_SHOOT_POSE_TIME:
 				new_anim = "run_weapon"
 			else:
-				new_anim = "run_forwards"
+				new_anim = "run"
 	else:
 		# Process logic when the character is in the air
 		if move_left and not move_right:
