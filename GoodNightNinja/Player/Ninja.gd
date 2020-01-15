@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-class_name Player
+class_name Ninja
 
 """ Character Demo, written by Juan Linietsky.
 
@@ -40,35 +40,35 @@ var siding_left = false
 var jumping = false
 var stopping_jump = false
 var shooting = false
-
+var shot_count = 0
 var floor_h_velocity = 0.0
 
 var airborne_time = 1e20
 var shoot_time = 1e20
 
-var Bullet = preload("res://player/NinjaStar.tscn")
+var NinjaStar = preload("res://player/NinjaStar.tscn")
 #var Enemy = preload("res://enemy/Enemy.tscn")
 
 
-func _shot_bullet():
+func _shot_ninja_star():
 	shoot_time = 0
-	var bi = Bullet.instance()
+	var bi = NinjaStar.instance()
 	var ss
 	if siding_left:
 		ss = -1.0
 	else:
 		ss = 1.0
-	var pos = position + ($BulletShoot as Position2D).position * Vector2(ss, 1.0)
-		
+	var pos = position + ($NinjaStarShoot as Position2D).position * Vector2(ss, 1.0)
+
 	bi.position = pos
 	get_parent().add_child(bi)
 	
 	bi.linear_velocity = Vector2(800.0 * ss, -80)
 	
 	($Sprite/Smoke as Particles2D).restart()
-	($SoundShoot as AudioStreamPlayer2D).play()
+#	($SoundShoot as AudioStreamPlayer2D).play()
 	
-	add_collision_exception_with(bi) # Make bullet and this not collide
+	add_collision_exception_with(bi) # Make ninja star and this not collide
 
 func _integrate_forces(s):
 	var lv = s.get_linear_velocity()
@@ -81,7 +81,7 @@ func _integrate_forces(s):
 	var move_left = Input.is_action_pressed("ui_left")
 	var move_right = Input.is_action_pressed("ui_right")
 	var jump = Input.is_action_pressed("ui_up")
-	var shoot = Input.is_action_pressed("shoot")
+	var shoot = Input.is_action_pressed("ui_select")
 	var spawn = Input.is_action_pressed("spawn")
 	
 	if spawn:
@@ -110,8 +110,11 @@ func _integrate_forces(s):
 	
 	# A good idea when implementing characters of all kinds,
 	# compensates for physics imprecision, as well as human reaction delay.
+
 	if shoot and not shooting:
-		call_deferred("_shot_bullet")
+		if shot_count < 5:
+			call_deferred("_shot_ninja_star")
+			shot_count += 1
 	else:
 		shoot_time += step
 	

@@ -10,12 +10,18 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "RigidBody2D",
-"class": "Player",
+"class": "Ninja",
 "language": "GDScript",
 "path": "res://Player/Ninja.gd"
+}, {
+"base": "RigidBody2D",
+"class": "NinjaStar",
+"language": "GDScript",
+"path": "res://Player/NinjaStar.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Ninja": "",
+"NinjaStar": ""
 }
 
 [application]
