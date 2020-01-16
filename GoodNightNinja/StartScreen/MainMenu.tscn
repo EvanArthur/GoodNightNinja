@@ -3,11 +3,11 @@
 [ext_resource path="res://StartScreen/assets/fonts/design.graffiti.comicsansms.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://StartScreen/MenuOptions.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 80
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 50
 font_data = ExtResource( 1 )
 
@@ -40,7 +40,7 @@ margin_bottom = 510.0
 [node name="Title" type="Label" parent="MenuColumns/RightColumnOptions"]
 margin_right = 622.0
 margin_bottom = 113.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Single Dad Ninja"
 
 [node name="MenuOptions" type="VBoxContainer" parent="MenuColumns/RightColumnOptions"]
@@ -56,7 +56,8 @@ script = ExtResource( 2 )
 [node name="PlayButton" type="MenuButton" parent="MenuColumns/RightColumnOptions/MenuOptions"]
 margin_right = 213.0
 margin_bottom = 77.0
-custom_fonts/font = SubResource( 1 )
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
 text = "Play"
 align = 0
 
@@ -64,6 +65,7 @@ align = 0
 margin_top = 107.0
 margin_right = 213.0
 margin_bottom = 184.0
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
 text = "Continue"
 align = 0
@@ -72,6 +74,7 @@ align = 0
 margin_top = 214.0
 margin_right = 213.0
 margin_bottom = 291.0
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
 text = "Settings"
 align = 0
@@ -89,4 +92,5 @@ margin_left = 345.0
 margin_right = 345.0
 margin_bottom = 440.0
 [connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/PlayButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/ContinueButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/SettingsButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_SettingsButton_pressed"]

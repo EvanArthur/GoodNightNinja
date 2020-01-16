@@ -10,18 +10,24 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "RigidBody2D",
-"class": "Bullet",
+"class": "BasicEnemy",
 "language": "GDScript",
-"path": "res://Player/bullet.gd"
+"path": "res://BasicEnemy.gd"
 }, {
 "base": "RigidBody2D",
-"class": "Player",
+"class": "Ninja",
 "language": "GDScript",
-"path": "res://Player/player.gd"
+"path": "res://Player/Ninja.gd"
+}, {
+"base": "RigidBody2D",
+"class": "NinjaStar",
+"language": "GDScript",
+"path": "res://Player/NinjaStar.gd"
 } ]
 _global_script_class_icons={
-"Bullet": "",
-"Player": ""
+"BasicEnemy": "",
+"Ninja": "",
+"NinjaStar": ""
 }
 
 [application]
@@ -29,6 +35,10 @@ _global_script_class_icons={
 config/name="GoodNightNinja"
 run/main_scene="res://StartScreen/MainMenu.tscn"
 config/icon="res://icon.png"
+
+[physics]
+
+2d/default_gravity=700
 
 [rendering]
 
