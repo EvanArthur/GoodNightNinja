@@ -27,10 +27,9 @@ class_name Ninja
 # Member variables
 const WALK_ACCEL = 2000.0
 const WALK_DEACCEL = 1000.0
-const WALK_MAX_VELOCITY = 500.0
-const AIR_ACCEL = 200.0
-const AIR_DEACCEL = 200.0
-const JUMP_VELOCITY = 460
+const WALK_MAX_VELOCITY = 700.0
+const AIR_ACCEL = 50.0
+const JUMP_VELOCITY = 700
 const STOP_JUMP_FORCE = 900.0
 const MAX_SHOOT_POSE_TIME = 0.3
 const MAX_FLOOR_AIRBORNE_TIME = 0.15
@@ -54,9 +53,9 @@ func _shot_ninja_star():
 	var bi = NinjaStar.instance()
 	var ss
 	if siding_left:
-		ss = -1.0
+		ss = -2.0
 	else:
-		ss = 1.0
+		ss = 2.0
 	var pos = position + ($NinjaStarShoot as Position2D).position * Vector2(ss, 1.0)
 
 	bi.position = pos
@@ -65,7 +64,7 @@ func _shot_ninja_star():
 	bi.linear_velocity = Vector2(800.0 * ss, -80)
 	
 	($Sprite/Smoke as Particles2D).restart()
-#	($SoundShoot as AudioStreamPlayer2D).play()
+	($SoundShoot as AudioStreamPlayer2D).play()
 	
 	add_collision_exception_with(bi) # Make ninja star and this not collide
 
@@ -111,7 +110,7 @@ func _integrate_forces(s):
 	# compensates for physics imprecision, as well as human reaction delay.
 
 	if shoot and not shooting:
-		if shot_count < 5:
+		if shot_count < 10000:
 			call_deferred("_shot_ninja_star")
 			shot_count += 1
 	else:
@@ -133,6 +132,12 @@ func _integrate_forces(s):
 			stopping_jump = true
 		if stopping_jump:
 			lv.y += STOP_JUMP_FORCE * step
+			
+		# Check siding
+		if lv.y < 0 and move_left:
+			new_siding_left = true
+		elif lv.y > 0 and move_right:
+			new_siding_left = false
 	
 	if on_floor:
 		# Process logic when character is on floor
@@ -143,7 +148,7 @@ func _integrate_forces(s):
 			if lv.x < WALK_MAX_VELOCITY:
 				lv.x += WALK_ACCEL * 2*step
 		else:
-			$Sprite.stop()
+
 			lv.x = 0
 		
 		# Check jump
@@ -151,7 +156,7 @@ func _integrate_forces(s):
 			lv.y = -JUMP_VELOCITY
 			jumping = true
 			stopping_jump = false
-			#($SoundJump as AudioStreamPlayer2D).play()
+			($SoundJump as AudioStreamPlayer2D).play()
 		
 		# Check siding
 		if lv.x < 0 and move_left:
@@ -174,10 +179,10 @@ func _integrate_forces(s):
 		# Process logic when the character is in the air
 		if move_left and not move_right:
 			if lv.x > -WALK_MAX_VELOCITY:
-				lv.x -= AIR_ACCEL * step
+				lv.x -= AIR_ACCEL
 		elif move_right and not move_left:
 			if lv.x < WALK_MAX_VELOCITY:
-				lv.x += AIR_ACCEL * step
+				lv.x += AIR_ACCEL
 		else:
 			lv.x = 0
 		
