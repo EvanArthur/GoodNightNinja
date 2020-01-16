@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ninja_star.wav-1da6ae76ae48de47fd6f6a490b8349dd.sample"
+
+[deps]
+
+source_file="res://Player/ninja_star.wav"
+dest_files=[ "res://.import/ninja_star.wav-1da6ae76ae48de47fd6f6a490b8349dd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

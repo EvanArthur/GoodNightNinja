@@ -64,7 +64,7 @@ func _shot_ninja_star():
 	bi.linear_velocity = Vector2(800.0 * ss, -80)
 	
 	($Sprite/Smoke as Particles2D).restart()
-#	($SoundShoot as AudioStreamPlayer2D).play()
+	($SoundShoot as AudioStreamPlayer2D).play()
 	
 	add_collision_exception_with(bi) # Make ninja star and this not collide
 
@@ -156,7 +156,7 @@ func _integrate_forces(s):
 			lv.y = -JUMP_VELOCITY
 			jumping = true
 			stopping_jump = false
-			#($SoundJump as AudioStreamPlayer2D).play()
+			($SoundJump as AudioStreamPlayer2D).play()
 		
 		# Check siding
 		if lv.x < 0 and move_left:

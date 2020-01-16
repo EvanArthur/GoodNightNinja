@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player/Ninja.gd" type="Script" id=1]
 [ext_resource path="res://Player/NinjaIdlepng.png" type="Texture" id=2]
@@ -14,8 +14,10 @@
 [ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning5.png" type="Texture" id=12]
 [ext_resource path="res://Player/ninjaRunningsequence/ninjaRunning6.png" type="Texture" id=13]
 [ext_resource path="res://Player/ninja-star.png" type="Texture" id=14]
+[ext_resource path="res://Player/ninja_star.wav" type="AudioStream" id=15]
+[ext_resource path="res://Player/jump.wav" type="AudioStream" id=16]
 
-[sub_resource type="PhysicsMaterial" id=5]
+[sub_resource type="PhysicsMaterial" id=1]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -47,7 +49,7 @@ orbit_velocity_random = 0.0
 [node name="Ninja" type="RigidBody2D"]
 position = Vector2( 510.292, 210 )
 mode = 2
-physics_material_override = SubResource( 5 )
+physics_material_override = SubResource( 1 )
 custom_integrator = true
 contacts_reported = 3
 script = ExtResource( 1 )
@@ -57,7 +59,7 @@ position = Vector2( 0.291992, -20 )
 scale = Vector2( 0.299416, 0.299416 )
 frames = SubResource( 2 )
 animation = "run"
-frame = 5
+frame = 4
 playing = true
 
 [node name="Smoke" type="Particles2D" parent="Sprite"]
@@ -88,3 +90,9 @@ current = true
 
 [node name="NinjaStarShoot" type="Position2D" parent="."]
 position = Vector2( 49.708, -50 )
+
+[node name="SoundShoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 15 )
+
+[node name="SoundJump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
