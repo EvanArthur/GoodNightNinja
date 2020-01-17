@@ -148,7 +148,6 @@ func _integrate_forces(s):
 			if lv.x < WALK_MAX_VELOCITY:
 				lv.x += WALK_ACCEL * 2*step
 		else:
-
 			lv.x = 0
 		
 		# Check jump
