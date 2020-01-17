@@ -169,7 +169,6 @@ func _integrate_forces(s):
 			if shoot_time < MAX_SHOOT_POSE_TIME:
 				new_anim = "idle_weapon"
 			else:
-				$IdleCollision.get_shape().set_extents(Vector2(59,59))
 				new_anim = "idle"
 		else:
 			if shoot_time < MAX_SHOOT_POSE_TIME:

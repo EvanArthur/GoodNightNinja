@@ -76,13 +76,13 @@ local_coords = false
 process_material = SubResource( 3 )
 texture = ExtResource( 14 )
 
-[node name="IdleCollision" type="CollisionShape2D" parent="."]
-position = Vector2( 14.708, -20 )
-shape = SubResource( 4 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 rotating = true
 current = true
+
+[node name="IdleCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 14.708, -20 )
+shape = SubResource( 4 )
 
 [node name="NinjaStarShoot" type="Position2D" parent="."]
 position = Vector2( 49.708, -50 )
