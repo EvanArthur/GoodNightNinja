@@ -29,7 +29,7 @@ const WALK_ACCEL = 2000.0
 const WALK_DEACCEL = 1000.0
 const WALK_MAX_VELOCITY = 700.0
 const AIR_ACCEL = 25.0
-const JUMP_VELOCITY = 800
+const JUMP_VELOCITY = 750
 const STOP_JUMP_FORCE = 900.0
 const MAX_SHOOT_POSE_TIME = 0.3
 const MAX_FLOOR_AIRBORNE_TIME = 0.15
@@ -47,7 +47,7 @@ var shoot_time = 1e20
 
 var NinjaStar = preload("res://player/NinjaStar.tscn")
 #var Enemy = preload("res://enemy/Enemy.tscn")
-
+		
 func _shot_ninja_star():
 	shoot_time = 0
 	var bi = NinjaStar.instance()
@@ -69,6 +69,7 @@ func _shot_ninja_star():
 	add_collision_exception_with(bi) # Make ninja star and this not collide
 
 func _integrate_forces(s):
+
 	var lv = s.get_linear_velocity()
 	var step = s.get_step()
 	
@@ -168,6 +169,7 @@ func _integrate_forces(s):
 			if shoot_time < MAX_SHOOT_POSE_TIME:
 				new_anim = "idle_weapon"
 			else:
+				$IdleCollision.get_shape().set_extents(Vector2(59,59))
 				new_anim = "idle"
 		else:
 			if shoot_time < MAX_SHOOT_POSE_TIME:
