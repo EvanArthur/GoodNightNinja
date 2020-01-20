@@ -39,4 +39,4 @@ func _on_Level1_pressed():
 
 func _on_Level2_pressed():
 	print("Level 2 Button Pressed")
-	get_tree().change_scene("res://Levels/Level2.tscn")
+	get_tree().change_scene("res://Levels/Level1.tscn")
