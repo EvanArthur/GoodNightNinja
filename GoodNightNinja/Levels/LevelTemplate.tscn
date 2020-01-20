@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Levels/sky.png" type="Texture" id=1]
 [ext_resource path="res://Levels/building1.png" type="Texture" id=2]
 [ext_resource path="res://Levels/ledge1.png" type="Texture" id=3]
 [ext_resource path="res://Levels/building2.png" type="Texture" id=4]
 [ext_resource path="res://Levels/building3.png" type="Texture" id=5]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -83,7 +82,6 @@ scale = Vector2( 3.86473, 0.206141 )
 texture = ExtResource( 3 )
 
 [node name="building2" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 450, 296.483 )
 
 [node name="Sprite" type="Sprite" parent="building2"]
@@ -102,7 +100,6 @@ polygon = PoolVector2Array( -267.303, -14.9926, 290.104, -14.993, 301.126, 12.07
 one_way_collision = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 1118.51, 290.483 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D2"]
@@ -111,6 +108,3 @@ texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
 polygon = PoolVector2Array( -263.586, -96.1704, -302.956, -96.17, 0.365845, -286.162, 302.601, -96.17, 265.003, -96.17, 0.365845, -261.726 )
-
-[node name="Ninja" parent="." instance=ExtResource( 6 )]
-position = Vector2( 67.1555, 503.159 )

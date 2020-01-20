@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GoodNightNinja"
-run/main_scene="res://Levels/LevelTemplate.tscn"
+run/main_scene="res://StartScreen/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [layer_names]

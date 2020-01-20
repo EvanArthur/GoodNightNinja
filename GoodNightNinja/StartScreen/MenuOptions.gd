@@ -17,11 +17,15 @@ func _on_PlayButton_pressed():
 	print("Play Button Pressed")
 	get_tree().change_scene("res://Levels/Level1New.tscn")
 
-
-func _on_SettingsButton_pressed():
-	print("Settings Button Pressed")
-	get_tree().change_scene("res://StartScreen/SettingsScreen/SettingsScreen.tscn")
+func _on_TutorialButton_pressed():
+	print("Tutorial Button Pressed")
+	get_tree().change_scene("res://StartScreen/TutorialScreen.tscn")
 
 func _on_ContinueButton_pressed():
 	print("Continue Button Pressed")
 	get_tree().change_scene("res://Levels/Level3Test.tscn")
+
+
+func _on_QuitButton_pressed():
+	print("Quit Button Pressed")
+	get_tree().quit()
