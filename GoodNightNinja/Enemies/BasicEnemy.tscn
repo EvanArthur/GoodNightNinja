@@ -1,16 +1,82 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://BasicEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/PlaceholderSamurai.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/SamuraiWalk/  SamuraiWalk1.png" type="Texture" id=3]
+[ext_resource path="res://Enemies/SamuraiWalk/  SamuraiWalk2.png" type="Texture" id=4]
+[ext_resource path="res://Enemies/SamuraiWalk/  SamuraiWalk3.png" type="Texture" id=5]
+[ext_resource path="res://Enemies/SamuraiWalk/  SamuraiWalk4.png" type="Texture" id=6]
+[ext_resource path="res://Enemies/SamuraiWalk/  SamuraiWalk5.png" type="Texture" id=7]
+[ext_resource path="res://Enemies/SamuraiWalk/  SamuraiWalk6.png" type="Texture" id=8]
+[ext_resource path="res://Enemies/SamuraiWalk/  SamuraiWalk7.png" type="Texture" id=9]
+[ext_resource path="res://Enemies/SamuraiSlash/  SamuraiSlash1.png" type="Texture" id=10]
+[ext_resource path="res://Enemies/SamuraiSlash/  SamuraiSlash2.png" type="Texture" id=11]
+[ext_resource path="res://Enemies/SamuraiSlash/  SamuraiSlash3.png" type="Texture" id=12]
+[ext_resource path="res://Enemies/SamuraiSlash/  SamuraiSlash4.png" type="Texture" id=13]
+[ext_resource path="res://Enemies/SamuraiSlash/  SamuraiSlash5.png" type="Texture" id=14]
+[ext_resource path="res://Enemies/SamuraiSlash/  SamuraiSlash6 .png" type="Texture" id=15]
+[ext_resource path="res://Enemies/SamuraiDie/  SamuraiDie1.png" type="Texture" id=16]
+[ext_resource path="res://Enemies/SamuraiDie/  SamuraiDie2.png" type="Texture" id=17]
+[ext_resource path="res://Enemies/SamuraiDie/  SamuraiDie3.png" type="Texture" id=18]
+[ext_resource path="res://Enemies/SamuraiDie/  SamuraiDie4.png" type="Texture" id=19]
+[ext_resource path="res://Enemies/SamuraiDie/  SamuraiDie5.png" type="Texture" id=20]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "welk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "attak",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "ded",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 110, 110 )
 
 [node name="BasicEnemy" type="RigidBody2D"]
-collision_mask = 0
+position = Vector2( 510, -90 )
+collision_layer = 2
+collision_mask = 5
+mode = 2
 script = ExtResource( 1 )
 
-[node name="EnemyHitbox" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 20, -90 )
+scale = Vector2( 0.342205, 0.32274 )
+frames = SubResource( 1 )
+animation = "ded"
+frame = 4
+playing = true
 
-[node name="Visibility" type="VisibilityNotifier2D" parent="."]
+[node name="EnemyHitbox" type="CollisionShape2D" parent="."]
+position = Vector2( 10, -100 )
+shape = SubResource( 2 )
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2( -40, -200 )
+enabled = true
+cast_to = Vector2( 0, 217 )
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2( 70, -200 )
+enabled = true
+cast_to = Vector2( 0, 217 )
+
+[node name="WeakPoint" type="RayCast2D" parent="."]
+position = Vector2( -110, -170 )
+enabled = true
+cast_to = Vector2( 0, 167 )
