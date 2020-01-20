@@ -52,8 +52,8 @@ func _integrate_forces(s):
 	var new_animation = animation
 	
 	if state == STATE_DYING:
-		#new_animation = "ded"
-		print(weak_point.get_collider())
+		new_animation = "ded"
+		call_deferred("_die")
 		
 	elif state == STATE_WALKING:
 		new_animation = "welk"
