@@ -33,8 +33,14 @@ _global_script_class_icons={
 [application]
 
 config/name="GoodNightNinja"
-run/main_scene="res://StartScreen/MainMenu.tscn"
+run/main_scene="res://Levels/LevelTemplate.tscn"
 config/icon="res://icon.png"
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemies"
+2d_physics/layer_3="world"
 
 [physics]
 
