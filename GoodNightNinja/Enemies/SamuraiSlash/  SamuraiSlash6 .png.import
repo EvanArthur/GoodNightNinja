@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/NinjaThrow2.png-2e44bb2a049ec77eaa3347b66df4c0e2.stex"
+path="res://.import/  SamuraiSlash6 .png-314a04479689f7fcad8d876b28d0139b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/NinjaThrowSequence/NinjaThrow2.png"
-dest_files=[ "res://.import/NinjaThrow2.png-2e44bb2a049ec77eaa3347b66df4c0e2.stex" ]
+source_file="res://Enemies/SamuraiSlash/  SamuraiSlash6 .png"
+dest_files=[ "res://.import/  SamuraiSlash6 .png-314a04479689f7fcad8d876b28d0139b.stex" ]
 
 [params]
 
