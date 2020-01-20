@@ -15,7 +15,7 @@ func _ready():
 
 func _on_PlayButton_pressed():
 	print("Play Button Pressed")
-	get_tree().change_scene("res://Levels/Level1New.tscn")
+	get_tree().change_scene("res://Levels/Level1.tscn")
 
 func _on_TutorialButton_pressed():
 	print("Tutorial Button Pressed")
