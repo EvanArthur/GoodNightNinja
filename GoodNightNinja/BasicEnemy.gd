@@ -54,8 +54,7 @@ func _integrate_forces(s):
 		#new_animation = "ded"
 		pass
 	elif state == STATE_WALKING:
-		#new_animation = "welk"
-		
+		new_animation = "welk"
 		var wall_side = 0.0
 		
 		for i in range(s.get_contact_count()):
@@ -76,12 +75,13 @@ func _integrate_forces(s):
 		if wall_side !=0 and wall_side != direction:
 			direction = - direction
 			($Sprite as Sprite).scale.x = -direction
-		if direction < 0 and not rc_left.is_colliding() and rc_right.is_colliding():
+		if rc_right.is_colliding()==false and direction>0:
 			direction = -direction
-			($Sprite as Sprite).scale.x = -direction
-		elif direction > 0 and not rc_right.is_colliding() and rc_left.is_colliding():
+			#($Sprite as Sprite).scale.x = -direction
+		elif rc_left.is_colliding()==false and direction<0:
 			direction = -direction
-			($Sprite as Sprite).scale.x = -direction
+			#($Sprite as Sprite).scale.x = -direction
+		print(rc_right.is_colliding())
 		
 		linear_velocity.x = direction * WALK_SPEED
 		
