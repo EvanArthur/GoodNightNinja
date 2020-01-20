@@ -6,6 +6,15 @@ extends VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Global.level1:
+		get_node("Level1").visible = true
+	else:
+		get_node("Level1").visible = false
+	if Global.level2:
+		get_node("Level2").visible = true
+	else:
+		get_node("Level2").visible = false
+		
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
