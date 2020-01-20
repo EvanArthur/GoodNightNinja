@@ -1,6 +1,8 @@
 extends Node
 
 #test vars for levels
+var currentStage = 1
+var maxStage = 1
 var level1 = true
 var level2 = false
 
