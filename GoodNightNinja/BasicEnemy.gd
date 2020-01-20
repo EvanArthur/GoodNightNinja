@@ -10,7 +10,7 @@ const STATE_ATTACKING = 2
 
 # used to control basic state and direction of sprite/animation
 var state = STATE_WALKING
-var direction = -1
+var direction = 1
 var animation = ""
 
 var health = 1
@@ -68,6 +68,7 @@ func _integrate_forces(s):
 					break
 				if countact is player and not countact.disabled:
 					state = STATE_ATTACKING
+					print("HERE")
 			if dp.x > 0.9:
 				wall_side=1.0
 			elif dp.x < -0.9:
@@ -83,16 +84,10 @@ func _integrate_forces(s):
 			($Sprite as Sprite).scale.x = -direction
 		
 		linear_velocity.x = direction * WALK_SPEED
+		
 	elif state == STATE_ATTACKING:
 		#new_animation = "attek"
 		pass
 		
 	if animation != new_animation:
 		animation = new_animation
-
-		
-	
-			
-	
-	
-	
