@@ -49,6 +49,7 @@ position = Vector2( 20, -90 )
 scale = Vector2( 0.342205, 0.32274 )
 frames = SubResource( 1 )
 animation = "welk"
+frame = 2
 playing = true
 
 [node name="EnemyHitbox" type="CollisionShape2D" parent="."]
@@ -57,9 +58,15 @@ shape = SubResource( 2 )
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2( -40, -200 )
+enabled = true
 cast_to = Vector2( 0, 217 )
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2( 70, -200 )
 enabled = true
 cast_to = Vector2( 0, 217 )
+
+[node name="WeakPoint" type="RayCast2D" parent="."]
+position = Vector2( -110, -170 )
+enabled = true
+cast_to = Vector2( 0, 167 )
