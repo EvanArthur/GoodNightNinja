@@ -118,7 +118,7 @@ motion_scale = Vector2( 0.25, 0.25 )
 [node name="Background" type="Sprite" parent="ParallaxBackground/BackgroundLayer"]
 texture = ExtResource( 6 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 40632, 4936 )
+region_rect = Rect2( 0, 0, 20316, 4936 )
 
 [node name="City3Layer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.25, 0.25 )

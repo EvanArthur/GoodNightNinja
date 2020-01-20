@@ -6,9 +6,9 @@
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle2.png" type="Texture" id=4]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle3.png" type="Texture" id=5]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle4.png" type="Texture" id=6]
-[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow1.png" type="Texture" id=7]
-[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow2.png" type="Texture" id=8]
-[ext_resource path="res://Player/NinjaJumping.png" type="Texture" id=9]
+[ext_resource path="res://Player/NinjaJumping.png" type="Texture" id=7]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow1.png" type="Texture" id=8]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow2.png" type="Texture" id=9]
 [ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard1.png" type="Texture" id=10]
 [ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard2.png" type="Texture" id=11]
 [ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard3.png" type="Texture" id=12]
@@ -30,15 +30,15 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": false,
-"name": "shooting",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "jumping",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "shooting",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
