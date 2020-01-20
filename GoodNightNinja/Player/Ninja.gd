@@ -39,11 +39,12 @@ var siding_left = false
 var jumping = false
 var stopping_jump = false
 var shooting = false
-var shot_count = 0
+var star_count = 5
 var floor_h_velocity = 0.0
 
 var airborne_time = 1e20
 var shoot_time = 1e20
+var local_collision_pos
 
 var NinjaStar = preload("res://player/NinjaStar.tscn")
 #var Enemy = preload("res://enemy/Enemy.tscn")
@@ -61,12 +62,13 @@ func _shot_ninja_star():
 	bi.position = pos
 	get_parent().add_child(bi)
 	
-	bi.linear_velocity = Vector2(800.0 * ss, -80)
-	
+	bi.linear_velocity = Vector2(300.0 * ss, -80)
+
 	($Sprite/Smoke as Particles2D).restart()
 	($SoundShoot as AudioStreamPlayer2D).play()
 	
-	add_collision_exception_with(bi) # Make ninja star and this not collide
+func incriment_ninja_stars():
+	star_count += 1
 
 func _integrate_forces(s):
 
@@ -111,9 +113,10 @@ func _integrate_forces(s):
 	# compensates for physics imprecision, as well as human reaction delay.
 
 	if shoot and not shooting:
-		if shot_count < 10000:
+		if star_count != 0:
+			star_count -= 1
 			call_deferred("_shot_ninja_star")
-			shot_count += 1
+			$Sprite.play("shooting")
 	else:
 		shoot_time += step
 	
@@ -212,6 +215,8 @@ func _integrate_forces(s):
 		$Sprite.play(anim)
 	
 	shooting = shoot
+	
+
 	
 	# Apply floor velocity
 	if found_floor:
