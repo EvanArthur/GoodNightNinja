@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Levels/sky.png" type="Texture" id=1]
 [ext_resource path="res://Levels/ledge1.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Levels/building3.png" type="Texture" id=4]
 [ext_resource path="res://Levels/building1.png" type="Texture" id=5]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Area2D.gd" type="Script" id=7]
+[ext_resource path="res://Levels/Coin.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2053.66, 50.2275 )
@@ -27,6 +29,9 @@ extents = Vector2( 302.03, 17.5132 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 274.099, 25.3398 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 43.0162
 
 [node name="Level" type="Node2D"]
 
@@ -275,3 +280,106 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box2"]
 position = Vector2( 9632.37, 5510.4 )
 shape = SubResource( 7 )
+
+[node name="Collectible" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Collectible"]
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D"]
+position = Vector2( 2660.09, 5929.3 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Collectible/Area2D"]
+position = Vector2( 2660.61, 5929.6 )
+scale = Vector2( 0.506495, 0.514445 )
+texture = ExtResource( 8 )
+
+[node name="Area2D2" type="Area2D" parent="Collectible"]
+position = Vector2( 904.667, -320.53 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D2"]
+position = Vector2( 2660.09, 5929.3 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Collectible/Area2D2"]
+position = Vector2( 2660.61, 5929.6 )
+scale = Vector2( 0.506495, 0.514445 )
+texture = ExtResource( 8 )
+
+[node name="Area2D3" type="Area2D" parent="Collectible"]
+position = Vector2( 1249.93, -679.393 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D3"]
+position = Vector2( 2660.09, 5929.3 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Collectible/Area2D3"]
+position = Vector2( 2660.61, 5929.6 )
+scale = Vector2( 0.506495, 0.514445 )
+texture = ExtResource( 8 )
+
+[node name="Area2D4" type="Area2D" parent="Collectible"]
+position = Vector2( 899.29, -1054.12 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D4"]
+position = Vector2( 2660.09, 5929.3 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Collectible/Area2D4"]
+position = Vector2( 2660.61, 5929.6 )
+scale = Vector2( 0.506495, 0.514445 )
+texture = ExtResource( 8 )
+
+[node name="Area2D5" type="Area2D" parent="Collectible"]
+position = Vector2( 1247.25, -1412.79 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D5"]
+position = Vector2( 2660.09, 5929.3 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Collectible/Area2D5"]
+position = Vector2( 2660.61, 5929.6 )
+scale = Vector2( 0.506495, 0.514445 )
+texture = ExtResource( 8 )
+
+[node name="Area2D6" type="Area2D" parent="Collectible"]
+position = Vector2( 2152.97, -1742.96 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D6"]
+position = Vector2( 2660.09, 5929.3 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Collectible/Area2D6"]
+position = Vector2( 2660.61, 5929.6 )
+scale = Vector2( 0.506495, 0.514445 )
+texture = ExtResource( 8 )
+[connection signal="body_entered" from="Collectible/Area2D" to="Collectible/Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Collectible/Area2D2" to="Collectible/Area2D2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Collectible/Area2D3" to="Collectible/Area2D3" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Collectible/Area2D4" to="Collectible/Area2D4" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Collectible/Area2D5" to="Collectible/Area2D5" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Collectible/Area2D6" to="Collectible/Area2D6" method="_on_Area2D_body_entered"]
