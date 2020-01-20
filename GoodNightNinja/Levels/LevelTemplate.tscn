@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Levels/LevelTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Levels/building1.png" type="Texture" id=2]
@@ -8,8 +8,7 @@
 [ext_resource path="res://Levels/sky.png" type="Texture" id=6]
 [ext_resource path="res://Levels/city2.png" type="Texture" id=7]
 [ext_resource path="res://Levels/city1.png" type="Texture" id=8]
-[ext_resource path="res://Levels/city3.png" type="Texture" id=9]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -76,7 +75,7 @@ shape = SubResource( 4 )
 modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
 self_modulate = Color( 0.360784, 0.235294, 0.670588, 1 )
 material = SubResource( 5 )
-position = Vector2( 0, 895 )
+position = Vector2( -38.0277, 891.521 )
 scale = Vector2( 20, 15.9789 )
 texture = ExtResource( 3 )
 
@@ -124,27 +123,23 @@ region_rect = Rect2( 0, 0, 10158, 4936 )
 motion_scale = Vector2( 0.5, 0.5 )
 
 [node name="FarCity" type="Sprite" parent="ParallaxBackground/City2Layer"]
-position = Vector2( 0, 350 )
+position = Vector2( 0, 300 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 9788, 657 )
+region_rect = Rect2( 0, 0, 101580, 2115 )
 
 [node name="City1Layer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 0.75 )
 
 [node name="CloseCity" type="Sprite" parent="ParallaxBackground/City1Layer"]
-position = Vector2( 0, 350 )
+position = Vector2( 0, 200 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 8 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 9788, 701 )
+region_rect = Rect2( 0, 0, 101580, 2300 )
 
-[node name="City3Layer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="SuperFarCity" type="Sprite" parent="ParallaxBackground/City3Layer"]
-texture = ExtResource( 9 )
-region_enabled = true
-
-[node name="Ninja" parent="." instance=ExtResource( 10 )]
+[node name="Ninja" parent="." instance=ExtResource( 9 )]
 position = Vector2( 60.2959, 488.871 )
 
 [node name="LevelEnd" type="Area2D" parent="."]
