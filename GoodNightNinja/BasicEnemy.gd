@@ -6,20 +6,18 @@ class_name BasicEnemy
 const WALK_SPEED = 50
 const STATE_WALKING = 0
 const STATE_DYING = 1
-const STATE_ATTACKING = 2
 
 # used to control basic state and direction of sprite/animation
 var state = STATE_WALKING
-var direction = 1
+var direction = -1
 var animation = ""
 
 var health = 1
 
-onready var rc_left = $RayCastLeft
-onready var rc_right = $RayCastRight
+onready var rc_left = $RaycastLeft
+onready var rc_right = $RaycastRight
 
 var star = preload("res://Player/NinjaStar.gd")
-var player = preload("res://Player/Ninja.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,39 +34,33 @@ func _preDie():
 	#play sound or death animation here
 	
 # called after hit with melee or ranged attack
-func _onHit(countact, s, dp):
+func _onHit(countact, state, dp):
 	health = health - 0.25
 	if health <=0:
 		mode = MODE_RIGID
 		state = STATE_DYING
 		
-		s.set_angular_velocity(sign(dp.x) * 33.0)
-		set_friction(1)
-		countact.disable()
+		state.set_angular
 	
-func _integrate_forces(s):
-	var linVel = s.get_linear_velocity()
+func _integrate_forces(state):
+	var linVel = state.get_linear_velocity()
 	var new_animation = animation
 	
 	if state == STATE_DYING:
-		#new_animation = "ded"
-		pass
+		new_animation = "ded"
 	elif state == STATE_WALKING:
-		#new_animation = "welk"
+		new_animation = "welk"
 		
 		var wall_side = 0.0
 		
-		for i in range(s.get_contact_count()):
-			var countact = s.get_contact_collider_object(i)
-			var dp = s.get_contact_local_normal(i)
+		for i in range(state.get_contact_count()):
+			var countact = state.get_contact_collider_object(i)
+			var dp = state.get_contact_local_normal(i)
 			
 			if countact:
 				if countact is star and not countact.disabled:
-					call_deferred("_onHit", countact, s, dp)
+					call_deferred("_onHit", countact, state, dp)
 					break
-				if countact is player and not countact.disabled:
-					state = STATE_ATTACKING
-					print("HERE")
 			if dp.x > 0.9:
 				wall_side=1.0
 			elif dp.x < -0.9:
@@ -85,9 +77,12 @@ func _integrate_forces(s):
 		
 		linear_velocity.x = direction * WALK_SPEED
 		
-	elif state == STATE_ATTACKING:
-		#new_animation = "attek"
-		pass
-		
 	if animation != new_animation:
 		animation = new_animation
+
+		
+	
+			
+	
+	
+	

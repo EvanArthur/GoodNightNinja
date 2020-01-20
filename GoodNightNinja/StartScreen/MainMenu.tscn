@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://StartScreen/assets/fonts/design.graffiti.comicsansms.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://StartScreen/MenuOptions.gd" type="Script" id=2]
-[ext_resource path="res://Levels/sky.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -31,12 +30,12 @@ custom_constants/margin_bottom = 80
 [node name="MenuColumns" type="HBoxContainer" parent="."]
 margin_left = 120.0
 margin_top = 10.0
-margin_right = 935.0
-margin_bottom = 525.0
+margin_right = 904.0
+margin_bottom = 520.0
 
 [node name="RightColumnOptions" type="VBoxContainer" parent="MenuColumns"]
 margin_right = 622.0
-margin_bottom = 515.0
+margin_bottom = 510.0
 
 [node name="Title" type="Label" parent="MenuColumns/RightColumnOptions"]
 margin_right = 622.0
@@ -46,8 +45,8 @@ text = "Single Dad Ninja"
 
 [node name="MenuOptions" type="VBoxContainer" parent="MenuColumns/RightColumnOptions"]
 margin_top = 117.0
-margin_right = 261.0
-margin_bottom = 515.0
+margin_right = 213.0
+margin_bottom = 408.0
 size_flags_horizontal = 0
 size_flags_vertical = 2
 custom_constants/separation = 30
@@ -55,7 +54,7 @@ alignment = 1
 script = ExtResource( 2 )
 
 [node name="PlayButton" type="MenuButton" parent="MenuColumns/RightColumnOptions/MenuOptions"]
-margin_right = 261.0
+margin_right = 213.0
 margin_bottom = 77.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 2 )
@@ -64,51 +63,34 @@ align = 0
 
 [node name="ContinueButton" type="MenuButton" parent="MenuColumns/RightColumnOptions/MenuOptions"]
 margin_top = 107.0
-margin_right = 261.0
+margin_right = 213.0
 margin_bottom = 184.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
 text = "Continue"
 align = 0
 
-[node name="TutorialButton" type="MenuButton" parent="MenuColumns/RightColumnOptions/MenuOptions"]
+[node name="SettingsButton" type="MenuButton" parent="MenuColumns/RightColumnOptions/MenuOptions"]
 margin_top = 214.0
-margin_right = 261.0
+margin_right = 213.0
 margin_bottom = 291.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
-text = "Tutorial"
+text = "Settings"
 align = 0
 
-[node name="QuitButton" type="MenuButton" parent="MenuColumns/RightColumnOptions/MenuOptions"]
-margin_top = 321.0
-margin_right = 261.0
-margin_bottom = 398.0
-mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
-text = "Quit Game"
-align = 0
-
-[node name="LeftColumnOptions" type="VBoxContainer" parent="MenuColumns"]
-margin_left = 626.0
-margin_right = 815.0
-margin_bottom = 515.0
-alignment = 2
-
-[node name="VersionNum" type="Label" parent="MenuColumns/LeftColumnOptions"]
-margin_top = 472.0
-margin_right = 189.0
-margin_bottom = 515.0
+[node name="VersionNum" type="Label" parent="MenuColumns/RightColumnOptions"]
+margin_top = 467.0
+margin_right = 622.0
+margin_bottom = 510.0
 custom_fonts/font = SubResource( 4 )
-text = "Version .0012"
-align = 2
-valign = 2
+text = "Version .0001"
 
-[node name="Sprite" type="Sprite" parent="."]
-show_behind_parent = true
-position = Vector2( -1887.06, 1307.93 )
-texture = ExtResource( 3 )
+[node name="GameGraphic" type="CenterContainer" parent="MenuColumns"]
+visible = false
+margin_left = 345.0
+margin_right = 345.0
+margin_bottom = 440.0
 [connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/PlayButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/ContinueButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_ContinueButton_pressed"]
-[connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/TutorialButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_TutorialButton_pressed"]
-[connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/QuitButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/SettingsButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_SettingsButton_pressed"]
