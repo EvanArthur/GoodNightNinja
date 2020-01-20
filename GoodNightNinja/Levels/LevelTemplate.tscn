@@ -22,17 +22,6 @@ extents = Vector2( 10000, 8.285 )
 
 [node name="LevelTemplate" type="Node2D"]
 
-<<<<<<< HEAD
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 4410, -850 )
-
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
-position = Vector2( -4060, 254 )
-scale = Vector2( 0.383812, 0.383812 )
-texture = ExtResource( 1 )
-
-=======
->>>>>>> e9f697af75225d2a168c12e8e528f2cee179a52d
 [node name="building1" type="StaticBody2D" parent="."]
 editor/display_folded = true
 material = SubResource( 1 )
