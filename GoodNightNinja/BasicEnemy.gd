@@ -6,6 +6,7 @@ class_name BasicEnemy
 const WALK_SPEED = 50
 const STATE_WALKING = 0
 const STATE_DYING = 1
+const STATE_ATTACKING = 2
 
 # used to control basic state and direction of sprite/animation
 var state = STATE_WALKING
@@ -18,6 +19,7 @@ onready var rc_left = $RaycastLeft
 onready var rc_right = $RaycastRight
 
 var star = preload("res://Player/NinjaStar.gd")
+var player = preload("res://Player/Ninja.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -61,6 +63,8 @@ func _integrate_forces(state):
 				if countact is star and not countact.disabled:
 					call_deferred("_onHit", countact, state, dp)
 					break
+				if countact is player and not countact.disabled:
+					state = STATE_ATTACKING
 			if dp.x > 0.9:
 				wall_side=1.0
 			elif dp.x < -0.9:
@@ -76,6 +80,8 @@ func _integrate_forces(state):
 			($Sprite as Sprite).scale.x = -direction
 		
 		linear_velocity.x = direction * WALK_SPEED
+	elif state == STATE_ATTACKING:
+		new_animation = "attek"
 		
 	if animation != new_animation:
 		animation = new_animation
