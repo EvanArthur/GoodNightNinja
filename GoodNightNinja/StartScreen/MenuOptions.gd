@@ -15,7 +15,10 @@ func _ready():
 
 func _on_PlayButton_pressed():
 	print("Play Button Pressed")
-	get_tree().change_scene("res://Levels/Level1.tscn")
+	get_tree().change_scene("res://Levels/LevelTemplate.tscn")
+	#get_tree().change_scene("res://Levels/Level"+str(Global.currentStage)+".tscn")
+	#if Global.currentStage > Global.maxStage:
+	#	get_tree().change_scene("res://Levels/Level"+str(Global.maxStage)+".tscn")
 
 func _on_TutorialButton_pressed():
 	print("Tutorial Button Pressed")

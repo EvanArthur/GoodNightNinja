@@ -14,9 +14,11 @@ var direction = 1
 var animation = ""
 
 var health = 1
+var object = null
 
 onready var rc_left = $RayCastLeft
 onready var rc_right = $RayCastRight
+onready var weak_point = $WeakPoint
 
 var star = preload("res://Player/NinjaStar.gd")
 var player = preload("res://Player/Ninja.gd")
@@ -36,15 +38,14 @@ func _preDie():
 	#play sound or death animation here
 	
 # called after hit with melee or ranged attack
-func _onHit(countact, s, dp):
+func _onHit():
 	health = health - 0.25
+	print(health)
 	if health <=0:
-		mode = MODE_RIGID
 		state = STATE_DYING
 		
-		s.set_angular_velocity(sign(dp.x) * 33.0)
-		set_friction(1)
-		countact.disable()
+		set_friction(1000)
+
 	
 func _integrate_forces(s):
 	var linVel = s.get_linear_velocity()
@@ -52,7 +53,8 @@ func _integrate_forces(s):
 	
 	if state == STATE_DYING:
 		#new_animation = "ded"
-		pass
+		print(weak_point.get_collider())
+		
 	elif state == STATE_WALKING:
 		new_animation = "welk"
 		var wall_side = 0.0
@@ -67,7 +69,7 @@ func _integrate_forces(s):
 					break
 				if countact is player and not countact.disabled:
 					state = STATE_ATTACKING
-					print("HERE")
+
 			if dp.x > 0.9:
 				wall_side=1.0
 			elif dp.x < -0.9:
@@ -77,11 +79,17 @@ func _integrate_forces(s):
 			($Sprite as Sprite).scale.x = -direction
 		if rc_right.is_colliding()==false and direction>0:
 			direction = -direction
-			#($Sprite as Sprite).scale.x = -direction
+			$AnimatedSprite.flip_h=true
+			weak_point.position.x*=-1
 		elif rc_left.is_colliding()==false and direction<0:
 			direction = -direction
-			#($Sprite as Sprite).scale.x = -direction
-		print(rc_right.is_colliding())
+			$AnimatedSprite.flip_h=false
+			weak_point.position.x*=-1
+
+		if weak_point.is_colliding() and weak_point.get_collider()!=object:
+
+			call_deferred("_onHit")
+			object = weak_point.get_collider()
 		
 		linear_velocity.x = direction * WALK_SPEED
 		
@@ -91,3 +99,4 @@ func _integrate_forces(s):
 		
 	if animation != new_animation:
 		animation = new_animation
+		$AnimatedSprite.play(animation)

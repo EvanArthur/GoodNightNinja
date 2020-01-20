@@ -51,6 +51,7 @@ align = 0
 margin_top = 114.0
 margin_right = 784.0
 margin_bottom = 149.0
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 2 )
 text = "Level 2"
 align = 0
