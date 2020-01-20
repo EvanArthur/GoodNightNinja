@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/city2.png-586571d2ba1c4c7a4e0fc56039ba1377.stex"
+path="res://.import/  SamuraiDie1.png-3684c3294557cc081f2da5bd39ed4d0a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/city2.png"
-dest_files=[ "res://.import/city2.png-586571d2ba1c4c7a4e0fc56039ba1377.stex" ]
+source_file="res://Enemies/SamuraiDie/  SamuraiDie1.png"
+dest_files=[ "res://.import/  SamuraiDie1.png-3684c3294557cc081f2da5bd39ed4d0a.stex" ]
 
 [params]
 
@@ -19,9 +19,9 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

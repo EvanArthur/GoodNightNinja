@@ -1,12 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Levels/LevelTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Levels/building1.png" type="Texture" id=2]
 [ext_resource path="res://Levels/ledge1.png" type="Texture" id=3]
 [ext_resource path="res://Levels/building2.png" type="Texture" id=4]
 [ext_resource path="res://Levels/building3.png" type="Texture" id=5]
-[ext_resource path="res://Levels/skyBG.png" type="Texture" id=6]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/sky.png" type="Texture" id=6]
+[ext_resource path="res://Levels/city2.png" type="Texture" id=7]
+[ext_resource path="res://Levels/city1.png" type="Texture" id=8]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -64,7 +66,6 @@ shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="platform" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 710, 590 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
@@ -74,8 +75,8 @@ shape = SubResource( 4 )
 modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
 self_modulate = Color( 0.360784, 0.235294, 0.670588, 1 )
 material = SubResource( 5 )
-position = Vector2( -38.0277, -13.5753 )
-scale = Vector2( 20, 0.1 )
+position = Vector2( -38.0277, 891.521 )
+scale = Vector2( 20, 15.9789 )
 texture = ExtResource( 3 )
 
 [node name="building2" type="StaticBody2D" parent="."]
@@ -110,17 +111,35 @@ polygon = PoolVector2Array( -263.586, -96.1704, -302.956, -96.17, 0.365845, -286
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.5, 0.5 )
+[node name="BackgroundLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.25, 0.25 )
 
-[node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 0, -200 )
-scale = Vector2( 0.5, 0.5 )
+[node name="Background" type="Sprite" parent="ParallaxBackground/BackgroundLayer"]
 texture = ExtResource( 6 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 50420, 6128 )
+region_rect = Rect2( 0, 0, 10158, 4936 )
 
-[node name="Ninja" parent="." instance=ExtResource( 7 )]
+[node name="City2Layer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="FarCity" type="Sprite" parent="ParallaxBackground/City2Layer"]
+position = Vector2( 0, 300 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 101580, 2115 )
+
+[node name="City1Layer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.75, 0.75 )
+
+[node name="CloseCity" type="Sprite" parent="ParallaxBackground/City1Layer"]
+position = Vector2( 0, 200 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 101580, 2300 )
+
+[node name="Ninja" parent="." instance=ExtResource( 9 )]
 position = Vector2( 60.2959, 488.871 )
 
 [node name="LevelEnd" type="Area2D" parent="."]
