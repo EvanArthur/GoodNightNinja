@@ -106,7 +106,8 @@ valign = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( -1887.06, 1307.93 )
+position = Vector2( -165.798, 453.971 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
 [connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/PlayButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/ContinueButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_ContinueButton_pressed"]
