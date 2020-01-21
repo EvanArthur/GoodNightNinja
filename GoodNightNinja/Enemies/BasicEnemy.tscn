@@ -45,7 +45,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 110, 110 )
+extents = Vector2( 90, 110 )
 
 [node name="BasicEnemy" type="RigidBody2D"]
 position = Vector2( 510, -90 )
@@ -58,8 +58,7 @@ script = ExtResource( 1 )
 position = Vector2( 20, -90 )
 scale = Vector2( 0.342205, 0.32274 )
 frames = SubResource( 1 )
-animation = "ded"
-frame = 4
+animation = "attak"
 playing = true
 
 [node name="EnemyHitbox" type="CollisionShape2D" parent="."]
@@ -79,4 +78,9 @@ cast_to = Vector2( 0, 217 )
 [node name="WeakPoint" type="RayCast2D" parent="."]
 position = Vector2( -110, -170 )
 enabled = true
-cast_to = Vector2( 0, 167 )
+cast_to = Vector2( 0, 150 )
+
+[node name="block" type="RayCast2D" parent="."]
+position = Vector2( 120, -200 )
+enabled = true
+cast_to = Vector2( 0, 207 )
