@@ -92,11 +92,8 @@ func _integrate_forces(s):
 			object.append(weak_point.get_collider())
 		
 		if strong.is_colliding() and other.find(strong.get_collider())==-1:
-			print("here")
 			new_animation="attak"
 			other.append(strong.get_collider())
-		if animation=="attak":
-			print("got it")
 		linear_velocity.x = direction * WALK_SPEED
 		
 	elif state == STATE_ATTACKING:
