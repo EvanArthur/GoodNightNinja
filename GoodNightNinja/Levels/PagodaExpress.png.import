@@ -2,23 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-<<<<<<< HEAD
-valid=false
-=======
-path="res://.import/InsideBuilding1.png-42ecad669c755c05474f92e6da972c94.stex"
+path="res://.import/PagodaExpress.png-b55ccd428254bf9aa9980054864e5d0a.stex"
 metadata={
 "vram_texture": false
 }
->>>>>>> ffdca4654ff1d80167c02f18f68dc7f1c81905f8
 
 [deps]
 
-source_file="res://Levels/InsideBuilding1.png"
-<<<<<<< HEAD
-=======
-dest_files=[ "res://.import/InsideBuilding1.png-42ecad669c755c05474f92e6da972c94.stex" ]
+source_file="res://Levels/PagodaExpress.png"
+dest_files=[ "res://.import/PagodaExpress.png-b55ccd428254bf9aa9980054864e5d0a.stex" ]
 
->>>>>>> ffdca4654ff1d80167c02f18f68dc7f1c81905f8
 [params]
 
 compress/mode=0
