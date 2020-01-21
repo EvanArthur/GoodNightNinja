@@ -12,6 +12,7 @@ const STATE_ATTACKING = 2
 var state = STATE_WALKING
 var direction = 1
 var animation = ""
+var new_animation = ""
 
 var health = 1
 var object = []
@@ -37,6 +38,7 @@ func _preDie():
 	rc_left.queue_free()
 	rc_right.queue_free()
 	weak_point.queue_free()
+	$CollisionShape2D.queue_free()
 	#property of RigidBody. Makes it stay in place
 	mode = MODE_STATIC
 	
@@ -54,7 +56,7 @@ func _onHit():
 	
 func _integrate_forces(s):
 	var linVel = s.get_linear_velocity()
-	var new_animation = animation
+	new_animation = animation
 
 	
 	if state == STATE_DYING:
@@ -87,19 +89,26 @@ func _integrate_forces(s):
 			weak_point.position.x*=-1
 			strong.position.x*=-1
 		if weak_point.is_colliding() and object.find(weak_point.get_collider())==-1:
-			print("hit")
 			call_deferred("_onHit")
 			object.append(weak_point.get_collider())
 		
 		if strong.is_colliding() and other.find(strong.get_collider())==-1:
-			new_animation="attak"
+			#print("block")
+			#state=STATE_ATTACKING
 			other.append(strong.get_collider())
 		linear_velocity.x = direction * WALK_SPEED
 		
 	elif state == STATE_ATTACKING:
-		#new_animation = "attek"
-		pass
+		new_animation = "attak"
 		
 	if animation != new_animation:
 		animation = new_animation
 		$AnimatedSprite.play(animation)
+
+func _on_AnimatedSprite_animation_finished(extra_arg_0):
+	if animation=="attak":
+		state=STATE_WALKING
+		
+	else:
+		pass
+	
