@@ -157,7 +157,6 @@ position = Vector2( 390, -21.297 )
 position = Vector2( 60.2959, 488.871 )
 
 [node name="LevelEnd" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 1863.6, -717.562 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
