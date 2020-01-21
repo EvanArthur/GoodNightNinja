@@ -100,15 +100,14 @@ func _integrate_forces(s):
 		
 	elif state == STATE_ATTACKING:
 		new_animation = "attak"
+		if _on_AnimatedSprite_animation_finished():
+			print("here")
+			state=STATE_WALKING
 		
 	if animation != new_animation:
 		animation = new_animation
 		$AnimatedSprite.play(animation)
 
-func _on_AnimatedSprite_animation_finished(extra_arg_0):
-	if animation=="attak":
-		state=STATE_WALKING
-		
-	else:
-		pass
+func _on_AnimatedSprite_animation_finished():
+	return true
 	

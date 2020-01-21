@@ -62,6 +62,7 @@ position = Vector2( 20, -90 )
 scale = Vector2( 0.342205, 0.32274 )
 frames = SubResource( 1 )
 animation = "attak"
+frame = 2
 playing = true
 
 [node name="EnemyHitbox" type="CollisionShape2D" parent="."]
