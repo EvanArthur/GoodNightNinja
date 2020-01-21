@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/NinjaStar.gd" type="Script" id=1]
 [ext_resource path="res://Player/ninja-star.png" type="Texture" id=2]
-[ext_resource path="res://Player/NinjaStarArea.gd" type="Script" id=3]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -59,9 +58,6 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=5]
-radius = 8.86174
-
 [node name="NinjaStar" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 5
@@ -89,13 +85,4 @@ one_shot = true
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/shutdown = SubResource( 4 )
-
-[node name="NinjaStarArea" type="Area2D" parent="."]
-collision_layer = 8
-script = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NinjaStarArea"]
-shape = SubResource( 5 )
 [connection signal="timeout" from="Timer" to="." method="disable"]
-[connection signal="body_entered" from="NinjaStarArea" to="NinjaStarArea" method="_on_NinjaStarArea_body_entered"]
-[connection signal="body_exited" from="NinjaStarArea" to="NinjaStarArea" method="_on_NinjaStarArea_body_exited"]

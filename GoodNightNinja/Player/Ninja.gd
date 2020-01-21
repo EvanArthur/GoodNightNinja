@@ -66,9 +66,10 @@ func _shot_ninja_star():
 
 	($Sprite/Smoke as Particles2D).restart()
 	($SoundShoot as AudioStreamPlayer2D).play()
+	add_collision_exception_with(bi)
 	
-func incriment_ninja_stars():
-	star_count += 1
+func restore_ninja_stars():
+	star_count = 5
 
 func _integrate_forces(s):
 
