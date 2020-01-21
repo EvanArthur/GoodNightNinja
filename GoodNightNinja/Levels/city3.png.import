@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/City3.png-e1925cf5d48e504f3dbfbc94e11e6b96.stex"
+path="res://.import/city3.png-78c0a3ff45770e137c437cb1a01dba7b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/City3.png"
-dest_files=[ "res://.import/City3.png-e1925cf5d48e504f3dbfbc94e11e6b96.stex" ]
+source_file="res://Levels/city3.png"
+dest_files=[ "res://.import/city3.png-78c0a3ff45770e137c437cb1a01dba7b.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=false
+flags/repeat=0
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

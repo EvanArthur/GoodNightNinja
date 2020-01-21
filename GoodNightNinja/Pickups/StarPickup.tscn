@@ -3,16 +3,16 @@
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Pickups/NinjaStarArea.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 20, 20 )
 
 [node name="StarPickup" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.625, 0.625 )
@@ -23,5 +23,5 @@ gravity = 0.0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NinjaStarArea"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 [connection signal="body_entered" from="NinjaStarArea" to="NinjaStarArea" method="_on_NinjaStarArea_body_entered"]
