@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Levels/ledge1.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Dumpster.png" type="Texture" id=2]
@@ -8,9 +8,10 @@
 [ext_resource path="res://Levels/Area2D.gd" type="Script" id=6]
 [ext_resource path="res://Levels/Coin.png" type="Texture" id=7]
 [ext_resource path="res://Levels/sky.png" type="Texture" id=8]
-[ext_resource path="res://Levels/City3.png" type="Texture" id=9]
-[ext_resource path="res://Levels/city2.png" type="Texture" id=10]
-[ext_resource path="res://Levels/city1.png" type="Texture" id=11]
+[ext_resource path="res://Levels/city3.png" type="Texture" id=9]
+[ext_resource path="res://Levels/City3.png" type="Texture" id=10]
+[ext_resource path="res://Levels/city2.png" type="Texture" id=11]
+[ext_resource path="res://Levels/city1.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2052.76, 66.063 )
@@ -413,11 +414,19 @@ shape = SubResource( 10 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 10000, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 2474.34, 4483.13 )
+position = Vector2( 9007.2, 3350.63 )
+scale = Vector2( 3.48162, 1.66463 )
 texture = ExtResource( 8 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 10000, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 1431.76, 5262.02 )
+scale = Vector2( 1.18798, 0.596098 )
+texture = ExtResource( 9 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.25, 0.25 )
@@ -426,25 +435,25 @@ motion_mirroring = Vector2( 10000, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 367.392, 5224.61 )
 scale = Vector2( 0.579281, 0.566214 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.5, 0.5 )
 motion_mirroring = Vector2( 10000, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 682.998, 5547.68 )
-scale = Vector2( 2.65885, 1.73177 )
-texture = ExtResource( 10 )
+position = Vector2( 4275.04, 5433.17 )
+scale = Vector2( 2.05436, 0.742346 )
+texture = ExtResource( 11 )
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 0.75 )
 motion_mirroring = Vector2( 10000, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2( 772.85, 5688.55 )
-scale = Vector2( 2.6913, 1.03255 )
-texture = ExtResource( 11 )
+position = Vector2( 3506.35, 5302.73 )
+scale = Vector2( 1.82879, 0.791492 )
+texture = ExtResource( 12 )
 [connection signal="body_entered" from="Collectible/Area2D" to="Collectible/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Collectible/Area2D2" to="Collectible/Area2D2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Collectible/Area2D3" to="Collectible/Area2D3" method="_on_Area2D_body_entered"]
