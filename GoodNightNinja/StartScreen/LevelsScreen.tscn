@@ -94,7 +94,7 @@ text = "Return to Menu"
 
 [node name="Sprite" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 15.2452, 494.681 )
+position = Vector2( 294.345, 361.847 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
 [connection signal="pressed" from="LevelBox/Level1" to="LevelBox" method="_on_Level1_pressed"]

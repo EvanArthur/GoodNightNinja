@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Levels/LevelTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Levels/building1.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Levels/PagodaExpress.png" type="Texture" id=13]
 [ext_resource path="res://Levels/InsideBuilding1.png" type="Texture" id=14]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=16]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -35,10 +36,10 @@ extents = Vector2( 33.1348, 64.5401 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 1120, 21.562 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 200, 10 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 80, 90 )
 
 [sub_resource type="RectangleShape2D" id=10]
@@ -60,7 +61,7 @@ extents = Vector2( 180, 10 )
 extents = Vector2( 100, 10 )
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 10, 430 )
+extents = Vector2( 10, 327.645 )
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 10, 390 )
@@ -189,7 +190,6 @@ texture = ExtResource( 5 )
 polygon = PoolVector2Array( -263.586, -96.1704, -302.956, -96.17, 0.365845, -286.162, 302.601, -96.17, 265.003, -96.17, 0.365845, -261.726 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="BackgroundLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.25, 0.25 )
@@ -253,7 +253,7 @@ one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2( 486, -690 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -264,7 +264,7 @@ scale = Vector2( 0.0620049, 0.0620048 )
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -283,25 +283,29 @@ shape = SubResource( 10 )
 position = Vector2( -3030, 30 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D6"]
-position = Vector2( 0, 2.43799 )
+position = Vector2( -3.82837, 2.43799 )
 scale = Vector2( 1.59541, 1.59541 )
 texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
 position = Vector2( -580, 20 )
 shape = SubResource( 11 )
+one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D6"]
 position = Vector2( 20, 280 )
 shape = SubResource( 12 )
+one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D6"]
 position = Vector2( 540, 280 )
 shape = SubResource( 13 )
+one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D6"]
 position = Vector2( -590, -300 )
 shape = SubResource( 14 )
+one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D6"]
 position = Vector2( -210, -203 )
@@ -316,7 +320,7 @@ position = Vector2( 510, -230 )
 shape = SubResource( 15 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D6"]
-position = Vector2( -770, -110 )
+position = Vector2( -773.828, -186.568 )
 shape = SubResource( 16 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D6"]
@@ -329,4 +333,22 @@ shape = SubResource( 18 )
 
 [node name="Ninja" parent="." instance=ExtResource( 15 )]
 position = Vector2( -6580, 490 )
+
+[node name="BasicEnemy" parent="." instance=ExtResource( 16 )]
+position = Vector2( -5975.28, -36.4028 )
+
+[node name="BasicEnemy2" parent="." instance=ExtResource( 16 )]
+position = Vector2( -1974.62, 537.854 )
+
+[node name="BasicEnemy3" parent="." instance=ExtResource( 16 )]
+position = Vector2( -558.119, -645.115 )
+
+[node name="BasicEnemy4" parent="." instance=ExtResource( 16 )]
+position = Vector2( -558.119, -645.115 )
+
+[node name="StarPickup" parent="." instance=ExtResource( 10 )]
+position = Vector2( -4463.89, -15.3135 )
+
+[node name="StarPickup2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 371.353, -892.013 )
 [connection signal="body_entered" from="StaticBody2D3/LevelEnd" to="." method="_on_LevelEnd_body_entered"]

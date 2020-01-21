@@ -45,7 +45,7 @@ text = "Return to Menu"
 
 [node name="Sprite" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 15.2452, 494.681 )
+position = Vector2( 378.807, 344.565 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
 [connection signal="pressed" from="WinBox/ReturnButton" to="." method="_on_ReturnButton_pressed"]

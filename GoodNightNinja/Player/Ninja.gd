@@ -62,7 +62,7 @@ func _shot_ninja_star():
 	bi.position = pos
 	get_parent().add_child(bi)
 	
-	bi.linear_velocity = Vector2(300.0 * ss, -80)
+	bi.linear_velocity = Vector2(800.0 * ss, -80)
 
 	($Sprite/Smoke as Particles2D).restart()
 	($SoundShoot as AudioStreamPlayer2D).play()

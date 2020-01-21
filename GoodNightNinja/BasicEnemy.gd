@@ -46,7 +46,7 @@ func _preDie():
 	
 # called after hit with melee or ranged attack
 func _onHit():
-	health = health - 0.25
+	health = health - 1
 	print(health)
 	if health <=0:
 		state = STATE_DYING
