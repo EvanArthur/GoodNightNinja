@@ -43,6 +43,7 @@ text = "Levels:"
 margin_top = 75.0
 margin_right = 784.0
 margin_bottom = 110.0
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 2 )
 text = "Level 1"
 align = 0
@@ -56,18 +57,49 @@ custom_fonts/font = SubResource( 2 )
 text = "Level 2"
 align = 0
 
-[node name="ReturnButton" type="MenuButton" parent="LevelBox"]
+[node name="Level3" type="MenuButton" parent="LevelBox"]
 margin_top = 153.0
 margin_right = 784.0
-margin_bottom = 216.0
+margin_bottom = 188.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
+text = "Level 3"
+align = 0
+
+[node name="Level4" type="MenuButton" parent="LevelBox"]
+margin_top = 192.0
+margin_right = 784.0
+margin_bottom = 227.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
+text = "Level 4"
+align = 0
+
+[node name="Level5" type="MenuButton" parent="LevelBox"]
+margin_top = 231.0
+margin_right = 784.0
+margin_bottom = 266.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
+text = "Level 5"
+align = 0
+
+[node name="ReturnButton" type="MenuButton" parent="LevelBox"]
+margin_top = 270.0
+margin_right = 784.0
+margin_bottom = 333.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
 text = "Return to Menu"
 
 [node name="Sprite" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( -1905.16, 1496.08 )
+position = Vector2( 15.2452, 494.681 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
 [connection signal="pressed" from="LevelBox/Level1" to="LevelBox" method="_on_Level1_pressed"]
 [connection signal="pressed" from="LevelBox/Level2" to="LevelBox" method="_on_Level2_pressed"]
+[connection signal="pressed" from="LevelBox/Level3" to="LevelBox" method="_on_Level3_pressed"]
+[connection signal="pressed" from="LevelBox/Level4" to="LevelBox" method="_on_Level4_pressed"]
+[connection signal="pressed" from="LevelBox/Level5" to="LevelBox" method="_on_Level5_pressed"]
 [connection signal="pressed" from="LevelBox/ReturnButton" to="LevelBox" method="_on_ReturnButton_pressed"]
