@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Player/Ninja.gd" type="Script" id=1]
 [ext_resource path="res://Player/NinjaIdlepng.png" type="Texture" id=2]
@@ -6,16 +6,24 @@
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle2.png" type="Texture" id=4]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle3.png" type="Texture" id=5]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle4.png" type="Texture" id=6]
-[ext_resource path="res://Player/NinjaJumping.png" type="Texture" id=7]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard1.png" type="Texture" id=8]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard2.png" type="Texture" id=9]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard3.png" type="Texture" id=10]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard4.png" type="Texture" id=11]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard5.png" type="Texture" id=12]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard6.png" type="Texture" id=13]
-[ext_resource path="res://Player/ninja-star.png" type="Texture" id=14]
-[ext_resource path="res://Player/ninja_star.wav" type="AudioStream" id=15]
-[ext_resource path="res://Player/jump.wav" type="AudioStream" id=16]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow1.png" type="Texture" id=7]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow2.png" type="Texture" id=8]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow3.png" type="Texture" id=9]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow4.png" type="Texture" id=10]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow5 .png" type="Texture" id=11]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow6.png" type="Texture" id=12]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow7.png" type="Texture" id=13]
+[ext_resource path="res://Player/NinjaJumping.png" type="Texture" id=14]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard1.png" type="Texture" id=15]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard2.png" type="Texture" id=16]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard3.png" type="Texture" id=17]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard4.png" type="Texture" id=18]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard5.png" type="Texture" id=19]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard6.png" type="Texture" id=20]
+[ext_resource path="res://Player/ninja-star.png" type="Texture" id=21]
+[ext_resource path="res://Player/ninja_star.wav" type="AudioStream" id=22]
+[ext_resource path="res://Player/jump.wav" type="AudioStream" id=23]
+[ext_resource path="res://Player/NinjaArea.gd" type="Script" id=24]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -27,15 +35,20 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "shooting",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "jumping",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "run",
-"speed": 5.0
+"speed": 12.0
 } ]
 
 [sub_resource type="ParticlesMaterial" id=3]
@@ -48,9 +61,12 @@ orbit_velocity_random = 0.0
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 20, 90 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 25, 90 )
+
 [node name="Ninja" type="RigidBody2D"]
 position = Vector2( 510.292, 210 )
-collision_mask = 4
+collision_mask = 12
 mode = 2
 mass = 3.0
 physics_material_override = SubResource( 1 )
@@ -62,7 +78,8 @@ script = ExtResource( 1 )
 position = Vector2( 9.70789, -20 )
 scale = Vector2( 0.299416, 0.299416 )
 frames = SubResource( 2 )
-animation = "jumping"
+animation = "shooting"
+frame = 5
 
 [node name="Smoke" type="Particles2D" parent="Sprite"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -74,21 +91,35 @@ one_shot = true
 explosiveness = 1.0
 local_coords = false
 process_material = SubResource( 3 )
-texture = ExtResource( 14 )
+texture = ExtResource( 21 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 rotating = true
 current = true
+zoom = Vector2( 1.5, 1.5 )
+smoothing_speed = 10.0
+drag_margin_left = 0.3
+drag_margin_right = 0.3
 
 [node name="IdleCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 14.708, -20 )
 shape = SubResource( 4 )
 
 [node name="NinjaStarShoot" type="Position2D" parent="."]
-position = Vector2( 49.708, -50 )
+position = Vector2( 29.708, -60 )
 
 [node name="SoundShoot" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 15 )
+position = Vector2( 14.708, -20 )
+stream = ExtResource( 22 )
 
 [node name="SoundJump" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 16 )
+position = Vector2( 14.708, -20 )
+stream = ExtResource( 23 )
+
+[node name="NinjaArea" type="Area2D" parent="."]
+script = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NinjaArea"]
+position = Vector2( 14.708, -20 )
+shape = SubResource( 5 )
+[connection signal="body_entered" from="NinjaArea" to="NinjaArea" method="_on_NinjaArea_body_entered"]

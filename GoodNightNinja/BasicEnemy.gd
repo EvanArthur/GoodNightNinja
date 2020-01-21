@@ -14,11 +14,13 @@ var direction = 1
 var animation = ""
 
 var health = 1
-var object = null
+var object = []
+var other = []
 
 onready var rc_left = $RayCastLeft
 onready var rc_right = $RayCastRight
 onready var weak_point = $WeakPoint
+onready var strong = $block
 
 var star = preload("res://Player/NinjaStar.gd")
 var player = preload("res://Player/Ninja.gd")
@@ -32,6 +34,9 @@ func _die():
 
 func _preDie():
 	$EnemyHitbox.queue_free()
+	rc_left.queue_free()
+	rc_right.queue_free()
+	weak_point.queue_free()
 	#property of RigidBody. Makes it stay in place
 	mode = MODE_STATIC
 	
@@ -50,11 +55,12 @@ func _onHit():
 func _integrate_forces(s):
 	var linVel = s.get_linear_velocity()
 	var new_animation = animation
+
 	
 	if state == STATE_DYING:
-		#new_animation = "ded"
-		print(weak_point.get_collider())
-		
+		new_animation = "ded"
+		call_deferred("_preDie")
+
 	elif state == STATE_WALKING:
 		new_animation = "welk"
 		var wall_side = 0.0
@@ -62,13 +68,6 @@ func _integrate_forces(s):
 		for i in range(s.get_contact_count()):
 			var countact = s.get_contact_collider_object(i)
 			var dp = s.get_contact_local_normal(i)
-			
-			if countact:
-				if countact is star and not countact.disabled:
-					call_deferred("_onHit", countact, s, dp)
-					break
-				if countact is player and not countact.disabled:
-					state = STATE_ATTACKING
 
 			if dp.x > 0.9:
 				wall_side=1.0
@@ -81,16 +80,23 @@ func _integrate_forces(s):
 			direction = -direction
 			$AnimatedSprite.flip_h=true
 			weak_point.position.x*=-1
+			strong.position.x*=-1
 		elif rc_left.is_colliding()==false and direction<0:
 			direction = -direction
 			$AnimatedSprite.flip_h=false
 			weak_point.position.x*=-1
+			strong.position.x*=-1
 
-		if weak_point.is_colliding() and weak_point.get_collider()!=object:
-
+		if weak_point.is_colliding() and object.find(weak_point.get_collider())==-1:
 			call_deferred("_onHit")
-			object = weak_point.get_collider()
+			object.append(weak_point.get_collider())
 		
+		if strong.is_colliding() and other.find(strong.get_collider())==-1:
+			print("here")
+			new_animation="attak"
+			other.append(strong.get_collider())
+		if animation=="attak":
+			print("got it")
 		linear_velocity.x = direction * WALK_SPEED
 		
 	elif state == STATE_ATTACKING:
