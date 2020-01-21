@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/NinjaStar.gd" type="Script" id=1]
 [ext_resource path="res://Player/ninja-star.png" type="Texture" id=2]
@@ -58,14 +58,17 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="CircleShape2D" id=5]
+radius = 8.52794
+
 [node name="NinjaStar" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 5
-mode = 2
 script = ExtResource( 1 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 material = SubResource( 1 )
+position = Vector2( 0, -2 )
 emitting = false
 amount = 1
 one_shot = true
@@ -85,4 +88,9 @@ one_shot = true
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/shutdown = SubResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 5 )
 [connection signal="timeout" from="Timer" to="." method="disable"]

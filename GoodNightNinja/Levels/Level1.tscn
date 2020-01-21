@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Levels/sky.png" type="Texture" id=1]
 [ext_resource path="res://Levels/ledge1.png" type="Texture" id=2]
@@ -10,30 +10,33 @@
 [ext_resource path="res://Levels/Coin.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2831.19, 50.2275 )
+extents = Vector2( 2052.76, 66.063 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 160.663, 89.3423 )
+extents = Vector2( 1307.71, 50.2275 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 346.625, 222.364 )
+extents = Vector2( 160.663, 89.3423 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 158.148, 16.7085 )
+extents = Vector2( 346.625, 222.364 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 391.725, 18.3057 )
+extents = Vector2( 158.148, 16.7085 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 302.03, 17.5132 )
+extents = Vector2( 391.725, 18.3057 )
 
 [sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 302.03, 17.5132 )
+
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 274.099, 25.3398 )
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=9]
 radius = 43.0162
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 37.9957, 687.179 )
 
 [node name="Level" type="Node2D"]
@@ -55,7 +58,7 @@ scale = Vector2( 6.41952, 0.915897 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2( 1262.9, 6067.63 )
+position = Vector2( 2042.65, 6081.18 )
 shape = SubResource( 1 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
@@ -69,7 +72,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
 position = Vector2( 1314.44, 6072.72 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Dumpster1" type="StaticBody2D" parent="."]
 __meta__ = {
@@ -83,7 +86,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dumpster1"]
 position = Vector2( 790.027, 5902.23 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="House1" type="StaticBody2D" parent="."]
 
@@ -97,7 +100,7 @@ polygon = PoolVector2Array( 1152.22, 5573.85, 1548.83, 5349.52, 1950.83, 5570.26
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House1"]
 position = Vector2( 1547.35, 5798.66 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="House2" type="StaticBody2D" parent="."]
 position = Vector2( 952.337, -1438.07 )
@@ -124,23 +127,23 @@ texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Skycraper1"]
 position = Vector2( 3564.74, 5686.88 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Skycraper1"]
 position = Vector2( 3906.39, 5330.98 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Skycraper1"]
 position = Vector2( 3555.27, 4957.64 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Skycraper1"]
 position = Vector2( 3900.15, 4595.31 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Skycraper1"]
 position = Vector2( 3729.81, 4280.24 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="Ninja" parent="." instance=ExtResource( 6 )]
@@ -159,7 +162,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dumpster2"]
 position = Vector2( 790.027, 5902.23 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Dumpster3" type="StaticBody2D" parent="."]
 position = Vector2( 6926.16, 0.588867 )
@@ -174,7 +177,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dumpster3"]
 position = Vector2( 790.027, 5902.23 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Dumpster4" type="StaticBody2D" parent="."]
 position = Vector2( 8712.49, 0.125523 )
@@ -189,7 +192,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dumpster4"]
 position = Vector2( 790.027, 5902.23 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Platorm1" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -205,7 +208,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platorm1"]
 position = Vector2( 4984.35, 3605.83 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Platorm3" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -221,7 +224,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platorm3"]
 position = Vector2( 4984.35, 3605.83 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Platorm4" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -237,7 +240,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platorm4"]
 position = Vector2( 4984.35, 3605.83 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Platorm2" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -253,7 +256,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platorm2"]
 position = Vector2( 4984.35, 3605.83 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Box" type="StaticBody2D" parent="."]
 position = Vector2( -539.543, -1.93457 )
@@ -268,7 +271,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
 position = Vector2( 9632.37, 5510.4 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Box2" type="StaticBody2D" parent="."]
 position = Vector2( 247.768, -5.32471 )
@@ -283,7 +286,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box2"]
 position = Vector2( 9632.37, 5510.4 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Collectible" type="Node" parent="."]
 
@@ -295,7 +298,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D"]
 position = Vector2( 2660.09, 5929.3 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="Collectible/Area2D"]
 position = Vector2( 2660.61, 5929.6 )
@@ -311,7 +314,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D2"]
 position = Vector2( 2660.09, 5929.3 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="Collectible/Area2D2"]
 position = Vector2( 2660.61, 5929.6 )
@@ -327,7 +330,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D3"]
 position = Vector2( 2660.09, 5929.3 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="Collectible/Area2D3"]
 position = Vector2( 2660.61, 5929.6 )
@@ -343,7 +346,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D4"]
 position = Vector2( 2660.09, 5929.3 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="Collectible/Area2D4"]
 position = Vector2( 2660.61, 5929.6 )
@@ -359,7 +362,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D5"]
 position = Vector2( 2660.09, 5929.3 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="Collectible/Area2D5"]
 position = Vector2( 2660.61, 5929.6 )
@@ -375,9 +378,25 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D6"]
 position = Vector2( 2660.09, 5929.3 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="Collectible/Area2D6"]
+position = Vector2( 2660.61, 5929.6 )
+scale = Vector2( 0.506495, 0.514445 )
+texture = ExtResource( 8 )
+
+[node name="Area2D7" type="Area2D" parent="Collectible"]
+position = Vector2( 4497.73, -671.187 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/Area2D7"]
+position = Vector2( 2660.09, 5929.3 )
+shape = SubResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Collectible/Area2D7"]
 position = Vector2( 2660.61, 5929.6 )
 scale = Vector2( 0.506495, 0.514445 )
 texture = ExtResource( 8 )
@@ -393,10 +412,11 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 30.4281, 5336.08 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 [connection signal="body_entered" from="Collectible/Area2D" to="Collectible/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Collectible/Area2D2" to="Collectible/Area2D2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Collectible/Area2D3" to="Collectible/Area2D3" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Collectible/Area2D4" to="Collectible/Area2D4" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Collectible/Area2D5" to="Collectible/Area2D5" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Collectible/Area2D6" to="Collectible/Area2D6" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Collectible/Area2D7" to="Collectible/Area2D7" method="_on_Area2D_body_entered"]
