@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Levels/LevelTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Levels/building1.png" type="Texture" id=2]
@@ -10,8 +10,9 @@
 [ext_resource path="res://Levels/city2.png" type="Texture" id=8]
 [ext_resource path="res://Levels/city1.png" type="Texture" id=9]
 [ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Levels/ApartmentBuilding.png" type="Texture" id=11]
+[ext_resource path="res://Levels/Dumpster.png" type="Texture" id=12]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -29,13 +30,19 @@ extents = Vector2( 10000, 8.285 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 33.1348, 64.5401 )
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 1120, 21.562 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 80, 90 )
+
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="building1" type="StaticBody2D" parent="."]
 editor/display_folded = true
 material = SubResource( 1 )
-position = Vector2( 1670, -20 )
+position = Vector2( 1540, 17.562 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="building1"]
 position = Vector2( -67, 365 )
@@ -85,7 +92,7 @@ texture = ExtResource( 3 )
 
 [node name="building2" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 450, 296.483 )
+position = Vector2( -2650, 290.045 )
 
 [node name="Sprite" type="Sprite" parent="building2"]
 position = Vector2( 0, -1 )
@@ -104,7 +111,7 @@ one_way_collision = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1118.51, 290.483 )
+position = Vector2( -1810, 290.045 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D2"]
 scale = Vector2( 0.164312, 0.164312 )
@@ -114,12 +121,12 @@ texture = ExtResource( 5 )
 polygon = PoolVector2Array( -263.586, -96.1704, -302.956, -96.17, 0.365845, -286.162, 302.601, -96.17, 265.003, -96.17, 0.365845, -261.726 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="BackgroundLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.25, 0.25 )
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/BackgroundLayer"]
+position = Vector2( 2990, -80 )
 texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 20316, 4936 )
@@ -128,8 +135,8 @@ region_rect = Rect2( 0, 0, 20316, 4936 )
 motion_scale = Vector2( 0.25, 0.25 )
 
 [node name="SuperFarCity" type="Sprite" parent="ParallaxBackground/City3Layer"]
-position = Vector2( 0, 250 )
-scale = Vector2( 0.4, 0.4 )
+position = Vector2( 6480, 150 )
+scale = Vector2( 0.485726, 0.485726 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 40632, 3284 )
@@ -138,8 +145,8 @@ region_rect = Rect2( 0, 0, 40632, 3284 )
 motion_scale = Vector2( 0.5, 0.5 )
 
 [node name="FarCity" type="Sprite" parent="ParallaxBackground/City2Layer"]
-position = Vector2( 0, 350 )
-scale = Vector2( 1.03498, 1.13028 )
+position = Vector2( -490, 250 )
+scale = Vector2( 0.891991, 0.974125 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 9788, 657 )
@@ -156,16 +163,40 @@ region_rect = Rect2( 0, 0, 9788, 701 )
 [node name="StaticBody2D" parent="." instance=ExtResource( 10 )]
 position = Vector2( 390, -21.297 )
 
-[node name="Ninja" parent="." instance=ExtResource( 11 )]
-position = Vector2( 60.2959, 488.871 )
-
-[node name="LevelEnd" type="Area2D" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1863.6, -717.562 )
+position = Vector2( -100, -130 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+[node name="Sprite" type="Sprite" parent="StaticBody2D3"]
+scale = Vector2( 0.288029, 0.288029 )
+texture = ExtResource( 11 )
+
+[node name="LevelEnd" type="Area2D" parent="StaticBody2D3"]
+editor/display_folded = true
+position = Vector2( 1833.6, -550 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/LevelEnd"]
 shape = SubResource( 6 )
 
-[node name="BasicEnemy" parent="." instance=ExtResource( 12 )]
-position = Vector2( 431.241, 229.331 )
-[connection signal="body_entered" from="LevelEnd" to="." method="_on_LevelEnd_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 0, -468.438 )
+shape = SubResource( 7 )
+one_way_collision = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( -2210, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D4"]
+scale = Vector2( 0.0620049, 0.0620048 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource( 8 )
+
+[node name="Ninja" parent="." instance=ExtResource( 13 )]
+position = Vector2( -3310, 480 )
+[connection signal="body_entered" from="StaticBody2D3/LevelEnd" to="." method="_on_LevelEnd_body_entered"]
