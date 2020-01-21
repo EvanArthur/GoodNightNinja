@@ -86,8 +86,8 @@ func _integrate_forces(s):
 			$AnimatedSprite.flip_h=false
 			weak_point.position.x*=-1
 			strong.position.x*=-1
-
 		if weak_point.is_colliding() and object.find(weak_point.get_collider())==-1:
+			print("hit")
 			call_deferred("_onHit")
 			object.append(weak_point.get_collider())
 		
