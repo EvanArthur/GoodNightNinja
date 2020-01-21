@@ -195,39 +195,39 @@ polygon = PoolVector2Array( -263.586, -96.1704, -302.956, -96.17, 0.365845, -286
 motion_scale = Vector2( 0.25, 0.25 )
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/BackgroundLayer"]
-position = Vector2( 2990, -80 )
 texture = ExtResource( 6 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 20316, 4936 )
+region_rect = Rect2( 0, 0, 26560, 3227 )
 
 [node name="City3Layer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.25, 0.25 )
 
 [node name="SuperFarCity" type="Sprite" parent="ParallaxBackground/City3Layer"]
-position = Vector2( 6480, 150 )
-scale = Vector2( 0.485726, 0.485726 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 40632, 3284 )
+region_rect = Rect2( 0, 0, 26560, 2545 )
 
 [node name="City2Layer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.5, 0.5 )
 
 [node name="FarCity" type="Sprite" parent="ParallaxBackground/City2Layer"]
-position = Vector2( -490, 250 )
-scale = Vector2( 0.891991, 0.974125 )
+position = Vector2( 0, 250 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 9788, 657 )
+region_rect = Rect2( 0, 0, 26560, 1781 )
+region_filter_clip = true
 
 [node name="City1Layer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 0.75 )
 
 [node name="CloseCity" type="Sprite" parent="ParallaxBackground/City1Layer"]
-position = Vector2( 0, 200 )
+position = Vector2( 0, 300 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 9788, 701 )
+region_rect = Rect2( 0, 0, 26560, 1902 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 10 )]
 position = Vector2( 390, -21.297 )
