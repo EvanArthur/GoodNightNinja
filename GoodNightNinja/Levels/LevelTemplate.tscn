@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Levels/LevelTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Levels/building1.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Levels/city1.png" type="Texture" id=9]
 [ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -29,6 +30,7 @@ extents = Vector2( 10000, 8.285 )
 extents = Vector2( 33.1348, 64.5401 )
 
 [node name="LevelTemplate" type="Node2D"]
+editor/display_folded = true
 script = ExtResource( 1 )
 
 [node name="building1" type="StaticBody2D" parent="."]
@@ -162,4 +164,7 @@ position = Vector2( 1863.6, -717.562 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
 shape = SubResource( 6 )
+
+[node name="BasicEnemy" parent="." instance=ExtResource( 12 )]
+position = Vector2( 680, 550.5 )
 [connection signal="body_entered" from="LevelEnd" to="." method="_on_LevelEnd_body_entered"]

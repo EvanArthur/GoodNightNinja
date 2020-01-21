@@ -114,9 +114,10 @@ func _integrate_forces(s):
 	# compensates for physics imprecision, as well as human reaction delay.
 
 	if shoot and not shooting:
-		star_count -= 1
-		$Sprite.play("shooting")
-		call_deferred("_shot_ninja_star")
+		if star_count != 0:
+			star_count -= 1
+			$Sprite.play("shooting")
+			call_deferred("_shot_ninja_star")
 	else:
 		shoot_time += step
 	
