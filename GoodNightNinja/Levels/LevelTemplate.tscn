@@ -350,5 +350,5 @@ position = Vector2( -558.119, -645.115 )
 position = Vector2( -4463.89, -15.3135 )
 
 [node name="StarPickup2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 371.353, -892.013 )
+position = Vector2( 367.02, -893.365 )
 [connection signal="body_entered" from="StaticBody2D3/LevelEnd" to="." method="_on_LevelEnd_body_entered"]
