@@ -66,9 +66,10 @@ func _shot_ninja_star():
 
 	($Sprite/Smoke as Particles2D).restart()
 	($SoundShoot as AudioStreamPlayer2D).play()
+	add_collision_exception_with(bi)
 	
-func incriment_ninja_stars():
-	star_count += 1
+func restore_ninja_stars():
+	star_count = 5
 
 func _integrate_forces(s):
 
@@ -115,8 +116,8 @@ func _integrate_forces(s):
 	if shoot and not shooting:
 		if star_count != 0:
 			star_count -= 1
-			call_deferred("_shot_ninja_star")
 			$Sprite.play("shooting")
+			call_deferred("_shot_ninja_star")
 	else:
 		shoot_time += step
 	
