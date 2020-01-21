@@ -118,6 +118,8 @@ func _integrate_forces(s):
 			star_count -= 1
 			$Sprite.play("shooting")
 			call_deferred("_shot_ninja_star")
+		else:
+			print(star_count)
 	else:
 		shoot_time += step
 	
