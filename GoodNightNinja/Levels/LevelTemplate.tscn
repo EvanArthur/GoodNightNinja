@@ -6,9 +6,9 @@
 [ext_resource path="res://Levels/building2.png" type="Texture" id=4]
 [ext_resource path="res://Levels/building3.png" type="Texture" id=5]
 [ext_resource path="res://Levels/sky.png" type="Texture" id=6]
-[ext_resource path="res://Levels/city3.png" type="Texture" id=7]
-[ext_resource path="res://Levels/city2.png" type="Texture" id=8]
-[ext_resource path="res://Levels/city1.png" type="Texture" id=9]
+[ext_resource path="res://Levels/City3.png" type="Texture" id=7]
+[ext_resource path="res://Levels/City2.png" type="Texture" id=8]
+[ext_resource path="res://Levels/City1.png" type="Texture" id=9]
 [ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Levels/ApartmentBuilding.png" type="Texture" id=11]
 [ext_resource path="res://Levels/Dumpster.png" type="Texture" id=12]
@@ -202,8 +202,9 @@ region_rect = Rect2( 0, 0, 26560, 3227 )
 [node name="City3Layer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.25, 0.25 )
 
-[node name="SuperFarCity" type="Sprite" parent="ParallaxBackground/City3Layer"]
-scale = Vector2( 0.5, 0.5 )
+[node name="FarFarCity" type="Sprite" parent="ParallaxBackground/City3Layer"]
+position = Vector2( 0, 200 )
+scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 26560, 2545 )
@@ -213,11 +214,10 @@ motion_scale = Vector2( 0.5, 0.5 )
 
 [node name="FarCity" type="Sprite" parent="ParallaxBackground/City2Layer"]
 position = Vector2( 0, 250 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 8 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 26560, 1781 )
-region_filter_clip = true
+region_rect = Rect2( 0, 0, 53120, 1781 )
 
 [node name="City1Layer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 0.75 )
@@ -227,7 +227,7 @@ position = Vector2( 0, 300 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 26560, 1902 )
+region_rect = Rect2( 0, 0, 53120, 1902 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 10 )]
 position = Vector2( 390, -21.297 )
@@ -335,7 +335,7 @@ shape = SubResource( 18 )
 position = Vector2( -6580, 490 )
 
 [node name="BasicEnemy" parent="." instance=ExtResource( 16 )]
-position = Vector2( -5975.28, -36.4028 )
+position = Vector2( -5975.28, -44.8442 )
 
 [node name="BasicEnemy2" parent="." instance=ExtResource( 16 )]
 position = Vector2( -1974.62, 537.854 )
