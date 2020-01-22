@@ -17,15 +17,12 @@ var new_animation = ""
 var health = 1
 var object = []
 var other = []
-var turns=0
 
 onready var rc_left = $RayCastLeft
 onready var rc_right = $RayCastRight
 onready var weak_point = $WeakPoint
 onready var forAtt=$AttackZoneF
 onready var backAtt=$AttackZoneB
-
-#onready var strong = $block
 
 var star = preload("res://Player/NinjaStar.gd")
 var player = preload("res://Player/Ninja.gd")
@@ -68,7 +65,6 @@ func _integrate_forces(s):
 		call_deferred("_preDie")
 
 	elif state == STATE_WALKING:
-		turns=0
 		if direction >0:
 			forAtt.set_enabled(true)
 			backAtt.set_enabled(false)
@@ -77,23 +73,12 @@ func _integrate_forces(s):
 			forAtt.set_enabled(false)
 		WALK_SPEED=100
 		new_animation = "welk"
-		var wall_side = 0.0
 		
-		for i in range(s.get_contact_count()):
-			var countact = s.get_contact_collider_object(i)
-			var dp = s.get_contact_local_normal(i)
-
-			if dp.x > 0.9:
-				wall_side=1.0
-			elif dp.x < -0.9:
-				wall_side = -1.0
-		if wall_side !=0 and wall_side != direction:
-			direction = - direction
-			($Sprite as Sprite).scale.x = -direction
 		if rc_right.is_colliding()==false and direction>0:
 			direction = -direction
 			$AnimatedSprite.flip_h=true
 			weak_point.position.x*=-1
+			$StrongPoint.position.x*=-1
 			
 			
 			#strong.position.x*=-1
@@ -101,18 +86,22 @@ func _integrate_forces(s):
 			direction = -direction
 			$AnimatedSprite.flip_h=false
 			weak_point.position.x*=-1
-			
-			#strong.position.x*=-1
+			$StrongPoint.position.x*=-1
+		
+		if $StrongPoint.is_colliding():
+			if $StrongPoint.get_collider().name =="Area2D":
+				state=STATE_ATTACKING
+			else:
+				direction = -direction
+				$AnimatedSprite.flip_h=false
+				weak_point.position.x*=-1
+				$StrongPoint.position.x*=-1
+
 		if weak_point.is_colliding() and object.find(weak_point.get_collider())==-1:
 			print(weak_point.get_collider().name)
 			if weak_point.get_collider().name=="Area2D":
 				call_deferred("_onHit")
 			object.append(weak_point.get_collider())
-		
-		#if strong.is_colliding() and other.find(strong.get_collider())==-1:
-			#print("block")
-			#state=STATE_ATTACKING
-			#other.append(strong.get_collider())
 			
 			
 		if forAtt.is_colliding():
@@ -124,8 +113,12 @@ func _integrate_forces(s):
 		linear_velocity.x = direction * WALK_SPEED
 		
 	elif state == STATE_ATTACKING:
-		if turns>3:
+		
+		print($EnragedTimer.time_left)
+		if $EnragedTimer.is_stopped():
 			state=STATE_WALKING
+		if $EnragedTimer.is_stopped():
+			$EnragedTimer.start()
 		new_animation="attak"
 		if backAtt.is_enabled()==false:
 			backAtt.set_enabled(true)
@@ -137,21 +130,23 @@ func _integrate_forces(s):
 				direction=-direction
 				$AnimatedSprite.flip_h=false
 				weak_point.position.x*=-1
+				$EnragedTimer.start()
 		if backAtt.is_colliding():
 			if backAtt.get_collider().name=="Ninja" and direction==1:
 				direction=-direction
 				$AnimatedSprite.flip_h=true
 				weak_point.position.x*=-1
+				$EnragedTimer.start()
 		if rc_right.is_colliding()==false and direction>0:
 			direction = -direction
 			$AnimatedSprite.flip_h=true
 			weak_point.position.x*=-1
-			turns+=2
+
 		elif rc_left.is_colliding()==false and direction<0:
 			direction = -direction
 			$AnimatedSprite.flip_h=false
 			weak_point.position.x*=-1
-			turns+=2
+
 		linear_velocity.x = direction * WALK_SPEED
 		
 	if animation != new_animation:
