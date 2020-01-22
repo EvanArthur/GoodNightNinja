@@ -46,6 +46,34 @@ var airborne_time = 1e20
 var shoot_time = 1e20
 var local_collision_pos
 
+# health stuff here. Created by Will
+signal health_updated(health)
+signal killed()
+
+export (float) var max_health = 100
+onready var health = max_health setget _set_health
+onready var invulnerability_timer = $InvulnterabilityTimer
+
+func damage(amount):
+	if invulnerability_timer.is_stopped():
+		invulnerability_timer.start()
+		_set_health(health - amount)
+
+#despawn character and go to respawn screen
+func _kill():
+	pass
+
+
+
+func _set_health(value):
+	var prev_health = health
+	health = clamp(value, 0, max_health)
+	if health != prev_health:
+		emit_signal("health_updated", health)
+		if health == 0:
+			_kill()
+			emit_signal("killed")
+
 var NinjaStar = preload("res://player/NinjaStar.tscn")
 #var Enemy = preload("res://enemy/Enemy.tscn")
 		
