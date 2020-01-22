@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/HealthBar/label_HP_bg.png" type="Texture" id=1]
 [ext_resource path="res://Player/HealthBar/label_HP.png" type="Texture" id=2]
 [ext_resource path="res://StartScreen/assets/fonts/design.graffiti.comicsansms.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Player/HealthBar/lifebar_bg.png" type="Texture" id=4]
 [ext_resource path="res://Player/HealthBar/lifebar_fill.png" type="Texture" id=5]
+[ext_resource path="res://GUI/HealthBar.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
@@ -63,8 +64,10 @@ valign = 2
 margin_left = 104.0
 margin_right = 500.0
 margin_bottom = 53.0
+value = 100.0
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="Counters" type="HBoxContainer" parent="HBoxContainer"]
 margin_left = 984.0
