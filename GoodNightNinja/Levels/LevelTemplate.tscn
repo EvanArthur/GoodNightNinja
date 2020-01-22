@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Levels/LevelTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Levels/sky.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Levels/InsideBuilding1.png" type="Texture" id=15]
 [ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=18]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -356,4 +357,9 @@ position = Vector2( 367.02, -893.365 )
 
 [node name="Ninja" parent="." instance=ExtResource( 17 )]
 position = Vector2( -6580, 490 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -9.906
+autoplay = true
 [connection signal="body_entered" from="StaticBody2D3/LevelEnd" to="." method="_on_LevelEnd_body_entered"]
