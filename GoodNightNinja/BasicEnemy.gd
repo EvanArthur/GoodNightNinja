@@ -3,7 +3,7 @@ extends RigidBody2D
 class_name BasicEnemy
 
 # basic variables 
-const WALK_SPEED = 50
+var WALK_SPEED = 50
 const STATE_WALKING = 0
 const STATE_DYING = 1
 const STATE_ATTACKING = 2
@@ -17,11 +17,15 @@ var new_animation = ""
 var health = 1
 var object = []
 var other = []
+var turns=0
 
 onready var rc_left = $RayCastLeft
 onready var rc_right = $RayCastRight
 onready var weak_point = $WeakPoint
-onready var strong = $block
+onready var forAtt=$AttackZoneF
+onready var backAtt=$AttackZoneB
+
+#onready var strong = $block
 
 var star = preload("res://Player/NinjaStar.gd")
 var player = preload("res://Player/Ninja.gd")
@@ -46,7 +50,7 @@ func _preDie():
 	
 # called after hit with melee or ranged attack
 func _onHit():
-	health = health - 1
+	health = health - .5
 	print(health)
 	if health <=0:
 		state = STATE_DYING
@@ -64,6 +68,14 @@ func _integrate_forces(s):
 		call_deferred("_preDie")
 
 	elif state == STATE_WALKING:
+		turns=0
+		if direction >0:
+			forAtt.set_enabled(true)
+			backAtt.set_enabled(false)
+		else:
+			backAtt.set_enabled(true)
+			forAtt.set_enabled(false)
+		WALK_SPEED=100
 		new_animation = "welk"
 		var wall_side = 0.0
 		
@@ -82,27 +94,65 @@ func _integrate_forces(s):
 			direction = -direction
 			$AnimatedSprite.flip_h=true
 			weak_point.position.x*=-1
-			strong.position.x*=-1
+			
+			
+			#strong.position.x*=-1
 		elif rc_left.is_colliding()==false and direction<0:
 			direction = -direction
 			$AnimatedSprite.flip_h=false
 			weak_point.position.x*=-1
-			strong.position.x*=-1
+			
+			#strong.position.x*=-1
 		if weak_point.is_colliding() and object.find(weak_point.get_collider())==-1:
-			call_deferred("_onHit")
+			print(weak_point.get_collider().name)
+			if weak_point.get_collider().name=="Area2D":
+				call_deferred("_onHit")
 			object.append(weak_point.get_collider())
 		
-		if strong.is_colliding() and other.find(strong.get_collider())==-1:
+		#if strong.is_colliding() and other.find(strong.get_collider())==-1:
 			#print("block")
 			#state=STATE_ATTACKING
-			other.append(strong.get_collider())
+			#other.append(strong.get_collider())
+			
+			
+		if forAtt.is_colliding():
+			if forAtt.get_collider().name=="Ninja":
+				state=STATE_ATTACKING
+		if backAtt.is_colliding():
+			if backAtt.get_collider().name=="Ninja":
+				state=STATE_ATTACKING
 		linear_velocity.x = direction * WALK_SPEED
 		
 	elif state == STATE_ATTACKING:
-		new_animation = "attak"
-		if _on_AnimatedSprite_animation_finished():
-			print("here")
+		if turns>3:
 			state=STATE_WALKING
+		new_animation="attak"
+		if backAtt.is_enabled()==false:
+			backAtt.set_enabled(true)
+		else:
+			forAtt.set_enabled(true)
+		WALK_SPEED=200
+		if forAtt.is_colliding():
+			if forAtt.get_collider().name=="Ninja" and direction==-1:
+				direction=-direction
+				$AnimatedSprite.flip_h=false
+				weak_point.position.x*=-1
+		if backAtt.is_colliding():
+			if backAtt.get_collider().name=="Ninja" and direction==1:
+				direction=-direction
+				$AnimatedSprite.flip_h=true
+				weak_point.position.x*=-1
+		if rc_right.is_colliding()==false and direction>0:
+			direction = -direction
+			$AnimatedSprite.flip_h=true
+			weak_point.position.x*=-1
+			turns+=2
+		elif rc_left.is_colliding()==false and direction<0:
+			direction = -direction
+			$AnimatedSprite.flip_h=false
+			weak_point.position.x*=-1
+			turns+=2
+		linear_velocity.x = direction * WALK_SPEED
 		
 	if animation != new_animation:
 		animation = new_animation
