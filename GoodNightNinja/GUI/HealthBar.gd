@@ -4,10 +4,14 @@ extends Control
 # var a = 2
 # var b = "text"
 onready var health_bar = $HealthBar
+onready var number_label = ""
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var max_player_health = $"..../Player/Ninja".max_health
+	
+	
 
 func _on_health_updated(health, amount):
 	health_bar.value = health
