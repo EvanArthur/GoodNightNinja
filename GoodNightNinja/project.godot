@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://BasicEnemy.gd"
 }, {
+"base": "Node2D",
+"class": "MovingPlatform",
+"language": "GDScript",
+"path": "res://MovingPlatform.gd"
+}, {
 "base": "RigidBody2D",
 "class": "Ninja",
 "language": "GDScript",
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BasicEnemy": "",
+"MovingPlatform": "",
 "Ninja": "",
 "NinjaStar": ""
 }
@@ -33,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GoodNightNinja"
-run/main_scene="res://StartScreen/MainMenu.tscn"
+run/main_scene="res://Levels/Level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
