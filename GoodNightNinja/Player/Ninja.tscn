@@ -5,29 +5,29 @@
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle2.png" type="Texture" id=3]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle3.png" type="Texture" id=4]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle4.png" type="Texture" id=5]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard1.png" type="Texture" id=6]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard2.png" type="Texture" id=7]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard3.png" type="Texture" id=8]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard4.png" type="Texture" id=9]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard5.png" type="Texture" id=10]
-[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard6.png" type="Texture" id=11]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow1.png" type="Texture" id=12]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow2.png" type="Texture" id=13]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow3.png" type="Texture" id=14]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow4.png" type="Texture" id=15]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow5 .png" type="Texture" id=16]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow6.png" type="Texture" id=17]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow7.png" type="Texture" id=18]
-[ext_resource path="res://Player/NinjaJumping.png" type="Texture" id=19]
+[ext_resource path="res://Player/NinjaJumping.png" type="Texture" id=6]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow1.png" type="Texture" id=7]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow2.png" type="Texture" id=8]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow3.png" type="Texture" id=9]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow4.png" type="Texture" id=10]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow5 .png" type="Texture" id=11]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow6.png" type="Texture" id=12]
+[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow7.png" type="Texture" id=13]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard1.png" type="Texture" id=14]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard2.png" type="Texture" id=15]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard3.png" type="Texture" id=16]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard4.png" type="Texture" id=17]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard5.png" type="Texture" id=18]
+[ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard6.png" type="Texture" id=19]
 [ext_resource path="res://Player/ninja-star.png" type="Texture" id=20]
 [ext_resource path="res://Player/ninja_star.wav" type="AudioStream" id=21]
 [ext_resource path="res://Player/jump.wav" type="AudioStream" id=22]
 [ext_resource path="res://Player/NinjaArea.gd" type="Script" id=23]
 
-[sub_resource type="PhysicsMaterial" id=6]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=2]
 script/source = "extends RigidBody2D
 
 class_name Ninja
@@ -101,8 +101,7 @@ func _preDie():
 #despawn character and go to respawn screen
 func _kill():
 	_preDie()
-	#get_tree().change_scene(\"res://StartScreen/RespawnScreen.tscn\")
-	get_tree().change_scene(\"res://StartScreen/MainMenu.tscn\")
+	get_tree().change_scene(\"res://StartScreen/RespawnScreen.tscn\")
 
 
 
@@ -301,40 +300,40 @@ func _integrate_forces(s):
 	lv += s.get_total_gravity() * step
 	s.set_linear_velocity(lv)"
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "run",
-"speed": 12.0
+"name": "jumping",
+"speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": false,
 "name": "shooting",
 "speed": 60.0
 }, {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "jumping",
-"speed": 5.0
+"name": "run",
+"speed": 12.0
 } ]
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="ParticlesMaterial" id=4]
 flag_disable_z = true
 gravity = Vector3( 0, 98, 0 )
 angular_velocity = 1.05
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 20, 90 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 25, 90 )
 
 [node name="Ninja" type="RigidBody2D"]
@@ -342,15 +341,15 @@ position = Vector2( 510.292, 210 )
 collision_mask = 12
 mode = 2
 mass = 3.0
-physics_material_override = SubResource( 6 )
+physics_material_override = SubResource( 1 )
 custom_integrator = true
 contacts_reported = 1
-script = SubResource( 7 )
+script = SubResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 9.70789, -20 )
 scale = Vector2( 0.299416, 0.299416 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "shooting"
 frame = 5
 
@@ -363,7 +362,7 @@ lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
 local_coords = false
-process_material = SubResource( 3 )
+process_material = SubResource( 4 )
 texture = ExtResource( 20 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -376,7 +375,7 @@ drag_margin_right = 0.3
 
 [node name="IdleCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 14.708, -20 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="NinjaStarShoot" type="Position2D" parent="."]
 position = Vector2( 29.708, -60 )
@@ -396,7 +395,7 @@ script = ExtResource( 23 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NinjaArea"]
 position = Vector2( 14.708, -20 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="InvulnterabilityTimer" type="Timer" parent="."]
 wait_time = 0.6
