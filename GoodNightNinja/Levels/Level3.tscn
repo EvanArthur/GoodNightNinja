@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Levels/sky.png" type="Texture" id=1]
 [ext_resource path="res://Levels/city3.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1045.03, 10 )
@@ -84,6 +85,9 @@ position = Vector2( 581.833, 562.238 )
 
 [node name="LevelFinish" parent="." instance=ExtResource( 9 )]
 position = Vector2( 966.205, 256.248 )
+
+[node name="HealthPotion" parent="." instance=ExtResource( 10 )]
+position = Vector2( -299.219, 493.891 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
 
 [editable path="CanvasLayer/GUI"]
