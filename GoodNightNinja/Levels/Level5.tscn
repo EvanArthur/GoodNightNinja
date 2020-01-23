@@ -13,7 +13,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1045.03, 10 )
 
-[node name="Level2" type="Node2D"]
+[node name="Level5" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

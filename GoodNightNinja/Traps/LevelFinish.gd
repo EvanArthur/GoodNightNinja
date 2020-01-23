@@ -20,15 +20,18 @@ func _process(delta):
 
 func _on_LevelFinish_body_entered(body):
 	print("You Finished Level "+str(Global.currentStage))
-	Global.currentStage += 1
-	if Global.currentStage == 2:
-		Global.level2 = true
-	elif Global.currentStage == 3:
-		Global.level3 = true
-	elif Global.currentStage == 4:
-		Global.level4 = true
-	elif Global.currentStage == 5:
-		Global.level5 == true
-	# loads end screen and gives time elapsed
-	get_tree().change_scene("res://StartScreen/EndScreen.tscn")
 	Global.timeElapsed = str_elapsed
+	if Global.currentStage >= Global.maxStage:
+		get_tree().change_scene("res://StartScreen/WinScreen.tscn")
+	else:
+		Global.currentStage += 1
+		if Global.currentStage == 2:
+			Global.level2 = true
+		elif Global.currentStage == 3:
+			Global.level3 = true
+		elif Global.currentStage == 4:
+			Global.level4 = true
+		elif Global.currentStage == 5:
+			Global.level5 == true
+		# loads end screen and gives time elapsed
+		get_tree().change_scene("res://StartScreen/EndScreen.tscn")
