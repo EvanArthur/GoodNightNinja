@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/  SamuraiSlash4.png-e4cd0e20f9c256f670377bb51215a204.stex"
+path="res://.import/SamuraiSlash4.png-735efd9fa367ccc418c7620c73600186.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/SamuraiSlash/  SamuraiSlash4.png"
-dest_files=[ "res://.import/  SamuraiSlash4.png-e4cd0e20f9c256f670377bb51215a204.stex" ]
+source_file="res://Enemies/SamuraiSlash/SamuraiSlash4.png"
+dest_files=[ "res://.import/SamuraiSlash4.png-735efd9fa367ccc418c7620c73600186.stex" ]
 
 [params]
 

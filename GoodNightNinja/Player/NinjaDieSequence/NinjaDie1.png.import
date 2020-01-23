@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/  NinjaDie1.png-2a2a04a559b9d5d1d2719f83e9357cd4.stex"
+path="res://.import/NinjaDie1.png-6d4060d39607533c3f69f8ab141df629.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/NinjaDieSequence/  NinjaDie1.png"
-dest_files=[ "res://.import/  NinjaDie1.png-2a2a04a559b9d5d1d2719f83e9357cd4.stex" ]
+source_file="res://Player/NinjaDieSequence/NinjaDie1.png"
+dest_files=[ "res://.import/NinjaDie1.png-6d4060d39607533c3f69f8ab141df629.stex" ]
 
 [params]
 

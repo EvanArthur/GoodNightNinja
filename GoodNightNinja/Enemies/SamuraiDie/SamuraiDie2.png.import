@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/  SamuraiDie2.png-eb3fa50b149764544810d875263aedf3.stex"
+path="res://.import/SamuraiDie2.png-0c686d25f5cd8d689080e8d785a052c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/SamuraiDie/  SamuraiDie2.png"
-dest_files=[ "res://.import/  SamuraiDie2.png-eb3fa50b149764544810d875263aedf3.stex" ]
+source_file="res://Enemies/SamuraiDie/SamuraiDie2.png"
+dest_files=[ "res://.import/SamuraiDie2.png-0c686d25f5cd8d689080e8d785a052c0.stex" ]
 
 [params]
 

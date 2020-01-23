@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/  SamuraiWalk5.png-a44c2bfd2a25c402a1f481d0f361c815.stex"
+path="res://.import/SamuraiWalk5.png-3bd83b00860f2bd0bc65d4b1b95c9dba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/SamuraiWalk/  SamuraiWalk5.png"
-dest_files=[ "res://.import/  SamuraiWalk5.png-a44c2bfd2a25c402a1f481d0f361c815.stex" ]
+source_file="res://Enemies/SamuraiWalk/SamuraiWalk5.png"
+dest_files=[ "res://.import/SamuraiWalk5.png-3bd83b00860f2bd0bc65d4b1b95c9dba.stex" ]
 
 [params]
 

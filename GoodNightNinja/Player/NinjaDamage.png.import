@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/  NinjaDamage.png-cbb1c886c8bcfb75b1ba8efc78a103d5.stex"
+path="res://.import/NinjaDamage.png-fe098905275af0c2fc56999fcd8aef2b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/  NinjaDamage.png"
-dest_files=[ "res://.import/  NinjaDamage.png-cbb1c886c8bcfb75b1ba8efc78a103d5.stex" ]
+source_file="res://Player/NinjaDamage.png"
+dest_files=[ "res://.import/NinjaDamage.png-fe098905275af0c2fc56999fcd8aef2b.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/  NinjaThrow7.png-8891fb7dcae6b84d8c7f664d8f31a7a0.stex"
+path="res://.import/NinjaThrow7.png-ee97ad4ac26f8a00311384fd0d64e32e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/NinjaThrowSequence/  NinjaThrow7.png"
-dest_files=[ "res://.import/  NinjaThrow7.png-8891fb7dcae6b84d8c7f664d8f31a7a0.stex" ]
+source_file="res://Player/NinjaThrowSequence/NinjaThrow7.png"
+dest_files=[ "res://.import/NinjaThrow7.png-ee97ad4ac26f8a00311384fd0d64e32e.stex" ]
 
 [params]
 
