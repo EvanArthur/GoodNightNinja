@@ -71,10 +71,7 @@ func _preDie():
 #despawn character and go to respawn screen
 func _kill():
 	_preDie()
-	#get_tree().change_scene("res://StartScreen/RespawnScreen.tscn")
-	get_tree().change_scene("res://StartScreen/MainMenu.tscn")
-
-
+	get_tree().change_scene("res://StartScreen/RespawnScreen.tscn")
 
 func _set_health(value):
 	var prev_health = health

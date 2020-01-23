@@ -16,7 +16,6 @@ func _ready():
 	
 
 func _on_Ninja_health_updated(health):
-	print("Test for on_ninja_health_updated")
 	health_bar.value = health
 	number_label.text = str(health)
 	

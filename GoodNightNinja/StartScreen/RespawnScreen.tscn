@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://StartScreen/EndScreen.gd" type="Script" id=1]
+[ext_resource path="res://StartScreen/RespawnScreen.gd" type="Script" id=1]
 [ext_resource path="res://StartScreen/assets/fonts/design.graffiti.comicsansms.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Levels/sky.png" type="Texture" id=3]
 
