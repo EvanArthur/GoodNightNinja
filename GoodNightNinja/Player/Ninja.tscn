@@ -6,13 +6,13 @@
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle3.png" type="Texture" id=4]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle4.png" type="Texture" id=5]
 [ext_resource path="res://Player/NinjaJumping.png" type="Texture" id=6]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow1.png" type="Texture" id=7]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow2.png" type="Texture" id=8]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow3.png" type="Texture" id=9]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow4.png" type="Texture" id=10]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow5 .png" type="Texture" id=11]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow6.png" type="Texture" id=12]
-[ext_resource path="res://Player/NinjaThrowSequence/  NinjaThrow7.png" type="Texture" id=13]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow1.png" type="Texture" id=7]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow2.png" type="Texture" id=8]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow3.png" type="Texture" id=9]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow4.png" type="Texture" id=10]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow5 .png" type="Texture" id=11]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow6.png" type="Texture" id=12]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow7.png" type="Texture" id=13]
 [ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard1.png" type="Texture" id=14]
 [ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard2.png" type="Texture" id=15]
 [ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard3.png" type="Texture" id=16]
@@ -23,6 +23,13 @@
 [ext_resource path="res://Player/ninja_star.wav" type="AudioStream" id=21]
 [ext_resource path="res://Player/jump.wav" type="AudioStream" id=22]
 [ext_resource path="res://Player/NinjaArea.gd" type="Script" id=23]
+
+
+
+
+
+
+
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
