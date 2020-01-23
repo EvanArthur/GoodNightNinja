@@ -15,9 +15,9 @@
 [ext_resource path="res://Levels/Dumpster.png" type="Texture" id=13]
 [ext_resource path="res://Levels/PagodaExpress.png" type="Texture" id=14]
 [ext_resource path="res://Levels/InsideBuilding1.png" type="Texture" id=15]
-[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=18]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=17]
+[ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=18]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -337,29 +337,27 @@ shape = SubResource( 17 )
 position = Vector2( 10, 530 )
 shape = SubResource( 18 )
 
-[node name="BasicEnemy" parent="." instance=ExtResource( 16 )]
-position = Vector2( -5975.28, -44.8442 )
-
-[node name="BasicEnemy2" parent="." instance=ExtResource( 16 )]
-position = Vector2( -1974.62, 537.854 )
-
-[node name="BasicEnemy3" parent="." instance=ExtResource( 16 )]
-position = Vector2( -558.119, -645.115 )
-
-[node name="BasicEnemy4" parent="." instance=ExtResource( 16 )]
-position = Vector2( -558.119, -645.115 )
-
 [node name="StarPickup" parent="." instance=ExtResource( 11 )]
 position = Vector2( -4463.89, -15.3135 )
 
 [node name="StarPickup2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 367.02, -893.365 )
 
-[node name="Ninja" parent="." instance=ExtResource( 17 )]
+[node name="Ninja" parent="." instance=ExtResource( 16 )]
 position = Vector2( -6580, 490 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 18 )
+stream = ExtResource( 17 )
 volume_db = -9.906
 autoplay = true
+
+[node name="SpikeTrap" parent="." instance=ExtResource( 18 )]
+position = Vector2( -7732.21, 221.154 )
+
+[node name="LevelTemplate" type="Node" parent="."]
 [connection signal="body_entered" from="StaticBody2D3/LevelEnd" to="." method="_on_LevelEnd_body_entered"]
+[connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
+
+[editable path="CanvasLayer/GUI"]
+
+[editable path="Ninja"]

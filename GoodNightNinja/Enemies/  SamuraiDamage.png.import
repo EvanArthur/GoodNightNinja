@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset.png-7d62e0550cb9afaf31af18a1fd42a92a.stex"
+path="res://.import/  SamuraiDamage.png-c2ebb564ae49696a2fb9ec2a7d9514fb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://start-assets/tileset.png"
-dest_files=[ "res://.import/tileset.png-7d62e0550cb9afaf31af18a1fd42a92a.stex" ]
+source_file="res://Enemies/  SamuraiDamage.png"
+dest_files=[ "res://.import/  SamuraiDamage.png-c2ebb564ae49696a2fb9ec2a7d9514fb.stex" ]
 
 [params]
 
