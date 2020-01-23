@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Levels/sky.png" type="Texture" id=1]
 [ext_resource path="res://Levels/city3.png" type="Texture" id=2]
@@ -10,9 +10,18 @@
 [ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levels/Dumpster.png" type="Texture" id=11]
+[ext_resource path="res://Levels/PagodaExpress.png" type="Texture" id=12]
+[ext_resource path="res://Levels/building3.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1045.03, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1637.79, 1468.19 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 171.49, 131.207 )
 
 [node name="Level1" type="Node2D"]
 
@@ -66,14 +75,15 @@ region_rect = Rect2( 0, 0, 53120, 1902 )
 editor/display_folded = true
 
 [node name="Floor" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1.80147, 601.703 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Floor"]
-position = Vector2( 260.016, -1.50737 )
-scale = Vector2( 1.50245, 0.212598 )
+position = Vector2( 1465.96, 0.397785 )
+scale = Vector2( 3.83277, 0.246022 )
 texture = ExtResource( 6 )
 
 [node name="Ninja" parent="." instance=ExtResource( 7 )]
@@ -81,13 +91,54 @@ editor/display_folded = true
 position = Vector2( 20.4064, 511.468 )
 
 [node name="SpikeTrap" parent="." instance=ExtResource( 8 )]
-position = Vector2( 581.833, 562.238 )
+position = Vector2( 1161.56, 571.779 )
 
 [node name="LevelFinish" parent="." instance=ExtResource( 9 )]
-position = Vector2( 966.205, 256.248 )
+position = Vector2( 3334.61, 240.738 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 10 )]
 position = Vector2( -302.18, 370.993 )
 motion = Vector2( 400, 0 )
 cycle = 5.0
+
+[node name="Dumpster1" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 417.22, 515.501 )
+scale = Vector2( 0.05, 0.05 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Dumpster1"]
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dumpster1"]
+shape = SubResource( 2 )
+
+[node name="PagodaExpress1" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 794.59, 455.85 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="PagodaExpress1"]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PagodaExpress1"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 1512.46, 413.513 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 13 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -182.828, -56.2915, -158.731, -56.2915, 0.0864258, -155.963, 158.904, -58.4821, 185.191, -57.3868, 0.0864258, -170.202 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
