@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shittyspikes.png-aaf3b261d6b078f5333fd59942b059c1.stex"
+path="res://.import/label_HP.png-df4c3cacf3793dc9e3d7e84bf2240865.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Traps/shittyspikes.png"
-dest_files=[ "res://.import/shittyspikes.png-aaf3b261d6b078f5333fd59942b059c1.stex" ]
+source_file="res://Player/HealthBar/label_HP.png"
+dest_files=[ "res://.import/label_HP.png-df4c3cacf3793dc9e3d7e84bf2240865.stex" ]
 
 [params]
 
