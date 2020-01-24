@@ -4,7 +4,7 @@
 [ext_resource path="res://Levels/roof1.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 212.315, 20.5228 )
+extents = Vector2( 212.315, 16.8131 )
 
 [node name="MovingPlatform" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,6 +16,6 @@ mode = 3
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Platform"]
-position = Vector2( 0, -3.00407e-005 )
+position = Vector2( 0, -3.00407e-05 )
 scale = Vector2( 0.164837, 0.185955 )
 texture = ExtResource( 2 )
