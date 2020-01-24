@@ -15,4 +15,4 @@ func _ready():
 
 func _on_Spikes_body_entered(body):
 	if body.get_name() == "Ninja":
-		body.damage(100)
+		body.damage(30)

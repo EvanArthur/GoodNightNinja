@@ -81,7 +81,7 @@ region_rect = Rect2( 0, 0, 53120, 3227 )
 motion_scale = Vector2( 0.25, 0.25 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/City3"]
-position = Vector2( -989.031, -951.828 )
+position = Vector2( -1035.62, -951.828 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 3 )
 centered = false
@@ -224,7 +224,6 @@ position = Vector2( 20.4064, 511.468 )
 position = Vector2( 33.4304, -21.825 )
 
 [node name="SpikeTrap" parent="." instance=ExtResource( 9 )]
-editor/display_folded = true
 position = Vector2( 2649.37, 573.813 )
 
 [node name="SpikeTrap2" parent="." instance=ExtResource( 9 )]
@@ -334,7 +333,7 @@ one_way_collision_margin = 128.0
 stream = ExtResource( 14 )
 volume_db = 5.825
 autoplay = true
-max_distance = 1.56933e+09
+max_distance = 1.56933e+009
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
 
 [editable path="CanvasLayer/GUI"]
@@ -342,5 +341,7 @@ max_distance = 1.56933e+09
 [editable path="Ninja"]
 
 [editable path="SpikeTrap"]
+
+[editable path="SpikeTrap2"]
 
 [editable path="MovingPlatform"]
