@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "RigidBody2D",
 "class": "BasicEnemy",
 "language": "GDScript",
-"path": "res://BasicEnemy.gd"
+"path": "res://Enemies/BasicEnemy.gd"
 }, {
 "base": "Node2D",
 "class": "MovingPlatform",
 "language": "GDScript",
-"path": "res://MovingPlatform.gd"
+"path": "res://Traps/MovingPlatform.gd"
 }, {
 "base": "RigidBody2D",
 "class": "Ninja",

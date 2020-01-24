@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Levels/LevelTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Levels/sky.png" type="Texture" id=2]
@@ -14,10 +14,9 @@
 [ext_resource path="res://Levels/ApartmentBuilding.png" type="Texture" id=12]
 [ext_resource path="res://Levels/Dumpster.png" type="Texture" id=13]
 [ext_resource path="res://Levels/PagodaExpress.png" type="Texture" id=14]
-[ext_resource path="res://Levels/InsideBuilding1.png" type="Texture" id=15]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=17]
-[ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=16]
+[ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=17]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -293,7 +292,6 @@ position = Vector2( -3030, 30 )
 [node name="Sprite" type="Sprite" parent="StaticBody2D6"]
 position = Vector2( -3.82837, 2.43799 )
 scale = Vector2( 1.59541, 1.59541 )
-texture = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
 position = Vector2( -580, 20 )
@@ -345,15 +343,15 @@ position = Vector2( -4463.89, -15.3135 )
 [node name="StarPickup2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 367.02, -893.365 )
 
-[node name="Ninja" parent="." instance=ExtResource( 16 )]
+[node name="Ninja" parent="." instance=ExtResource( 15 )]
 position = Vector2( -6580, 490 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 17 )
+stream = ExtResource( 16 )
 volume_db = -9.906
 autoplay = true
 
-[node name="SpikeTrap" parent="." instance=ExtResource( 18 )]
+[node name="SpikeTrap" parent="." instance=ExtResource( 17 )]
 position = Vector2( -7732.21, 221.154 )
 [connection signal="body_entered" from="StaticBody2D3/LevelEnd" to="." method="_on_LevelEnd_body_entered"]
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]

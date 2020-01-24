@@ -206,6 +206,7 @@ shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="TallBuilding2" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 5788.51, -104.237 )
 
 [node name="Sprite" type="Sprite" parent="TallBuilding2"]

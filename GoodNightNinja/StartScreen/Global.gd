@@ -4,10 +4,10 @@ extends Node
 var currentStage = 1
 var maxStage = 5
 var level1 = true
-var level2 = false
-var level3 = false
-var level4 = false
-var level5 = false
+var level2 = true
+var level3 = true
+var level4 = true
+var level5 = true
 
 #this is a string
 var timeElapsed = ""

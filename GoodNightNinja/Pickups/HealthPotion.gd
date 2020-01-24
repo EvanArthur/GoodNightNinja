@@ -12,7 +12,14 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func _die():
+	queue_free()
 
+func _preDie():
+	$CollisionShape2D.queue_free()
+	_die()
+	
 func _on_HealthPotion_body_entered(body):
 	if body.get_name() == "Ninja":
 		body.damage(-15)
+		_preDie()

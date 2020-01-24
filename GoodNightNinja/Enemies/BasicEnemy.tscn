@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://BasicEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/BasicEnemy.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/PlaceholderSamurai.png" type="Texture" id=2]
 [ext_resource path="res://Enemies/SamuraiWalk/  SamuraiWalk1.png" type="Texture" id=3]
 [ext_resource path="res://Enemies/SamuraiWalk/  SamuraiWalk2.png" type="Texture" id=4]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Enemies/SamuraiSlash/  SamuraiSlash4.png" type="Texture" id=18]
 [ext_resource path="res://Enemies/SamuraiSlash/  SamuraiSlash5.png" type="Texture" id=19]
 [ext_resource path="res://Enemies/SamuraiSlash/  SamuraiSlash6 .png" type="Texture" id=20]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
