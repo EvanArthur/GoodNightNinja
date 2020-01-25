@@ -211,7 +211,21 @@ cycle = 5.0
 [node name="MovingPlatform4" parent="." instance=ExtResource( 9 )]
 position = Vector2( 11233.1, -193.838 )
 motion = Vector2( 200, 0 )
-cycle = 5.0
+
+[node name="MovingPlatform5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 11724, -499.384 )
+motion = Vector2( 200, 0 )
+cycle = 2.0
+
+[node name="MovingPlatform6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 11047.7, -681.337 )
+motion = Vector2( 200, 0 )
+cycle = 3.0
+
+[node name="MovingPlatform7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 11718.4, -1028.57 )
+motion = Vector2( 200, 0 )
+cycle = 4.0
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 7596.39, 1142.4 )
@@ -678,7 +692,6 @@ shape = SubResource( 17 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="InsideHouse1"]
 position = Vector2( -365.825, -187.743 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 18 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InsideHouse1"]
@@ -729,4 +742,34 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor5"]
 shape = SubResource( 10 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D7"]
+position = Vector2( 10898.3, -3064.08 )
+rotation = 3.14159
+texture = ExtResource( 1 )
+
+[node name="PagodaExpress2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 10744.3, -1496.58 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="PagodaExpress2"]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PagodaExpress2"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2( 10733.3, -1308.79 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D8"]
+texture = ExtResource( 6 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
