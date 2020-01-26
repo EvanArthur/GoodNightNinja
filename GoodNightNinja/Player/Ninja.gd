@@ -98,6 +98,7 @@ func restore_ninja_stars():
 func increment_ninja_stars():
 	star_count += 1
 	clamp(star_count, 0, 5)
+	
 
 func _integrate_forces(s):
 	if dying:
