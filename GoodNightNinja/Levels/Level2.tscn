@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Levels/sky.png" type="Texture" id=1]
 [ext_resource path="res://Levels/city3.png" type="Texture" id=2]
@@ -6,17 +6,45 @@
 [ext_resource path="res://Levels/city1.png" type="Texture" id=4]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/ledge1.png" type="Texture" id=6]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Levels/Cinema.png" type="Texture" id=11]
+[ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Cinema.png" type="Texture" id=10]
+[ext_resource path="res://Levels/Hotel.png" type="Texture" id=11]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1045.03, 10 )
+extents = Vector2( 5459.04, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 162.561, 17.9685 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 130.898, 10.909 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 268.469, 12.4718 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 144.415, 16.8291 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 71.7139, 10.0287 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 101.555, 10.0477 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 88.4075, 7.23267 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 114.243, 5.55173 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 462.098, 20.5869 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 206.884, 16.9478 )
 
 [node name="Level2" type="Node2D"]
 
@@ -70,27 +98,24 @@ region_rect = Rect2( 0, 0, 53120, 1902 )
 editor/display_folded = true
 
 [node name="Floor" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1.80147, 601.703 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Floor"]
-position = Vector2( 1370.63, -5.04503 )
-scale = Vector2( 3.64856, 0.150534 )
+position = Vector2( 2471.21, -5.04503 )
+scale = Vector2( 5.77529, 0.150534 )
 texture = ExtResource( 6 )
 
-[node name="Ninja" parent="." instance=ExtResource( 7 )]
-editor/display_folded = true
-position = Vector2( 20.4064, 511.468 )
+[node name="SpikeTrap" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2950.69, 572.611 )
 
-[node name="SpikeTrap" parent="." instance=ExtResource( 8 )]
-position = Vector2( 489.855, 814.589 )
+[node name="LevelFinish" parent="." instance=ExtResource( 8 )]
+position = Vector2( 164.063, -910.762 )
 
-[node name="LevelFinish" parent="." instance=ExtResource( 9 )]
-position = Vector2( 976.646, -838.725 )
-
-[node name="HealthPotion" parent="." instance=ExtResource( 10 )]
+[node name="HealthPotion" parent="." instance=ExtResource( 9 )]
 position = Vector2( -168.094, 802.387 )
 
 [node name="Cinema1" type="StaticBody2D" parent="."]
@@ -99,11 +124,128 @@ position = Vector2( 580.717, 429.226 )
 [node name="Sprite" type="Sprite" parent="Cinema1"]
 position = Vector2( 944.283, -651.251 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cinema1"]
 position = Vector2( 59.4691, -102.664 )
 shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 1829.78, -100.67 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 389.647, -320.005 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 1484.13, -361.871 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 732.642, -323.761 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 1001.78, -323.761 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( -44.955, -574.392 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 1932.69, -576.386 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 325.977, -769.071 )
+shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 583.596, -965.675 )
+shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 1303.28, -963.681 )
+shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 1560.46, -768.309 )
+shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 1215.08, -323.473 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 359.17, -353.02 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Cinema1"]
+position = Vector2( 1510.7, -323.634 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="Hotel1" type="StaticBody2D" parent="."]
+position = Vector2( 3582.12, -275.913 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hotel1"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hotel1"]
+position = Vector2( -267.381, 292.582 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hotel1"]
+position = Vector2( 269.837, -145.239 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hotel1"]
+position = Vector2( -0.169678, 3.5079 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Hotel1"]
+position = Vector2( -5.29663, -563.492 )
+shape = SubResource( 9 )
+one_way_collision = true
+
+[node name="Ninja" parent="." instance=ExtResource( 12 )]
+editor/display_folded = true
+position = Vector2( 20.4064, 511.468 )
+
+[node name="Ledge1" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 4473.83, -592.731 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ledge1"]
+scale = Vector2( 0.4, 0.3 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge1"]
+shape = SubResource( 10 )
+one_way_collision = true
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
 
 [editable path="CanvasLayer/GUI"]
