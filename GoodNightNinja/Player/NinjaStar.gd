@@ -15,3 +15,10 @@ func disable():
 	
 	($Anim as AnimationPlayer).play("shutdown")
 	disabled = true
+	queue_free()
+
+func _on_StarArea_body_entered(body):
+	if body.name == "Ninja":
+		body.increment_ninja_stars()
+		disable()
+	

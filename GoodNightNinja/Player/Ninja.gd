@@ -2,27 +2,7 @@ extends RigidBody2D
 
 class_name Ninja
 
-""" Character Demo, written by Juan Linietsky.
-
-  Implementation of a 2D Character controller.
-  This implementation uses the physics engine for
-  controlling a character, in a very similar way
-  than a 3D character controller would be implemented.
-
-  Using the physics engine for this has the main advantages:
-    - Easy to write.
-    - Interaction with other physics-based objects is free
-    - Only have to deal with the object linear velocity, not position
-    - All collision/area framework available
-
-  But also has the following disadvantages:
-    - Objects may bounce a little bit sometimes
-    - Going up ramps sends the chracter flying up, small hack is needed.
-    - A ray collider is needed to avoid sliding down on ramps and  
-      undesiderd bumps, small steps and rare numerical precision errors.
-      (another alternative may be to turn on friction when the character is not moving).
-    - Friction cant be used, so floor velocity must be considered
-      for moving platforms. """
+#Character Demo, written by Juan Linietsky.
 
 # Member variables
 const WALK_ACCEL = 2000.0
@@ -108,6 +88,10 @@ func _shot_ninja_star():
 	
 func restore_ninja_stars():
 	star_count = 5
+
+func increment_ninja_stars():
+	star_count += 1
+	clamp(star_count, 0, 5)
 
 func _integrate_forces(s):
 

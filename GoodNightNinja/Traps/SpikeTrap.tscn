@@ -34,4 +34,8 @@ shape = SubResource( 2 )
 position = Vector2( 3.68417, -9.47371 )
 scale = Vector2( 0.787368, 0.578947 )
 texture = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="SpikeTrap"]
+wait_time = 0.7
+one_shot = true
 [connection signal="body_entered" from="SpikeTrap/BottomPlatform/Spikes" to="SpikeTrap" method="_on_Spikes_body_entered"]
