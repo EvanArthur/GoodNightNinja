@@ -14,5 +14,4 @@ func _ready():
 
 
 func _on_ReturnButton_pressed():
-	print("Return Button Pressed")
 	get_tree().change_scene("res://StartScreen/MainMenu.tscn")

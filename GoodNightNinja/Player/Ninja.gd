@@ -52,6 +52,8 @@ func _preDie():
 #despawn character and go to respawn screen
 func _kill():
 	$Sprite.play("dying")
+	#makes rigidbody stay put
+	mode = MODE_STATIC
 	dying = true
 	yield(get_tree().create_timer(1.5),"timeout")
 	_preDie()

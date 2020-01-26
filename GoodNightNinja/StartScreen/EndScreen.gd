@@ -15,7 +15,6 @@ func _on_ReturnButton_pressed():
 
 func _on_ContinueButton_pressed():
 	if Global.currentStage > Global.maxStage:
-		print("You beat the game!")
 		get_tree().change_scene("res://StartScreen/MainMenu.tscn")
 	else:
 		get_tree().change_scene("res://Levels/Level"+str(Global.currentStage)+".tscn")
