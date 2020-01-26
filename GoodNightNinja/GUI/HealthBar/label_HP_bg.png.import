@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/  LifeBarProgress_1.png-afa8d00c05302ecaa03440a71eab7a37.stex"
+path="res://.import/label_HP_bg.png-af3331713f0f4820e8a414a472affcfe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/HealthBar/  LifeBarProgress_1.png"
-dest_files=[ "res://.import/  LifeBarProgress_1.png-afa8d00c05302ecaa03440a71eab7a37.stex" ]
+source_file="res://GUI/HealthBar/label_HP_bg.png"
+dest_files=[ "res://.import/label_HP_bg.png-af3331713f0f4820e8a414a472affcfe.stex" ]
 
 [params]
 
