@@ -46,6 +46,14 @@ config/icon="res://icon.png"
 
 Global="*res://StartScreen/Global.gd"
 
+[input]
+
+Pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
 [layer_names]
 
 2d_physics/layer_1="player"
@@ -56,7 +64,3 @@ Global="*res://StartScreen/Global.gd"
 [physics]
 
 2d/default_gravity=700
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

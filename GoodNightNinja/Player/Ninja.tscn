@@ -1,11 +1,20 @@
 [gd_scene load_steps=37 format=2]
 
+<<<<<<< HEAD
 [ext_resource path="res://Player/NinjaIdlepng.png" type="Texture" id=1]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle1.png" type="Texture" id=2]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle2.png" type="Texture" id=3]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle3.png" type="Texture" id=4]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle4.png" type="Texture" id=5]
 [ext_resource path="res://Player/NinjaDamage.png" type="Texture" id=6]
+=======
+[ext_resource path="res://Player/Ninja.gd" type="Script" id=1]
+[ext_resource path="res://Player/NinjaIdlepng.png" type="Texture" id=2]
+[ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle1.png" type="Texture" id=3]
+[ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle2.png" type="Texture" id=4]
+[ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle3.png" type="Texture" id=5]
+[ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle4.png" type="Texture" id=6]
+>>>>>>> 52a87a173d05205e0c937dc8440b3a93bc8ee48b
 [ext_resource path="res://Player/NinjaJumping.png" type="Texture" id=7]
 [ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow1.png" type="Texture" id=8]
 [ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow2.png" type="Texture" id=9]
@@ -20,6 +29,7 @@
 [ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard4.png" type="Texture" id=18]
 [ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard5.png" type="Texture" id=19]
 [ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard6.png" type="Texture" id=20]
+<<<<<<< HEAD
 [ext_resource path="res://NinjaDie1.png" type="Texture" id=21]
 [ext_resource path="res://Player/NinjaDieSequence/NinjaDie2.png" type="Texture" id=22]
 [ext_resource path="res://Player/NinjaDieSequence/NinjaDie3.png" type="Texture" id=23]
@@ -30,10 +40,17 @@
 [ext_resource path="res://Player/ninja_star.wav" type="AudioStream" id=28]
 [ext_resource path="res://Player/jump.wav" type="AudioStream" id=29]
 [ext_resource path="res://Player/NinjaArea.gd" type="Script" id=30]
+=======
+[ext_resource path="res://Player/ninja-star.png" type="Texture" id=21]
+[ext_resource path="res://Player/ninja_star.wav" type="AudioStream" id=22]
+[ext_resource path="res://Player/jump.wav" type="AudioStream" id=23]
+[ext_resource path="res://Player/NinjaArea.gd" type="Script" id=24]
+>>>>>>> 52a87a173d05205e0c937dc8440b3a93bc8ee48b
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
 
+<<<<<<< HEAD
 [sub_resource type="GDScript" id=2]
 script/source = "extends RigidBody2D
 
@@ -296,17 +313,23 @@ func _on_Ninja_killed():
 "
 
 [sub_resource type="SpriteFrames" id=3]
+=======
+[sub_resource type="SpriteFrames" id=2]
+>>>>>>> 52a87a173d05205e0c937dc8440b3a93bc8ee48b
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
+<<<<<<< HEAD
 "frames": [ ExtResource( 6 ) ],
 "loop": false,
 "name": "damage",
 "speed": 1.0
 }, {
+=======
+>>>>>>> 52a87a173d05205e0c937dc8440b3a93bc8ee48b
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "jumping",
@@ -333,17 +356,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=3]
 flag_disable_z = true
 gravity = Vector3( 0, 98, 0 )
 angular_velocity = 1.05
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 20, 90 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 25, 90 )
 
 [node name="Ninja" type="RigidBody2D"]
@@ -354,15 +377,21 @@ mass = 3.0
 physics_material_override = SubResource( 1 )
 custom_integrator = true
 contacts_reported = 1
-script = SubResource( 2 )
+script = ExtResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 9.70789, -20 )
 scale = Vector2( 0.299416, 0.299416 )
+<<<<<<< HEAD
 frames = SubResource( 3 )
 animation = "dying"
 frame = 4
 playing = true
+=======
+frames = SubResource( 2 )
+animation = "shooting"
+frame = 5
+>>>>>>> 52a87a173d05205e0c937dc8440b3a93bc8ee48b
 
 [node name="Smoke" type="Particles2D" parent="Sprite"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -373,8 +402,13 @@ lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
 local_coords = false
+<<<<<<< HEAD
 process_material = SubResource( 4 )
 texture = ExtResource( 27 )
+=======
+process_material = SubResource( 3 )
+texture = ExtResource( 21 )
+>>>>>>> 52a87a173d05205e0c937dc8440b3a93bc8ee48b
 
 [node name="Camera2D" type="Camera2D" parent="."]
 rotating = true
@@ -386,30 +420,42 @@ drag_margin_right = 0.3
 
 [node name="IdleCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 14.708, -20 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="NinjaStarShoot" type="Position2D" parent="."]
 position = Vector2( 29.708, -60 )
 
 [node name="SoundShoot" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 14.708, -20 )
+<<<<<<< HEAD
 stream = ExtResource( 28 )
+=======
+stream = ExtResource( 22 )
+>>>>>>> 52a87a173d05205e0c937dc8440b3a93bc8ee48b
 volume_db = -14.734
 
 [node name="SoundJump" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 14.708, -20 )
+<<<<<<< HEAD
 stream = ExtResource( 29 )
 volume_db = -12.193
 
 [node name="NinjaArea" type="Area2D" parent="."]
 script = ExtResource( 30 )
+=======
+stream = ExtResource( 23 )
+volume_db = -12.193
+
+[node name="NinjaArea" type="Area2D" parent="."]
+script = ExtResource( 24 )
+>>>>>>> 52a87a173d05205e0c937dc8440b3a93bc8ee48b
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NinjaArea"]
 position = Vector2( 14.708, -20 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="InvulnterabilityTimer" type="Timer" parent="."]
-wait_time = 0.6
+wait_time = 0.01
 one_shot = true
 [connection signal="killed" from="." to="." method="_on_Ninja_killed"]
 [connection signal="body_entered" from="NinjaArea" to="NinjaArea" method="_on_NinjaArea_body_entered"]

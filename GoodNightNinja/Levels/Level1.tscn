@@ -81,6 +81,7 @@ extents = Vector2( 112.857, 10 )
 extents = Vector2( 485.526, 10 )
 
 [node name="Level1" type="Node2D"]
+position = Vector2( 1.01404, 1.01402 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -130,6 +131,7 @@ region_rect = Rect2( 0, 0, 53120, 1902 )
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 5 )]
 editor/display_folded = true
+margin_bottom = 84.0
 
 [node name="Floor" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -726,7 +728,7 @@ position = Vector2( 1.79541, -330.057 )
 shape = SubResource( 21 )
 
 [node name="Ninja" parent="." instance=ExtResource( 16 )]
-position = Vector2( 118.614, 312.911 )
+position = Vector2( 133.399, 482.934 )
 
 [node name="Floor5" type="StaticBody2D" parent="."]
 editor/display_folded = true

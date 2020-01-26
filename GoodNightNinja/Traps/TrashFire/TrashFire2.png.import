@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/label_HP.png-df4c3cacf3793dc9e3d7e84bf2240865.stex"
+path="res://.import/TrashFire2.png-9470e273a78a8ceba27d93084e20ad3a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/HealthBar/label_HP.png"
-dest_files=[ "res://.import/label_HP.png-df4c3cacf3793dc9e3d7e84bf2240865.stex" ]
+source_file="res://Traps/TrashFire/TrashFire2.png"
+dest_files=[ "res://.import/TrashFire2.png-9470e273a78a8ceba27d93084e20ad3a.stex" ]
 
 [params]
 
