@@ -84,15 +84,13 @@ texture = ExtResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
 one_shot = true
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/shutdown = SubResource( 4 )
 
-[node name="StarArea" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StarArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 5 )
 [connection signal="timeout" from="Timer" to="." method="disable"]
-[connection signal="body_entered" from="StarArea" to="." method="_on_StarArea_body_entered"]
