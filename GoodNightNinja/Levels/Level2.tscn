@@ -31,19 +31,19 @@ extents = Vector2( 144.415, 16.8291 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 71.7139, 10.0287 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 101.555, 10.0477 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 88.4075, 7.23267 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 114.243, 5.55173 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 462.098, 20.5869 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 206.884, 16.9478 )
 
 [node name="Level2" type="Node2D"]
@@ -95,7 +95,6 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 53120, 1902 )
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 5 )]
-editor/display_folded = true
 
 [node name="Floor" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -190,12 +189,12 @@ shape = SubResource( 6 )
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Cinema1"]
 position = Vector2( 359.17, -353.02 )
-shape = SubResource( 11 )
+shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Cinema1"]
 position = Vector2( 1510.7, -323.634 )
-shape = SubResource( 11 )
+shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="Hotel1" type="StaticBody2D" parent="."]
@@ -210,19 +209,19 @@ texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hotel1"]
 position = Vector2( -267.381, 292.582 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hotel1"]
 position = Vector2( 269.837, -145.239 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Hotel1"]
 position = Vector2( -0.169678, 3.5079 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Hotel1"]
 position = Vector2( -5.29663, -563.492 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 one_way_collision = true
 
 [node name="Ninja" parent="." instance=ExtResource( 12 )]
@@ -244,7 +243,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge1"]
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 one_way_collision = true
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
 
