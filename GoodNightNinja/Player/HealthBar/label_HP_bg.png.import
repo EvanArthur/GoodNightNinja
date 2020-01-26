@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/  LifeBarUnder.png-8911d6ae1ebdb07b467edfa856307aab.stex"
+path="res://.import/label_HP_bg.png-3aa097b3948287f5bcf84e19acfc4940.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GUI/HealthBar/  LifeBarUnder.png"
-dest_files=[ "res://.import/  LifeBarUnder.png-8911d6ae1ebdb07b467edfa856307aab.stex" ]
+source_file="res://Player/HealthBar/label_HP_bg.png"
+dest_files=[ "res://.import/label_HP_bg.png-3aa097b3948287f5bcf84e19acfc4940.stex" ]
 
 [params]
 
