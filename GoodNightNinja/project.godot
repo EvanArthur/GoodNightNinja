@@ -64,7 +64,3 @@ Pause={
 [physics]
 
 2d/default_gravity=700
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

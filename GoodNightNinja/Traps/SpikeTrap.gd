@@ -9,8 +9,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var bodies = $BottomPlatform/Spikes.get_overlapping_bodies()
-	var body = bodies.front()
 	if not bodies.empty():
+		var body = bodies.front()
 		if body.get_name() == "Ninja":
 			if timer.is_stopped():
 				timer.start()

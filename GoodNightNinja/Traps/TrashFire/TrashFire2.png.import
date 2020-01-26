@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fiyah.png-25d87775846670e37ce5cf0abca5dbd5.stex"
+path="res://.import/TrashFire2.png-9470e273a78a8ceba27d93084e20ad3a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Traps/Fiyah.png"
-dest_files=[ "res://.import/Fiyah.png-25d87775846670e37ce5cf0abca5dbd5.stex" ]
+source_file="res://Traps/TrashFire/TrashFire2.png"
+dest_files=[ "res://.import/TrashFire2.png-9470e273a78a8ceba27d93084e20ad3a.stex" ]
 
 [params]
 
