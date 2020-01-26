@@ -24,18 +24,3 @@ func on_max_health_updated(max_health):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Button_pressed():
-	get_tree().paused = true
-	$PausePopup.show()
-
-
-func _on_ContinueButton_pressed():
-	$PausePopup.hide()
-	get_tree().paused = false
-
-
-func _on_ReturnButton_pressed():
-	get_tree().paused = false
-	get_tree().change_scene("res://StartScreen/MainMenu.tscn")
