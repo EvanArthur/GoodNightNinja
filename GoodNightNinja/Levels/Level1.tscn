@@ -131,7 +131,8 @@ region_rect = Rect2( 0, 0, 53120, 1902 )
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 5 )]
 editor/display_folded = true
-rect_scale = Vector2( 0.109082, 0.109082 )
+margin_right = 387.0
+margin_bottom = 291.0
 
 [node name="Floor" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -728,7 +729,7 @@ position = Vector2( 1.79541, -330.057 )
 shape = SubResource( 21 )
 
 [node name="Ninja" parent="." instance=ExtResource( 16 )]
-position = Vector2( 118.614, 312.911 )
+position = Vector2( 133.399, 482.934 )
 
 [node name="Floor5" type="StaticBody2D" parent="."]
 editor/display_folded = true
