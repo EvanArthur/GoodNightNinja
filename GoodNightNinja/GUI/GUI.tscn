@@ -7,12 +7,6 @@
 [ext_resource path="res://GUI/HealthBar/LifeBarUnder.png" type="Texture" id=5]
 [ext_resource path="res://GUI/HealthBar/LifeBarProgress_1.png" type="Texture" id=6]
 
-
-
-
-
-
-
 [sub_resource type="DynamicFont" id=1]
 size = 28
 extra_spacing_bottom = 2
@@ -104,8 +98,8 @@ text = "Pause"
 
 [node name="PausePopup" type="Popup" parent="."]
 pause_mode = 2
-margin_left = 20.0
-margin_top = 20.0
+margin_left = 350.0
+margin_top = 150.0
 margin_right = 1004.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
