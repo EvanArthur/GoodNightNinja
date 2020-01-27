@@ -26,6 +26,8 @@ var airborne_time = 1e20
 var shoot_time = 1e20
 var local_collision_pos
 
+var dying = false
+
 # health stuff here. Created by Will
 signal health_updated
 signal killed
@@ -38,7 +40,6 @@ func damage(amount):
 	if invulnerability_timer.is_stopped():
 		invulnerability_timer.start()
 		_set_health(health - amount)
-		print("Ninja health: " + str(health))
 
 func _die():
 	queue_free()
@@ -50,6 +51,11 @@ func _preDie():
 	
 #despawn character and go to respawn screen
 func _kill():
+	$Sprite.play("dying")
+	#makes rigidbody stay put
+	mode = MODE_STATIC
+	dying = true
+	yield(get_tree().create_timer(1.5),"timeout")
 	_preDie()
 	get_tree().change_scene("res://StartScreen/RespawnScreen.tscn")
 
@@ -57,9 +63,9 @@ func _set_health(value):
 	var prev_health = health
 	health = clamp(value, 0, max_health)
 	if health != prev_health:
-		print("Health updated. New Health: " + str(health))
 		emit_signal("health_updated", health)
-		print("Emitted signal health_updated")
+		if health < prev_health:
+			$Sprite.play("damage")
 		if health == 0:
 			_kill()
 			emit_signal("killed")
@@ -92,9 +98,11 @@ func restore_ninja_stars():
 func increment_ninja_stars():
 	star_count += 1
 	clamp(star_count, 0, 5)
+	
 
 func _integrate_forces(s):
-
+	if dying:
+		return
 	var lv = s.get_linear_velocity()
 	var step = s.get_step()
 	

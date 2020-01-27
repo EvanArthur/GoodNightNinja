@@ -39,3 +39,8 @@ func _on_ContinueButton_pressed():
 func _on_ReturnButton_pressed():
 	get_tree().paused = false
 	get_tree().change_scene("res://StartScreen/MainMenu.tscn")
+	
+func _input(event):
+	if event.is_action_pressed("pause"):
+		get_tree().paused = true
+		$PausePopup.show()
