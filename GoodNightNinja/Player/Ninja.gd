@@ -25,6 +25,7 @@ var floor_h_velocity = 0.0
 var airborne_time = 1e20
 var shoot_time = 1e20
 var local_collision_pos
+var fall_time: int = 0
 
 var dying = false
 
@@ -144,25 +145,31 @@ func _integrate_forces(s):
 	# compensates for physics imprecision, as well as human reaction delay.
 
 	if shoot and not shooting:
-		if star_count != 0:
+		if star_count > 0:
 			star_count -= 1
 			$Sprite.play("shooting")
 			call_deferred("_shot_ninja_star")
-		else:
-			print(star_count)
 	else:
 		shoot_time += step
 	
 	if found_floor:
 		airborne_time = 0.0
+		if fall_time > 0:
+			var fall_length = int(OS.get_ticks_msec()) - fall_time
+			if fall_length > 1500:
+				print(str(fall_length))
+				damage( floor((fall_length - 1500) * .03))
+			fall_time = 0
+			
 	else:
 		airborne_time = 200 # Time it spent in the air
+		#get the time at the start of the fall
 	
 	var on_floor = airborne_time < MAX_FLOOR_AIRBORNE_TIME
 
 	# Process jump
 	if jumping:
-		if lv.y > 0:
+		if lv.y > 0: 
 			# Set off the jumping flag if going down
 			jumping = false
 		elif not jump:
@@ -228,6 +235,8 @@ func _integrate_forces(s):
 			else:
 				new_anim = "jumping"
 		else:
+			if fall_time == 0:
+				fall_time = OS.get_ticks_msec()
 			if shoot_time < MAX_SHOOT_POSE_TIME:
 				new_anim = "falling_weapon"
 			else:
@@ -249,6 +258,8 @@ func _integrate_forces(s):
 	if new_anim != anim:
 		anim = new_anim
 		$Sprite.play(anim)
+		
+	#if falling for too long, apply fall damage
 	
 	shooting = shoot
 	
