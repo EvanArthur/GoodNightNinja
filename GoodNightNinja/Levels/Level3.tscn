@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Levels/Hotel.png" type="Texture" id=1]
 [ext_resource path="res://Levels/building2.png" type="Texture" id=2]
@@ -44,6 +44,12 @@ extents = Vector2( 2279.65, 13.1683 )
 [sub_resource type="SegmentShape2D" id=14]
 a = Vector2( 517.028, -55.8227 )
 b = Vector2( -516.562, -55.7263 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 193.862, 16.5343 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 192.809, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 207.648, 159.101 )
@@ -360,7 +366,7 @@ shape = SubResource( 14 )
 
 [node name="Ninja" parent="." instance=ExtResource( 9 )]
 editor/display_folded = true
-position = Vector2( 16848.7, 1215.77 )
+position = Vector2( 13675.5, 281.727 )
 
 [node name="Sprite" parent="Ninja" index="0"]
 position = Vector2( 33.4304, -21.825 )
@@ -446,13 +452,27 @@ position = Vector2( 15225.3, 1278.33 )
 scale = Vector2( 0.7, 1 )
 
 [node name="SpikeTrap25" parent="." instance=ExtResource( 10 )]
-position = Vector2( 18113.5, 903.488 )
+position = Vector2( 18112.1, 903.488 )
 rotation = 4.71239
 scale = Vector2( 2, 1 )
 
-[node name="SpikeTrap26" parent="." instance=ExtResource( 10 )]
-position = Vector2( 18114.4, 133.706 )
+[node name="SpikeTrap28" parent="." instance=ExtResource( 10 )]
+position = Vector2( 18112.1, 903.488 )
 rotation = 4.71239
+scale = Vector2( 2, 1 )
+
+[node name="BottomPlatform" parent="SpikeTrap28/SpikeTrap" index="0"]
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D" parent="SpikeTrap28/SpikeTrap/BottomPlatform/Spikes" index="0"]
+shape = SubResource( 17 )
+
+[node name="SpikeTrap26" parent="." instance=ExtResource( 10 )]
+position = Vector2( 14840.4, 575.817 )
+scale = Vector2( 2, 1 )
+
+[node name="SpikeTrap29" parent="." instance=ExtResource( 10 )]
+position = Vector2( 15612.1, 576.89 )
 scale = Vector2( 2, 1 )
 
 [node name="SpikeTrap27" parent="." instance=ExtResource( 10 )]
@@ -460,8 +480,12 @@ position = Vector2( 16537.7, 763.426 )
 rotation = 1.5708
 scale = Vector2( 0.7, 1 )
 
+[node name="SpikeTrap30" parent="." instance=ExtResource( 10 )]
+position = Vector2( 16134.8, 576.707 )
+scale = Vector2( 0.7, 1 )
+
 [node name="LevelFinish" parent="." instance=ExtResource( 11 )]
-position = Vector2( 16022, 42.3354 )
+position = Vector2( 16972.3, -1002.45 )
 
 [node name="HealthPotion" parent="." instance=ExtResource( 12 )]
 position = Vector2( 5555.08, 461.589 )
@@ -516,13 +540,22 @@ motion = Vector2( -200, 100 )
 cycle = 3.0
 
 [node name="MovingPlatform8" parent="." instance=ExtResource( 13 )]
-editor/display_folded = true
 position = Vector2( 17272.3, 974.236 )
 motion = Vector2( 400, 0 )
 cycle = 1.5
 
 [node name="CollisionShape2D" parent="MovingPlatform8/Platform" index="0"]
 one_way_collision = true
+
+[node name="MovingPlatform11" parent="." instance=ExtResource( 13 )]
+position = Vector2( 14680.4, 369.418 )
+motion = Vector2( 400, 0 )
+cycle = 4.0
+
+[node name="MovingPlatform12" parent="." instance=ExtResource( 13 )]
+position = Vector2( 15525.7, 56.8864 )
+motion = Vector2( 0, 400 )
+cycle = 4.0
 
 [node name="MovingPlatform9" parent="." instance=ExtResource( 13 )]
 editor/display_folded = true
@@ -684,6 +717,8 @@ shape = SubResource( 13 )
 [editable path="SpikeTrap"]
 
 [editable path="SpikeTrap2"]
+
+[editable path="SpikeTrap28"]
 
 [editable path="MovingPlatform"]
 

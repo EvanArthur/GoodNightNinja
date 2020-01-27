@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Levels/sky.png" type="Texture" id=1]
 [ext_resource path="res://Levels/city3.png" type="Texture" id=2]
@@ -12,13 +12,9 @@
 [ext_resource path="res://Levels/Cinema.png" type="Texture" id=10]
 [ext_resource path="res://Levels/Hotel.png" type="Texture" id=11]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Levels/PagodaExpress.png" type="Texture" id=14]
-[ext_resource path="res://Levels/building1.png" type="Texture" id=15]
-[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7001.94, 10 )
+extents = Vector2( 5459.04, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 162.561, 17.9685 )
@@ -49,18 +45,6 @@ extents = Vector2( 462.098, 20.5869 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 206.884, 16.9478 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 343.349, 263.769 )
-
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 217.924, 709.066 )
-
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 2583.37, 10.9326 )
-
-[sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 45.4395, 369.658 )
 
 [node name="Level2" type="Node2D"]
 
@@ -113,23 +97,16 @@ region_rect = Rect2( 0, 0, 53120, 1902 )
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 5 )]
 editor/display_folded = true
 
-[node name="PausePopup" parent="CanvasLayer/GUI" index="1"]
-margin_left = 20.0
-margin_top = 20.0
-
 [node name="Floor" type="StaticBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 1.80147, 601.703 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Floor"]
-position = Vector2( 3235.11, -4.2963 )
-scale = Vector2( 7.25143, 0.16367 )
+position = Vector2( 2471.21, -5.04503 )
+scale = Vector2( 5.77529, 0.150534 )
 texture = ExtResource( 6 )
 
 [node name="SpikeTrap" parent="." instance=ExtResource( 7 )]
@@ -142,7 +119,6 @@ position = Vector2( 164.063, -910.762 )
 position = Vector2( -168.094, 802.387 )
 
 [node name="Cinema1" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 580.717, 429.226 )
 
 [node name="Sprite" type="Sprite" parent="Cinema1"]
@@ -223,7 +199,6 @@ shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="Hotel1" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 3582.12, -275.913 )
 __meta__ = {
 "_edit_group_": true
@@ -251,7 +226,8 @@ shape = SubResource( 10 )
 one_way_collision = true
 
 [node name="Ninja" parent="." instance=ExtResource( 12 )]
-position = Vector2( 51.5249, 516.194 )
+editor/display_folded = true
+position = Vector2( 20.4064, 511.468 )
 
 [node name="Ledge1" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -270,88 +246,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge1"]
 shape = SubResource( 11 )
 one_way_collision = true
-
-[node name="MovingPlatform" parent="." instance=ExtResource( 13 )]
-position = Vector2( 5294.24, -594.708 )
-motion = Vector2( 400, 0 )
-cycle = 5.0
-
-[node name="MovingPlatform2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 5923.99, -590.57 )
-motion = Vector2( 400, 500 )
-cycle = 7.0
-
-[node name="PagodaExpress1" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 6667.01, 324.951 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="PagodaExpress1"]
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PagodaExpress1"]
-position = Vector2( -6.24072, 0 )
-shape = SubResource( 12 )
-
-[node name="PagodaExpress2" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 8122.08, -97.0022 )
-
-[node name="Sprite" type="Sprite" parent="PagodaExpress2"]
-scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PagodaExpress2"]
-shape = SubResource( 13 )
-
-[node name="Floor2" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 10488.3, 604.375 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Floor2"]
-scale = Vector2( 5, 0.2 )
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
-shape = SubResource( 14 )
-
-[node name="Floor3" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 9503.82, 1332.67 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Floor3"]
-scale = Vector2( 5, 0.2 )
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
-shape = SubResource( 14 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 6954.68, 974.432 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
-rotation = 1.5708
-scale = Vector2( 0.7, 0.8 )
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 15 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
 
 [editable path="CanvasLayer/GUI"]
