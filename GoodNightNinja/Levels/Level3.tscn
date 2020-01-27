@@ -370,7 +370,8 @@ texture = ExtResource( 8 )
 shape = SubResource( 8 )
 
 [node name="Ninja" parent="." instance=ExtResource( 9 )]
-position = Vector2( 218.501, 459.603 )
+editor/display_folded = true
+position = Vector2( 13675.5, 281.727 )
 
 [node name="Sprite" parent="Ninja" index="0"]
 position = Vector2( 33.4304, -21.825 )
@@ -484,18 +485,12 @@ position = Vector2( 16537.7, 763.426 )
 rotation = 1.5708
 scale = Vector2( 0.7, 1 )
 
-[node name="SpikeTrap31" parent="." instance=ExtResource( 10 )]
-position = Vector2( 17232.2, 400.428 )
-scale = Vector2( 0.7, 1 )
-motion = Vector2( 500, 0 )
-cycle = 2.0
-
 [node name="SpikeTrap30" parent="." instance=ExtResource( 10 )]
 position = Vector2( 16134.8, 576.707 )
 scale = Vector2( 0.7, 1 )
 
 [node name="LevelFinish" parent="." instance=ExtResource( 11 )]
-position = Vector2( 17312, -587.239 )
+position = Vector2( 16972.3, -1002.45 )
 
 [node name="HealthPotion" parent="." instance=ExtResource( 12 )]
 position = Vector2( 5555.08, 461.589 )
@@ -546,7 +541,7 @@ cycle = 3.0
 
 [node name="MovingPlatform7" parent="." instance=ExtResource( 13 )]
 position = Vector2( 10625.1, 80.6369 )
-motion = Vector2( -300, 100 )
+motion = Vector2( -200, 100 )
 cycle = 3.0
 
 [node name="MovingPlatform8" parent="." instance=ExtResource( 13 )]
@@ -568,25 +563,21 @@ motion = Vector2( 0, 400 )
 cycle = 4.0
 
 [node name="MovingPlatform9" parent="." instance=ExtResource( 13 )]
-position = Vector2( 17258.6, 620.479 )
+editor/display_folded = true
+position = Vector2( 17266.7, 635.81 )
 motion = Vector2( 400, 0 )
-cycle = 3.0
+cycle = 4.0
 
 [node name="CollisionShape2D" parent="MovingPlatform9/Platform" index="0"]
 one_way_collision = true
 
 [node name="MovingPlatform10" parent="." instance=ExtResource( 13 )]
-position = Vector2( 17261.3, 254.538 )
+position = Vector2( 16511.4, 1062.06 )
 motion = Vector2( 400, 0 )
-cycle = 4.0
+cycle = 5.0
 
 [node name="CollisionShape2D" parent="MovingPlatform10/Platform" index="0"]
 one_way_collision = true
-
-[node name="MovingPlatform13" parent="." instance=ExtResource( 13 )]
-position = Vector2( 17754.2, -147.862 )
-motion = Vector2( 400, 0 )
-cycle = 4.0
 
 [node name="Building 2" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -722,24 +713,6 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Right2"]
 shape = SubResource( 15 )
-<<<<<<< HEAD
-
-[node name="Sewer Exit Right3" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 18139.6, -493.469 )
-rotation = 1.5708
-scale = Vector2( 0.7, 0.2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Sewer Exit Right3"]
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Right3"]
-shape = SubResource( 15 )
-=======
->>>>>>> 35cfb60f5d078b1779d6dd7f95c8342920371490
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
 
 [editable path="CanvasLayer/GUI"]
