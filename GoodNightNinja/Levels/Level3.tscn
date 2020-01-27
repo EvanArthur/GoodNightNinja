@@ -710,6 +710,7 @@ texture = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Right2"]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 shape = SubResource( 15 )
 <<<<<<< HEAD
 
@@ -729,6 +730,9 @@ texture = ExtResource( 8 )
 shape = SubResource( 15 )
 =======
 >>>>>>> 35cfb60f5d078b1779d6dd7f95c8342920371490
+=======
+shape = SubResource( 13 )
+>>>>>>> parent of cfea1e6... level 4
 =======
 shape = SubResource( 13 )
 >>>>>>> parent of cfea1e6... level 4
