@@ -65,7 +65,6 @@ position = Vector2( 20, -90 )
 scale = Vector2( 0.342205, 0.32274 )
 frames = SubResource( 1 )
 animation = "attak"
-frame = 5
 playing = true
 
 [node name="EnemyHitbox" type="CollisionShape2D" parent="."]
@@ -112,7 +111,7 @@ rotation = 1.57079
 cast_to = Vector2( 0, 300 )
 
 [node name="EnragedTimer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 4.0
 one_shot = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -120,6 +119,7 @@ wait_time = 0.7
 one_shot = true
 
 [node name="DamageZone" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 10, -90 )
 
 [node name="Collide" type="CollisionShape2D" parent="DamageZone"]

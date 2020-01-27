@@ -14,7 +14,7 @@ var direction = 1
 var animation = ""
 var new_animation = ""
 
-var health = 1
+var health = 100
 var object = []
 var other = []
 
@@ -35,27 +35,31 @@ func _die():
 	queue_free()
 
 func _preDie():
-	$EnemyHitbox.queue_free()
+	$AnimatedSprite.play("ded")
+	mode = MODE_STATIC
 	rc_left.queue_free()
 	rc_right.queue_free()
 	weak_point.queue_free()
 	$CollisionShape2D.queue_free()
-	#property of RigidBody. Makes it stay in place
-	mode = MODE_STATIC
+	yield(get_tree().create_timer(1.2), "timeout")
+	$EnemyHitbox.queue_free()
+	call_deferred("_die")
 	
 	#play sound or death animation here
 	
 # called after hit with melee or ranged attack
 func _onHit():
-	health = health - 1
-	print(health)
-	if health <=0:
+	health = health - 50
+	if health == 0:
 		state = STATE_DYING
-		
 		set_friction(1000)
+		_preDie()
 
 	
 func _integrate_forces(s):
+	if state == STATE_DYING:
+		return
+		
 	$RayCastLeft.add_exception($DamageZone)
 	$RayCastRight.add_exception($DamageZone)
 	$StrongPoint.add_exception($DamageZone)
@@ -73,12 +77,7 @@ func _integrate_forces(s):
 	var linVel = s.get_linear_velocity()
 	new_animation = animation
 
-	
-	if state == STATE_DYING:
-		new_animation = "ded"
-		call_deferred("_preDie")
-
-	elif state == STATE_WALKING:
+	if state == STATE_WALKING:
 		if direction >0:
 			forAtt.set_enabled(true)
 			backAtt.set_enabled(false)
@@ -105,7 +104,7 @@ func _integrate_forces(s):
 			$StrongPoint.position.x*=-1
 		
 		if $StrongPoint.is_colliding():
-			if $StrongPoint.get_collider().name =="Area2D":
+			if $StrongPoint.get_collider().name =="NinjaStar":
 				state=STATE_ATTACKING
 			else:
 				direction = -direction
@@ -114,8 +113,7 @@ func _integrate_forces(s):
 				$StrongPoint.position.x*=-1
 
 		if weak_point.is_colliding() and object.find(weak_point.get_collider())==-1:
-			#print(weak_point.get_collider().name)
-			if weak_point.get_collider().name=="Area2D":
+			if weak_point.get_collider().name=="NinjaStar":
 				call_deferred("_onHit")
 			object.append(weak_point.get_collider())
 			
@@ -124,14 +122,14 @@ func _integrate_forces(s):
 			if not zone.empty():
 				var body = zone.front()
 				#print(body,get_name())
-				if body.get_name() == "Area2D":
+				if body.get_name() == "NinjaStar":
 					call_deferred("_onHit")
 		else:
 			var zone = $DamageZone2.get_overlapping_bodies()
 			if not zone.empty():
 				var body = zone.front()
 				#print(body,get_name())
-				if body.get_name() == "Area2D":
+				if body.get_name() == "NinjaStar":
 					call_deferred("_onHit")
 		if forAtt.is_colliding():
 			if forAtt.get_collider().name=="Ninja":

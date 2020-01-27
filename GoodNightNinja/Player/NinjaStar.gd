@@ -21,4 +21,8 @@ func _on_StarArea_body_entered(body):
 	if body.name == "Ninja":
 		body.increment_ninja_stars()
 		disable()
+	if body.name == "BasicEnemy":
+		print("Found basic enemy")
+		body._onHit()
+		disable()
 	
