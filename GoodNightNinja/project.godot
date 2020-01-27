@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "NinjaStar",
 "language": "GDScript",
 "path": "res://Player/NinjaStar.gd"
+}, {
+"base": "Node2D",
+"class": "SpikeTrap",
+"language": "GDScript",
+"path": "res://Traps/SpikeTrap.gd"
 } ]
 _global_script_class_icons={
 "BasicEnemy": "",
 "MovingPlatform": "",
 "Ninja": "",
-"NinjaStar": ""
+"NinjaStar": "",
+"SpikeTrap": ""
 }
 
 [application]
