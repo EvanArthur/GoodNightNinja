@@ -108,10 +108,6 @@ region_rect = Rect2( 0, 0, 53120, 1902 )
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 5 )]
 editor/display_folded = true
 
-[node name="PausePopup" parent="CanvasLayer/GUI" index="1"]
-margin_left = 20.0
-margin_top = 20.0
-
 [node name="Floor" type="StaticBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 1.80147, 601.703 )
