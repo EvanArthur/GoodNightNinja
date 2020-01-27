@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "NinjaStar",
 "language": "GDScript",
 "path": "res://Player/NinjaStar.gd"
+}, {
+"base": "Node2D",
+"class": "SpikeTrap",
+"language": "GDScript",
+"path": "res://Traps/SpikeTrap.gd"
 } ]
 _global_script_class_icons={
 "BasicEnemy": "",
 "MovingPlatform": "",
 "Ninja": "",
-"NinjaStar": ""
+"NinjaStar": "",
+"SpikeTrap": ""
 }
 
 [application]
@@ -45,14 +51,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://StartScreen/Global.gd"
-
-[input]
-
-pause={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
- ]
-}
 
 [layer_names]
 
