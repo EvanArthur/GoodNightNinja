@@ -317,7 +317,6 @@ shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="TallBuilding2" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 5788.51, -80 )
 __meta__ = {
 "_edit_group_": true
@@ -764,12 +763,12 @@ texture = ExtResource( 11 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PagodaExpress2"]
 shape = SubResource( 3 )
 
-[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+[node name="House2" type="StaticBody2D" parent="."]
 position = Vector2( 10733.3, -1308.79 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D8"]
+[node name="Sprite" type="Sprite" parent="House2"]
 texture = ExtResource( 6 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
