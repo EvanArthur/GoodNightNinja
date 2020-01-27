@@ -114,7 +114,7 @@ func _integrate_forces(s):
 				$StrongPoint.position.x*=-1
 
 		if weak_point.is_colliding() and object.find(weak_point.get_collider())==-1:
-			print(weak_point.get_collider().name)
+			#print(weak_point.get_collider().name)
 			if weak_point.get_collider().name=="Area2D":
 				call_deferred("_onHit")
 			object.append(weak_point.get_collider())
@@ -123,14 +123,14 @@ func _integrate_forces(s):
 			var zone = $DamageZone.get_overlapping_bodies()
 			if not zone.empty():
 				var body = zone.front()
-				print(body,get_name())
+				#print(body,get_name())
 				if body.get_name() == "Area2D":
 					call_deferred("_onHit")
 		else:
 			var zone = $DamageZone2.get_overlapping_bodies()
 			if not zone.empty():
 				var body = zone.front()
-				print(body,get_name())
+				#print(body,get_name())
 				if body.get_name() == "Area2D":
 					call_deferred("_onHit")
 		if forAtt.is_colliding():
