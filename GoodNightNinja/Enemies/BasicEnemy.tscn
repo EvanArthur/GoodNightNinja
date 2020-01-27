@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Enemies/BasicEnemy.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/PlaceholderSamurai.png" type="Texture" id=2]
@@ -9,17 +9,17 @@
 [ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk5.png" type="Texture" id=7]
 [ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk6.png" type="Texture" id=8]
 [ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk7.png" type="Texture" id=9]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash1.png" type="Texture" id=10]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash2.png" type="Texture" id=11]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash3.png" type="Texture" id=12]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash4.png" type="Texture" id=13]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash5.png" type="Texture" id=14]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash6 .png" type="Texture" id=15]
-[ext_resource path="res://Enemies/SamuraiDie/SamuraiDie1.png" type="Texture" id=16]
-[ext_resource path="res://Enemies/SamuraiDie/SamuraiDie2.png" type="Texture" id=17]
-[ext_resource path="res://Enemies/SamuraiDie/SamuraiDie3.png" type="Texture" id=18]
-[ext_resource path="res://Enemies/SamuraiDie/SamuraiDie4.png" type="Texture" id=19]
-[ext_resource path="res://Enemies/SamuraiDie/SamuraiDie5.png" type="Texture" id=20]
+[ext_resource path="res://Enemies/SamuraiDie/SamuraiDie1.png" type="Texture" id=10]
+[ext_resource path="res://Enemies/SamuraiDie/SamuraiDie2.png" type="Texture" id=11]
+[ext_resource path="res://Enemies/SamuraiDie/SamuraiDie3.png" type="Texture" id=12]
+[ext_resource path="res://Enemies/SamuraiDie/SamuraiDie4.png" type="Texture" id=13]
+[ext_resource path="res://Enemies/SamuraiDie/SamuraiDie5.png" type="Texture" id=14]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash1.png" type="Texture" id=15]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash2.png" type="Texture" id=16]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash3.png" type="Texture" id=17]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash4.png" type="Texture" id=18]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash5.png" type="Texture" id=19]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash6 .png" type="Texture" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -33,22 +33,25 @@ animations = [ {
 "name": "welk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "attak",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": false,
 "name": "ded",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "attak",
+"speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 30, 20 )
+extents = Vector2( 20, 20 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 20, 80 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 70, 80 )
 
 [node name="BasicEnemy" type="RigidBody2D"]
 position = Vector2( 510, -90 )
@@ -61,8 +64,8 @@ script = ExtResource( 1 )
 position = Vector2( 20, -90 )
 scale = Vector2( 0.342205, 0.32274 )
 frames = SubResource( 1 )
-animation = "welk"
-frame = 4
+animation = "attak"
+frame = 5
 playing = true
 
 [node name="EnemyHitbox" type="CollisionShape2D" parent="."]
@@ -111,4 +114,22 @@ cast_to = Vector2( 0, 300 )
 [node name="EnragedTimer" type="Timer" parent="."]
 wait_time = 6.0
 one_shot = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="DamageZone" type="Area2D" parent="."]
+position = Vector2( 10, -90 )
+
+[node name="Collide" type="CollisionShape2D" parent="DamageZone"]
+position = Vector2( 60, 0 )
+shape = SubResource( 4 )
+
+[node name="DamageZone2" type="Area2D" parent="."]
+position = Vector2( -110, -90 )
+
+[node name="Collide" type="CollisionShape2D" parent="DamageZone2"]
+position = Vector2( 60, 0 )
+shape = SubResource( 4 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished" binds= [ false ]]
