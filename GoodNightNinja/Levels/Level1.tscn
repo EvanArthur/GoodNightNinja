@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Levels/sky.png" type="Texture" id=1]
 [ext_resource path="res://Levels/city3.png" type="Texture" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=17]
 [ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5120.73, 10 )
@@ -866,4 +869,22 @@ position = Vector2( 11693.8, 603.707 )
 
 [node name="Ninja" parent="." instance=ExtResource( 19 )]
 position = Vector2( 140.857, 418.152 )
+
+[node name="HealthPotion" parent="." instance=ExtResource( 20 )]
+position = Vector2( 5484.97, 303.032 )
+
+[node name="StarPickup" parent="." instance=ExtResource( 21 )]
+position = Vector2( 3886.98, -654.709 )
+
+[node name="BasicEnemy3" parent="." instance=ExtResource( 22 )]
+position = Vector2( 9534.42, 595.083 )
+
+[node name="BasicEnemy" parent="." instance=ExtResource( 22 )]
+position = Vector2( 3023.59, -456.236 )
+
+[node name="BasicEnemy2" parent="." instance=ExtResource( 22 )]
+position = Vector2( 5356.32, 1398.6 )
+
+[node name="HealthPotion2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 8329.05, 548.421 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
