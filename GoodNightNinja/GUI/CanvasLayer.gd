@@ -11,5 +11,8 @@ func _ready():
 func _on_Ninja_health_updated(health):
 	$GUI._on_Ninja_health_updated(health)
 	
-func on_max_health_updated(max_health):
-	$GUI.on_max_health_updated(max_health)
+func _on_max_health_updated(max_health):
+	$GUI._on_max_health_updated(max_health)
+	
+func _on_Ninja_star_count_updated(star_count):
+	$GUI._on_Ninja_star_count_updated(star_count)

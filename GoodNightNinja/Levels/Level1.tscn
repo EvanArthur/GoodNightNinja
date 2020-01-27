@@ -829,3 +829,4 @@ position = Vector2( 8329.05, 548.421 )
 [node name="Ninja" parent="." instance=ExtResource( 18 )]
 position = Vector2( 140.857, 418.152 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
+[connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
