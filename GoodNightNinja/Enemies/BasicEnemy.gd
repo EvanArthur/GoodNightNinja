@@ -49,6 +49,7 @@ func _preDie():
 	
 # called after hit with melee or ranged attack
 func _onHit():
+	print("On hit called")
 	health = health - 50
 	if health == 0:
 		state = STATE_DYING
@@ -104,7 +105,7 @@ func _integrate_forces(s):
 			$StrongPoint.position.x*=-1
 		
 		if $StrongPoint.is_colliding():
-			if $StrongPoint.get_collider().name =="NinjaStar":
+			if $StrongPoint.get_collider().name =="Ninja":
 				state=STATE_ATTACKING
 			else:
 				direction = -direction
@@ -200,3 +201,14 @@ func _integrate_forces(s):
 func _on_AnimatedSprite_animation_finished():
 	return true
 	
+
+
+func _on_DamageZone_body_entered(body):
+	if body.get_name() == "NinjaStar":
+		_onHit()
+
+
+func _on_DamageZone2_body_entered(body):
+	pass
+#	if body.get_name() == "NinjaStar":
+#		_onHit()
