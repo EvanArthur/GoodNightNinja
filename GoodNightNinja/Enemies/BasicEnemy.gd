@@ -47,7 +47,7 @@ func _preDie():
 	
 # called after hit with melee or ranged attack
 func _onHit():
-	health = health - .5
+	health = health - 1
 	print(health)
 	if health <=0:
 		state = STATE_DYING
@@ -56,6 +56,20 @@ func _onHit():
 
 	
 func _integrate_forces(s):
+	$RayCastLeft.add_exception($DamageZone)
+	$RayCastRight.add_exception($DamageZone)
+	$StrongPoint.add_exception($DamageZone)
+	$WeakPoint.add_exception($DamageZone)
+	$AttackZoneB.add_exception($DamageZone)
+	$AttackZoneF.add_exception($DamageZone)
+	
+	
+	$RayCastLeft.add_exception($DamageZone2)
+	$RayCastRight.add_exception($DamageZone2)
+	$StrongPoint.add_exception($DamageZone2)
+	$WeakPoint.add_exception($DamageZone2)
+	$AttackZoneB.add_exception($DamageZone2)
+	$AttackZoneF.add_exception($DamageZone2)
 	var linVel = s.get_linear_velocity()
 	new_animation = animation
 
@@ -73,12 +87,14 @@ func _integrate_forces(s):
 			forAtt.set_enabled(false)
 		WALK_SPEED=100
 		new_animation = "welk"
+		#$DamageZone/Collide.set_disabled(true)
 		
 		if rc_right.is_colliding()==false and direction>0:
 			direction = -direction
 			$AnimatedSprite.flip_h=true
 			weak_point.position.x*=-1
 			$StrongPoint.position.x*=-1
+			$DamageZone.position.x*=-1
 			
 			
 			#strong.position.x*=-1
@@ -103,7 +119,20 @@ func _integrate_forces(s):
 				call_deferred("_onHit")
 			object.append(weak_point.get_collider())
 			
-			
+		if direction<0:
+			var zone = $DamageZone.get_overlapping_bodies()
+			if not zone.empty():
+				var body = zone.front()
+				print(body,get_name())
+				if body.get_name() == "Area2D":
+					call_deferred("_onHit")
+		else:
+			var zone = $DamageZone2.get_overlapping_bodies()
+			if not zone.empty():
+				var body = zone.front()
+				print(body,get_name())
+				if body.get_name() == "Area2D":
+					call_deferred("_onHit")
 		if forAtt.is_colliding():
 			if forAtt.get_collider().name=="Ninja":
 				state=STATE_ATTACKING
@@ -113,8 +142,25 @@ func _integrate_forces(s):
 		linear_velocity.x = direction * WALK_SPEED
 		
 	elif state == STATE_ATTACKING:
+		#$DamageZone/Collide.set_disabled(false)
+		if direction>0:
+			var zone = $DamageZone.get_overlapping_bodies()
+			if not zone.empty():
+				var body = zone.front()
+				if body.get_name() == "Ninja":
+					if $Timer.is_stopped():
+						$Timer.start()
+						body.damage(30)
+		else:
+			var zone = $DamageZone2.get_overlapping_bodies()
+			if not zone.empty():
+				var body = zone.front()
+				if body.get_name() == "Ninja":
+					if $Timer.is_stopped():
+						$Timer.start()
+						body.damage(30)
+
 		
-		print($EnragedTimer.time_left)
 		if $EnragedTimer.is_stopped():
 			state=STATE_WALKING
 		if $EnragedTimer.is_stopped():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Levels/sky.png" type="Texture" id=1]
 [ext_resource path="res://Levels/city3.png" type="Texture" id=2]
@@ -12,9 +12,14 @@
 [ext_resource path="res://Levels/Cinema.png" type="Texture" id=10]
 [ext_resource path="res://Levels/Hotel.png" type="Texture" id=11]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Levels/PagodaExpress.png" type="Texture" id=14]
+[ext_resource path="res://Levels/building1.png" type="Texture" id=15]
+[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=16]
+[ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5459.04, 10 )
+extents = Vector2( 7413.33, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 162.561, 17.9685 )
@@ -45,6 +50,12 @@ extents = Vector2( 462.098, 20.5869 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 206.884, 16.9478 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 287.531, 225.455 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 355.567, 1149.79 )
 
 [node name="Level2" type="Node2D"]
 
@@ -109,8 +120,8 @@ position = Vector2( 1.80147, 601.703 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Floor"]
-position = Vector2( 2471.21, -5.04503 )
-scale = Vector2( 5.77529, 0.150534 )
+position = Vector2( 3447.46, -4.98312 )
+scale = Vector2( 7.66176, 0.15162 )
 texture = ExtResource( 6 )
 
 [node name="SpikeTrap" parent="." instance=ExtResource( 7 )]
@@ -123,6 +134,7 @@ position = Vector2( 164.063, -910.762 )
 position = Vector2( -168.094, 802.387 )
 
 [node name="Cinema1" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 580.717, 429.226 )
 
 [node name="Sprite" type="Sprite" parent="Cinema1"]
@@ -203,6 +215,7 @@ shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="Hotel1" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 3582.12, -275.913 )
 __meta__ = {
 "_edit_group_": true
@@ -231,7 +244,7 @@ one_way_collision = true
 
 [node name="Ninja" parent="." instance=ExtResource( 12 )]
 editor/display_folded = true
-position = Vector2( 20.4064, 511.468 )
+position = Vector2( 4406.43, -697.445 )
 
 [node name="Ledge1" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -250,6 +263,137 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge1"]
 shape = SubResource( 11 )
 one_way_collision = true
+
+[node name="Ledge2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 4223.71, -73.2618 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ledge2"]
+scale = Vector2( 0.4, 0.3 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge2"]
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 13 )]
+position = Vector2( 5351.49, -591.237 )
+motion = Vector2( 300, 0 )
+cycle = 4.0
+
+[node name="MovingPlatform2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 6207.65, -172.776 )
+motion = Vector2( 300, 500 )
+cycle = 7.0
+
+[node name="PagodaExpress1" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 7133.28, 363.175 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="PagodaExpress1"]
+scale = Vector2( 0.17, 0.17 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PagodaExpress1"]
+position = Vector2( -4.76465, 0 )
+shape = SubResource( 12 )
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 9384.19, 600.716 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor2"]
+scale = Vector2( 3, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="TallBuilding1" type="StaticBody2D" parent="."]
+position = Vector2( 8200.99, -561.593 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TallBuilding1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TallBuilding1"]
+position = Vector2( -15.3359, 1.91699 )
+shape = SubResource( 13 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+autoplay = true
+
+[node name="FireTrap" parent="." instance=ExtResource( 17 )]
+position = Vector2( 5050.66, 578.478 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 5230.53, 581.678 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap5" parent="." instance=ExtResource( 17 )]
+position = Vector2( 5416.62, 581.678 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap6" parent="." instance=ExtResource( 17 )]
+position = Vector2( 5596.64, 580.726 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap7" parent="." instance=ExtResource( 17 )]
+position = Vector2( 5776.67, 581.678 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap11" parent="." instance=ExtResource( 17 )]
+position = Vector2( 5952.02, 579.615 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap12" parent="." instance=ExtResource( 17 )]
+position = Vector2( 6131.5, 579.615 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap13" parent="." instance=ExtResource( 17 )]
+position = Vector2( 6310.98, 579.615 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap14" parent="." instance=ExtResource( 17 )]
+position = Vector2( 6486.33, 577.552 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap15" parent="." instance=ExtResource( 17 )]
+position = Vector2( 6667.87, 577.552 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 4868.67, 580.594 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 4693.03, 582.71 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap8" parent="." instance=ExtResource( 17 )]
+position = Vector2( 4517.68, 582.71 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap9" parent="." instance=ExtResource( 17 )]
+position = Vector2( 4340.27, 582.71 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireTrap10" parent="." instance=ExtResource( 17 )]
+position = Vector2( 4162.85, 584.773 )
+scale = Vector2( 0.5, 0.5 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
 
 [editable path="CanvasLayer/GUI"]

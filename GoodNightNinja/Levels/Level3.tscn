@@ -120,6 +120,7 @@ position = Vector2( 1858.56, 1062.96 )
 shape = SubResource( 6 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
 
@@ -721,6 +722,7 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Right2"]
 shape = SubResource( 15 )
+<<<<<<< HEAD
 
 [node name="Sewer Exit Right3" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -736,6 +738,8 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Right3"]
 shape = SubResource( 15 )
+=======
+>>>>>>> 35cfb60f5d078b1779d6dd7f95c8342920371490
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
 
 [editable path="CanvasLayer/GUI"]

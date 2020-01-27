@@ -18,6 +18,7 @@ extents = Vector2( 1045.03, 10 )
 [node name="Level5" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
 
@@ -71,6 +72,7 @@ margin_left = 20.0
 margin_top = 20.0
 
 [node name="Floor" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1.80147, 601.703 )
 scale = Vector2( 2, 1 )
 
