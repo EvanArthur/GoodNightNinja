@@ -17,56 +17,56 @@
 [ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=15]
 [ext_resource path="res://Levels/Dumpster.png" type="Texture" id=16]
 
-[sub_resource type="SegmentShape2D" id=9]
+[sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -705.105, 1162.81 )
 b = Vector2( -1397.27, 1158.66 )
 
-[sub_resource type="SegmentShape2D" id=10]
+[sub_resource type="SegmentShape2D" id=2]
 a = Vector2( 1451.49, -582.527 )
 b = Vector2( 760.195, -582.527 )
 
-[sub_resource type="SegmentShape2D" id=11]
+[sub_resource type="SegmentShape2D" id=3]
 a = Vector2( -1809.24, -2310.22 )
 b = Vector2( 1824.22, -2321.28 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 2107.05, 122.749 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 2100.64, 97.1105 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 18.7373, 1205.02 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 2279.65, 13.1683 )
 
-[sub_resource type="SegmentShape2D" id=14]
+[sub_resource type="SegmentShape2D" id=8]
 a = Vector2( 517.028, -55.8227 )
 b = Vector2( -516.562, -55.7263 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 193.862, 16.5343 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 192.809, 10 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 207.648, 159.101 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 133.894, 8.03809 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 133.85, 12.0083 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 1375.91, 926.982 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 516.641, 51.5499 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 69.9482, 42.9855 )
 
 [node name="Level3" type="Node2D"]
@@ -82,15 +82,15 @@ __meta__ = {
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hotel Building"]
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Hotel Building"]
-shape = SubResource( 10 )
+shape = SubResource( 2 )
 one_way_collision = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hotel Building"]
-shape = SubResource( 11 )
+shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="Grocerie Building 1" type="StaticBody2D" parent="."]
@@ -106,18 +106,18 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grocerie Building 1"]
 visible = false
 position = Vector2( 12.8184, -275.616 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Grocerie Building 1"]
 visible = false
 position = Vector2( -12.8193, -2019.04 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Grocerie Building 1"]
 position = Vector2( 1858.56, 1062.96 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 editor/display_folded = true
@@ -168,6 +168,10 @@ region_rect = Rect2( 0, 0, 53120, 1902 )
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 7 )]
 
+[node name="PausePopup" parent="CanvasLayer/GUI" index="1"]
+margin_left = 20.0
+margin_top = 20.0
+
 [node name="Floor" type="StaticBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 1.80147, 601.703 )
@@ -176,7 +180,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Floor"]
 position = Vector2( 260.016, -1.50737 )
@@ -192,7 +196,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
 position = Vector2( 1817.03, -1.55701 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Floor2"]
 position = Vector2( 1819.85, -0.12207 )
@@ -208,7 +212,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
 position = Vector2( 2.39355, 2.91815 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Floor3"]
 position = Vector2( -0.793457, 4.91418 )
@@ -224,7 +228,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
 position = Vector2( 3581.13, -0.153198 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Floor4"]
 position = Vector2( 3376.42, -0.904784 )
@@ -240,7 +244,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor5"]
 position = Vector2( 3581.13, -0.153198 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Floor5"]
 position = Vector2( 3376.42, -0.904784 )
@@ -256,7 +260,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor6"]
 position = Vector2( 3581.13, -0.153198 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Floor6"]
 position = Vector2( 3376.42, -0.904784 )
@@ -272,7 +276,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor7"]
 position = Vector2( 3581.13, -0.153198 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Floor7"]
 position = Vector2( 3376.42, -0.904784 )
@@ -288,7 +292,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor8"]
 position = Vector2( 3581.13, -0.153198 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Floor8"]
 position = Vector2( 3376.42, -0.904784 )
@@ -307,7 +311,7 @@ __meta__ = {
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor9"]
-shape = SubResource( 14 )
+shape = SubResource( 8 )
 
 [node name="Floor10" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -321,7 +325,7 @@ __meta__ = {
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor10"]
-shape = SubResource( 14 )
+shape = SubResource( 8 )
 
 [node name="Floor11" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -335,7 +339,7 @@ __meta__ = {
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor11"]
-shape = SubResource( 14 )
+shape = SubResource( 8 )
 
 [node name="Floor12" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -349,7 +353,7 @@ __meta__ = {
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor12"]
-shape = SubResource( 14 )
+shape = SubResource( 8 )
 
 [node name="Floor13" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -363,7 +367,7 @@ __meta__ = {
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor13"]
-shape = SubResource( 14 )
+shape = SubResource( 8 )
 
 [node name="Ninja" parent="." instance=ExtResource( 9 )]
 editor/display_folded = true
@@ -462,11 +466,11 @@ position = Vector2( 18112.1, 903.488 )
 rotation = 4.71239
 scale = Vector2( 2, 1 )
 
-[node name="BottomPlatform" parent="SpikeTrap28/SpikeTrap" index="0"]
-shape = SubResource( 16 )
+[node name="BottomPlatform" parent="SpikeTrap28/SpikeTrap" index="1"]
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D" parent="SpikeTrap28/SpikeTrap/BottomPlatform/Spikes" index="0"]
-shape = SubResource( 17 )
+shape = SubResource( 10 )
 
 [node name="SpikeTrap26" parent="." instance=ExtResource( 10 )]
 position = Vector2( 14840.4, 575.817 )
@@ -588,17 +592,17 @@ texture = ExtResource( 14 )
 
 [node name="Lower Section of house" type="CollisionShape2D" parent="Building 2"]
 position = Vector2( 2.40137, 84.0443 )
-shape = SubResource( 5 )
+shape = SubResource( 11 )
 
 [node name="Left roof piece" type="CollisionShape2D" parent="Building 2"]
 position = Vector2( -111.925, -143.302 )
 rotation = 2.58309
-shape = SubResource( 6 )
+shape = SubResource( 12 )
 
 [node name="Right roof piece" type="CollisionShape2D" parent="Building 2"]
 position = Vector2( 107.392, -143.877 )
 rotation = 0.558505
-shape = SubResource( 7 )
+shape = SubResource( 13 )
 one_way_collision = true
 one_way_collision_margin = 128.0
 
@@ -620,7 +624,7 @@ __meta__ = {
 texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dumpster 1"]
-shape = SubResource( 12 )
+shape = SubResource( 14 )
 
 [node name="Sewer Entranc Left" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -635,7 +639,7 @@ __meta__ = {
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Entranc Left"]
-shape = SubResource( 13 )
+shape = SubResource( 15 )
 
 [node name="Sewer Entrance Right" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -650,7 +654,7 @@ __meta__ = {
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Entrance Right"]
-shape = SubResource( 13 )
+shape = SubResource( 15 )
 
 [node name="Sewer Dumpster" type="StaticBody2D" parent="."]
 position = Vector2( 14972.7, 1214.01 )
@@ -663,7 +667,7 @@ scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Dumpster"]
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="Sewer Exit Left" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -678,7 +682,7 @@ __meta__ = {
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Left"]
-shape = SubResource( 13 )
+shape = SubResource( 15 )
 
 [node name="Sewer Exit Right" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -693,7 +697,7 @@ __meta__ = {
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Right"]
-shape = SubResource( 13 )
+shape = SubResource( 15 )
 
 [node name="Sewer Exit Right2" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -708,6 +712,7 @@ __meta__ = {
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Right2"]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -739,6 +744,9 @@ shape = SubResource( 13 )
 =======
 shape = SubResource( 13 )
 >>>>>>> parent of cfea1e6... level 4
+=======
+shape = SubResource( 15 )
+>>>>>>> d3303e82d40739663ec510a53aa671033e420db3
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
 
 [editable path="CanvasLayer/GUI"]
