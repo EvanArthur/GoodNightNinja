@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Pickups/HealthPotion.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Pickups/health.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 45.7075, 42.3538 )
+extents = Vector2( 54.0762, 53.5118 )
 
 [node name="HealthPotion" type="Node2D"]
 
@@ -15,5 +15,6 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="HealthPotion/CollisionShape2D"]
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 [connection signal="body_entered" from="HealthPotion" to="HealthPotion" method="_on_HealthPotion_body_entered"]
