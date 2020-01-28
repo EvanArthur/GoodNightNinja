@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/ledge1.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Levels/Cinema.png" type="Texture" id=7]
+[ext_resource path="res://Buildings/Cinema.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Buildings/Hotel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=10]
@@ -20,36 +20,18 @@
 extents = Vector2( 7413.33, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 162.561, 17.9685 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 130.898, 10.909 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 268.469, 12.4718 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 144.415, 16.8291 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 71.7139, 10.0287 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 101.555, 10.0477 )
-
-[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 287.531, 225.455 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1544.08, 11.4322 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 57.209, 416.519 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 57.1494, 413.817 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 2580.85, 57.5488 )
 
 [node name="Level2" type="Node2D"]
@@ -74,93 +56,14 @@ position = Vector2( 2950.69, 572.611 )
 position = Vector2( 164.063, -910.762 )
 
 [node name="HealthPotion" parent="." instance=ExtResource( 5 )]
-position = Vector2( -168.094, 802.387 )
+position = Vector2( -192.178, 531.439 )
 
 [node name="TallBuilding" parent="." instance=ExtResource( 6 )]
 position = Vector2( 8208, -548.666 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="TallBuilding"]
-
-[node name="Cinema1" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 580.717, 429.226 )
-
-[node name="Sprite" type="Sprite" parent="Cinema1"]
-position = Vector2( 944.283, -651.251 )
+[node name="Cinema" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1518.03, -219.681 )
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 7 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 59.4691, -102.664 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 1829.78, -100.67 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 389.647, -320.005 )
-shape = SubResource( 3 )
-one_way_collision = true
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 1484.13, -361.871 )
-shape = SubResource( 3 )
-one_way_collision = true
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 732.642, -323.761 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 1001.78, -323.761 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( -44.955, -574.392 )
-shape = SubResource( 4 )
-one_way_collision = true
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 1932.69, -576.386 )
-shape = SubResource( 4 )
-one_way_collision = true
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 325.977, -769.071 )
-shape = SubResource( 5 )
-one_way_collision = true
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 583.596, -965.675 )
-shape = SubResource( 5 )
-one_way_collision = true
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 1303.28, -963.681 )
-shape = SubResource( 5 )
-one_way_collision = true
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 1560.46, -768.309 )
-shape = SubResource( 5 )
-one_way_collision = true
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 1215.08, -323.473 )
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 359.17, -353.02 )
-shape = SubResource( 7 )
-one_way_collision = true
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="Cinema1"]
-position = Vector2( 1510.7, -323.634 )
-shape = SubResource( 7 )
-one_way_collision = true
 
 [node name="Hotel" parent="." instance=ExtResource( 8 )]
 position = Vector2( 3582.12, -275.913 )
@@ -232,7 +135,7 @@ texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PagodaExpress1"]
 position = Vector2( -4.76465, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 2 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
 position = Vector2( 9384.19, 600.716 )
@@ -245,7 +148,7 @@ scale = Vector2( 3, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
-shape = SubResource( 10 )
+shape = SubResource( 3 )
 
 [node name="Floor3" type="StaticBody2D" parent="."]
 position = Vector2( 13902.2, 605.174 )
@@ -258,7 +161,7 @@ scale = Vector2( 3, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
-shape = SubResource( 10 )
+shape = SubResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
@@ -336,7 +239,7 @@ scale = Vector2( 0.8, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 11 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2( 12405, 1010.2 )
@@ -350,7 +253,7 @@ scale = Vector2( 0.8, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( 9879.38, 1374.56 )
@@ -363,7 +266,7 @@ scale = Vector2( 5, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource( 13 )
+shape = SubResource( 6 )
 
 [node name="SpikeTrap2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 7602.98, 1306.45 )
