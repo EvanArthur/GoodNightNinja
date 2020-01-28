@@ -17,6 +17,7 @@ var new_animation = ""
 var health = 1
 var object = []
 var other = []
+var attacking=false
 
 onready var rc_left = $RayCastLeft
 onready var rc_right = $RayCastRight
@@ -180,6 +181,19 @@ func _integrate_forces(s):
 					if $Timer.is_stopped():
 						$Timer.start()
 						body.damage(30)
+			else:
+				if $StrongPoint.is_colliding():
+					if $StrongPoint.get_collider().name =="StarArea":
+						pass
+					else:
+						
+						direction = -direction
+						if $StrongPoint.position.x>0:
+							$AnimatedSprite.flip_h=true
+						else:
+							$AnimatedSprite.flip_h=false
+						weak_point.position.x*=-1
+						$StrongPoint.position.x*=-1
 		else:
 			var zone = $DamageZone2.get_overlapping_bodies()
 			if not zone.empty():
@@ -188,6 +202,19 @@ func _integrate_forces(s):
 					if $Timer.is_stopped():
 						$Timer.start()
 						body.damage(30)
+			else:
+				if $StrongPoint.is_colliding():
+					if $StrongPoint.get_collider().name =="StarArea":
+						pass
+					else:
+						
+						direction = -direction
+						if $StrongPoint.position.x>0:
+							$AnimatedSprite.flip_h=true
+						else:
+							$AnimatedSprite.flip_h=false
+						weak_point.position.x*=-1
+						$StrongPoint.position.x*=-1
 
 		
 		if $EnragedTimer.is_stopped():
@@ -225,22 +252,8 @@ func _integrate_forces(s):
 			$AnimatedSprite.flip_h=false
 			weak_point.position.x*=-1
 			$StrongPoint.position.x*=-1
-		if $StrongPoint.is_colliding():
-			
-			if $StrongPoint.get_collider().name =="NinjaStar":
-				
-				$EnragedTimer.start()
-			elif $StrongPoint.get_collider().name =="StarArea":
-				pass
-			else:
-				
-				direction = -direction
-				if $StrongPoint.position.x>0:
-					$AnimatedSprite.flip_h=true
-				else:
-					$AnimatedSprite.flip_h=false
-				weak_point.position.x*=-1
-				$StrongPoint.position.x*=-1
+		
+		
 		linear_velocity.x = direction * WALK_SPEED
 		
 	if animation != new_animation:
