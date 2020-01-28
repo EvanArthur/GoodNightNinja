@@ -600,7 +600,6 @@ shape = SubResource( 19 )
 [node name="Ninja" parent="." instance=ExtResource( 15 )]
 editor/display_folded = true
 position = Vector2( 110.167, 428.378 )
-scale = Vector2( 1, 1 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 
