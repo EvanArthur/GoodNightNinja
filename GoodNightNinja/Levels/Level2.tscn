@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/ledge1.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=11]
 [ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7413.33, 10 )
@@ -84,6 +85,27 @@ texture = ExtResource( 2 )
 
 [node name="SpikeTrap" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2950.69, 572.611 )
+
+[node name="SpikeTrap2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7595.09, 1300.79 )
+
+[node name="SpikeTrap3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7980.01, 1302.41 )
+
+[node name="SpikeTrap4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 8364.68, 1302.41 )
+
+[node name="SpikeTrap5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 8749.35, 1302.41 )
+
+[node name="SpikeTrap6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 9134.03, 1302.41 )
+
+[node name="SpikeTrap7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 9518.87, 1302.53 )
+
+[node name="SpikeTrap8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 9904.66, 1302.53 )
 
 [node name="LevelFinish" parent="." instance=ExtResource( 4 )]
 position = Vector2( 164.063, -910.762 )
@@ -218,6 +240,42 @@ __meta__ = {
 shape = SubResource( 11 )
 one_way_collision = true
 
+[node name="Ledge3" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 7614.43, 937.414 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ledge3"]
+scale = Vector2( 0.4, 0.3 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge3"]
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="Ledge4" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 9763.59, 1118.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ledge4"]
+scale = Vector2( 0.4, 0.3 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge4"]
+shape = SubResource( 11 )
+one_way_collision = true
+
 [node name="Ledge2" type="StaticBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 4223.71, -73.2618 )
@@ -240,6 +298,16 @@ one_way_collision = true
 position = Vector2( 5351.49, -591.237 )
 motion = Vector2( 300, 0 )
 cycle = 4.0
+
+[node name="MovingPlatform3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 8255.38, 1091.08 )
+motion = Vector2( 300, 0 )
+cycle = 4.0
+
+[node name="MovingPlatform4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 8969.73, 917.774 )
+motion = Vector2( 300, 0 )
+cycle = 6.0
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 6207.65, -172.776 )
@@ -397,6 +465,12 @@ shape = SubResource( 17 )
 [node name="Ninja" parent="." instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 110.165, 428.378 )
+
+[node name="BasicEnemy2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 7125.54, 111.059 )
+
+[node name="BasicEnemy" parent="." instance=ExtResource( 14 )]
+position = Vector2( 9749.78, 1075.63 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 
