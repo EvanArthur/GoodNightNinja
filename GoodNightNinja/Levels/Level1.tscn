@@ -174,36 +174,43 @@ position = Vector2( 8194.34, 1389.03 )
 position = Vector2( 8583.23, 1391.56 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 7037.52, 887.624 )
 motion = Vector2( 200, 0 )
 cycle = 5.0
 
 [node name="MovingPlatform4" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11233.1, -193.838 )
 motion = Vector2( 200, 0 )
 cycle = 4.0
 
 [node name="MovingPlatform5" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11724, -499.384 )
 motion = Vector2( 200, 0 )
 cycle = 5.0
 
 [node name="MovingPlatform6" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11047.7, -681.337 )
 motion = Vector2( 200, 0 )
 cycle = 6.0
 
 [node name="MovingPlatform7" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11718.4, -1028.57 )
 motion = Vector2( 200, 0 )
 cycle = 7.0
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 7596.39, 1142.4 )
 motion = Vector2( 200, 0 )
 cycle = 4.0
 
 [node name="MovingPlatform3" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 8063.3, 875.696 )
 motion = Vector2( 200, 0 )
 cycle = 3.0
@@ -323,7 +330,6 @@ position = Vector2( 0, -5.763 )
 shape = SubResource( 6 )
 
 [node name="Apartment1" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 3465.41, -21.752 )
 
 [node name="Sprite" type="Sprite" parent="Apartment1"]
