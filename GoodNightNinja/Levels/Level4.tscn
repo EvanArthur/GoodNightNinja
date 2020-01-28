@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=2]
@@ -12,37 +12,17 @@
 [ext_resource path="res://Buildings/ApartmentBuilding.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Levels/Cinema.png" type="Texture" id=13]
+[ext_resource path="res://Buildings/Cinema.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 517.522, 57.0608 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4158.28, 1201.07 )
-
-[sub_resource type="SegmentShape2D" id=3]
-a = Vector2( -4193.06, 217.126 )
-b = Vector2( 4193.38, 217.534 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 2403.2, 279.985 )
-
-[sub_resource type="SegmentShape2D" id=5]
-a = Vector2( -2540.6, -443.838 )
-b = Vector2( 2542.29, -445.679 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 1581.12, 330.425 )
-
-[sub_resource type="SegmentShape2D" id=7]
-a = Vector2( -1684.73, -1099.19 )
-b = Vector2( 1685.35, -1099.45 )
 
 [node name="Level4" type="Node2D"]
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 1 )]
 
 [node name="TallBuilding" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
 position = Vector2( 872.422, -162.227 )
 scale = Vector2( 0.75, 0.7 )
 
@@ -218,7 +198,7 @@ position = Vector2( 1702.57, -1201.25 )
 motion = Vector2( 300, 0 )
 cycle = 3.0
 
-[node name="CollisionShape2D" parent="MovingPlatform/Platform" index="0"]
+[node name="CollisionShape2D" parent="MovingPlatform/Platform" index="1"]
 one_way_collision = true
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 9 )]
@@ -246,6 +226,7 @@ scale = Vector2( 2, 1 )
 cycle = 5.0
 
 [node name="ApartmentBuilding2" parent="." instance=ExtResource( 10 )]
+editor/display_folded = true
 position = Vector2( 5423.2, -323.692 )
 scale = Vector2( 0.4, 0.4 )
 
@@ -295,39 +276,18 @@ scale = Vector2( 2.5, 2.5 )
 [node name="BasicEnemy3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 9312.36, -33.6844 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Cinema" parent="." instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 13913.5, -709.134 )
 scale = Vector2( 0.5, 0.5 )
+full_collide = true
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
-texture = ExtResource( 13 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -6.2207, 1520.34 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -6.11133, -48.7419 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 5 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -7.44727, -685.346 )
-shape = SubResource( 6 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 7 )
+[node name="StarPickup" parent="Cinema" instance=ExtResource( 12 )]
+position = Vector2( -3866.4, 67.09 )
+scale = Vector2( 2, 2 )
 
 [node name="StarPickup2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 8655.27, -100.442 )
-
-[node name="StarPickup3" parent="." instance=ExtResource( 12 )]
-position = Vector2( 11980.3, -675.589 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="killed" from="Ninja" to="CanvasLayer" method="_on_Ninja_killed"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]

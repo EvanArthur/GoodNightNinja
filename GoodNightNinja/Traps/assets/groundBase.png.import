@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cinema.png-928ee0f1894c9fab62253664383a975b.stex"
+path="res://.import/groundBase.png-75084bd164e1c12cb12ee8343a74963c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Cinema.png"
-dest_files=[ "res://.import/Cinema.png-928ee0f1894c9fab62253664383a975b.stex" ]
+source_file="res://Traps/assets/groundBase.png"
+dest_files=[ "res://.import/groundBase.png-75084bd164e1c12cb12ee8343a74963c.stex" ]
 
 [params]
 

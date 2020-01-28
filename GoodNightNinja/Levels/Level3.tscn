@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Buildings/Hotel.tscn" type="PackedScene" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Buildings/House.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=10]
-[ext_resource path="res://Levels/Dumpster.png" type="Texture" id=11]
+[ext_resource path="res://Buildings/Dumpster.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -26,14 +26,8 @@ extents = Vector2( 193.862, 16.5343 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 192.809, 10 )
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 1375.91, 926.982 )
-
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 516.641, 51.5499 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 69.9482, 42.9855 )
 
 [node name="Level3" type="Node2D"]
 
@@ -375,12 +369,12 @@ cycle = 5.0
 [node name="Platform" parent="MovingPlatform" index="0"]
 position = Vector2( -0.388672, -0.465332 )
 
-[node name="CollisionShape2D" parent="MovingPlatform/Platform" index="0"]
+[node name="Sprite" parent="MovingPlatform/Platform" index="0"]
+position = Vector2( 0.637207, 0.574585 )
+
+[node name="CollisionShape2D" parent="MovingPlatform/Platform" index="1"]
 position = Vector2( 1.33093, -2.44266 )
 one_way_collision = true
-
-[node name="Sprite" parent="MovingPlatform/Platform" index="1"]
-position = Vector2( 0.637207, 0.574585 )
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 4169.98, 12.2038 )
@@ -417,7 +411,7 @@ position = Vector2( 17272.3, 974.236 )
 motion = Vector2( 400, 0 )
 cycle = 1.5
 
-[node name="CollisionShape2D" parent="MovingPlatform8/Platform" index="0"]
+[node name="CollisionShape2D" parent="MovingPlatform8/Platform" index="1"]
 one_way_collision = true
 
 [node name="MovingPlatform11" parent="." instance=ExtResource( 8 )]
@@ -436,7 +430,7 @@ position = Vector2( 17266.7, 635.81 )
 motion = Vector2( 400, 0 )
 cycle = 4.0
 
-[node name="CollisionShape2D" parent="MovingPlatform9/Platform" index="0"]
+[node name="CollisionShape2D" parent="MovingPlatform9/Platform" index="1"]
 one_way_collision = true
 
 [node name="MovingPlatform10" parent="." instance=ExtResource( 8 )]
@@ -444,7 +438,7 @@ position = Vector2( 16511.4, 1062.06 )
 motion = Vector2( 400, 0 )
 cycle = 5.0
 
-[node name="CollisionShape2D" parent="MovingPlatform10/Platform" index="0"]
+[node name="CollisionShape2D" parent="MovingPlatform10/Platform" index="1"]
 one_way_collision = true
 
 [node name="House" parent="." instance=ExtResource( 9 )]
@@ -458,19 +452,9 @@ stream = ExtResource( 10 )
 volume_db = -3.263
 max_distance = 1.56933e+009
 
-[node name="Dumpster 1" type="StaticBody2D" parent="."]
-editor/display_folded = true
+[node name="Dumpster" parent="." instance=ExtResource( 11 )]
 position = Vector2( 13682.6, 480.977 )
 scale = Vector2( 0.07, 0.07 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Dumpster 1"]
-texture = ExtResource( 11 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dumpster 1"]
-shape = SubResource( 8 )
 
 [node name="Sewer Entranc Left" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -485,7 +469,7 @@ __meta__ = {
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Entranc Left"]
-shape = SubResource( 9 )
+shape = SubResource( 5 )
 
 [node name="Sewer Entrance Right" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -500,20 +484,11 @@ __meta__ = {
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Entrance Right"]
-shape = SubResource( 9 )
+shape = SubResource( 5 )
 
-[node name="Sewer Dumpster" type="StaticBody2D" parent="."]
+[node name="Dumpster2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 14972.7, 1214.01 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Sewer Dumpster"]
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 11 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Dumpster"]
-shape = SubResource( 10 )
 
 [node name="Sewer Exit Left" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -528,7 +503,7 @@ __meta__ = {
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Left"]
-shape = SubResource( 9 )
+shape = SubResource( 5 )
 
 [node name="Sewer Exit Right" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -543,7 +518,7 @@ __meta__ = {
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Right"]
-shape = SubResource( 9 )
+shape = SubResource( 5 )
 
 [node name="Sewer Exit Right2" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -558,7 +533,7 @@ __meta__ = {
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Right2"]
-shape = SubResource( 9 )
+shape = SubResource( 5 )
 
 [node name="Ninja" parent="." instance=ExtResource( 12 )]
 editor/display_folded = true
