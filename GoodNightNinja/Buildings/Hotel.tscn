@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Hotel.gd" type="Script" id=1]
+[ext_resource path="res://Buildings/assets/Hotel.png" type="Texture" id=2]
+[ext_resource path="res://Traps/NormalPlatform.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1758.88, 2825.19 )
+
+[node name="Hotel" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, 656.657 )
+shape = SubResource( 1 )
+
+[node name="NormalPlatform" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1069.12, 1181.92 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="NormalPlatform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -0.000732422, 29.4257 )
+scale = Vector2( 0.9, 0.6 )
+
+[node name="NormalPlatform3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1083.83, -578.697 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="NormalPlatform4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2.76685, -2240.73 )
+scale = Vector2( 3.55, 1.5 )

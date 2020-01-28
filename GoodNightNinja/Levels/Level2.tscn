@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/ledge1.png" type="Texture" id=2]
@@ -7,14 +7,15 @@
 [ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Cinema.png" type="Texture" id=7]
-[ext_resource path="res://Levels/Hotel.png" type="Texture" id=8]
+[ext_resource path="res://Buildings/Hotel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Levels/PagodaExpress.png" type="Texture" id=10]
 [ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=11]
 [ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Levels/ApartmentBuilding.png" type="Texture" id=14]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Buildings/ApartmentBuilding.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7413.33, 10 )
@@ -36,15 +37,6 @@ extents = Vector2( 71.7139, 10.0287 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 101.555, 10.0477 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 88.4075, 7.23267 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 114.243, 5.55173 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 462.098, 20.5869 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 206.884, 16.9478 )
@@ -98,8 +90,6 @@ position = Vector2( -168.094, 802.387 )
 position = Vector2( 8208, -548.666 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TallBuilding"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TallBuilding/StaticBody2D"]
 
 [node name="Cinema1" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -182,33 +172,9 @@ position = Vector2( 1510.7, -323.634 )
 shape = SubResource( 7 )
 one_way_collision = true
 
-[node name="Hotel1" type="StaticBody2D" parent="."]
-editor/display_folded = true
+[node name="Hotel" parent="." instance=ExtResource( 8 )]
 position = Vector2( 3582.12, -275.913 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Hotel1"]
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hotel1"]
-position = Vector2( -267.381, 292.582 )
-shape = SubResource( 8 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hotel1"]
-position = Vector2( 269.837, -145.239 )
-shape = SubResource( 8 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hotel1"]
-position = Vector2( -0.169678, 3.5079 )
-shape = SubResource( 9 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Hotel1"]
-position = Vector2( -5.29663, -563.492 )
-shape = SubResource( 10 )
-one_way_collision = true
 
 [node name="Ledge1" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -569,25 +535,11 @@ shape = SubResource( 17 )
 position = Vector2( -4.85156, -1627.6 )
 shape = SubResource( 18 )
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+[node name="ApartmentBuilding" parent="." instance=ExtResource( 15 )]
 position = Vector2( 13223.1, 106.908 )
 scale = Vector2( 0.2, 0.2 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D4"]
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2( 0, 433.979 )
-shape = SubResource( 17 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2( -4.85156, -1627.6 )
-shape = SubResource( 18 )
-
-[node name="Ninja" parent="." instance=ExtResource( 15 )]
+[node name="Ninja" parent="." instance=ExtResource( 16 )]
 position = Vector2( 110.167, 428.378 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
