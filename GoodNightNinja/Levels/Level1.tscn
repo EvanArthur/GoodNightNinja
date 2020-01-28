@@ -136,10 +136,10 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="SpikeTrap" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1161.56, 571.779 )
+position = Vector2( 1161.56, 581.849 )
 
 [node name="SpikeTrap2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2371.15, 574.169 )
+position = Vector2( 2351.01, 579.204 )
 
 [node name="SpikeTrap10" parent="." instance=ExtResource( 3 )]
 position = Vector2( 4927.6, 574.096 )
@@ -247,7 +247,6 @@ texture = ExtResource( 7 )
 polygon = PoolVector2Array( -182.828, -56.2915, -158.731, -56.2915, 0.0864258, -155.963, 158.904, -58.4821, 185.191, -57.3868, 0.0864258, -170.202 )
 
 [node name="TallBuilding1" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 1970.46, -104.237 )
 __meta__ = {
 "_edit_group_": true

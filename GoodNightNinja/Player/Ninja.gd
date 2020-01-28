@@ -43,10 +43,12 @@ func damage(amount):
 		invulnerability_timer.start()
 		_set_health(health - amount)
 
+func _die():
+	queue_free()
+	
 func _preDie():
 	$NinjaArea.queue_free()
 	$IdleCollision.queue_free()
-	queue_free()
 	
 #despawn character and go to respawn screen
 func _kill():
@@ -54,8 +56,9 @@ func _kill():
 	#makes rigidbody stay put
 	mode = MODE_STATIC
 	dying = true
-	yield(get_tree().create_timer(1.5),"timeout")
 	_preDie()
+	yield(get_tree().create_timer(1.5),"timeout")
+	_die()
 	get_tree().change_scene("res://StartScreen/RespawnScreen.tscn")
 
 func _set_health(value):
@@ -65,6 +68,7 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health < prev_health:
 			$Sprite.play("damage")
+			yield(get_tree().create_timer(.1), "timeout")
 		if health == 0:
 			_kill()
 			emit_signal("killed")
@@ -97,16 +101,20 @@ func restore_ninja_stars():
 
 func increment_ninja_stars():
 	star_count += 1
-	clamp(star_count, 0, 5)
+	star_count = clamp(star_count, 0, 5)
 	emit_signal("star_count_updated", star_count)
 	
 
 func _integrate_forces(s):
+	if dying:
+		return
 	var lv = s.get_linear_velocity()
 	var step = s.get_step()
 	
 	var new_anim = anim
 	var new_siding_left = siding_left
+	
+	var took_damage = false
 	
 	# Get the controls
 	var move_left = Input.is_action_pressed("ui_left")
@@ -114,10 +122,7 @@ func _integrate_forces(s):
 	var jump = Input.is_action_pressed("ui_up")
 	var shoot = Input.is_action_pressed("ui_select")
 	var spawn = Input.is_action_pressed("spawn")
-	if dying:
-		lv.x = 0
-		lv.y = 0
-		return
+	
 	if spawn:
 #		var e = Enemy.instance()
 		var p = position
@@ -159,7 +164,7 @@ func _integrate_forces(s):
 		if fall_time > 0:
 			var fall_length = int(OS.get_ticks_msec()) - fall_time
 			if fall_length > 1500:
-				print(str(fall_length))
+				took_damage = true
 				damage( floor((fall_length - 1500) * .03))
 			fall_time = 0
 			
@@ -245,7 +250,6 @@ func _integrate_forces(s):
 				new_anim = "falling"
 	if $Baby.is_colliding():
 		if $Baby.get_collider().name == "DamageZone2" or $Baby.get_collider().name == "DamageZone":
-			print("here")
 			call_deferred("damage", 100)
 	# Update siding
 	if new_siding_left != siding_left:
@@ -256,6 +260,8 @@ func _integrate_forces(s):
 		
 		siding_left = new_siding_left
 	
+	if took_damage:
+		new_anim = "damage"
 	# Change animation
 	if new_anim != anim:
 		anim = new_anim
