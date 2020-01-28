@@ -13,12 +13,12 @@
 [ext_resource path="res://Levels/sky.png" type="Texture" id=11]
 [ext_resource path="res://Levels/Nursery.png" type="Texture" id=12]
 [ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=14]
-[ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5120.73, 10 )
@@ -808,41 +808,41 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
 shape = SubResource( 22 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 14 )
-autoplay = true
-
-[node name="FireTrap" parent="." instance=ExtResource( 15 )]
+[node name="FireTrap" parent="." instance=ExtResource( 14 )]
 position = Vector2( 10998.6, 603.707 )
 
-[node name="FireTrap2" parent="." instance=ExtResource( 15 )]
+[node name="FireTrap2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 11347.6, 603.707 )
 
-[node name="FireTrap3" parent="." instance=ExtResource( 15 )]
+[node name="FireTrap3" parent="." instance=ExtResource( 14 )]
 position = Vector2( 11693.8, 603.707 )
 
-[node name="HealthPotion" parent="." instance=ExtResource( 16 )]
+[node name="HealthPotion" parent="." instance=ExtResource( 15 )]
 position = Vector2( 5484.97, 303.032 )
 
-[node name="StarPickup" parent="." instance=ExtResource( 17 )]
+[node name="StarPickup" parent="." instance=ExtResource( 16 )]
 position = Vector2( 3886.98, -654.709 )
 
-[node name="BasicEnemy3" parent="." instance=ExtResource( 18 )]
+[node name="BasicEnemy3" parent="." instance=ExtResource( 17 )]
 position = Vector2( 9531.83, 566.598 )
 
-[node name="BasicEnemy4" parent="." instance=ExtResource( 18 )]
+[node name="BasicEnemy4" parent="." instance=ExtResource( 17 )]
 position = Vector2( 10174, 569.188 )
 
-[node name="BasicEnemy" parent="." instance=ExtResource( 18 )]
+[node name="BasicEnemy" parent="." instance=ExtResource( 17 )]
 position = Vector2( 3023.59, -456.236 )
 
-[node name="BasicEnemy2" parent="." instance=ExtResource( 18 )]
+[node name="BasicEnemy2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 5356.32, 1398.6 )
 
-[node name="HealthPotion2" parent="." instance=ExtResource( 16 )]
+[node name="HealthPotion2" parent="." instance=ExtResource( 15 )]
 position = Vector2( 8329.05, 548.421 )
 
-[node name="Ninja" parent="." instance=ExtResource( 19 )]
+[node name="Ninja" parent="." instance=ExtResource( 18 )]
 position = Vector2( 140.857, 418.152 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+autoplay = true
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
