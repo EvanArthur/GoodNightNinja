@@ -5,7 +5,7 @@
 [ext_resource path="res://Levels/city3.png" type="Texture" id=3]
 [ext_resource path="res://Levels/city2.png" type="Texture" id=4]
 [ext_resource path="res://Levels/city1.png" type="Texture" id=5]
-[ext_resource path="res://Levels/ground.png" type="Texture" id=6]
+[ext_resource path="res://Levels/  ground.png" type="Texture" id=6]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=7]
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -60,11 +60,11 @@ region_rect = Rect2( 0, 0, 53120, 1902 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Ground"]
 position = Vector2( -1000, 600 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 0.75 )
 texture = ExtResource( 6 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 48740, 3422 )
+region_rect = Rect2( 0, 0, 30010, 2042 )
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
 editor/display_folded = true

@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Traps/FireArea.gd" type="Script" id=1]
-[ext_resource path="res://Traps/TrashFire/TrashFire1.png" type="Texture" id=2]
-[ext_resource path="res://Traps/TrashFire/TrashFire2.png" type="Texture" id=3]
-[ext_resource path="res://Traps/TrashFire/TrashFire3.png" type="Texture" id=4]
+[ext_resource path="res://Traps/StationaryTrashFire/  bettertrashfire1.png" type="Texture" id=2]
+[ext_resource path="res://Traps/StationaryTrashFire/  bettertrashfire2.png" type="Texture" id=3]
+[ext_resource path="res://Traps/StationaryTrashFire/  bettertrashfire3.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( -15, 0, 15, 0, 15, -10, 0, -17, -15, -10 )
@@ -12,10 +12,11 @@ points = PoolVector2Array( -15, 0, 15, 0, 15, -10, 0, -17, -15, -10 )
 flags = 4
 frames = 3
 frame_0/texture = ExtResource( 2 )
+frame_0/delay_sec = 0.1
 frame_1/texture = ExtResource( 3 )
-frame_1/delay_sec = 0.0
+frame_1/delay_sec = 0.1
 frame_2/texture = ExtResource( 4 )
-frame_2/delay_sec = 0.0
+frame_2/delay_sec = 0.1
 
 [node name="FireTrap" type="Node2D"]
 
@@ -31,6 +32,4 @@ wait_time = 0.2
 one_shot = true
 
 [node name="Sprite" type="Sprite" parent="FireArea"]
-position = Vector2( 0, -110 )
-scale = Vector2( 0.5, 0.5 )
 texture = SubResource( 2 )
