@@ -248,7 +248,7 @@ func _integrate_forces(s):
 	if $Baby.is_colliding():
 		if $Baby.get_collider().name == "DamageZone2" or $Baby.get_collider().name == "DamageZone":
 			print("here")
-			health=0 
+			call_deferred("damage", 100)
 	# Update siding
 	if new_siding_left != siding_left:
 		if new_siding_left:

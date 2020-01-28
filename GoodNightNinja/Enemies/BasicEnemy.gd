@@ -49,7 +49,6 @@ func _preDie():
 	
 # called after hit with melee or ranged attack
 func _onHit():
-	print("On hit called")
 	health = health - 50
 	if health == 0:
 		state = STATE_DYING
@@ -58,6 +57,7 @@ func _onHit():
 
 	
 func _integrate_forces(s):
+	
 	if state == STATE_DYING:
 		return
 		
@@ -109,29 +109,33 @@ func _integrate_forces(s):
 				state=STATE_ATTACKING
 			else:
 				direction = -direction
-				$AnimatedSprite.flip_h=false
+				if $StrongPoint.position.x>0:
+					$AnimatedSprite.flip_h=true
+				else:
+					$AnimatedSprite.flip_h=false
 				weak_point.position.x*=-1
 				$StrongPoint.position.x*=-1
+				print($StrongPoint.get_collider().name)
 
 		if weak_point.is_colliding() and object.find(weak_point.get_collider())==-1:
 			if weak_point.get_collider().name=="NinjaStar":
 				call_deferred("_onHit")
 			object.append(weak_point.get_collider())
 			
-		if direction<0:
-			var zone = $DamageZone.get_overlapping_bodies()
-			if not zone.empty():
-				var body = zone.front()
-				#print(body,get_name())
-				if body.get_name() == "NinjaStar":
-					call_deferred("_onHit")
-		else:
-			var zone = $DamageZone2.get_overlapping_bodies()
-			if not zone.empty():
-				var body = zone.front()
-				#print(body,get_name())
-				if body.get_name() == "NinjaStar":
-					call_deferred("_onHit")
+#		if direction<0:
+#			var zone = $DamageZone.get_overlapping_bodies()
+#			if not zone.empty():
+#				var body = zone.front()
+#				#print(body,get_name())
+#				if body.get_name() == "NinjaStar":
+#					call_deferred("_onHit")
+#		else:
+#			var zone = $DamageZone2.get_overlapping_bodies()
+#			if not zone.empty():
+#				var body = zone.front()
+#				#print(body,get_name())
+#				if body.get_name() == "NinjaStar":
+#					call_deferred("_onHit")
 		if forAtt.is_colliding():
 			if forAtt.get_collider().name=="Ninja":
 				state=STATE_ATTACKING
@@ -175,22 +179,26 @@ func _integrate_forces(s):
 				direction=-direction
 				$AnimatedSprite.flip_h=false
 				weak_point.position.x*=-1
+				$StrongPoint.position.x*+-1
 				$EnragedTimer.start()
 		if backAtt.is_colliding():
 			if backAtt.get_collider().name=="Ninja" and direction==1:
 				direction=-direction
 				$AnimatedSprite.flip_h=true
 				weak_point.position.x*=-1
+				$StrongPoint.position.x*+-1
 				$EnragedTimer.start()
 		if rc_right.is_colliding()==false and direction>0:
 			direction = -direction
 			$AnimatedSprite.flip_h=true
 			weak_point.position.x*=-1
+			$StrongPoint.position.x*+-1
 
 		elif rc_left.is_colliding()==false and direction<0:
 			direction = -direction
 			$AnimatedSprite.flip_h=false
 			weak_point.position.x*=-1
+			$StrongPoint.position.x*+-1
 
 		linear_velocity.x = direction * WALK_SPEED
 		
