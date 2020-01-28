@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Levels/Hotel.png" type="Texture" id=1]
 [ext_resource path="res://Levels/building2.png" type="Texture" id=2]
@@ -13,9 +13,11 @@
 [ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Levels/building3.png" type="Texture" id=14]
-[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=15]
-[ext_resource path="res://Levels/Dumpster.png" type="Texture" id=16]
+[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Levels/building3.png" type="Texture" id=15]
+[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=16]
+[ext_resource path="res://Levels/Dumpster.png" type="Texture" id=17]
+[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=18]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -705.105, 1162.81 )
@@ -72,6 +74,7 @@ extents = Vector2( 69.9482, 42.9855 )
 [node name="Level3" type="Node2D"]
 
 [node name="Hotel Building" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 9286.83, 69.3613 )
 scale = Vector2( 0.15, 0.15 )
 __meta__ = {
@@ -94,6 +97,7 @@ shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="Grocerie Building 1" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2021.19, 275.251 )
 scale = Vector2( 0.15, 0.15 )
 __meta__ = {
@@ -120,6 +124,7 @@ position = Vector2( 1858.56, 1062.96 )
 shape = SubResource( 6 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
 
@@ -369,8 +374,7 @@ texture = ExtResource( 8 )
 shape = SubResource( 8 )
 
 [node name="Ninja" parent="." instance=ExtResource( 9 )]
-editor/display_folded = true
-position = Vector2( 17184.4, 161.995 )
+position = Vector2( 3185.24, 106.746 )
 
 [node name="Sprite" parent="Ninja" index="0"]
 position = Vector2( 33.4304, -21.825 )
@@ -461,6 +465,7 @@ rotation = 4.71239
 scale = Vector2( 2, 1 )
 
 [node name="SpikeTrap28" parent="." instance=ExtResource( 10 )]
+editor/display_folded = true
 position = Vector2( 18112.1, 903.488 )
 rotation = 4.71239
 scale = Vector2( 2, 1 )
@@ -530,6 +535,9 @@ position = Vector2( 4169.98, 12.2038 )
 motion = Vector2( 400, 0 )
 cycle = 5.0
 
+[node name="StarPickup" parent="MovingPlatform2" instance=ExtResource( 14 )]
+position = Vector2( 3.37646, -77.3813 )
+
 [node name="MovingPlatform3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 6817.93, -66.9584 )
 motion = Vector2( 0, 400 )
@@ -574,6 +582,7 @@ motion = Vector2( 0, 400 )
 cycle = 4.0
 
 [node name="MovingPlatform9" parent="." instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 17266.7, 635.81 )
 motion = Vector2( 400, 0 )
 cycle = 4.0
@@ -582,6 +591,7 @@ cycle = 4.0
 one_way_collision = true
 
 [node name="MovingPlatform10" parent="." instance=ExtResource( 13 )]
+editor/display_folded = true
 position = Vector2( 17272.1, 255.912 )
 motion = Vector2( 400, 0 )
 cycle = 3.0
@@ -607,7 +617,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Building 2"]
 scale = Vector2( 0.13, 0.13 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 
 [node name="Lower Section of house" type="CollisionShape2D" parent="Building 2"]
 position = Vector2( 2.40137, 84.0443 )
@@ -627,7 +637,7 @@ one_way_collision_margin = 128.0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 7691.7, -1242.63 )
-stream = ExtResource( 15 )
+stream = ExtResource( 16 )
 volume_db = -3.263
 max_distance = 1.56933e+09
 
@@ -640,7 +650,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Dumpster 1"]
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dumpster 1"]
 shape = SubResource( 14 )
@@ -683,7 +693,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Sewer Dumpster"]
 scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Dumpster"]
 shape = SubResource( 16 )
@@ -732,6 +742,12 @@ texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer Exit Right2"]
 shape = SubResource( 15 )
+
+[node name="BasicEnemy" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2190.55, -51.9844 )
+
+[node name="BasicEnemy2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2206.19, 207.759 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer/GUI" method="_on_Ninja_health_updated"]
 
 [editable path="CanvasLayer/GUI"]
