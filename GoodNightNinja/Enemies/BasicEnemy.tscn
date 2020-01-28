@@ -65,7 +65,7 @@ position = Vector2( 20, -90 )
 scale = Vector2( 0.342205, 0.32274 )
 frames = SubResource( 1 )
 animation = "attak"
-frame = 5
+frame = 3
 playing = true
 
 [node name="EnemyHitbox" type="CollisionShape2D" parent="."]
@@ -91,7 +91,7 @@ cast_to = Vector2( 0, 140 )
 collide_with_areas = true
 
 [node name="StrongPoint" type="RayCast2D" parent="."]
-position = Vector2( 100, -160 )
+position = Vector2( 50, -160 )
 enabled = true
 cast_to = Vector2( 0, 150 )
 collide_with_areas = true
