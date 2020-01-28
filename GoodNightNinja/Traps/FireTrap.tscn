@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Traps/FireArea.gd" type="Script" id=1]
-[ext_resource path="res://Traps/StationaryTrashFire/  bettertrashfire1.png" type="Texture" id=2]
-[ext_resource path="res://Traps/StationaryTrashFire/  bettertrashfire2.png" type="Texture" id=3]
-[ext_resource path="res://Traps/StationaryTrashFire/  bettertrashfire3.png" type="Texture" id=4]
+[ext_resource path="res://Traps/assets/StationaryTrashFire/  bettertrashfire1.png" type="Texture" id=2]
+[ext_resource path="res://Traps/assets/StationaryTrashFire/  bettertrashfire2.png" type="Texture" id=3]
+[ext_resource path="res://Traps/assets/StationaryTrashFire/  bettertrashfire3.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( -15, 0, 15, 0, 15, -10, 0, -17, -15, -10 )

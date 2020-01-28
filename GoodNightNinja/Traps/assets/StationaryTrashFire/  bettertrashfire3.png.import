@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TrashFire3.png-7cf2c2cfa7921d7ef052ee887ed807c1.stex"
+path="res://.import/  bettertrashfire3.png-6f3a5ef4e3bd27dbc2a578f61e864b05.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Traps/TrashFire/TrashFire3.png"
-dest_files=[ "res://.import/TrashFire3.png-7cf2c2cfa7921d7ef052ee887ed807c1.stex" ]
+source_file="res://Traps/assets/StationaryTrashFire/  bettertrashfire3.png"
+dest_files=[ "res://.import/  bettertrashfire3.png-6f3a5ef4e3bd27dbc2a578f61e864b05.stex" ]
 
 [params]
 

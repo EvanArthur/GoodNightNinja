@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Hotel.gd" type="Script" id=1]
+[ext_resource path="res://Buildings/Hotel.gd" type="Script" id=1]
 [ext_resource path="res://Buildings/assets/Hotel.png" type="Texture" id=2]
 [ext_resource path="res://Traps/NormalPlatform.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1758.88, 2825.19 )

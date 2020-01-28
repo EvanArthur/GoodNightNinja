@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/  bettertrashfire3.png-05a4a0e79712612b3007c1d2f4f695a7.stex"
+path="res://.import/floatingPlatform.png-7231bea344ec493a401968590970ba90.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Traps/StationaryTrashFire/  bettertrashfire3.png"
-dest_files=[ "res://.import/  bettertrashfire3.png-05a4a0e79712612b3007c1d2f4f695a7.stex" ]
+source_file="res://Traps/assets/floatingPlatform.png"
+dest_files=[ "res://.import/floatingPlatform.png-7231bea344ec493a401968590970ba90.stex" ]
 
 [params]
 
