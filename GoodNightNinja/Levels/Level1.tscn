@@ -171,21 +171,25 @@ motion = Vector2( 200, 0 )
 cycle = 5.0
 
 [node name="MovingPlatform4" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11233.1, -193.838 )
 motion = Vector2( 200, 0 )
 cycle = 4.0
 
 [node name="MovingPlatform5" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11724, -499.384 )
 motion = Vector2( 200, 0 )
 cycle = 5.0
 
 [node name="MovingPlatform6" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11047.7, -681.337 )
 motion = Vector2( 200, 0 )
 cycle = 6.0
 
 [node name="MovingPlatform7" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11718.4, -1028.57 )
 motion = Vector2( 200, 0 )
 cycle = 7.0
@@ -824,7 +828,10 @@ position = Vector2( 5484.97, 303.032 )
 position = Vector2( 3886.98, -654.709 )
 
 [node name="BasicEnemy3" parent="." instance=ExtResource( 18 )]
-position = Vector2( 9534.42, 595.083 )
+position = Vector2( 9531.83, 566.598 )
+
+[node name="BasicEnemy4" parent="." instance=ExtResource( 18 )]
+position = Vector2( 10174, 569.188 )
 
 [node name="BasicEnemy" parent="." instance=ExtResource( 18 )]
 position = Vector2( 3023.59, -456.236 )

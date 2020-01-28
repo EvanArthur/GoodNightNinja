@@ -36,5 +36,6 @@ func _physics_process(delta):
 
 
 func _on_Spikes_body_entered(body):
+	print("Should be damaging ninja")
 	if body.get_name() == "Ninja":
 		body.damage(30)
