@@ -32,6 +32,7 @@ var dying = false
 # health stuff here. Created by Will
 signal health_updated
 signal killed
+signal star_count_updated
 
 export var max_health = 100
 onready var health = max_health setget _set_health
@@ -95,10 +96,12 @@ func _shot_ninja_star():
 	
 func restore_ninja_stars():
 	star_count = 5
+	emit_signal("star_count_updated", star_count)
 
 func increment_ninja_stars():
 	star_count += 1
 	clamp(star_count, 0, 5)
+	emit_signal("star_count_updated", star_count)
 	
 
 func _integrate_forces(s):
@@ -147,6 +150,7 @@ func _integrate_forces(s):
 	if shoot and not shooting:
 		if star_count > 0:
 			star_count -= 1
+			emit_signal("star_count_updated", star_count)
 			$Sprite.play("shooting")
 			call_deferred("_shot_ninja_star")
 	else:
@@ -244,7 +248,7 @@ func _integrate_forces(s):
 	if $Baby.is_colliding():
 		if $Baby.get_collider().name == "DamageZone2" or $Baby.get_collider().name == "DamageZone":
 			print("here")
-			health=0 
+			call_deferred("damage", 100)
 	# Update siding
 	if new_siding_left != siding_left:
 		if new_siding_left:

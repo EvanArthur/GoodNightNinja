@@ -5,6 +5,7 @@ extends Control
 # var b = "text"
 onready var health_bar = $HBoxContainer/Bars/Bar/HealthBar
 onready var number_label = $HBoxContainer/Bars/Bar/Count/Background/Number
+onready var star_label = $HBoxContainer/Bars/StarCount/Count/Background/Number
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,12 +20,14 @@ func _on_Ninja_health_updated(health):
 	health_bar.value = health
 	number_label.text = str(health)
 	
-func on_max_health_updated(max_health):
+func _on_max_health_updated(max_health):
 	health_bar.max_value = max_health
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
+func _on_Ninja_star_count_updated(star_count):
+	star_label.text = str(star_count)
 
 func _on_Button_pressed():
 	get_tree().paused = true
@@ -41,6 +44,7 @@ func _on_ReturnButton_pressed():
 	get_tree().change_scene("res://StartScreen/MainMenu.tscn")
 	
 func _input(event):
-	if event.is_action_pressed("pause"):
-		get_tree().paused = true
-		$PausePopup.show()
+	#if event.is_action_pressed("pause"):
+	#	get_tree().paused = true
+	#	$PausePopup.show()
+	pass

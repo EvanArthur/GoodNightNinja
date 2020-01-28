@@ -14,7 +14,7 @@ var direction = 1
 var animation = ""
 var new_animation = ""
 
-var health = 1
+var health = 100
 var object = []
 var other = []
 
@@ -35,27 +35,32 @@ func _die():
 	queue_free()
 
 func _preDie():
-	$EnemyHitbox.queue_free()
+	$AnimatedSprite.play("ded")
+	mode = MODE_STATIC
 	rc_left.queue_free()
 	rc_right.queue_free()
 	weak_point.queue_free()
 	$CollisionShape2D.queue_free()
-	#property of RigidBody. Makes it stay in place
-	mode = MODE_STATIC
+	yield(get_tree().create_timer(1.2), "timeout")
+	$EnemyHitbox.queue_free()
+	call_deferred("_die")
 	
 	#play sound or death animation here
 	
 # called after hit with melee or ranged attack
 func _onHit():
-	health = health - 1
-	print(health)
-	if health <=0:
+	health = health - 50
+	if health == 0:
 		state = STATE_DYING
-		
 		set_friction(1000)
+		_preDie()
 
 	
 func _integrate_forces(s):
+	
+	if state == STATE_DYING:
+		return
+		
 	$RayCastLeft.add_exception($DamageZone)
 	$RayCastRight.add_exception($DamageZone)
 	$StrongPoint.add_exception($DamageZone)
@@ -73,12 +78,7 @@ func _integrate_forces(s):
 	var linVel = s.get_linear_velocity()
 	new_animation = animation
 
-	
-	if state == STATE_DYING:
-		new_animation = "ded"
-		call_deferred("_preDie")
-
-	elif state == STATE_WALKING:
+	if state == STATE_WALKING:
 		if direction >0:
 			forAtt.set_enabled(true)
 			backAtt.set_enabled(false)
@@ -105,34 +105,37 @@ func _integrate_forces(s):
 			$StrongPoint.position.x*=-1
 		
 		if $StrongPoint.is_colliding():
-			if $StrongPoint.get_collider().name =="Area2D":
+			if $StrongPoint.get_collider().name =="Ninja":
 				state=STATE_ATTACKING
 			else:
 				direction = -direction
-				$AnimatedSprite.flip_h=false
+				if $StrongPoint.position.x>0:
+					$AnimatedSprite.flip_h=true
+				else:
+					$AnimatedSprite.flip_h=false
 				weak_point.position.x*=-1
 				$StrongPoint.position.x*=-1
+				print($StrongPoint.get_collider().name)
 
 		if weak_point.is_colliding() and object.find(weak_point.get_collider())==-1:
-			print(weak_point.get_collider().name)
-			if weak_point.get_collider().name=="Area2D":
+			if weak_point.get_collider().name=="NinjaStar":
 				call_deferred("_onHit")
 			object.append(weak_point.get_collider())
 			
-		if direction<0:
-			var zone = $DamageZone.get_overlapping_bodies()
-			if not zone.empty():
-				var body = zone.front()
-				print(body,get_name())
-				if body.get_name() == "Area2D":
-					call_deferred("_onHit")
-		else:
-			var zone = $DamageZone2.get_overlapping_bodies()
-			if not zone.empty():
-				var body = zone.front()
-				print(body,get_name())
-				if body.get_name() == "Area2D":
-					call_deferred("_onHit")
+#		if direction<0:
+#			var zone = $DamageZone.get_overlapping_bodies()
+#			if not zone.empty():
+#				var body = zone.front()
+#				#print(body,get_name())
+#				if body.get_name() == "NinjaStar":
+#					call_deferred("_onHit")
+#		else:
+#			var zone = $DamageZone2.get_overlapping_bodies()
+#			if not zone.empty():
+#				var body = zone.front()
+#				#print(body,get_name())
+#				if body.get_name() == "NinjaStar":
+#					call_deferred("_onHit")
 		if forAtt.is_colliding():
 			if forAtt.get_collider().name=="Ninja":
 				state=STATE_ATTACKING
@@ -176,22 +179,26 @@ func _integrate_forces(s):
 				direction=-direction
 				$AnimatedSprite.flip_h=false
 				weak_point.position.x*=-1
+				$StrongPoint.position.x*+-1
 				$EnragedTimer.start()
 		if backAtt.is_colliding():
 			if backAtt.get_collider().name=="Ninja" and direction==1:
 				direction=-direction
 				$AnimatedSprite.flip_h=true
 				weak_point.position.x*=-1
+				$StrongPoint.position.x*+-1
 				$EnragedTimer.start()
 		if rc_right.is_colliding()==false and direction>0:
 			direction = -direction
 			$AnimatedSprite.flip_h=true
 			weak_point.position.x*=-1
+			$StrongPoint.position.x*+-1
 
 		elif rc_left.is_colliding()==false and direction<0:
 			direction = -direction
 			$AnimatedSprite.flip_h=false
 			weak_point.position.x*=-1
+			$StrongPoint.position.x*+-1
 
 		linear_velocity.x = direction * WALK_SPEED
 		
@@ -202,3 +209,14 @@ func _integrate_forces(s):
 func _on_AnimatedSprite_animation_finished():
 	return true
 	
+
+
+func _on_DamageZone_body_entered(body):
+	if body.get_name() == "NinjaStar":
+		_onHit()
+
+
+func _on_DamageZone2_body_entered(body):
+	pass
+#	if body.get_name() == "NinjaStar":
+#		_onHit()
