@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/ledge1.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1045.03, 10 )
@@ -57,6 +58,9 @@ position = Vector2( -244.531, 505.363 )
 
 [node name="HealthPotion" parent="." instance=ExtResource( 9 )]
 position = Vector2( -429.287, 510.797 )
+
+[node name="FireTrap" parent="." instance=ExtResource( 10 )]
+position = Vector2( 472.759, 206.493 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 
