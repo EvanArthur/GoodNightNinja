@@ -43,13 +43,10 @@ func damage(amount):
 		invulnerability_timer.start()
 		_set_health(health - amount)
 
-func _die():
-	queue_free()
-	
 func _preDie():
 	$NinjaArea.queue_free()
 	$IdleCollision.queue_free()
-	_die()
+	queue_free()
 	
 #despawn character and go to respawn screen
 func _kill():
@@ -105,8 +102,6 @@ func increment_ninja_stars():
 	
 
 func _integrate_forces(s):
-	if dying:
-		return
 	var lv = s.get_linear_velocity()
 	var step = s.get_step()
 	
@@ -119,7 +114,10 @@ func _integrate_forces(s):
 	var jump = Input.is_action_pressed("ui_up")
 	var shoot = Input.is_action_pressed("ui_select")
 	var spawn = Input.is_action_pressed("spawn")
-	
+	if dying:
+		lv.x = 0
+		lv.y = 0
+		return
 	if spawn:
 #		var e = Enemy.instance()
 		var p = position
