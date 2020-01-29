@@ -1,14 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Traps/SpikeTrap.gd" type="Script" id=1]
-[ext_resource path="res://Levels/ledge1.png" type="Texture" id=2]
-[ext_resource path="res://Traps/shittyspikes.png" type="Texture" id=3]
+[ext_resource path="res://Traps/spikes.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 193.862, 16.5343 )
+extents = Vector2( 199.534, 8.68391 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 192.809, 10 )
+extents = Vector2( 193.218, 20.2629 )
 
 [node name="SpikeTrap" type="Node2D"]
 script = ExtResource( 1 )
@@ -22,10 +21,9 @@ one_shot = true
 
 [node name="BottomPlatform" type="CollisionShape2D" parent="SpikeTrap"]
 shape = SubResource( 1 )
-one_way_collision = true
 
 [node name="Platform" type="Sprite" parent="SpikeTrap/BottomPlatform"]
-position = Vector2( 1.28185, 0.0443726 )
+position = Vector2( 0, -15 )
 scale = Vector2( 0.371471, 0.28901 )
 texture = ExtResource( 2 )
 
@@ -33,10 +31,6 @@ texture = ExtResource( 2 )
 position = Vector2( 0, -37.8948 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeTrap/BottomPlatform/Spikes"]
-position = Vector2( 1.05261, 0 )
+position = Vector2( -6.34193e-005, 5.26316 )
 shape = SubResource( 2 )
-
-[node name="Spikes" type="Sprite" parent="SpikeTrap/BottomPlatform/Spikes"]
-position = Vector2( 3.68417, -9.47371 )
-scale = Vector2( 0.787368, 0.578947 )
-texture = ExtResource( 3 )
+[connection signal="body_entered" from="SpikeTrap/BottomPlatform/Spikes" to="." method="_on_Spikes_body_entered"]
