@@ -16,14 +16,14 @@
 [ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=15]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 652.422, 357.59 )
 
-[sub_resource type="SegmentShape2D" id=1]
+[sub_resource type="SegmentShape2D" id=2]
 a = Vector2( -1683.73, -1099.33 )
 b = Vector2( 1683.29, -1099.93 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 517.522, 57.0608 )
 
 [node name="Level4" type="Node2D"]
@@ -46,7 +46,7 @@ position = Vector2( 3.3623, 386.521 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ApartmentBuilding/StaticBody2D" index="1"]
 position = Vector2( 1694.77, -2013.32 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="Cinema" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
@@ -55,7 +55,7 @@ scale = Vector2( 0.5, 0.5 )
 full_collide = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cinema/StaticBody2D" index="1"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StarPickup" parent="Cinema" instance=ExtResource( 5 )]
 position = Vector2( -3866.4, 67.09 )
@@ -95,7 +95,7 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 197.563, -1289.97 )
 
 [node name="Ninja" parent="." instance=ExtResource( 10 )]
-position = Vector2( 27630.9, 585.153 )
+position = Vector2( 8646.4, -162.513 )
 
 [node name="LevelFinish" parent="." instance=ExtResource( 11 )]
 position = Vector2( 27798, -548.879 )
@@ -112,7 +112,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -126,7 +126,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor3" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -140,7 +140,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor4" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -154,7 +154,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor5" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -168,7 +168,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor5"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor6" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -182,7 +182,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor6"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor7" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -196,7 +196,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor7"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor8" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -210,7 +210,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor8"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor9" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -224,7 +224,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor9"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor10" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -238,7 +238,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor10"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor11" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -252,7 +252,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor11"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor12" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -266,7 +266,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor12"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor13" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -280,7 +280,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor13"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor14" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -294,7 +294,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor14"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor15" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -308,7 +308,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor15"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor16" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -322,7 +322,7 @@ __meta__ = {
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor16"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="SpikeTrap" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1344.84, 635.65 )
@@ -396,9 +396,21 @@ position = Vector2( 10088.7, -7.24142 )
 motion = Vector2( 400, 0 )
 cycle = 4.0
 
+[node name="MovingPlatform11" parent="." instance=ExtResource( 14 )]
+editor/display_folded = true
+position = Vector2( 10995.9, -5.09905 )
+motion = Vector2( 300, 0 )
+cycle = 4.0
+
+[node name="MovingPlatform15" parent="." instance=ExtResource( 14 )]
+editor/display_folded = true
+position = Vector2( 11632.1, 8.4383 )
+motion = Vector2( 0, 500 )
+cycle = 4.0
+
 [node name="MovingPlatform6" parent="." instance=ExtResource( 14 )]
 editor/display_folded = true
-position = Vector2( 16700.9, -493.264 )
+position = Vector2( 16698.3, -532.956 )
 motion = Vector2( 0, 400 )
 cycle = 4.5
 
@@ -416,6 +428,16 @@ cycle = 4.25
 [node name="MovingPlatform12" parent="." instance=ExtResource( 14 )]
 position = Vector2( 26079.8, -405.143 )
 motion = Vector2( 0, 800 )
+cycle = 6.0
+
+[node name="MovingPlatform13" parent="." instance=ExtResource( 14 )]
+position = Vector2( 30704.4, -339.97 )
+motion = Vector2( 400, 0 )
+cycle = 6.0
+
+[node name="MovingPlatform14" parent="." instance=ExtResource( 14 )]
+position = Vector2( 31564.3, -57.0993 )
+motion = Vector2( 0, 500 )
 cycle = 6.0
 
 [node name="MovingPlatform10" parent="." instance=ExtResource( 14 )]
@@ -495,7 +517,7 @@ motion = Vector2( 200, 0 )
 cycle = 1.5
 
 [node name="SpikeTrap4" parent="ApartmentBuilding2" instance=ExtResource( 13 )]
-position = Vector2( 27240.7, -1177.52 )
+position = Vector2( 27240.7, -1145.51 )
 rotation = -1.5708
 scale = Vector2( 2.5, 2.5 )
 motion = Vector2( 400, 0 )
@@ -589,7 +611,7 @@ cycle = 2.0
 position = Vector2( 40606.7, -2973.56 )
 scale = Vector2( 2.5, 2.5 )
 motion = Vector2( 400, 0 )
-cycle = 1.75
+cycle = 3.0
 
 [node name="SpikeTrap19" parent="ApartmentBuilding2" instance=ExtResource( 13 )]
 position = Vector2( 47185.7, -2557.59 )
@@ -610,6 +632,12 @@ cycle = 1.75
 
 [node name="SpikeTrap22" parent="ApartmentBuilding2" instance=ExtResource( 13 )]
 position = Vector2( 54257.2, 2411.01 )
+scale = Vector2( 2.5, 2.5 )
+motion = Vector2( 300, 0 )
+cycle = 5.0
+
+[node name="SpikeTrap23" parent="ApartmentBuilding2" instance=ExtResource( 13 )]
+position = Vector2( 63269.5, 2409.65 )
 scale = Vector2( 2.5, 2.5 )
 motion = Vector2( 300, 0 )
 cycle = 5.0
@@ -673,12 +701,6 @@ position = Vector2( 20852.2, -1409.78 )
 [node name="BasicEnemy7" parent="." instance=ExtResource( 9 )]
 position = Vector2( 25057.9, -1159.28 )
 
-[node name="BasicEnemy8" parent="." instance=ExtResource( 9 )]
-position = Vector2( 29389.8, 589.555 )
-
-[node name="BasicEnemy9" parent="." instance=ExtResource( 9 )]
-position = Vector2( 28160.1, -49.5125 )
-
 [node name="StarPickup2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 8655.27, -100.442 )
 
@@ -690,6 +712,12 @@ position = Vector2( 26486.8, 546.16 )
 
 [node name="StarPickup4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 29126.3, -275.664 )
+
+[node name="BasicEnemy" parent="." instance=ExtResource( 9 )]
+position = Vector2( 28178.6, -104.771 )
+
+[node name="BasicEnemy2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 28686.3, 586.568 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="killed" from="Ninja" to="CanvasLayer" method="_on_Ninja_killed"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
