@@ -216,15 +216,9 @@ func _integrate_forces(s):
 		if jumping:
 			new_anim = "jumping"
 		elif abs(lv.x) < 0.1:
-			if shoot_time < MAX_SHOOT_POSE_TIME:
-				new_anim = "idle_weapon"
-			else:
-				new_anim = "idle"
+			new_anim = "idle"
 		else:
-			if shoot_time < MAX_SHOOT_POSE_TIME:
-				new_anim = "run_weapon"
-			else:
-				new_anim = "run"
+			new_anim = "run"
 	else:
 		# Process logic when the character is in the air
 		if move_left and not move_right:
@@ -237,17 +231,11 @@ func _integrate_forces(s):
 			lv.x = 0
 		
 		if lv.y < 0:
-			if shoot_time < MAX_SHOOT_POSE_TIME:
-				new_anim = "jumping_weapon"
-			else:
-				new_anim = "jumping"
+			new_anim = "jumping"
 		else:
 			if fall_time == 0:
 				fall_time = OS.get_ticks_msec()
-			if shoot_time < MAX_SHOOT_POSE_TIME:
-				new_anim = "falling_weapon"
-			else:
-				new_anim = "falling"
+			new_anim = "falling"
 	if $Baby.is_colliding():
 		if $Baby.get_collider().name == "DamageZone2":
 			damage(100)
