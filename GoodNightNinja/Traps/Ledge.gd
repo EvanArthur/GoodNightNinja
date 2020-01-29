@@ -9,9 +9,9 @@ export var one_way_collision = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if one_way_collision:
-		$NormalPlatform.one_way_collsion = true
+		$NormalPlatform/StaticBody2D/CollisionShape2D.one_way_collision = true
 	else:
-		$NormalPlatform.one_way_collision = false
+		$NormalPlatform/StaticBody2D/CollisionShape2D.one_way_collision = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
