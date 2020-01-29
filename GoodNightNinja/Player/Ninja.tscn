@@ -6,20 +6,20 @@
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle2.png" type="Texture" id=4]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle3.png" type="Texture" id=5]
 [ext_resource path="res://Player/NinjaIdleSequence/NinjaIdle4.png" type="Texture" id=6]
-[ext_resource path="res://Player/NinjaDieSequence/NinjaDie1.png" type="Texture" id=7]
-[ext_resource path="res://Player/NinjaDieSequence/NinjaDie2.png" type="Texture" id=8]
-[ext_resource path="res://Player/NinjaDieSequence/NinjaDie3.png" type="Texture" id=9]
-[ext_resource path="res://Player/NinjaDieSequence/NinjaDie4.png" type="Texture" id=10]
-[ext_resource path="res://Player/NinjaDieSequence/NinjaDie5.png" type="Texture" id=11]
-[ext_resource path="res://Player/NinjaJumping.png" type="Texture" id=12]
-[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow1.png" type="Texture" id=13]
-[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow2.png" type="Texture" id=14]
-[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow3.png" type="Texture" id=15]
-[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow4.png" type="Texture" id=16]
-[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow5 .png" type="Texture" id=17]
-[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow6.png" type="Texture" id=18]
-[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow7.png" type="Texture" id=19]
-[ext_resource path="res://Player/NinjaDamage.png" type="Texture" id=20]
+[ext_resource path="res://Player/NinjaDamage.png" type="Texture" id=7]
+[ext_resource path="res://Player/NinjaJumping.png" type="Texture" id=8]
+[ext_resource path="res://Player/NinjaDieSequence/NinjaDie1.png" type="Texture" id=9]
+[ext_resource path="res://Player/NinjaDieSequence/NinjaDie2.png" type="Texture" id=10]
+[ext_resource path="res://Player/NinjaDieSequence/NinjaDie3.png" type="Texture" id=11]
+[ext_resource path="res://Player/NinjaDieSequence/NinjaDie4.png" type="Texture" id=12]
+[ext_resource path="res://Player/NinjaDieSequence/NinjaDie5.png" type="Texture" id=13]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow1.png" type="Texture" id=14]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow2.png" type="Texture" id=15]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow3.png" type="Texture" id=16]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow4.png" type="Texture" id=17]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow5 .png" type="Texture" id=18]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow6.png" type="Texture" id=19]
+[ext_resource path="res://Player/NinjaThrowSequence/NinjaThrow7.png" type="Texture" id=20]
 [ext_resource path="res://Player/NinjaFalling.png" type="Texture" id=21]
 [ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard1.png" type="Texture" id=22]
 [ext_resource path="res://Player/ninjaRunningsequence/NinjaRunArtboard2.png" type="Texture" id=23]
@@ -41,25 +41,25 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": false,
-"name": "dying",
+"frames": [ ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "damage",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "jumping",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "dying",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": false,
 "name": "shooting",
 "speed": 60.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "damage",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 21 ) ],
 "loop": true,
