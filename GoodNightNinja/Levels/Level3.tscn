@@ -351,8 +351,20 @@ scale = Vector2( 0.7, 1 )
 position = Vector2( 16134.8, 576.707 )
 scale = Vector2( 0.7, 1 )
 
+[node name="SpikeTrap31" parent="." instance=ExtResource( 5 )]
+position = Vector2( 17275.6, 495.847 )
+scale = Vector2( 0.7, 1 )
+motion = Vector2( 400, 0 )
+cycle = 3.0
+
+[node name="BottomPlatform" parent="SpikeTrap31/SpikeTrap" index="1"]
+one_way_collision = true
+
+[node name="CollisionShape2D" parent="SpikeTrap31/SpikeTrap/BottomPlatform/Spikes" index="0"]
+one_way_collision = true
+
 [node name="LevelFinish" parent="." instance=ExtResource( 6 )]
-position = Vector2( 16972.3, -1002.45 )
+position = Vector2( 17665.7, -490.366 )
 
 [node name="HealthPotion" parent="." instance=ExtResource( 7 )]
 position = Vector2( 5555.08, 461.589 )
@@ -425,8 +437,7 @@ motion = Vector2( 0, 400 )
 cycle = 4.0
 
 [node name="MovingPlatform9" parent="." instance=ExtResource( 8 )]
-editor/display_folded = true
-position = Vector2( 17266.7, 635.81 )
+position = Vector2( 17284, 725.217 )
 motion = Vector2( 400, 0 )
 cycle = 4.0
 
@@ -434,11 +445,23 @@ cycle = 4.0
 one_way_collision = true
 
 [node name="MovingPlatform10" parent="." instance=ExtResource( 8 )]
-position = Vector2( 16511.4, 1062.06 )
+position = Vector2( 17270.7, 175.992 )
 motion = Vector2( 400, 0 )
 cycle = 5.0
 
 [node name="CollisionShape2D" parent="MovingPlatform10/Platform" index="1"]
+one_way_collision = true
+
+[node name="MovingPlatform14" parent="." instance=ExtResource( 8 )]
+position = Vector2( 17687.8, -109.222 )
+cycle = 5.0
+
+[node name="MovingPlatform13" parent="." instance=ExtResource( 8 )]
+position = Vector2( 17289.9, 387.32 )
+motion = Vector2( 400, 0 )
+cycle = 4.0
+
+[node name="CollisionShape2D" parent="MovingPlatform13/Platform" index="1"]
 one_way_collision = true
 
 [node name="House" parent="." instance=ExtResource( 9 )]
@@ -536,7 +559,7 @@ texture = ExtResource( 4 )
 shape = SubResource( 5 )
 
 [node name="Ninja" parent="." instance=ExtResource( 12 )]
-position = Vector2( 13675.5, 281.727 )
+position = Vector2( 17256.9, 1197.67 )
 
 [node name="Sprite" parent="Ninja" index="0"]
 position = Vector2( 33.4304, -21.825 )
@@ -549,6 +572,8 @@ position = Vector2( 33.4304, -21.825 )
 
 [editable path="SpikeTrap28"]
 
+[editable path="SpikeTrap31"]
+
 [editable path="MovingPlatform"]
 
 [editable path="MovingPlatform8"]
@@ -556,5 +581,9 @@ position = Vector2( 33.4304, -21.825 )
 [editable path="MovingPlatform9"]
 
 [editable path="MovingPlatform10"]
+
+[editable path="MovingPlatform13"]
+
+[editable path="House"]
 
 [editable path="Ninja"]
