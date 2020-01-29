@@ -4,7 +4,6 @@
 [ext_resource path="res://Traps/NormalPlatform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Traps/assets/ledge1.png" type="Texture" id=3]
 
-
 [node name="Ledge" type="Node2D"]
 script = ExtResource( 1 )
 

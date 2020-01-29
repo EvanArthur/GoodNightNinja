@@ -43,7 +43,6 @@ scale = Vector2( 0.6, 0.6 )
 full_collide = true
 
 [node name="ApartmentBuilding" parent="." instance=ExtResource( 3 )]
-editor/display_folded = true
 position = Vector2( 3501.61, -30.9941 )
 scale = Vector2( 0.25, 0.25 )
 
@@ -53,6 +52,10 @@ scale = Vector2( 4, 4 )
 
 [node name="StarPickup" parent="ApartmentBuilding" instance=ExtResource( 5 )]
 position = Vector2( 1541.47, -2494.86 )
+scale = Vector2( 4, 4 )
+
+[node name="StarPickup2" parent="ApartmentBuilding" instance=ExtResource( 5 )]
+position = Vector2( 18939.8, 2323.45 )
 scale = Vector2( 4, 4 )
 
 [node name="Floor" parent="." instance=ExtResource( 6 )]
