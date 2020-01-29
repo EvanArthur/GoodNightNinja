@@ -47,7 +47,7 @@ func _die():
 	queue_free()
 	
 func _preDie():
-	$NinjaArea.queue_free()
+	#$NinjaArea.queue_free()
 	$IdleCollision.queue_free()
 	
 #despawn character and go to respawn screen
@@ -163,9 +163,10 @@ func _integrate_forces(s):
 		airborne_time = 0.0
 		if fall_time > 0:
 			var fall_length = int(OS.get_ticks_msec()) - fall_time
-			if fall_length > 1500:
+			if fall_length > 1300:
 				took_damage = true
-				damage( floor((fall_length - 1500) * .03))
+				print("Fall damage")
+				damage( floor((fall_length - 1250) * .07))
 			fall_time = 0
 			
 	else:
