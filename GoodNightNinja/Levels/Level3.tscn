@@ -357,7 +357,7 @@ position = Vector2( 7691.7, -1242.63 )
 stream = ExtResource( 14 )
 volume_db = -3.263
 autoplay = true
-max_distance = 1.56933e+009
+max_distance = 1.56933e+09
 
 [node name="Dumpster" parent="." instance=ExtResource( 5 )]
 position = Vector2( 13682.6, 480.977 )
