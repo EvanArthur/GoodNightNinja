@@ -39,23 +39,23 @@ text = "Storyline:"
 [node name="Storyline" type="Label" parent="Tutorial"]
 margin_top = 75.0
 margin_right = 784.0
-margin_bottom = 150.0
+margin_bottom = 176.0
 custom_fonts/font = SubResource( 2 )
-text = "Welcome to Single Dad Ninja. You, a single dad, are tasked with returning your baby home through a dangerous city filled with enemies! Protect your child from the everlasting dangers of the night and get them to the nursery as quick as possible!"
+text = "Welcome to Single Dad Ninja. You, a single dad, are tasked with returning your baby home through a dangerous city filled with enemies! Protect your child from the everlasting dangers of the night and get them to the nursery as quick as possible! But be careful - if your baby takes any damage you will die immediately!"
 valign = 1
 autowrap = true
 
 [node name="Controls" type="Label" parent="Tutorial"]
-margin_top = 154.0
+margin_top = 180.0
 margin_right = 784.0
-margin_bottom = 225.0
+margin_bottom = 251.0
 custom_fonts/font = SubResource( 1 )
 text = "Controls:"
 
 [node name="ControlsText" type="Label" parent="Tutorial"]
-margin_top = 229.0
+margin_top = 255.0
 margin_right = 784.0
-margin_bottom = 408.0
+margin_bottom = 434.0
 custom_fonts/font = SubResource( 2 )
 text = "Move left: Left Arrow
 Move right: Right Arrow
@@ -68,9 +68,9 @@ valign = 1
 autowrap = true
 
 [node name="ReturnButton" type="MenuButton" parent="Tutorial"]
-margin_top = 412.0
+margin_top = 438.0
 margin_right = 784.0
-margin_bottom = 475.0
+margin_bottom = 501.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
 text = "Return to Menu"
