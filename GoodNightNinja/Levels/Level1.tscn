@@ -330,12 +330,11 @@ scale = Vector2( 2, 2 )
 [node name="StaticBody2D7" type="StaticBody2D" parent="."]
 
 [node name="MovingPlatform12" parent="." instance=ExtResource( 9 )]
-editor/display_folded = true
 position = Vector2( 10847.1, -1315.9 )
 scale = Vector2( 2.5, 3 )
 
 [node name="LevelFinish" parent="MovingPlatform12" instance=ExtResource( 17 )]
-position = Vector2( -86.9888, -109.209 )
+position = Vector2( -85.6392, -66.3671 )
 scale = Vector2( 0.4, 0.2 )
 
 [node name="Nursery" parent="MovingPlatform12" instance=ExtResource( 18 )]
@@ -400,7 +399,7 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="Finish" parent="." instance=ExtResource( 22 )]
-position = Vector2( 10456.7, -1850 )
+position = Vector2( 10640, -1697 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 

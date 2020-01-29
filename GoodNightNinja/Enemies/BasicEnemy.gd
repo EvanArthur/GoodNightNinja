@@ -17,16 +17,13 @@ var new_animation = ""
 var health = 1
 var object = []
 var other = []
-var attacking=false
+
 
 onready var rc_left = $RayCastLeft
 onready var rc_right = $RayCastRight
 onready var weak_point = $WeakPoint
 onready var forAtt=$AttackZoneF
 onready var backAtt=$AttackZoneB
-
-var star = preload("res://Player/NinjaStar.gd")
-var player = preload("res://Player/Ninja.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -257,9 +254,4 @@ func _integrate_forces(s):
 	if animation != new_animation:
 		animation = new_animation
 		$AnimatedSprite.play(animation)
-
-func _on_AnimatedSprite_animation_finished():
-	return true
-	
-
 
