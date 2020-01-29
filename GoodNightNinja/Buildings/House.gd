@@ -8,9 +8,9 @@ export var full_collide = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if full_collide:
-		$StaticBody2D/CollisionPolygon2D.set_disabled(false)
+		$StaticBody2D/HouseInside.set_disabled(false)
 	else:
-		$StaticBody2D/CollisionPolygon2D.set_disabled(true)
+		$StaticBody2D/HouseInside.set_disabled(true)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
