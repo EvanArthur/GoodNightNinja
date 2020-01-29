@@ -57,7 +57,6 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="Outside" type="Sprite" parent="."]
-visible = false
 position = Vector2( -0.687676, 0.55093 )
 scale = Vector2( 0.152173, 0.15187 )
 z_index = 3
