@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Buildings/ApartmentBuilding.gd" type="Script" id=1]
 [ext_resource path="res://Buildings/assets/ApartmentBuilding.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3809.76, 2001.3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 645.722, 332.593 )
 
 [node name="ApartmentBuilding" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,6 +21,15 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 3.3623, 430.147 )
 shape = SubResource( 1 )
+
+[node name="TopBuildling" type="StaticBody2D" parent="."]
+position = Vector2( 1691.83, -2026.58 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBuildling"]
+shape = SubResource( 2 )
 
 [node name="NormalPlatform" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1703.74, -2400.85 )
