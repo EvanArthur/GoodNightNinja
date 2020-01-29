@@ -1,22 +1,26 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Traps/Floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Buildings/GroceryStore.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Buildings/Dumpster.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Buildings/Express.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Buildings/Hotel.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Buildings/House.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=14]
-[ext_resource path="res://Traps/Ledge.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Buildings/Skyscraper.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Buildings/Express.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Buildings/Hotel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Buildings/ContinueSign.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Buildings/House.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=16]
+[ext_resource path="res://Traps/Ledge.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=18]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 105.195, 5778.46 )
 
 [node name="Level3" type="Node2D"]
 
@@ -185,7 +189,17 @@ scale = Vector2( 0.25, 0.25 )
 position = Vector2( -560.445, -2484.14 )
 scale = Vector2( 0.25, 0.25 )
 
-[node name="Express" parent="." instance=ExtResource( 6 )]
+[node name="Skyscraper" parent="." instance=ExtResource( 6 )]
+position = Vector2( 18669.5, -331.955 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Skyscraper"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skyscraper/StaticBody2D2"]
+position = Vector2( 1965.18, -2213.04 )
+shape = SubResource( 1 )
+
+[node name="Express" parent="." instance=ExtResource( 7 )]
 editor/display_folded = true
 position = Vector2( 822.492, 286.282 )
 scale = Vector2( 0.1, 0.1 )
@@ -194,11 +208,11 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( -2817.37, 2067.59 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="BasicEnemy8" parent="Express" instance=ExtResource( 7 )]
+[node name="BasicEnemy8" parent="Express" instance=ExtResource( 8 )]
 position = Vector2( 5986.11, 2667.16 )
 scale = Vector2( 10, 10 )
 
-[node name="Hotel" parent="." instance=ExtResource( 8 )]
+[node name="Hotel" parent="." instance=ExtResource( 9 )]
 position = Vector2( 9286.83, 69.3613 )
 scale = Vector2( 0.15, 0.15 )
 
@@ -207,11 +221,11 @@ editor/display_folded = true
 position = Vector2( 2021.19, 275.251 )
 scale = Vector2( 0.15, 0.15 )
 
-[node name="BasicEnemy" parent="GroceryStore" instance=ExtResource( 7 )]
+[node name="BasicEnemy" parent="GroceryStore" instance=ExtResource( 8 )]
 position = Vector2( 1067.4, -2176.71 )
 scale = Vector2( 6.66667, 6.66667 )
 
-[node name="BasicEnemy2" parent="GroceryStore" instance=ExtResource( 7 )]
+[node name="BasicEnemy2" parent="GroceryStore" instance=ExtResource( 8 )]
 position = Vector2( 1220, -450.82 )
 scale = Vector2( 6.66667, 6.66667 )
 
@@ -236,22 +250,25 @@ one_way_collision = true
 [node name="CollisionShape2D" parent="SpikeTrap31/SpikeTrap/BottomPlatform/Spikes" index="0"]
 one_way_collision = true
 
-[node name="LevelFinish" parent="." instance=ExtResource( 9 )]
-position = Vector2( 17665.7, -490.366 )
+[node name="ContinueSign" parent="." instance=ExtResource( 10 )]
+position = Vector2( 18953.7, -1450.82 )
 
-[node name="HealthPotion" parent="." instance=ExtResource( 10 )]
+[node name="LevelFinish" parent="." instance=ExtResource( 11 )]
+position = Vector2( 19033.4, -1464.1 )
+
+[node name="HealthPotion" parent="." instance=ExtResource( 12 )]
 position = Vector2( 5555.08, 461.589 )
 
-[node name="HealthPotion2" parent="." instance=ExtResource( 10 )]
+[node name="HealthPotion2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 13025.8, 462.164 )
 
-[node name="HealthPotion3" parent="." instance=ExtResource( 10 )]
+[node name="HealthPotion3" parent="." instance=ExtResource( 12 )]
 position = Vector2( 16438, 1215.22 )
 
-[node name="HealthPotion4" parent="." instance=ExtResource( 10 )]
+[node name="HealthPotion4" parent="." instance=ExtResource( 12 )]
 position = Vector2( 17259.7, 639.941 )
 
-[node name="MovingPlatform" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform" parent="." instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 3168.2, 249.203 )
 motion = Vector2( 400, 0 )
@@ -267,12 +284,12 @@ position = Vector2( 0.637207, 0.574585 )
 position = Vector2( 1.33093, -2.44266 )
 one_way_collision = true
 
-[node name="MovingPlatform2" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform2" parent="." instance=ExtResource( 13 )]
 position = Vector2( 4169.98, 12.2038 )
 motion = Vector2( 400, 0 )
 cycle = 5.0
 
-[node name="MovingPlatform15" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform15" parent="." instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 4947.03, 314.39 )
 cycle = 5.0
@@ -281,80 +298,86 @@ cycle = 5.0
 position = Vector2( -59.0781, -90.8833 )
 scale = Vector2( 0.05, 0.05 )
 
-[node name="MovingPlatform3" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 6817.93, -66.9584 )
 motion = Vector2( 0, 400 )
 cycle = 5.0
 one_way_collision = true
 
-[node name="MovingPlatform4" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform4" parent="." instance=ExtResource( 13 )]
 position = Vector2( 7653.96, -292.383 )
 motion = Vector2( 400, 0 )
 cycle = 5.0
 
-[node name="MovingPlatform5" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform5" parent="." instance=ExtResource( 13 )]
 position = Vector2( 8578.98, -255.217 )
 motion = Vector2( 0, 400 )
 cycle = 5.0
 
-[node name="MovingPlatform6" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform6" parent="." instance=ExtResource( 13 )]
 position = Vector2( 9877.78, 77.1876 )
 motion = Vector2( 0, 150 )
 cycle = 3.0
 
-[node name="MovingPlatform7" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform7" parent="." instance=ExtResource( 13 )]
 position = Vector2( 10766.3, 86.2859 )
 motion = Vector2( -300, 100 )
 cycle = 3.0
 
-[node name="MovingPlatform8" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform8" parent="." instance=ExtResource( 13 )]
 position = Vector2( 17272.3, 974.236 )
 motion = Vector2( 400, 0 )
 cycle = 1.5
 one_way_collision = true
 
-[node name="MovingPlatform11" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform11" parent="." instance=ExtResource( 13 )]
 position = Vector2( 14680.4, 369.418 )
 motion = Vector2( 400, 0 )
 cycle = 4.0
 
-[node name="MovingPlatform12" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform12" parent="." instance=ExtResource( 13 )]
 position = Vector2( 15525.7, 56.8864 )
 motion = Vector2( 0, 400 )
 cycle = 4.0
 
-[node name="StarPickup4" parent="MovingPlatform12" instance=ExtResource( 12 )]
+[node name="StarPickup4" parent="MovingPlatform12" instance=ExtResource( 14 )]
 position = Vector2( -1.02637, -99.3052 )
 
-[node name="MovingPlatform9" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform9" parent="." instance=ExtResource( 13 )]
 position = Vector2( 17284, 725.217 )
 motion = Vector2( 400, 0 )
 cycle = 4.0
 one_way_collision = true
 
-[node name="MovingPlatform10" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform10" parent="." instance=ExtResource( 13 )]
 position = Vector2( 17270.7, 175.992 )
 motion = Vector2( 400, 0 )
 cycle = 5.0
 one_way_collision = true
 
-[node name="MovingPlatform14" parent="." instance=ExtResource( 11 )]
+[node name="MovingPlatform14" parent="." instance=ExtResource( 13 )]
 position = Vector2( 17687.8, -109.222 )
 cycle = 5.0
 
-[node name="MovingPlatform13" parent="." instance=ExtResource( 11 )]
+[node name="BasicEnemy" parent="MovingPlatform14" instance=ExtResource( 8 )]
+position = Vector2( 618.184, 11.9994 )
+
+[node name="BasicEnemy2" parent="MovingPlatform14" instance=ExtResource( 8 )]
+position = Vector2( 927.271, -587.634 )
+
+[node name="MovingPlatform13" parent="." instance=ExtResource( 13 )]
 position = Vector2( 17289.9, 387.32 )
 motion = Vector2( 400, 0 )
 cycle = 4.0
 one_way_collision = true
 
-[node name="House" parent="." instance=ExtResource( 13 )]
+[node name="House" parent="." instance=ExtResource( 15 )]
 position = Vector2( 6155.84, 146.854 )
 scale = Vector2( 0.13, 0.13 )
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 7691.7, -1242.63 )
-stream = ExtResource( 14 )
+stream = ExtResource( 16 )
 volume_db = -3.263
 autoplay = true
 max_distance = 1.56933e+09
@@ -363,12 +386,12 @@ max_distance = 1.56933e+09
 position = Vector2( 13682.6, 480.977 )
 scale = Vector2( 0.07, 0.07 )
 
-[node name="Ledge" parent="." instance=ExtResource( 15 )]
+[node name="Ledge" parent="." instance=ExtResource( 17 )]
 position = Vector2( 13934.9, 960.344 )
 rotation = 1.5708
 scale = Vector2( 0.75, 1 )
 
-[node name="Ledge2" parent="." instance=ExtResource( 15 )]
+[node name="Ledge2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 14507.2, 763.248 )
 rotation = 1.5708
 scale = Vector2( 0.3, 1 )
@@ -377,7 +400,7 @@ scale = Vector2( 0.3, 1 )
 position = Vector2( 14972.7, 1214.01 )
 scale = Vector2( 0.05, 0.05 )
 
-[node name="Ledge3" parent="." instance=ExtResource( 15 )]
+[node name="Ledge3" parent="." instance=ExtResource( 17 )]
 position = Vector2( 16467.9, 771.927 )
 rotation = 1.5708
 scale = Vector2( 0.3, 1 )
@@ -386,47 +409,44 @@ scale = Vector2( 0.3, 1 )
 position = Vector2( -28.3379, -53.8613 )
 scale = Vector2( 2.33333, 1 )
 
-[node name="TallBuilding" parent="." instance=ExtResource( 16 )]
-position = Vector2( 18518.9, -582.136 )
-
 [node name="Floor4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 19809.5, 603.888 )
 scale = Vector2( 6, 1 )
 z_index = 1
 
-[node name="Ledge4" parent="." instance=ExtResource( 15 )]
+[node name="Ledge4" parent="." instance=ExtResource( 17 )]
 position = Vector2( 18200.9, 944.629 )
 rotation = 1.5708
 scale = Vector2( 0.7, 1 )
 
-[node name="BasicEnemy3" parent="." instance=ExtResource( 7 )]
+[node name="BasicEnemy3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 5649.01, 565.011 )
 
-[node name="BasicEnemy4" parent="." instance=ExtResource( 7 )]
+[node name="BasicEnemy4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 9407.85, -289.358 )
 
-[node name="BasicEnemy5" parent="." instance=ExtResource( 7 )]
+[node name="BasicEnemy5" parent="." instance=ExtResource( 8 )]
 position = Vector2( 13256.4, 537.429 )
 
-[node name="BasicEnemy6" parent="." instance=ExtResource( 7 )]
+[node name="BasicEnemy6" parent="." instance=ExtResource( 8 )]
 position = Vector2( 14646.8, 1271.34 )
 
-[node name="BasicEnemy7" parent="." instance=ExtResource( 7 )]
+[node name="BasicEnemy7" parent="." instance=ExtResource( 8 )]
 position = Vector2( 16724.9, 1255.49 )
 
-[node name="StarPickup" parent="." instance=ExtResource( 12 )]
+[node name="StarPickup" parent="." instance=ExtResource( 14 )]
 position = Vector2( 5011.23, 257.214 )
 
-[node name="StarPickup2" parent="." instance=ExtResource( 12 )]
+[node name="StarPickup2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 9117.91, -348.356 )
 
-[node name="StarPickup3" parent="." instance=ExtResource( 12 )]
+[node name="StarPickup3" parent="." instance=ExtResource( 14 )]
 position = Vector2( 13678.5, 305.047 )
 
-[node name="StarPickup5" parent="." instance=ExtResource( 12 )]
+[node name="StarPickup5" parent="." instance=ExtResource( 14 )]
 position = Vector2( 15607.1, 1220.57 )
 
-[node name="Ninja" parent="." instance=ExtResource( 17 )]
+[node name="Ninja" parent="." instance=ExtResource( 18 )]
 editor/display_folded = true
 position = Vector2( 144.401, 494.381 )
 z_index = 1
