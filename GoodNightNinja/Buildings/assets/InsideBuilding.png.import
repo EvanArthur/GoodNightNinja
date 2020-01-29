@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PagodaExpress.png-b55ccd428254bf9aa9980054864e5d0a.stex"
+path="res://.import/InsideBuilding.png-8df5b2b263153438e55e3b5365073410.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/PagodaExpress.png"
-dest_files=[ "res://.import/PagodaExpress.png-b55ccd428254bf9aa9980054864e5d0a.stex" ]
+source_file="res://Buildings/assets/InsideBuilding.png"
+dest_files=[ "res://.import/InsideBuilding.png-8df5b2b263153438e55e3b5365073410.stex" ]
 
 [params]
 

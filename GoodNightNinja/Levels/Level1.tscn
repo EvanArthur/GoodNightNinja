@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=2]
@@ -9,15 +9,15 @@
 [ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Buildings/Dumpster.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Levels/PagodaExpress.png" type="Texture" id=10]
+[ext_resource path="res://Buildings/Express.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Buildings/House.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Buildings/assets/Dumpster.png" type="Texture" id=12]
 [ext_resource path="res://Traps/NormalPlatform.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Levels/InsideBuilding1 2.png" type="Texture" id=15]
+[ext_resource path="res://Buildings/InsideBuilding.tscn" type="PackedScene" id=15]
 [ext_resource path="res://GUI/assets/sky.png" type="Texture" id=16]
-[ext_resource path="res://Levels/Nursery.png" type="Texture" id=17]
-[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Buildings/Nursery.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=21]
@@ -26,43 +26,22 @@
 extents = Vector2( 5120.73, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 171.49, 131.207 )
-
-[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1450, 57.1682 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 40.6797, 389.971 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 50.1982, 268.268 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 104.486, 8.75354 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 388.85, 43.7644 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 81.7949, 72.5919 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 10.5938, 259.668 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 107.651, 6.56668 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 137.406, 10 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 112.857, 10 )
-
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 485.526, 10 )
-
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 518.689, 55.3573 )
 
 [node name="Level1" type="Node2D"]
 
@@ -172,25 +151,21 @@ motion = Vector2( 200, 0 )
 cycle = 5.0
 
 [node name="MovingPlatform4" parent="." instance=ExtResource( 8 )]
-modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11233.1, -193.838 )
 motion = Vector2( 200, 0 )
 cycle = 4.0
 
 [node name="MovingPlatform5" parent="." instance=ExtResource( 8 )]
-modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11724, -499.384 )
 motion = Vector2( 200, 0 )
 cycle = 5.0
 
 [node name="MovingPlatform6" parent="." instance=ExtResource( 8 )]
-modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11047.7, -681.337 )
 motion = Vector2( 200, 0 )
 cycle = 6.0
 
 [node name="MovingPlatform7" parent="." instance=ExtResource( 8 )]
-modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 11718.4, -1028.57 )
 motion = Vector2( 200, 0 )
 cycle = 7.0
@@ -209,19 +184,9 @@ cycle = 3.0
 position = Vector2( 417.22, 515.501 )
 scale = Vector2( 0.05, 0.05 )
 
-[node name="PagodaExpress1" type="StaticBody2D" parent="."]
-editor/display_folded = true
+[node name="Express" parent="." instance=ExtResource( 10 )]
 position = Vector2( 794.59, 455.85 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="PagodaExpress1"]
 scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PagodaExpress1"]
-shape = SubResource( 2 )
 
 [node name="House" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1512.46, 413.513 )
@@ -240,7 +205,7 @@ scale = Vector2( 2.8, 1 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="SewerEntrance1" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -258,7 +223,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SewerEntrance1"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="SewerEntrance3" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -276,7 +241,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SewerEntrance3"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="SewerEntrance2" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -294,7 +259,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SewerEntrance2"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="House2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 6469.38, 1055.18 )
@@ -315,7 +280,7 @@ scale = Vector2( 0.2, 0.15 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Platform9" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -330,7 +295,7 @@ scale = Vector2( 0.2, 0.15 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform9"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="Platform10" type="StaticBody2D" parent="."]
@@ -346,7 +311,7 @@ scale = Vector2( 0.2, 0.15 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform10"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="Platform4" type="StaticBody2D" parent="."]
@@ -362,7 +327,7 @@ scale = Vector2( 0.2, 0.15 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -377,7 +342,7 @@ scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -392,7 +357,7 @@ scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -407,7 +372,7 @@ scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="NormalPlatform2" parent="." instance=ExtResource( 13 )]
 position = Vector2( 6073.96, 1039.04 )
@@ -463,56 +428,17 @@ scale = Vector2( 0.1, 0.1 )
 position = Vector2( 1131.73, 578.871 )
 scale = Vector2( 2, 2 )
 
-[node name="InsideHouse1" type="StaticBody2D" parent="."]
-editor/display_folded = true
+[node name="InsideBuilding" parent="." instance=ExtResource( 15 )]
 position = Vector2( 9982.07, 58.0481 )
 scale = Vector2( 1.7, 1.7 )
 
-[node name="Sprite" type="Sprite" parent="InsideHouse1"]
-texture = ExtResource( 15 )
+[node name="BasicEnemy3" parent="InsideBuilding" instance=ExtResource( 4 )]
+position = Vector2( -264.847, 299.147 )
+scale = Vector2( 0.588235, 0.588235 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InsideHouse1"]
-position = Vector2( -480.674, -60.5464 )
-shape = SubResource( 9 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="InsideHouse1"]
-position = Vector2( 481.12, 101.691 )
-shape = SubResource( 9 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="InsideHouse1"]
-position = Vector2( -365.825, -187.743 )
-shape = SubResource( 10 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="InsideHouse1"]
-position = Vector2( 10.6719, 173.034 )
-shape = SubResource( 11 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="InsideHouse1"]
-position = Vector2( 10.6719, 173.034 )
-shape = SubResource( 11 )
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="InsideHouse1"]
-position = Vector2( 345.174, 173.034 )
-shape = SubResource( 11 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="InsideHouse1"]
-position = Vector2( -357.683, 12.6988 )
-shape = SubResource( 12 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InsideHouse1"]
-polygon = PoolVector2Array( -185.844, -127.671, -151.693, -91.6542, -95.9229, -90.7009, -68.5991, -124.788, -127.222, -134.398 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="InsideHouse1"]
-position = Vector2( 242.177, 42.2849 )
-polygon = PoolVector2Array( -185.844, -127.671, -151.153, -103.051, -106.824, -101.621, -68.5991, -124.788, -127.222, -134.398 )
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="InsideHouse1"]
-position = Vector2( 448.795, -24.0255 )
-polygon = PoolVector2Array( -185.844, -127.671, -150.139, -94.7031, -102.473, -93.2731, -68.5991, -124.788, -127.222, -134.398 )
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="InsideHouse1"]
-position = Vector2( 1.79541, -330.057 )
-shape = SubResource( 13 )
+[node name="BasicEnemy4" parent="InsideBuilding" instance=ExtResource( 4 )]
+position = Vector2( 112.9, 300.671 )
+scale = Vector2( 0.588235, 0.588235 )
 
 [node name="Floor5" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -527,7 +453,7 @@ scale = Vector2( 2.8, 1 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor5"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="."]
 
@@ -536,30 +462,17 @@ position = Vector2( 10841.9, -3039.85 )
 rotation = 3.14159
 texture = ExtResource( 16 )
 
-[node name="PagodaExpress2" type="StaticBody2D" parent="."]
-position = Vector2( 10888.3, -1594.39 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="PagodaExpress2"]
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 17 )
-
-[node name="LevelFinish" parent="." instance=ExtResource( 18 )]
-position = Vector2( 10638.9, -1692.98 )
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+[node name="MovingPlatform12" parent="." instance=ExtResource( 8 )]
 position = Vector2( 10847.1, -1315.9 )
-__meta__ = {
-"_edit_group_": true
-}
+scale = Vector2( 2.5, 3 )
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D8"]
-texture = ExtResource( 6 )
+[node name="LevelFinish" parent="MovingPlatform12" instance=ExtResource( 17 )]
+position = Vector2( -86.9888, -109.209 )
+scale = Vector2( 0.4, 0.2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
-shape = SubResource( 14 )
+[node name="Nursery" parent="MovingPlatform12" instance=ExtResource( 18 )]
+position = Vector2( 16.48, -92.83 )
+scale = Vector2( 0.04, 0.0333333 )
 
 [node name="FireTrap" parent="." instance=ExtResource( 19 )]
 position = Vector2( 10998.6, 603.707 )
@@ -569,12 +482,6 @@ position = Vector2( 11347.6, 603.707 )
 
 [node name="FireTrap3" parent="." instance=ExtResource( 19 )]
 position = Vector2( 11693.8, 603.707 )
-
-[node name="BasicEnemy3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 9531.83, 566.598 )
-
-[node name="BasicEnemy4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 10174, 569.188 )
 
 [node name="BasicEnemy2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 5356.32, 1398.6 )
