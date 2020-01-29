@@ -8,19 +8,19 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 470.86, 332.889 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 259.757 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 247.729 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 488.919, 7.3526 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 25.7902, 10 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 resource_name = "appear"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Outside:modulate")
@@ -96,19 +96,19 @@ __meta__ = {
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -480.558, -73.7944 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 482.187, 88.7811 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -3.05176e-005, 330.856 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 0.814453, -328.246 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( -188.344, -127.189, -154.895, -131.59, -102.08, -131.59, -69.0701, -127.629, -101.639, -96.8202, -149.613, -96.8202 )
@@ -123,10 +123,10 @@ polygon = PoolVector2Array( -188.344, -127.189, -154.895, -131.59, -102.08, -131
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 466.783, -146.283 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-anims/appear = SubResource( 8 )
+anims/appear = SubResource( 6 )
 anims/shutdown = SubResource( 7 )
 [connection signal="body_entered" from="Entrance" to="." method="_on_Entrance_body_entered"]
 [connection signal="body_exited" from="Entrance" to="." method="_on_Entrance_body_exited"]
