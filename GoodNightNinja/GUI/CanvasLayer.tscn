@@ -32,7 +32,7 @@ scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 3 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 26560, 2545 )
+region_rect = Rect2( 0, 0, 39840, 2545 )
 
 [node name="City2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.5, 0.5 )
@@ -43,7 +43,7 @@ scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 4 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 83000, 1781 )
+region_rect = Rect2( 0, 0, 103750, 1781 )
 
 [node name="City1" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 0.75 )
