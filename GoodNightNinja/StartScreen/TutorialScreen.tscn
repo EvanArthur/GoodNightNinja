@@ -4,7 +4,6 @@
 [ext_resource path="res://StartScreen/assets/fonts/design.graffiti.comicsansms.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://GUI/assets/sky.png" type="Texture" id=3]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 2 )
@@ -42,7 +41,7 @@ margin_top = 75.0
 margin_right = 784.0
 margin_bottom = 150.0
 custom_fonts/font = SubResource( 2 )
-text = "Welcome to Single Dad Ninja. You, a single dad, are tasked with returning your baby home through a dangerous city filled with enemies! Protect your child from the everlasting dangers of the night and get them home as quick as possible!"
+text = "Welcome to Single Dad Ninja. You, a single dad, are tasked with returning your baby home through a dangerous city filled with enemies! Protect your child from the everlasting dangers of the night and get them to the nursery as quick as possible!"
 valign = 1
 autowrap = true
 
