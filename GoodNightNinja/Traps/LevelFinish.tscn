@@ -3,7 +3,7 @@
 [ext_resource path="res://Traps/LevelFinish.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 68.3267, 326.876 )
+extents = Vector2( 68.3267, 240 )
 
 [node name="LevelFinish" type="Area2D"]
 script = ExtResource( 1 )
