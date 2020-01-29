@@ -1,21 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Buildings/House.gd" type="Script" id=1]
 [ext_resource path="res://Buildings/assets/house.png" type="Texture" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, -10, 8.66025, 5, -100, 5 )
 
 [node name="House" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 873.904, 824 )
+scale = Vector2( 1.47302, 1.47302 )
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -1571.99, 1731.88, -1571.99, -600.504, 6.16357, -1576.55, 1577.98, -581.49, 1565.31, 1750.89 )
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+editor/display_folded = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
-polygon = PoolVector2Array( -1838.19, -594.166, -1591.01, -594.166, 6.16357, -1582.89, 1597, -581.49, 1837.84, -587.828, 6.16357, -1735 )
+position = Vector2( 860, 668.711 )
+scale = Vector2( 1.40038, 1.40038 )
+polygon = PoolVector2Array( -1932.7, -504.492, -1650.01, -505.491, 6.44562, -1567.11, 1667.61, -505.297, 1946.5, -506.142, 9.33545, -1721.1 )
 one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
