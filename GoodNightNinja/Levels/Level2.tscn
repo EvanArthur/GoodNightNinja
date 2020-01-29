@@ -164,7 +164,6 @@ position = Vector2( 10746.7, -310.41 )
 
 [node name="BasicEnemy2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 7128.94, 100.115 )
-scale = Vector2( 1, 1 )
 
 [node name="Express" parent="." instance=ExtResource( 13 )]
 position = Vector2( 7133.28, 363.175 )
