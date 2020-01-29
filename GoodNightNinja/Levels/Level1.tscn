@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=2]
@@ -17,8 +17,9 @@
 [ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=15]
 [ext_resource path="res://Buildings/Pipe.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Buildings/Cinema.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Buildings/ContinueSign.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16.2626, 989.165 )
@@ -273,10 +274,10 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="Pipe" parent="." instance=ExtResource( 16 )]
-position = Vector2( 6300, 1060 )
+position = Vector2( 6310, 920 )
 
 [node name="Pipe2" parent="." instance=ExtResource( 16 )]
-position = Vector2( 5970, 1240 )
+position = Vector2( 5990, 1196.6 )
 
 [node name="Pipe5" parent="." instance=ExtResource( 16 )]
 position = Vector2( 5069.52, 1014 )
@@ -294,7 +295,7 @@ rotation = 1.5708
 scale = Vector2( 2.25, 2.1 )
 
 [node name="Pipe3" parent="." instance=ExtResource( 16 )]
-position = Vector2( 8560, 1198.6 )
+position = Vector2( 8380, 1198.6 )
 
 [node name="Pipe4" parent="." instance=ExtResource( 16 )]
 position = Vector2( 8801, 950 )
@@ -303,12 +304,15 @@ position = Vector2( 8801, 950 )
 position = Vector2( 14790, -80 )
 scale = Vector2( 0.25, 0.25 )
 
-[node name="Ninja" parent="." instance=ExtResource( 18 )]
-position = Vector2( -530, 523.12 )
-
-[node name="LevelFinish" parent="." instance=ExtResource( 19 )]
+[node name="LevelFinish" parent="." instance=ExtResource( 18 )]
 position = Vector2( 15420, 416.598 )
 scale = Vector2( 1, 0.75 )
+
+[node name="Ninja" parent="." instance=ExtResource( 19 )]
+position = Vector2( -530, 523.12 )
+
+[node name="ContinueSign" parent="." instance=ExtResource( 20 )]
+position = Vector2( 15430, 410 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 
