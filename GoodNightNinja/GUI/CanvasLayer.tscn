@@ -17,17 +17,17 @@ script = ExtResource( 1 )
 motion_scale = Vector2( 0.2, 0.2 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Background"]
-position = Vector2( -1000, -1480 )
+position = Vector2( -4000, -1480 )
 texture = ExtResource( 2 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 53120, 3227 )
+region_rect = Rect2( 0, 0, 47808, 3227 )
 
 [node name="City3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.25, 0.25 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/City3"]
-position = Vector2( -1000, -950 )
+position = Vector2( -4000, -950 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 3 )
 centered = false
@@ -38,33 +38,33 @@ region_rect = Rect2( 0, 0, 26560, 2545 )
 motion_scale = Vector2( 0.5, 0.5 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/City2"]
-position = Vector2( -1000, -300 )
+position = Vector2( -4000, -300 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 4 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 26560, 1781 )
+region_rect = Rect2( 0, 0, 83000, 1781 )
 
 [node name="City1" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.75, 0.75 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/City1"]
-position = Vector2( -1000, -300 )
+position = Vector2( -4000, -300 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 53120, 1902 )
+region_rect = Rect2( 0, 0, 66400, 1902 )
 
 [node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Ground"]
-position = Vector2( -2000, 600 )
+position = Vector2( -4000, 600 )
 scale = Vector2( 1, 0.75 )
 texture = ExtResource( 6 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 30010, 2042 )
+region_rect = Rect2( 0, 0, 37512.5, 2042 )
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
 editor/display_folded = true

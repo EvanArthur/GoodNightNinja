@@ -1,16 +1,16 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Traps/Floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Buildings/Cinema.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Buildings/Hotel.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Buildings/Cinema.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Buildings/Hotel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Buildings/ContinueSign.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Buildings/Dumpster.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Buildings/Express.tscn" type="PackedScene" id=14]
@@ -20,12 +20,16 @@
 [ext_resource path="res://Buildings/ApartmentBuilding.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Buildings/GroceryStore.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100, 2000 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1720, 1040 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1890.4, 800 )
 
 [node name="Level2" type="Node2D"]
 
@@ -113,22 +117,18 @@ position = Vector2( 2950.69, 572.611 )
 [node name="SpikeTrap15" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2570, 572.611 )
 
-[node name="LevelFinish" parent="." instance=ExtResource( 5 )]
-position = Vector2( 15510, 430 )
-scale = Vector2( 1, 0.6 )
-
-[node name="TallBuilding" parent="." instance=ExtResource( 6 )]
+[node name="TallBuilding" parent="." instance=ExtResource( 5 )]
 position = Vector2( 8208, -548.666 )
 full_collide = true
 
-[node name="TallBuilding2" parent="." instance=ExtResource( 6 )]
+[node name="TallBuilding2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 9032.03, -549.191 )
 full_collide = true
 
-[node name="MovingPlatform13" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform13" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2742.05, 232.079 )
 
-[node name="Cinema" parent="." instance=ExtResource( 8 )]
+[node name="Cinema" parent="." instance=ExtResource( 7 )]
 position = Vector2( -1090, 49.8708 )
 scale = Vector2( 0.2, 0.2 )
 full_collide = true
@@ -140,7 +140,7 @@ position = Vector2( -850, -1652.55 )
 position = Vector2( 50, -1404.85 )
 shape = SubResource( 1 )
 
-[node name="Hotel" parent="." instance=ExtResource( 9 )]
+[node name="Hotel" parent="." instance=ExtResource( 8 )]
 position = Vector2( 3582.12, -275.913 )
 scale = Vector2( 0.25, 0.25 )
 
@@ -151,73 +151,73 @@ position = Vector2( -8.48047, 2303.65 )
 position = Vector2( 11.2471, 120 )
 shape = SubResource( 2 )
 
-[node name="MovingPlatform9" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform9" parent="." instance=ExtResource( 6 )]
 position = Vector2( 4473.83, -592.731 )
 
-[node name="BasicEnemy9" parent="." instance=ExtResource( 10 )]
+[node name="BasicEnemy9" parent="." instance=ExtResource( 9 )]
 position = Vector2( 3320, -860 )
 
-[node name="MovingPlatform10" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform10" parent="." instance=ExtResource( 6 )]
 position = Vector2( 7633.45, 1019.27 )
 
-[node name="MovingPlatform12" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform12" parent="." instance=ExtResource( 6 )]
 position = Vector2( 12148.3, 922.645 )
 
-[node name="MovingPlatform17" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform17" parent="." instance=ExtResource( 6 )]
 position = Vector2( 10889.6, -535.407 )
 
-[node name="MovingPlatform18" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform18" parent="." instance=ExtResource( 6 )]
 position = Vector2( 12334.4, -526.729 )
 
-[node name="MovingPlatform11" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform11" parent="." instance=ExtResource( 6 )]
 position = Vector2( 9803.51, 1103.47 )
 
-[node name="MovingPlatform8" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform8" parent="." instance=ExtResource( 6 )]
 position = Vector2( 4223.71, -73.2618 )
 
-[node name="HealthPotion" parent="." instance=ExtResource( 11 )]
+[node name="HealthPotion" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1550, -663.141 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="TallBuilding3" parent="." instance=ExtResource( 6 )]
+[node name="TallBuilding3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1310, 10 )
 scale = Vector2( 0.75, 0.5 )
 
-[node name="TallBuilding4" parent="." instance=ExtResource( 6 )]
+[node name="TallBuilding4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 770, 10 )
 scale = Vector2( 0.75, 0.5 )
 
-[node name="MovingPlatform" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform" parent="." instance=ExtResource( 6 )]
 position = Vector2( 5099.49, -316.739 )
 motion = Vector2( 300, 0 )
 cycle = 4.0
 
-[node name="MovingPlatform3" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 8256.92, 1142.15 )
 motion = Vector2( 300, 0 )
 cycle = 4.0
 
-[node name="MovingPlatform5" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 10592.5, 921.056 )
 motion = Vector2( 300, 0 )
 cycle = 4.0
 
-[node name="MovingPlatform4" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 9024.63, 954.797 )
 motion = Vector2( 300, 0 )
 cycle = 5.0
 
-[node name="MovingPlatform6" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 11332.1, 1087.46 )
 motion = Vector2( 300, 0 )
 cycle = 5.0
 
-[node name="MovingPlatform16" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform16" parent="." instance=ExtResource( 6 )]
 position = Vector2( 11693.5, -752.808 )
 motion = Vector2( 300, 0 )
 cycle = 5.0
 
-[node name="MovingPlatform7" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform7" parent="." instance=ExtResource( 6 )]
 position = Vector2( 11494.1, 142.137 )
 motion = Vector2( 0, 500 )
 cycle = 8.0
@@ -226,12 +226,16 @@ cycle = 8.0
 position = Vector2( 13980, 390 )
 rotation = 1.5708
 
-[node name="BasicEnemy10" parent="." instance=ExtResource( 10 )]
+[node name="BasicEnemy10" parent="." instance=ExtResource( 9 )]
 position = Vector2( 14660, 578.478 )
 
 [node name="FireTrap3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 15210, 576.916 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="ContinueSign" parent="." instance=ExtResource( 11 )]
+position = Vector2( 15770, 130 )
+z_index = 1
 
 [node name="Dumpster7" parent="." instance=ExtResource( 12 )]
 position = Vector2( 15040, 504.341 )
@@ -240,17 +244,17 @@ scale = Vector2( 0.05, 0.05 )
 [node name="SpikeTrap17" parent="." instance=ExtResource( 4 )]
 position = Vector2( 14180, 577.425 )
 
-[node name="MovingPlatform19" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform19" parent="." instance=ExtResource( 6 )]
 position = Vector2( 14345.3, -60.7324 )
 motion = Vector2( 0, 500 )
 cycle = 8.0
 
-[node name="MovingPlatform2" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 6430, -130 )
 motion = Vector2( 150, 250 )
 cycle = 7.0
 
-[node name="MovingPlatform21" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform21" parent="." instance=ExtResource( 6 )]
 position = Vector2( 5860, -473.91 )
 motion = Vector2( 150, 250 )
 cycle = 5.0
@@ -258,7 +262,7 @@ cycle = 5.0
 [node name="StarPickup2" parent="." instance=ExtResource( 13 )]
 position = Vector2( 10848.3, -313.217 )
 
-[node name="HealthPotion2" parent="." instance=ExtResource( 11 )]
+[node name="HealthPotion2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 10746.7, -310.41 )
 
 [node name="Express" parent="." instance=ExtResource( 14 )]
@@ -266,11 +270,11 @@ editor/display_folded = true
 position = Vector2( 6975.74, 246.733 )
 scale = Vector2( 0.12, 0.12 )
 
-[node name="BasicEnemy2" parent="Express" instance=ExtResource( 10 )]
+[node name="BasicEnemy2" parent="Express" instance=ExtResource( 9 )]
 position = Vector2( 1276.68, -1221.82 )
 scale = Vector2( 8.33333, 8.33333 )
 
-[node name="HealthPotion" parent="Express" instance=ExtResource( 11 )]
+[node name="HealthPotion" parent="Express" instance=ExtResource( 10 )]
 position = Vector2( 2885.34, -1350.95 )
 scale = Vector2( 8.33333, 8.33333 )
 
@@ -427,45 +431,51 @@ position = Vector2( -1215.5, -1962.61 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="Ninja" parent="." instance=ExtResource( 19 )]
+editor/display_folded = true
 position = Vector2( -920, -250 )
 z_index = 1
 
 [node name="StarPickup" parent="." instance=ExtResource( 13 )]
 position = Vector2( 7627.45, 927.834 )
 
-[node name="BasicEnemy" parent="." instance=ExtResource( 10 )]
+[node name="BasicEnemy" parent="." instance=ExtResource( 9 )]
 position = Vector2( 9803.59, 1061.73 )
 
 [node name="GroceryStore" parent="." instance=ExtResource( 20 )]
 position = Vector2( 16047.4, 49.8708 )
 scale = Vector2( 0.25, 0.25 )
-full_collide = true
 
 [node name="GroceryStore" parent="GroceryStore" instance=ExtResource( 20 )]
 position = Vector2( 0, -4199.48 )
 
-[node name="BasicEnemy3" parent="." instance=ExtResource( 10 )]
+[node name="StaticBody2D2" type="StaticBody2D" parent="GroceryStore"]
+position = Vector2( 0, -1119.48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroceryStore/StaticBody2D2"]
+shape = SubResource( 3 )
+
+[node name="BasicEnemy3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 10321.5, -280.64 )
 
-[node name="BasicEnemy4" parent="." instance=ExtResource( 10 )]
+[node name="BasicEnemy4" parent="." instance=ExtResource( 9 )]
 position = Vector2( 9921.34, -273.91 )
 
-[node name="BasicEnemy5" parent="." instance=ExtResource( 10 )]
+[node name="BasicEnemy5" parent="." instance=ExtResource( 9 )]
 position = Vector2( 13546.4, -411.61 )
 
-[node name="BasicEnemy11" parent="." instance=ExtResource( 10 )]
+[node name="BasicEnemy11" parent="." instance=ExtResource( 9 )]
 position = Vector2( 12720, -240 )
 
-[node name="BasicEnemy6" parent="." instance=ExtResource( 10 )]
+[node name="BasicEnemy6" parent="." instance=ExtResource( 9 )]
 position = Vector2( 890, 90 )
 
-[node name="BasicEnemy2" parent="." instance=ExtResource( 10 )]
+[node name="BasicEnemy2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1150, 330 )
 
-[node name="BasicEnemy8" parent="." instance=ExtResource( 10 )]
+[node name="BasicEnemy8" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1400, -420 )
 
-[node name="BasicEnemy7" parent="." instance=ExtResource( 10 )]
+[node name="BasicEnemy7" parent="." instance=ExtResource( 9 )]
 position = Vector2( 580, -630 )
 
 [node name="Dumpster" parent="." instance=ExtResource( 12 )]
@@ -503,19 +513,19 @@ scale = Vector2( 0.5, 0.5 )
 [node name="StarPickup3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1770, 534.716 )
 
-[node name="MovingPlatform14" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform14" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1870, -630 )
 scale = Vector2( 0.5, 0.5 )
 motion = Vector2( 0, 500 )
 cycle = 3.0
 
-[node name="MovingPlatform15" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform15" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2190, -295.989 )
 scale = Vector2( 0.5, 0.5 )
 motion = Vector2( 0, 500 )
 cycle = 6.0
 
-[node name="MovingPlatform20" parent="." instance=ExtResource( 7 )]
+[node name="MovingPlatform20" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2560, -20 )
 scale = Vector2( 0.5, 0.5 )
 motion = Vector2( 0, 500 )
@@ -524,6 +534,10 @@ cycle = 4.0
 [node name="Express2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 2020, 295.425 )
 scale = Vector2( 0.1, 0.1 )
+
+[node name="LevelFinish" parent="." instance=ExtResource( 21 )]
+position = Vector2( 16047.4, 101.494 )
+scale = Vector2( 1, 2 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 

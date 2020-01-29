@@ -26,10 +26,6 @@ func _ready():
 		$Level4.visible = true
 	else:
 		$Level4.visible = false
-	if Global.level5:
-		$Level5.visible = true
-	else:
-		$Level5.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
