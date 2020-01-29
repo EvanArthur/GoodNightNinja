@@ -249,8 +249,12 @@ func _integrate_forces(s):
 			else:
 				new_anim = "falling"
 	if $Baby.is_colliding():
-		if $Baby.get_collider().name == "DamageZone2" or $Baby.get_collider().name == "DamageZone":
-			call_deferred("damage", 100)
+		if $Baby.get_collider().name == "DamageZone2":
+			damage(100)
+		elif $Baby.get_collider().name == "DamageZone":
+			damage(100)
+		elif $Baby.get_collider().name == "Spikes":
+			damage(100)
 	# Update siding
 	if new_siding_left != siding_left:
 		if new_siding_left:

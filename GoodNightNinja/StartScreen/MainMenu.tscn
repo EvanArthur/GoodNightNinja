@@ -31,7 +31,7 @@ custom_constants/margin_bottom = 80
 [node name="MenuColumns" type="HBoxContainer" parent="."]
 margin_left = 120.0
 margin_top = 10.0
-margin_right = 935.0
+margin_right = 917.0
 margin_bottom = 525.0
 
 [node name="RightColumnOptions" type="VBoxContainer" parent="MenuColumns"]
@@ -91,16 +91,16 @@ align = 0
 
 [node name="LeftColumnOptions" type="VBoxContainer" parent="MenuColumns"]
 margin_left = 626.0
-margin_right = 815.0
+margin_right = 797.0
 margin_bottom = 515.0
 alignment = 2
 
 [node name="VersionNum" type="Label" parent="MenuColumns/LeftColumnOptions"]
 margin_top = 472.0
-margin_right = 189.0
+margin_right = 171.0
 margin_bottom = 515.0
 custom_fonts/font = SubResource( 4 )
-text = "Version .0012"
+text = "Version .102"
 align = 2
 valign = 2
 
