@@ -86,7 +86,6 @@ extents = Vector2( 20, 90 )
 extents = Vector2( 25, 90 )
 
 [node name="Ninja" type="RigidBody2D"]
-editor/display_folded = true
 position = Vector2( 510.292, 210 )
 collision_mask = 12
 mode = 2
