@@ -4,7 +4,6 @@
 [ext_resource path="res://StartScreen/assets/fonts/design.graffiti.comicsansms.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://GUI/assets/sky.png" type="Texture" id=3]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 2 )
@@ -76,19 +75,10 @@ custom_fonts/font = SubResource( 2 )
 text = "Level 4"
 align = 0
 
-[node name="Level5" type="MenuButton" parent="LevelBox"]
+[node name="ReturnButton" type="MenuButton" parent="LevelBox"]
 margin_top = 231.0
 margin_right = 784.0
-margin_bottom = 266.0
-mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
-text = "Level 5"
-align = 0
-
-[node name="ReturnButton" type="MenuButton" parent="LevelBox"]
-margin_top = 270.0
-margin_right = 784.0
-margin_bottom = 333.0
+margin_bottom = 294.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
 text = "Return to Menu"
@@ -102,5 +92,4 @@ texture = ExtResource( 3 )
 [connection signal="pressed" from="LevelBox/Level2" to="LevelBox" method="_on_Level2_pressed"]
 [connection signal="pressed" from="LevelBox/Level3" to="LevelBox" method="_on_Level3_pressed"]
 [connection signal="pressed" from="LevelBox/Level4" to="LevelBox" method="_on_Level4_pressed"]
-[connection signal="pressed" from="LevelBox/Level5" to="LevelBox" method="_on_Level5_pressed"]
 [connection signal="pressed" from="LevelBox/ReturnButton" to="LevelBox" method="_on_ReturnButton_pressed"]

@@ -7,7 +7,6 @@ var level1 = true
 var level2 = true
 var level3 = true
 var level4 = true
-var level5 = true
 
 #this is a string
 var timeElapsed = ""
