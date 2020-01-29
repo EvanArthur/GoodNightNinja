@@ -9,9 +9,9 @@
 [ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Buildings/Cinema.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Buildings/Hotel.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Buildings/Express.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=14]
 [ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=15]
@@ -100,20 +100,7 @@ position = Vector2( 10889.6, -535.407 )
 position = Vector2( 12334.4, -526.729 )
 
 [node name="MovingPlatform11" parent="." instance=ExtResource( 7 )]
-editor/display_folded = true
 position = Vector2( 9803.51, 1103.47 )
-
-[node name="BasicEnemy" parent="MovingPlatform11" instance=ExtResource( 10 )]
-position = Vector2( 0.0800781, -41.74 )
-
-[node name="BasicEnemy4" parent="MovingPlatform11" instance=ExtResource( 10 )]
-position = Vector2( 3742.93, -1515.08 )
-
-[node name="BasicEnemy3" parent="MovingPlatform11" instance=ExtResource( 10 )]
-position = Vector2( 517.948, -1384.11 )
-
-[node name="BasicEnemy2" parent="MovingPlatform11" instance=ExtResource( 10 )]
-position = Vector2( 117.831, -1377.38 )
 
 [node name="MovingPlatform8" parent="." instance=ExtResource( 7 )]
 position = Vector2( 4223.71, -73.2618 )
@@ -169,21 +156,19 @@ position = Vector2( 6207.65, -172.776 )
 motion = Vector2( 300, 500 )
 cycle = 7.0
 
-[node name="StarPickup2" parent="." instance=ExtResource( 11 )]
+[node name="StarPickup2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 10848.3, -313.217 )
-scale = Vector2( 1, 1 )
 
-[node name="HealthPotion2" parent="." instance=ExtResource( 12 )]
+[node name="HealthPotion2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 10746.7, -310.41 )
+
+[node name="BasicEnemy2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 7128.94, 100.115 )
 scale = Vector2( 1, 1 )
 
 [node name="Express" parent="." instance=ExtResource( 13 )]
 position = Vector2( 7133.28, 363.175 )
 scale = Vector2( 0.17, 0.17 )
-
-[node name="BasicEnemy2" parent="Express" instance=ExtResource( 10 )]
-position = Vector2( -25.5273, -1547.41 )
-scale = Vector2( 5.88235, 5.88235 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
 position = Vector2( 9384.19, 600.716 )
@@ -356,6 +341,7 @@ position = Vector2( 11972.3, 1307 )
 position = Vector2( 12138.4, 1307 )
 
 [node name="ApartmentBuilding2" parent="." instance=ExtResource( 16 )]
+editor/display_folded = true
 position = Vector2( 10176.3, 103.166 )
 scale = Vector2( 0.2, 0.2 )
 
@@ -369,17 +355,37 @@ scale = Vector2( 0.2, 0.2 )
 [node name="Ninja" parent="." instance=ExtResource( 17 )]
 position = Vector2( -409.293, 489.557 )
 
-[node name="HealthPotion" parent="." instance=ExtResource( 12 )]
+[node name="HealthPotion" parent="." instance=ExtResource( 11 )]
 position = Vector2( 7321.98, 84.6185 )
 
-[node name="StarPickup" parent="." instance=ExtResource( 11 )]
+[node name="StarPickup" parent="." instance=ExtResource( 10 )]
 position = Vector2( 7627.45, 927.834 )
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+[node name="BasicEnemy" parent="." instance=ExtResource( 12 )]
+position = Vector2( 9803.59, 1061.73 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+[node name="Bounds" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
 position = Vector2( -514.61, 519.325 )
 shape = SubResource( 6 )
+
+[node name="Bounds2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds2"]
+position = Vector2( 15441.2, -707.002 )
+shape = SubResource( 6 )
+
+[node name="BasicEnemy3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 10321.5, -280.64 )
+
+[node name="BasicEnemy4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 9921.34, -273.91 )
+
+[node name="BasicEnemy5" parent="." instance=ExtResource( 12 )]
+position = Vector2( 13546.4, -411.61 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 

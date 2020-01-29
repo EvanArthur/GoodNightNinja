@@ -192,7 +192,6 @@ position = Vector2( 9993.61, 165.336 )
 motion = Vector2( 600, 0 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 9 )]
-editor/display_folded = true
 position = Vector2( 1814.33, -1165.69 )
 motion = Vector2( 400, 0 )
 cycle = 6.0
