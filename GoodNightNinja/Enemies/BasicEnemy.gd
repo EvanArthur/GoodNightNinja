@@ -17,7 +17,8 @@ var new_animation = ""
 var health = 1
 var object = []
 var other = []
-
+var attacking=false
+var loop=0
 
 onready var rc_left = $RayCastLeft
 onready var rc_right = $RayCastRight
@@ -25,60 +26,67 @@ onready var weak_point = $WeakPoint
 onready var forAtt=$AttackZoneF
 onready var backAtt=$AttackZoneB
 
+var star = preload("res://Player/NinjaStar.gd")
+var player = preload("res://Player/Ninja.gd")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _die():
+	$EnemyHitbox.queue_free()
+	$CollisionShape2D.queue_free()
 	queue_free()
 
 func _preDie():
-	$AnimatedSprite.play("ded")
 	mode = MODE_STATIC
+	$AnimatedSprite.play("ded")
 	rc_left.queue_free()
 	rc_right.queue_free()
 	weak_point.queue_free()
-	$CollisionShape2D.queue_free()
+	
 	yield(get_tree().create_timer(1.2), "timeout")
-	$EnemyHitbox.queue_free()
+	
 	call_deferred("_die")
 	
 	#play sound or death animation here
 	
 # called after hit with melee or ranged attack
 func _onHit():
-	
+	$AnimatedSprite.play("damege")
 	health = health - 0.5
 	print(health)
 	if health == 0:
 		state = STATE_DYING
-		set_friction(1000)
-		_preDie()
+		call_deferred("_preDie")
+		
 
 	
 func _integrate_forces(s):
 	
 	if state == STATE_DYING:
-		return
+		pass
 		
-	$RayCastLeft.add_exception($DamageZone)
-	$RayCastRight.add_exception($DamageZone)
-	$StrongPoint.add_exception($DamageZone)
-	$WeakPoint.add_exception($DamageZone)
-	$AttackZoneB.add_exception($DamageZone)
-	$AttackZoneF.add_exception($DamageZone)
 	
-	
-	$RayCastLeft.add_exception($DamageZone2)
-	$RayCastRight.add_exception($DamageZone2)
-	$StrongPoint.add_exception($DamageZone2)
-	$WeakPoint.add_exception($DamageZone2)
-	$AttackZoneB.add_exception($DamageZone2)
-	$AttackZoneF.add_exception($DamageZone2)
 	var linVel = s.get_linear_velocity()
 	new_animation = animation
 
 	if state == STATE_WALKING:
+		$RayCastLeft.add_exception($DamageZone)
+		$RayCastRight.add_exception($DamageZone)
+		$StrongPoint.add_exception($DamageZone)
+		$WeakPoint.add_exception($DamageZone)
+		$AttackZoneB.add_exception($DamageZone)
+		$AttackZoneF.add_exception($DamageZone)
+		
+		
+		$RayCastLeft.add_exception($DamageZone2)
+		$RayCastRight.add_exception($DamageZone2)
+		$StrongPoint.add_exception($DamageZone2)
+		$WeakPoint.add_exception($DamageZone2)
+		$AttackZoneB.add_exception($DamageZone2)
+		$AttackZoneF.add_exception($DamageZone2)
+		
 		if direction >0:
 			forAtt.set_enabled(true)
 			backAtt.set_enabled(false)
@@ -86,7 +94,7 @@ func _integrate_forces(s):
 			backAtt.set_enabled(true)
 			forAtt.set_enabled(false)
 		WALK_SPEED=100
-		new_animation = "welk"
+		$AnimatedSprite.play("welk")
 		#$DamageZone/Collide.set_disabled(true)
 		
 		if rc_right.is_colliding()==false and direction>0:
@@ -105,10 +113,13 @@ func _integrate_forces(s):
 		
 		if $StrongPoint.is_colliding():
 			
+			
 			if $StrongPoint.get_collider().name =="NinjaStar":
 				
 				state=STATE_ATTACKING
 			elif $StrongPoint.get_collider().name =="StarArea":
+				pass
+			elif $StrongPoint.get_collider().name =="Entrance":
 				pass
 			else:
 				direction = -direction
@@ -132,30 +143,34 @@ func _integrate_forces(s):
 			var zone = $DamageZone.get_overlapping_bodies()
 			if not zone.empty():
 				var body = zone.front()
-				if body.get_name() == "NinjaStar":
+				if body.get_name() == "NinjaStar" or body.get_name().begins_with("@"):
 					$EnragedTimer.start()
 					state=STATE_ATTACKING
 			var damagezone = $DamageZone2.get_overlapping_bodies()
 			if not damagezone.empty():
 				var bodydam = damagezone.front()
-				if bodydam.get_name() == "NinjaStar":
-#					if $Timer2.is_stopped():
-#						$Timer2.start()
-					call_deferred("_onHit")
+				print(bodydam)
+				print(bodydam.get_name())
+				if bodydam.get_name() == "NinjaStar" or bodydam.get_name().begins_with("@"):
+					if $Timer2.is_stopped():
+						$Timer2.start()
+						call_deferred("_onHit")
 		else:
 			var zone = $DamageZone2.get_overlapping_bodies()
 			if not zone.empty():
 				var body = zone.front()
-				if body.get_name() == "NinjaStar":
+				if body.get_name() == "NinjaStar" or body.get_name().begins_with("@"):
 					$EnragedTimer.start()
 					state=STATE_ATTACKING
 			var damagezone = $DamageZone.get_overlapping_bodies()
 			if not damagezone.empty():
 				var bodydam = damagezone.front()
-				if bodydam.get_name() == "NinjaStar":
-#					if $Timer2.is_stopped():
-#						$Timer2.start()
-					call_deferred("_onHit")
+				print(bodydam)
+				print(bodydam.get_name())
+				if bodydam.get_name() == "NinjaStar" or bodydam.get_name().begins_with("@"):
+					if $Timer2.is_stopped():
+						$Timer2.start()
+						call_deferred("_onHit")
 					
 					
 		if forAtt.is_colliding():
@@ -167,6 +182,21 @@ func _integrate_forces(s):
 		linear_velocity.x = direction * WALK_SPEED
 		
 	elif state == STATE_ATTACKING:
+		$AnimatedSprite.play("attak")
+		$RayCastLeft.add_exception($DamageZone)
+		$RayCastRight.add_exception($DamageZone)
+		$StrongPoint.add_exception($DamageZone)
+		$WeakPoint.add_exception($DamageZone)
+		$AttackZoneB.add_exception($DamageZone)
+		$AttackZoneF.add_exception($DamageZone)
+		
+		
+		$RayCastLeft.add_exception($DamageZone2)
+		$RayCastRight.add_exception($DamageZone2)
+		$StrongPoint.add_exception($DamageZone2)
+		$WeakPoint.add_exception($DamageZone2)
+		$AttackZoneB.add_exception($DamageZone2)
+		$AttackZoneF.add_exception($DamageZone2)
 		#$DamageZone/Collide.set_disabled(false)
 		if direction>0:
 			var zone = $DamageZone.get_overlapping_bodies()
@@ -179,6 +209,8 @@ func _integrate_forces(s):
 			else:
 				if $StrongPoint.is_colliding():
 					if $StrongPoint.get_collider().name =="StarArea":
+						pass
+					elif $StrongPoint.get_collider().name =="Entrance":
 						pass
 					else:
 						
@@ -200,6 +232,8 @@ func _integrate_forces(s):
 			else:
 				if $StrongPoint.is_colliding():
 					if $StrongPoint.get_collider().name =="StarArea":
+						pass
+					elif $StrongPoint.get_collider().name =="Entrance":
 						pass
 					else:
 						
@@ -254,4 +288,7 @@ func _integrate_forces(s):
 	if animation != new_animation:
 		animation = new_animation
 		$AnimatedSprite.play(animation)
+
+	
+
 
