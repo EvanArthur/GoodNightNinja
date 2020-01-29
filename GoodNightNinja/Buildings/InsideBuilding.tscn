@@ -18,7 +18,7 @@ extents = Vector2( 10, 259.757 )
 extents = Vector2( 10, 247.729 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 488.919, 10 )
+extents = Vector2( 488.919, 7.3526 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 25.7902, 10 )
@@ -30,6 +30,7 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="Outside" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 0.15, 0.15 )
 z_index = 3
 texture = ExtResource( 3 )
@@ -82,7 +83,7 @@ position = Vector2( 482.187, 88.7811 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -3.05176e-005, 329.06 )
+position = Vector2( -3.05176e-005, 330.856 )
 shape = SubResource( 5 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
