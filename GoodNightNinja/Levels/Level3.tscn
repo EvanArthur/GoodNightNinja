@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Buildings/Hotel.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Buildings/Dumpster.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2279.65, 13.1683 )
@@ -316,8 +317,8 @@ position = Vector2( 14130.4, 1278.76 )
 scale = Vector2( 0.7, 1 )
 
 [node name="SpikeTrap24" parent="." instance=ExtResource( 5 )]
-position = Vector2( 15225.3, 1278.33 )
-scale = Vector2( 0.7, 1 )
+position = Vector2( 15111, 1278.91 )
+scale = Vector2( 0.25, 1 )
 
 [node name="SpikeTrap25" parent="." instance=ExtResource( 5 )]
 position = Vector2( 18112.1, 903.488 )
@@ -374,7 +375,10 @@ position = Vector2( 5555.08, 461.589 )
 position = Vector2( 13025.8, 462.164 )
 
 [node name="HealthPotion3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 16436.7, 1215.22 )
+position = Vector2( 16438, 1215.22 )
+
+[node name="HealthPotion4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 17259.7, 639.941 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 8 )]
 editor/display_folded = true
@@ -418,8 +422,8 @@ motion = Vector2( 0, 150 )
 cycle = 3.0
 
 [node name="MovingPlatform7" parent="." instance=ExtResource( 8 )]
-position = Vector2( 10625.1, 80.6369 )
-motion = Vector2( -200, 100 )
+position = Vector2( 10766.3, 86.2859 )
+motion = Vector2( -300, 100 )
 cycle = 3.0
 
 [node name="MovingPlatform8" parent="." instance=ExtResource( 8 )]
@@ -477,6 +481,7 @@ full_collide = true
 position = Vector2( 7691.7, -1242.63 )
 stream = ExtResource( 10 )
 volume_db = -3.263
+autoplay = true
 max_distance = 1.56933e+09
 
 [node name="Dumpster" parent="." instance=ExtResource( 11 )]
@@ -563,7 +568,8 @@ texture = ExtResource( 4 )
 shape = SubResource( 5 )
 
 [node name="Ninja" parent="." instance=ExtResource( 12 )]
-position = Vector2( 17256.9, 1197.67 )
+editor/display_folded = false
+position = Vector2( 6240.55, 81.2074 )
 
 [node name="Sprite" parent="Ninja" index="0"]
 position = Vector2( 33.4304, -21.825 )
@@ -588,6 +594,21 @@ position = Vector2( 14646.8, 1271.34 )
 
 [node name="BasicEnemy7" parent="." instance=ExtResource( 13 )]
 position = Vector2( 16724.9, 1255.49 )
+
+[node name="StarPickup" parent="." instance=ExtResource( 14 )]
+position = Vector2( 5390.67, 463.973 )
+
+[node name="StarPickup2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 9117.91, -348.356 )
+
+[node name="StarPickup3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 13678.5, 305.047 )
+
+[node name="StarPickup4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 15522.4, -67.4117 )
+
+[node name="StarPickup5" parent="." instance=ExtResource( 14 )]
+position = Vector2( 15607.1, 1220.57 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 
