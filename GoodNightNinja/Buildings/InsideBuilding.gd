@@ -16,15 +16,8 @@ func _ready():
 
 func _on_Entrance_body_entered(body):
 	if body.get_name() == "Ninja":
-		if $Outside.visible:
-			$Outside.visible = false
-		else:
-			$Outside.visible = true
+		($Anim as AnimationPlayer).play("shutdown")
 
-
-func _on_Exit_body_entered(body):
+func _on_Entrance_body_exited(body):
 	if body.get_name() == "Ninja":
-		if $Outside.visible:
-			$Outside.visible = false
-		else:
-			$Outside.visible = true
+		($Anim as AnimationPlayer).play("appear")

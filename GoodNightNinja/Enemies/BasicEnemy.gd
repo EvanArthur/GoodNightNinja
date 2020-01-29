@@ -50,7 +50,9 @@ func _preDie():
 	
 # called after hit with melee or ranged attack
 func _onHit():
+	
 	health = health - 0.5
+	print(health)
 	if health == 0:
 		state = STATE_DYING
 		set_friction(1000)
@@ -107,12 +109,11 @@ func _integrate_forces(s):
 		if $StrongPoint.is_colliding():
 			
 			if $StrongPoint.get_collider().name =="NinjaStar":
-				print("Here")
+				
 				state=STATE_ATTACKING
 			elif $StrongPoint.get_collider().name =="StarArea":
 				pass
 			else:
-				print($StrongPoint.get_collider().name)
 				direction = -direction
 				if $StrongPoint.position.x>0:
 					$AnimatedSprite.flip_h=true
@@ -140,27 +141,24 @@ func _integrate_forces(s):
 			var damagezone = $DamageZone2.get_overlapping_bodies()
 			if not damagezone.empty():
 				var bodydam = damagezone.front()
-
 				if bodydam.get_name() == "NinjaStar":
-					if $Timer.is_stopped():
-						$Timer.start()
-						call_deferred("_onHit")
+#					if $Timer2.is_stopped():
+#						$Timer2.start()
+					call_deferred("_onHit")
 		else:
 			var zone = $DamageZone2.get_overlapping_bodies()
 			if not zone.empty():
 				var body = zone.front()
-				#print(body,get_name())
 				if body.get_name() == "NinjaStar":
 					$EnragedTimer.start()
 					state=STATE_ATTACKING
 			var damagezone = $DamageZone.get_overlapping_bodies()
 			if not damagezone.empty():
 				var bodydam = damagezone.front()
-
 				if bodydam.get_name() == "NinjaStar":
-					if $Timer.is_stopped():
-						$Timer.start()
-						call_deferred("_onHit")
+#					if $Timer2.is_stopped():
+#						$Timer2.start()
+					call_deferred("_onHit")
 					
 					
 		if forAtt.is_colliding():

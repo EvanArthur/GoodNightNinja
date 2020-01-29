@@ -100,10 +100,10 @@ position = Vector2( 1161.56, 581.849 )
 position = Vector2( 2351.01, 579.204 )
 
 [node name="SpikeTrap10" parent="." instance=ExtResource( 7 )]
-position = Vector2( 4927.6, 574.096 )
+position = Vector2( 4927.6, 580.308 )
 
 [node name="SpikeTrap9" parent="." instance=ExtResource( 7 )]
-position = Vector2( 4613.57, 574.169 )
+position = Vector2( 4613.57, 580.381 )
 
 [node name="SpikeTrap3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 7029.6, 1390.07 )
@@ -313,7 +313,6 @@ position = Vector2( 1131.73, 578.871 )
 scale = Vector2( 2, 2 )
 
 [node name="InsideBuilding" parent="." instance=ExtResource( 16 )]
-editor/display_folded = true
 position = Vector2( 9982.07, 58.0481 )
 scale = Vector2( 1.7, 1.7 )
 

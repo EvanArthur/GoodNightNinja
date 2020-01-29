@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Buildings/InsideBuilding.gd" type="Script" id=1]
 [ext_resource path="res://Buildings/assets/InsideBuilding.png" type="Texture" id=2]
@@ -6,10 +6,7 @@
 [ext_resource path="res://Traps/NormalPlatform.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 0.952332, 57.8259 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 1.30841, 81.2157 )
+extents = Vector2( 470.86, 332.889 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 259.757 )
@@ -23,6 +20,36 @@ extents = Vector2( 488.919, 7.3526 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 25.7902, 10 )
 
+[sub_resource type="Animation" id=8]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Outside:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "shutdown"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Outside:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="InsideBuilding" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -31,7 +58,8 @@ texture = ExtResource( 2 )
 
 [node name="Outside" type="Sprite" parent="."]
 visible = false
-scale = Vector2( 0.15, 0.15 )
+position = Vector2( -0.687676, 0.55093 )
+scale = Vector2( 0.152173, 0.15187 )
 z_index = 3
 texture = ExtResource( 3 )
 
@@ -52,24 +80,17 @@ position = Vector2( 339.107, 172.723 )
 scale = Vector2( 0.255, 0.17 )
 
 [node name="Entrance" type="Area2D" parent="."]
-position = Vector2( -479.28, 262.428 )
+position = Vector2( 2.40042, 8.67578 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance"]
+position = Vector2( -2, 0 )
 shape = SubResource( 1 )
 
-[node name="Exit" type="Area2D" parent="."]
-position = Vector2( 479.18, -239.837 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
-shape = SubResource( 2 )
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
 __meta__ = {
 "_edit_group_": true
 }
@@ -104,5 +125,9 @@ polygon = PoolVector2Array( -188.344, -127.189, -154.895, -131.59, -102.08, -131
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 466.783, -146.283 )
 shape = SubResource( 6 )
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+anims/appear = SubResource( 8 )
+anims/shutdown = SubResource( 7 )
 [connection signal="body_entered" from="Entrance" to="." method="_on_Entrance_body_entered"]
-[connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
+[connection signal="body_exited" from="Entrance" to="." method="_on_Entrance_body_exited"]
