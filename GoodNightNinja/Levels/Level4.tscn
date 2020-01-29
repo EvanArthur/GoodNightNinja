@@ -4,6 +4,7 @@
 [ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=8]
