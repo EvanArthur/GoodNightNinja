@@ -55,7 +55,7 @@ func _preDie():
 func _onHit():
 	$AnimatedSprite.play("damege")
 	health = health - 0.5
-	print(health)
+	#print(health)
 	if health == 0:
 		state = STATE_DYING
 		call_deferred("_preDie")
@@ -149,8 +149,8 @@ func _integrate_forces(s):
 			var damagezone = $DamageZone2.get_overlapping_bodies()
 			if not damagezone.empty():
 				var bodydam = damagezone.front()
-				print(bodydam)
-				print(bodydam.get_name())
+				#print(bodydam)
+				#print(bodydam.get_name())
 				if bodydam.get_name() == "NinjaStar" or bodydam.get_name().begins_with("@"):
 					if $Timer2.is_stopped():
 						$Timer2.start()
@@ -165,8 +165,8 @@ func _integrate_forces(s):
 			var damagezone = $DamageZone.get_overlapping_bodies()
 			if not damagezone.empty():
 				var bodydam = damagezone.front()
-				print(bodydam)
-				print(bodydam.get_name())
+				#print(bodydam)
+				#print(bodydam.get_name())
 				if bodydam.get_name() == "NinjaStar" or bodydam.get_name().begins_with("@"):
 					if $Timer2.is_stopped():
 						$Timer2.start()
