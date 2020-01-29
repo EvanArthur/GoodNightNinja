@@ -21,7 +21,7 @@
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Buildings/ContinueSign.tscn" type="PackedScene" id=20]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.2626, 989.165 )
 
 [node name="Level1" type="Node2D"]
@@ -247,7 +247,7 @@ position = Vector2( 12637.9, 603.392 )
 position = Vector2( 5356.32, 1398.6 )
 
 [node name="HealthPotion2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 10440, 491.93 )
+position = Vector2( 9981.51, 491.93 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
@@ -261,7 +261,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Bounds2" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -271,7 +271,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds2"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Pipe" parent="." instance=ExtResource( 16 )]
 position = Vector2( 6310, 920 )
