@@ -42,11 +42,10 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 197.563, -1289.97 )
 
 [node name="Ninja" parent="." instance=ExtResource( 5 )]
-editor/display_folded = true
-position = Vector2( 12777.4, -1129.77 )
+position = Vector2( 77.2882, 524.502 )
 
 [node name="LevelFinish" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1273.23, -553.44 )
+position = Vector2( -302.868, -920.841 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -194,9 +193,9 @@ motion = Vector2( 600, 0 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 9 )]
 editor/display_folded = true
-position = Vector2( 1702.57, -1201.25 )
-motion = Vector2( 300, 0 )
-cycle = 3.0
+position = Vector2( 1814.33, -1165.69 )
+motion = Vector2( 400, 0 )
+cycle = 6.0
 
 [node name="CollisionShape2D" parent="MovingPlatform/Platform" index="1"]
 one_way_collision = true

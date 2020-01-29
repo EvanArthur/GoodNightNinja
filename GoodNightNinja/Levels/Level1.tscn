@@ -109,7 +109,7 @@ position = Vector2( 8194.34, 1389.03 )
 position = Vector2( 8583.23, 1391.56 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 8 )]
-position = Vector2( 7037.52, 887.624 )
+position = Vector2( 7037.52, 899.107 )
 motion = Vector2( 200, 0 )
 cycle = 5.0
 

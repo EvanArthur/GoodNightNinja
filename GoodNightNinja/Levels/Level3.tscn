@@ -450,7 +450,7 @@ full_collide = true
 position = Vector2( 7691.7, -1242.63 )
 stream = ExtResource( 10 )
 volume_db = -3.263
-max_distance = 1.56933e+009
+max_distance = 1.56933e+09
 
 [node name="Dumpster" parent="." instance=ExtResource( 11 )]
 position = Vector2( 13682.6, 480.977 )
@@ -536,7 +536,6 @@ texture = ExtResource( 4 )
 shape = SubResource( 5 )
 
 [node name="Ninja" parent="." instance=ExtResource( 12 )]
-editor/display_folded = true
 position = Vector2( 13675.5, 281.727 )
 
 [node name="Sprite" parent="Ninja" index="0"]
