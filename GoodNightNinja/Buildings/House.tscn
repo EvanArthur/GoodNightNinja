@@ -11,9 +11,13 @@ position = Vector2( 873.904, 824 )
 scale = Vector2( 1.47302, 1.47302 )
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 860, 668.711 )
 scale = Vector2( 1.40038, 1.40038 )
 polygon = PoolVector2Array( -1932.7, -504.492, -1650.01, -505.491, 6.44562, -1567.11, 1667.61, -505.297, 1946.5, -506.142, 9.33545, -1721.1 )
+one_way_collision = true
+
+[node name="HouseInside" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1450.55, 3366.45, -1458.33, -41.7937, 883.866, -1511.53, 3210.5, -40.8538, 3194.93, 3390.83 )

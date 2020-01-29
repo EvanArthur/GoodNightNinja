@@ -32,9 +32,5 @@ position = Vector2( -2059.77, -392.337 )
 scale = Vector2( 0.93, 1 )
 
 [node name="NormalPlatform5" parent="." instance=ExtResource( 3 )]
-position = Vector2( -1202.82, -1042.79 )
-scale = Vector2( 0.93, 1 )
-
-[node name="NormalPlatform6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1202.82, -1047.95 )
-scale = Vector2( 0.93, 1 )
+position = Vector2( -8.464, -1042.79 )
+scale = Vector2( 3.3, 1 )
