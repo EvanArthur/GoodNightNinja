@@ -23,7 +23,7 @@
 [ext_resource path="res://Buildings/Nursery.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=22]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.2626, 989.165 )
 
 [node name="Level1" type="Node2D"]
@@ -78,13 +78,15 @@ position = Vector2( 112.9, 300.671 )
 scale = Vector2( 0.588235, 0.588235 )
 
 [node name="Floor" parent="." instance=ExtResource( 7 )]
-editor/display_folded = true
-position = Vector2( 1786.62, 623.571 )
-scale = Vector2( 12, 1 )
+position = Vector2( 2100, 623.571 )
+scale = Vector2( 14, 1 )
 z_index = 1
 
+[node name="Sprite" parent="Floor" index="0"]
+position = Vector2( -61.4286, 0 )
+
 [node name="CollisionShape2D" parent="Floor/StaticBody2D" index="0"]
-position = Vector2( 0, -5.9121 )
+position = Vector2( -62.1429, -3.47991 )
 
 [node name="Floor1" parent="." instance=ExtResource( 7 )]
 editor/display_folded = true
@@ -221,7 +223,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Bounds2" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -231,7 +233,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds2"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Pipe" parent="." instance=ExtResource( 15 )]
 position = Vector2( 6310, 897.679 )
@@ -240,7 +242,7 @@ position = Vector2( 6310, 897.679 )
 position = Vector2( 5990, 1147.07 )
 
 [node name="Pipe5" parent="." instance=ExtResource( 15 )]
-position = Vector2( 5069.52, 1014 )
+position = Vector2( 5070, 1020 )
 rotation = 1.5708
 scale = Vector2( 2.25, 2.1 )
 
