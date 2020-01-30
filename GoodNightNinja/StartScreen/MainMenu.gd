@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends Node2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -15,15 +15,19 @@ func _ready():
 
 func _on_PlayButton_pressed():
 	get_tree().change_scene("res://Levels/Level1.tscn")
-	#if Global.currentStage > Global.maxStage:
-	#	get_tree().change_scene("res://Levels/Level"+str(Global.maxStage)+".tscn")
 
-func _on_TutorialButton_pressed():
-	get_tree().change_scene("res://StartScreen/TutorialScreen.tscn")
 
 func _on_ContinueButton_pressed():
 	get_tree().change_scene("res://StartScreen/LevelsScreen.tscn")
 
 
+
+
+func _on_TutorialButton_pressed():
+	get_tree().change_scene("res://StartScreen/TutorialScreen.tscn")
+
+
+
 func _on_QuitButton_pressed():
 	get_tree().quit()
+

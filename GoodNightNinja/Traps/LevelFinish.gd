@@ -34,4 +34,4 @@ func _on_LevelFinish_body_entered(body):
 			elif Global.currentStage == 5:
 				Global.level5 == true
 			# loads end screen and gives time elapsed
-			get_tree().change_scene("res://StartScreen/EndScreen.tscn")
+			get_tree().change_scene("res://StartScreen/EndLevelScreen.tscn")

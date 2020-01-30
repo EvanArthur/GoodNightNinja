@@ -13,8 +13,11 @@ func _ready():
 #	pass
 
 
-func _on_RespawnButton_pressed():
-	get_tree().change_scene("res://Levels/Level"+str(Global.currentStage)+".tscn")
+func _on_nextLevelButtton_pressed():
+	if Global.currentStage > Global.maxStage:
+		get_tree().change_scene("res://StartScreen/MainMenu.tscn")
+	else:
+		get_tree().change_scene("res://Levels/Level"+str(Global.currentStage)+".tscn")
 
 
 func _on_MainMenuButton_pressed():
