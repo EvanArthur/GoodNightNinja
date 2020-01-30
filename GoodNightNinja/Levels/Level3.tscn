@@ -423,7 +423,7 @@ position = Vector2( 13678.5, 305.047 )
 position = Vector2( 15607.1, 1220.57 )
 
 [node name="Ninja" parent="." instance=ExtResource( 16 )]
-position = Vector2( 9092.33, -477.837 )
+position = Vector2( -242.434, 396.134 )
 z_index = 1
 
 [node name="Sprite" parent="Ninja" index="0"]

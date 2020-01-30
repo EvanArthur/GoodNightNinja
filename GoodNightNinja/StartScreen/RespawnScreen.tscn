@@ -11,6 +11,7 @@ margin_left = 290.0
 margin_top = 180.0
 margin_right = 740.0
 margin_bottom = 240.0
+mouse_default_cursor_shape = 2
 flat = true
 
 [node name="MainMenuButton" type="Button" parent="."]
@@ -18,6 +19,7 @@ margin_left = 290.0
 margin_top = 270.0
 margin_right = 730.0
 margin_bottom = 320.0
+mouse_default_cursor_shape = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 510, 300 )
