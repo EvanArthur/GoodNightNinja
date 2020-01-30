@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Traps/Floor.tscn" type="PackedScene" id=2]
@@ -15,13 +15,12 @@
 [ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Buildings/Express.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=15]
-[ext_resource path="res://Buildings/assets/sewerWall.png" type="Texture" id=16]
-[ext_resource path="res://Traps/Ledge.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Buildings/ApartmentBuilding.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Buildings/GroceryStore.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Levels/Arrow.png" type="Texture" id=22]
+[ext_resource path="res://Traps/Ledge.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Buildings/ApartmentBuilding.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Buildings/GroceryStore.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Levels/Arrow.png" type="Texture" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100, 2000 )
@@ -281,91 +280,7 @@ scale = Vector2( 8.33333, 8.33333 )
 stream = ExtResource( 15 )
 autoplay = true
 
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 7790, 850 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite9" type="Sprite" parent="."]
-position = Vector2( 7790, 1350 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite10" type="Sprite" parent="."]
-position = Vector2( 8530, 1350 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite11" type="Sprite" parent="."]
-position = Vector2( 9270, 1350 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite12" type="Sprite" parent="."]
-position = Vector2( 10020, 1360 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite13" type="Sprite" parent="."]
-position = Vector2( 10770, 1350 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite14" type="Sprite" parent="."]
-position = Vector2( 11520, 1350 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite15" type="Sprite" parent="."]
-position = Vector2( 12270, 1350 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 8540, 850 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( 9290, 860 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite5" type="Sprite" parent="."]
-position = Vector2( 10040, 880 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite6" type="Sprite" parent="."]
-position = Vector2( 10784.5, 850 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite7" type="Sprite" parent="."]
-position = Vector2( 11530, 850 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Sprite8" type="Sprite" parent="."]
-position = Vector2( 12280, 850 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 16 )
-
-[node name="Ledge" parent="." instance=ExtResource( 17 )]
+[node name="Ledge" parent="." instance=ExtResource( 16 )]
 position = Vector2( 7361.5, 1013.84 )
 scale = Vector2( 0.11, 7.2 )
 
@@ -374,7 +289,7 @@ position = Vector2( 10080, 1480 )
 scale = Vector2( 10, 5 )
 z_index = 1
 
-[node name="Ledge2" parent="." instance=ExtResource( 17 )]
+[node name="Ledge2" parent="." instance=ExtResource( 16 )]
 position = Vector2( 12600, 1030 )
 scale = Vector2( 0.48, 7 )
 
@@ -417,7 +332,7 @@ position = Vector2( 11972.3, 1307 )
 [node name="SpikeTrap14" parent="." instance=ExtResource( 4 )]
 position = Vector2( 12138.4, 1307 )
 
-[node name="ApartmentBuilding2" parent="." instance=ExtResource( 18 )]
+[node name="ApartmentBuilding2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 10176.3, 103.166 )
 scale = Vector2( 0.2, 0.2 )
 
@@ -427,7 +342,7 @@ position = Vector2( -2317.76, -5978.69 )
 [node name="NormalPlatform" parent="ApartmentBuilding2" index="3"]
 position = Vector2( -2305.83, -6303.75 )
 
-[node name="ApartmentBuilding" parent="." instance=ExtResource( 18 )]
+[node name="ApartmentBuilding" parent="." instance=ExtResource( 17 )]
 position = Vector2( 13223.1, 106.908 )
 scale = Vector2( 0.2, 0.2 )
 
@@ -435,7 +350,7 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( -1215.5, -1962.61 )
 scale = Vector2( 0.2, 0.2 )
 
-[node name="Ninja" parent="." instance=ExtResource( 19 )]
+[node name="Ninja" parent="." instance=ExtResource( 18 )]
 editor/display_folded = true
 position = Vector2( -920, -250 )
 z_index = 1
@@ -446,11 +361,11 @@ position = Vector2( 7627.45, 927.834 )
 [node name="BasicEnemy" parent="." instance=ExtResource( 9 )]
 position = Vector2( 9803.59, 1061.73 )
 
-[node name="GroceryStore" parent="." instance=ExtResource( 20 )]
+[node name="GroceryStore" parent="." instance=ExtResource( 19 )]
 position = Vector2( 16047.4, 49.8708 )
 scale = Vector2( 0.25, 0.25 )
 
-[node name="GroceryStore" parent="GroceryStore" instance=ExtResource( 20 )]
+[node name="GroceryStore" parent="GroceryStore" instance=ExtResource( 19 )]
 position = Vector2( 0, -4199.48 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="GroceryStore"]
@@ -540,7 +455,7 @@ cycle = 4.0
 position = Vector2( 2020, 295.425 )
 scale = Vector2( 0.1, 0.1 )
 
-[node name="LevelFinish" parent="." instance=ExtResource( 21 )]
+[node name="LevelFinish" parent="." instance=ExtResource( 20 )]
 position = Vector2( 16047.4, 101.494 )
 scale = Vector2( 1, 2 )
 
@@ -548,31 +463,31 @@ scale = Vector2( 1, 2 )
 position = Vector2( -86.7987, -31.0792 )
 rotation = 1.14319
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 22 )
+texture = ExtResource( 21 )
 
 [node name="Arrow2" type="Sprite" parent="."]
 position = Vector2( 3253.91, -221.663 )
 rotation = -0.760963
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 22 )
+texture = ExtResource( 21 )
 
 [node name="Arrow4" type="Sprite" parent="."]
 position = Vector2( 3534.55, -485.118 )
 rotation = -0.760963
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 22 )
+texture = ExtResource( 21 )
 
 [node name="Arrow5" type="Sprite" parent="."]
 position = Vector2( 3820.92, -699.891 )
 rotation = -0.760963
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 22 )
+texture = ExtResource( 21 )
 
 [node name="Arrow6" type="Sprite" parent="."]
 position = Vector2( 7633.03, -101.618 )
 rotation = 1.5708
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 22 )
+texture = ExtResource( 21 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 
