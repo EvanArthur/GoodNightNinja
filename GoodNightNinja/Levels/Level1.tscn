@@ -1,0 +1,296 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Buildings/ApartmentBuilding.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Buildings/InsideBuilding.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Traps/Floor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Buildings/Dumpster.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Buildings/Express.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Pickups/HealthPotion.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Traps/FireTrap.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=14]
+[ext_resource path="res://Buildings/Pipe.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Buildings/Cinema.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Buildings/ContinueSign.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Buildings/2StoryBuilding.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Buildings/1StoryTower.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Buildings/Nursery.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=22]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16.2626, 989.165 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 1 )]
+
+[node name="TallBuilding" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1923.65, -103.247 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="TallBuilding2" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( 5793.08, -83.6298 )
+scale = Vector2( 0.6, 0.6 )
+full_collide = true
+
+[node name="ApartmentBuilding" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3501.61, -30.9941 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="BasicEnemy" parent="ApartmentBuilding" instance=ExtResource( 4 )]
+position = Vector2( -1914.81, -1793.31 )
+scale = Vector2( 4, 4 )
+
+[node name="StarPickup" parent="ApartmentBuilding" instance=ExtResource( 5 )]
+position = Vector2( 1541.47, -2494.86 )
+scale = Vector2( 4, 4 )
+
+[node name="StarPickup2" parent="ApartmentBuilding" instance=ExtResource( 5 )]
+position = Vector2( 18273.6, 3403.98 )
+scale = Vector2( 4, 4 )
+
+[node name="ApartmentBuilding2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7110, -15.471 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="StarPickup2" parent="ApartmentBuilding2" instance=ExtResource( 5 )]
+position = Vector2( 18273.6, 3403.98 )
+scale = Vector2( 4, 4 )
+
+[node name="InsideBuilding" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 9982.07, 58.0481 )
+scale = Vector2( 1.7, 1.7 )
+
+[node name="BasicEnemy3" parent="InsideBuilding" instance=ExtResource( 4 )]
+position = Vector2( -264.847, 299.147 )
+scale = Vector2( 0.588235, 0.588235 )
+
+[node name="BasicEnemy4" parent="InsideBuilding" instance=ExtResource( 4 )]
+position = Vector2( 112.9, 300.671 )
+scale = Vector2( 0.588235, 0.588235 )
+
+[node name="Floor" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 1786.62, 623.571 )
+scale = Vector2( 12, 1 )
+z_index = 1
+
+[node name="CollisionShape2D" parent="Floor/StaticBody2D" index="0"]
+position = Vector2( 0, -5.9121 )
+
+[node name="Floor1" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 7010, 627.828 )
+scale = Vector2( 5.23, 1 )
+z_index = 1
+
+[node name="CollisionShape2D" parent="Floor1/StaticBody2D" index="0"]
+position = Vector2( 0, -7.73693 )
+
+[node name="Floor2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 7029.6, 1402.43 )
+scale = Vector2( 7.25, 1 )
+z_index = 1
+
+[node name="Floor3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 10901, 623.571 )
+scale = Vector2( 7, 1 )
+z_index = 1
+
+[node name="Floor4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 14780, 623.571 )
+scale = Vector2( 7, 1 )
+z_index = 1
+
+[node name="SpikeTrap" parent="." instance=ExtResource( 8 )]
+position = Vector2( 830, 586.146 )
+
+[node name="SpikeTrap2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2351.01, 579.204 )
+
+[node name="SpikeTrap11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 8260, 592.904 )
+
+[node name="SpikeTrap3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 7029.6, 1390.07 )
+
+[node name="SpikeTrap7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 6642.19, 1390.07 )
+
+[node name="SpikeTrap4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 7417.59, 1388.85 )
+
+[node name="SpikeTrap5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 7805.59, 1388.85 )
+
+[node name="SpikeTrap6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 8194.34, 1389.03 )
+
+[node name="SpikeTrap8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 8583.23, 1391.56 )
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 9 )]
+position = Vector2( 7037.52, 899.107 )
+motion = Vector2( 200, 0 )
+cycle = 5.0
+
+[node name="MovingPlatform4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 11233.1, -193.838 )
+motion = Vector2( 200, 0 )
+cycle = 4.0
+
+[node name="MovingPlatform5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 12040, 0 )
+motion = Vector2( -200, 0 )
+cycle = 4.0
+
+[node name="MovingPlatform6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 12780, 242.693 )
+motion = Vector2( 200, 0 )
+cycle = 4.0
+
+[node name="MovingPlatform2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 7596.39, 1142.4 )
+motion = Vector2( 200, 0 )
+cycle = 4.0
+
+[node name="MovingPlatform3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 8063.3, 875.696 )
+motion = Vector2( 200, 0 )
+cycle = 3.0
+
+[node name="Dumpster" parent="." instance=ExtResource( 10 )]
+position = Vector2( -60, 523.12 )
+scale = Vector2( 0.05, 0.05 )
+
+[node name="Express" parent="." instance=ExtResource( 11 )]
+position = Vector2( 270, 313 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="MovingPlatform11" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5220, 910 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="HealthPotion" parent="MovingPlatform11" instance=ExtResource( 12 )]
+position = Vector2( -119.999, 780 )
+scale = Vector2( 2, 2 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+
+[node name="FireTrap" parent="." instance=ExtResource( 13 )]
+position = Vector2( 10998.6, 603.707 )
+
+[node name="FireTrap2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 11302.1, 603.707 )
+
+[node name="FireTrap3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 11637.8, 603.707 )
+
+[node name="FireTrap4" parent="." instance=ExtResource( 13 )]
+position = Vector2( 11983.3, 600.206 )
+
+[node name="FireTrap5" parent="." instance=ExtResource( 13 )]
+position = Vector2( 12326.5, 599.427 )
+
+[node name="FireTrap6" parent="." instance=ExtResource( 13 )]
+position = Vector2( 12637.9, 603.392 )
+
+[node name="BasicEnemy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 5356.32, 1398.6 )
+
+[node name="HealthPotion2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 10440, 491.93 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+autoplay = true
+
+[node name="Bounds" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( -1010, -200 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
+shape = SubResource( 3 )
+
+[node name="Bounds2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 15900, -370 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds2"]
+shape = SubResource( 3 )
+
+[node name="Pipe" parent="." instance=ExtResource( 15 )]
+position = Vector2( 6310, 897.679 )
+
+[node name="Pipe2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 5990, 1147.07 )
+
+[node name="Pipe5" parent="." instance=ExtResource( 15 )]
+position = Vector2( 5069.52, 1014 )
+rotation = 1.5708
+scale = Vector2( 2.25, 2.1 )
+
+[node name="Pipe7" parent="." instance=ExtResource( 15 )]
+position = Vector2( 5600, 900 )
+rotation = 1.5708
+scale = Vector2( 1.5, 2.1 )
+
+[node name="Pipe6" parent="." instance=ExtResource( 15 )]
+position = Vector2( 8990, 1010 )
+rotation = 1.5708
+scale = Vector2( 2.25, 2.1 )
+
+[node name="Pipe3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 8380, 1198.6 )
+
+[node name="Pipe4" parent="." instance=ExtResource( 15 )]
+position = Vector2( 8801, 950 )
+
+[node name="Cinema" parent="." instance=ExtResource( 16 )]
+position = Vector2( 14790, -80 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="LevelFinish" parent="." instance=ExtResource( 17 )]
+position = Vector2( 15420, 416.598 )
+scale = Vector2( 1, 0.75 )
+
+[node name="ContinueSign" parent="." instance=ExtResource( 18 )]
+position = Vector2( 15430, 410 )
+
+[node name="2StoryBuilding" parent="." instance=ExtResource( 19 )]
+position = Vector2( 4630, 250 )
+scale = Vector2( 0.8, 1 )
+
+[node name="1StoryTower" parent="." instance=ExtResource( 20 )]
+position = Vector2( 4950, 380 )
+scale = Vector2( 0.8, 1 )
+
+[node name="1StoryTower2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 1370, 380 )
+
+[node name="Nursery" parent="." instance=ExtResource( 21 )]
+position = Vector2( -590, 366.598 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Ninja" parent="." instance=ExtResource( 22 )]
+position = Vector2( -850, 510 )
+[connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
+[connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
+
+[editable path="Floor"]
+
+[editable path="Floor1"]
