@@ -2,19 +2,19 @@
 
 [ext_resource path="res://Enemies/BasicEnemy.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/PlaceholderSamurai.png" type="Texture" id=2]
-[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk1.png" type="Texture" id=3]
-[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk2.png" type="Texture" id=4]
-[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk3.png" type="Texture" id=5]
-[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk4.png" type="Texture" id=6]
-[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk5.png" type="Texture" id=7]
-[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk6.png" type="Texture" id=8]
-[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk7.png" type="Texture" id=9]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash1.png" type="Texture" id=10]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash2.png" type="Texture" id=11]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash3.png" type="Texture" id=12]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash4.png" type="Texture" id=13]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash5.png" type="Texture" id=14]
-[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash6 .png" type="Texture" id=15]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash1.png" type="Texture" id=3]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash2.png" type="Texture" id=4]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash3.png" type="Texture" id=5]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash4.png" type="Texture" id=6]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash5.png" type="Texture" id=7]
+[ext_resource path="res://Enemies/SamuraiSlash/SamuraiSlash6 .png" type="Texture" id=8]
+[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk1.png" type="Texture" id=9]
+[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk2.png" type="Texture" id=10]
+[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk3.png" type="Texture" id=11]
+[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk4.png" type="Texture" id=12]
+[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk5.png" type="Texture" id=13]
+[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk6.png" type="Texture" id=14]
+[ext_resource path="res://Enemies/SamuraiWalk/SamuraiWalk7.png" type="Texture" id=15]
 [ext_resource path="res://Enemies/SamuraiDie/SamuraiDie1.png" type="Texture" id=16]
 [ext_resource path="res://Enemies/SamuraiDie/SamuraiDie2.png" type="Texture" id=17]
 [ext_resource path="res://Enemies/SamuraiDie/SamuraiDie3.png" type="Texture" id=18]
@@ -28,15 +28,15 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "welk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "attak",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "welk",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": false,
@@ -65,7 +65,7 @@ position = Vector2( 20, -90 )
 scale = Vector2( 0.342205, 0.32274 )
 frames = SubResource( 1 )
 animation = "attak"
-frame = 2
+frame = 1
 playing = true
 
 [node name="EnemyHitbox" type="CollisionShape2D" parent="."]

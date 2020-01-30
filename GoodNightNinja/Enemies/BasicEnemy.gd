@@ -53,7 +53,7 @@ func _preDie():
 	
 # called after hit with melee or ranged attack
 func _onHit():
-	$AnimatedSprite.play("damege")
+	#$AnimatedSprite.play("damege")
 	health = health - 0.5
 	#print(health)
 	if health == 0:

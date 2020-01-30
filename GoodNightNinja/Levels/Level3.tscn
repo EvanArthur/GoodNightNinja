@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Traps/Floor.tscn" type="PackedScene" id=2]
@@ -13,11 +13,10 @@
 [ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Buildings/House.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Levels/goodnightninja.wav" type="AudioStream" id=14]
-[ext_resource path="res://Traps/Ledge.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Levels/Level 3.wav" type="AudioStream" id=18]
+[ext_resource path="res://Traps/Ledge.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Levels/Level 3.wav" type="AudioStream" id=17]
 
 [node name="Level3" type="Node2D"]
 
@@ -356,23 +355,16 @@ position = Vector2( 6155.84, 146.854 )
 scale = Vector2( 0.13, 0.13 )
 full_collide = true
 
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 7691.7, -1242.63 )
-stream = ExtResource( 14 )
-volume_db = -3.263
-autoplay = true
-max_distance = 1.56933e+009
-
 [node name="Dumpster" parent="." instance=ExtResource( 5 )]
 position = Vector2( 13682.6, 480.977 )
 scale = Vector2( 0.07, 0.07 )
 
-[node name="Ledge" parent="." instance=ExtResource( 15 )]
+[node name="Ledge" parent="." instance=ExtResource( 14 )]
 position = Vector2( 13934.9, 960.344 )
 rotation = 1.5708
 scale = Vector2( 0.75, 1 )
 
-[node name="Ledge2" parent="." instance=ExtResource( 15 )]
+[node name="Ledge2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 14507.2, 763.248 )
 rotation = 1.5708
 scale = Vector2( 0.3, 1 )
@@ -381,7 +373,7 @@ scale = Vector2( 0.3, 1 )
 position = Vector2( 14972.7, 1214.01 )
 scale = Vector2( 0.05, 0.05 )
 
-[node name="Ledge3" parent="." instance=ExtResource( 15 )]
+[node name="Ledge3" parent="." instance=ExtResource( 14 )]
 position = Vector2( 16467.9, 771.927 )
 rotation = 1.5708
 scale = Vector2( 0.3, 1 )
@@ -390,7 +382,7 @@ scale = Vector2( 0.3, 1 )
 position = Vector2( -28.3379, -53.8613 )
 scale = Vector2( 2.33333, 1 )
 
-[node name="TallBuilding" parent="." instance=ExtResource( 16 )]
+[node name="TallBuilding" parent="." instance=ExtResource( 15 )]
 position = Vector2( 18518.9, -582.136 )
 
 [node name="Floor4" parent="." instance=ExtResource( 2 )]
@@ -398,7 +390,7 @@ position = Vector2( 19809.5, 603.888 )
 scale = Vector2( 6, 1 )
 z_index = 1
 
-[node name="Ledge4" parent="." instance=ExtResource( 15 )]
+[node name="Ledge4" parent="." instance=ExtResource( 14 )]
 position = Vector2( 18200.9, 944.629 )
 rotation = 1.5708
 scale = Vector2( 0.7, 1 )
@@ -430,7 +422,7 @@ position = Vector2( 13678.5, 305.047 )
 [node name="StarPickup5" parent="." instance=ExtResource( 12 )]
 position = Vector2( 15607.1, 1220.57 )
 
-[node name="Ninja" parent="." instance=ExtResource( 17 )]
+[node name="Ninja" parent="." instance=ExtResource( 16 )]
 position = Vector2( 9092.33, -477.837 )
 z_index = 1
 
@@ -438,7 +430,7 @@ z_index = 1
 position = Vector2( 33.4304, -21.825 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 18 )
+stream = ExtResource( 17 )
 autoplay = true
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
