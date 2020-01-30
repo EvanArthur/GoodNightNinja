@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Buildings/Skyscraper.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Buildings/Finish.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Levels/Level4.wav" type="AudioStream" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 127.392, 4343.77 )
@@ -568,6 +569,10 @@ position = Vector2( -95.7933, -1088.58 )
 scale = Vector2( 0.5, 0.5 )
 motion = Vector2( 0, 1000 )
 cycle = 6.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+autoplay = true
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="killed" from="Ninja" to="CanvasLayer" method="_on_Ninja_killed"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]

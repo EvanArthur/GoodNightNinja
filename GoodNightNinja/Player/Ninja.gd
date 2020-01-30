@@ -57,6 +57,7 @@ func _kill():
 	mode = MODE_STATIC
 	dying = true
 	_preDie()
+	($death as AudioStreamPlayer2D).play()
 	yield(get_tree().create_timer(1.5),"timeout")
 	_die()
 	get_tree().change_scene("res://StartScreen/RespawnScreen.tscn")
@@ -68,6 +69,7 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health < prev_health:
 			$Sprite.play("damage")
+			($damage as AudioStreamPlayer2D).play()
 			yield(get_tree().create_timer(.1), "timeout")
 		if health == 0:
 			_kill()

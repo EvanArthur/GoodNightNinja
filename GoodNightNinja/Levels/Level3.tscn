@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Traps/Floor.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Traps/Ledge.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Levels/Level 3.wav" type="AudioStream" id=18]
 
 [node name="Level3" type="Node2D"]
 
@@ -360,7 +361,7 @@ position = Vector2( 7691.7, -1242.63 )
 stream = ExtResource( 14 )
 volume_db = -3.263
 autoplay = true
-max_distance = 1.56933e+09
+max_distance = 1.56933e+009
 
 [node name="Dumpster" parent="." instance=ExtResource( 5 )]
 position = Vector2( 13682.6, 480.977 )
@@ -435,6 +436,10 @@ z_index = 1
 
 [node name="Sprite" parent="Ninja" index="0"]
 position = Vector2( 33.4304, -21.825 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+autoplay = true
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 
