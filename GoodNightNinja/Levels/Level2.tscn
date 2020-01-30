@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Traps/Floor.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Buildings/GroceryStore.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Traps/LevelFinish.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Levels/Arrow.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100, 2000 )
@@ -542,6 +543,36 @@ scale = Vector2( 0.1, 0.1 )
 [node name="LevelFinish" parent="." instance=ExtResource( 21 )]
 position = Vector2( 16047.4, 101.494 )
 scale = Vector2( 1, 2 )
+
+[node name="Arrow" type="Sprite" parent="."]
+position = Vector2( -86.7987, -31.0792 )
+rotation = 1.14319
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
+
+[node name="Arrow2" type="Sprite" parent="."]
+position = Vector2( 3253.91, -221.663 )
+rotation = -0.760963
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
+
+[node name="Arrow4" type="Sprite" parent="."]
+position = Vector2( 3534.55, -485.118 )
+rotation = -0.760963
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
+
+[node name="Arrow5" type="Sprite" parent="."]
+position = Vector2( 3820.92, -699.891 )
+rotation = -0.760963
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
+
+[node name="Arrow6" type="Sprite" parent="."]
+position = Vector2( 7633.03, -101.618 )
+rotation = 1.5708
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 

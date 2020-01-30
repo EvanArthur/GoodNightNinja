@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Buildings/1StoryTower.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Buildings/Nursery.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Levels/Arrow.png" type="Texture" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.2626, 989.165 )
@@ -41,9 +42,26 @@ scale = Vector2( 0.6, 0.6 )
 full_collide = true
 
 [node name="InsideBuilding" parent="." instance=ExtResource( 3 )]
-editor/display_folded = true
 position = Vector2( 9982.07, 58.0481 )
 scale = Vector2( 1.7, 1.7 )
+
+[node name="NormalPlatform" parent="InsideBuilding" index="2"]
+editor/display_folded = true
+
+[node name="NormalPlatform2" parent="InsideBuilding" index="3"]
+editor/display_folded = true
+
+[node name="NormalPlatform3" parent="InsideBuilding" index="4"]
+editor/display_folded = true
+
+[node name="NormalPlatform4" parent="InsideBuilding" index="5"]
+editor/display_folded = true
+
+[node name="StaticBody2D" parent="InsideBuilding/NormalPlatform4" index="0"]
+editor/display_folded = true
+
+[node name="Entrance" parent="InsideBuilding" index="6"]
+editor/display_folded = true
 
 [node name="BasicEnemy3" parent="InsideBuilding" instance=ExtResource( 4 )]
 position = Vector2( -264.847, 299.147 )
@@ -290,8 +308,36 @@ scale = Vector2( 0.1, 0.1 )
 
 [node name="Ninja" parent="." instance=ExtResource( 22 )]
 position = Vector2( -850, 510 )
+
+[node name="Arrow" type="Sprite" parent="."]
+position = Vector2( 4783.58, -534.157 )
+rotation = 0.811578
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 23 )
+
+[node name="Arrow3" type="Sprite" parent="."]
+position = Vector2( 13271.6, 187.475 )
+rotation = 0.811578
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 23 )
+
+[node name="Arrow2" type="Sprite" parent="."]
+position = Vector2( 5350.93, 1.84442 )
+rotation = 1.5708
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 23 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
+
+[editable path="InsideBuilding"]
+
+[editable path="InsideBuilding/NormalPlatform"]
+
+[editable path="InsideBuilding/NormalPlatform2"]
+
+[editable path="InsideBuilding/NormalPlatform3"]
+
+[editable path="InsideBuilding/NormalPlatform4"]
 
 [editable path="Floor1"]
 
