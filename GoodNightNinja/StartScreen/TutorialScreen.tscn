@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://StartScreen/Tutorial.gd" type="Script" id=1]
-[ext_resource path="res://StartScreen/assets/fonts/design.graffiti.comicsansms.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://GUI/assets/sky.png" type="Texture" id=3]
+[ext_resource path="res://StartScreen/assets/fonts/BauhausBold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://StartScreen/assets/background.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -32,30 +32,30 @@ script = ExtResource( 1 )
 
 [node name="Story" type="Label" parent="Tutorial"]
 margin_right = 784.0
-margin_bottom = 71.0
+margin_bottom = 48.0
 custom_fonts/font = SubResource( 1 )
 text = "Storyline:"
 
 [node name="Storyline" type="Label" parent="Tutorial"]
-margin_top = 75.0
+margin_top = 52.0
 margin_right = 784.0
-margin_bottom = 176.0
+margin_bottom = 125.0
 custom_fonts/font = SubResource( 2 )
 text = "Welcome to Single Dad Ninja. You, a single dad, are tasked with returning your baby home through a dangerous city filled with enemies! Protect your child from the everlasting dangers of the night and get them to the nursery as quick as possible! But be careful - if your baby takes any damage you will die immediately!"
 valign = 1
 autowrap = true
 
 [node name="Controls" type="Label" parent="Tutorial"]
-margin_top = 180.0
+margin_top = 129.0
 margin_right = 784.0
-margin_bottom = 251.0
+margin_bottom = 177.0
 custom_fonts/font = SubResource( 1 )
 text = "Controls:"
 
 [node name="ControlsText" type="Label" parent="Tutorial"]
-margin_top = 255.0
+margin_top = 181.0
 margin_right = 784.0
-margin_bottom = 434.0
+margin_bottom = 311.0
 custom_fonts/font = SubResource( 2 )
 text = "Move left: Left Arrow
 Move right: Right Arrow
@@ -68,16 +68,16 @@ valign = 1
 autowrap = true
 
 [node name="ReturnButton" type="MenuButton" parent="Tutorial"]
-margin_top = 438.0
+margin_top = 315.0
 margin_right = 784.0
-margin_bottom = 501.0
+margin_bottom = 360.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
 text = "Return to Menu"
 
 [node name="Sprite" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 409.466, 331.225 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 514, 300 )
+scale = Vector2( 0.257936, 0.230238 )
 texture = ExtResource( 3 )
 [connection signal="pressed" from="Tutorial/ReturnButton" to="Tutorial" method="_on_ReturnButton_pressed"]

@@ -1,14 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://StartScreen/EndScreen.gd" type="Script" id=1]
 [ext_resource path="res://StartScreen/assets/fonts/design.graffiti.comicsansms.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://StartScreen/LevelLabel.gd" type="Script" id=3]
-[ext_resource path="res://StartScreen/TimeLabel.gd" type="Script" id=4]
-[ext_resource path="res://GUI/assets/sky.png" type="Texture" id=5]
+[ext_resource path="res://StartScreen/assets/fonts/BAUHHL.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://StartScreen/TimeLabel.gd" type="Script" id=5]
+[ext_resource path="res://StartScreen/assets/continueScreen.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 34
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
@@ -31,41 +36,41 @@ margin_bottom = 520.0
 alignment = 1
 
 [node name="LevelLabel" type="Label" parent="EndContainer"]
-margin_top = 101.0
+margin_top = 118.0
 margin_right = 784.0
-margin_bottom = 172.0
+margin_bottom = 189.0
 custom_fonts/font = SubResource( 1 )
 align = 1
 script = ExtResource( 3 )
 
 [node name="TimeLabel" type="Label" parent="EndContainer"]
-margin_top = 176.0
+margin_top = 193.0
 margin_right = 784.0
-margin_bottom = 247.0
-custom_fonts/font = SubResource( 1 )
+margin_bottom = 229.0
+custom_fonts/font = SubResource( 3 )
 align = 1
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="ContinueButton" type="MenuButton" parent="EndContainer"]
-margin_top = 251.0
+margin_top = 233.0
 margin_right = 784.0
-margin_bottom = 328.0
+margin_bottom = 310.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 2 )
 text = "Next Level"
 
 [node name="ReturnButton" type="MenuButton" parent="EndContainer"]
-margin_top = 332.0
+margin_top = 314.0
 margin_right = 784.0
-margin_bottom = 409.0
+margin_bottom = 391.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 2 )
 text = "Return to Menu"
 
 [node name="Sprite" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 326.738, 351.78 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 5 )
+position = Vector2( 512, 300 )
+scale = Vector2( 0.255936, 0.230238 )
+texture = ExtResource( 6 )
 [connection signal="pressed" from="EndContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="EndContainer/ReturnButton" to="." method="_on_ReturnButton_pressed"]

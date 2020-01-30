@@ -1,4 +1,4 @@
-extends Node2D
+extends MenuButton
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -13,9 +13,5 @@ func _ready():
 #	pass
 
 
-func _on_RespawnButton_pressed():
-	get_tree().change_scene("res://Levels/Level"+str(Global.currentStage)+".tscn")
-
-
-func _on_MainMenuButton_pressed():
-	get_tree().change_scene("res://StartScreen/MainMenu.tscn")
+func _on_Play_pressed():
+	pass # Replace with function body.
