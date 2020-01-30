@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends Label
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -6,12 +6,8 @@ extends VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	set_text("Level " + str(Global.currentStage - 1) + " completed")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_ReturnButton_pressed():
-	get_tree().change_scene("res://StartScreen/MainMenu.tscn")

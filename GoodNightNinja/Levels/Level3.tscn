@@ -186,12 +186,11 @@ position = Vector2( -560.445, -2484.14 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="Express" parent="." instance=ExtResource( 6 )]
-editor/display_folded = true
 position = Vector2( 822.492, 286.282 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="Dumpster3" parent="Express" instance=ExtResource( 5 )]
-position = Vector2( -2817.37, 2067.59 )
+position = Vector2( -2412.59, 2101.32 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="BasicEnemy8" parent="Express" instance=ExtResource( 7 )]
@@ -252,7 +251,6 @@ position = Vector2( 16438, 1215.22 )
 position = Vector2( 17259.7, 639.941 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 11 )]
-editor/display_folded = true
 position = Vector2( 3168.2, 249.203 )
 motion = Vector2( 400, 0 )
 cycle = 5.0
@@ -270,7 +268,7 @@ one_way_collision = true
 [node name="MovingPlatform2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 4169.98, 12.2038 )
 motion = Vector2( 400, 0 )
-cycle = 5.0
+cycle = 6.0
 
 [node name="MovingPlatform15" parent="." instance=ExtResource( 11 )]
 editor/display_folded = true
@@ -285,7 +283,6 @@ scale = Vector2( 0.05, 0.05 )
 position = Vector2( 6817.93, -66.9584 )
 motion = Vector2( 0, 400 )
 cycle = 5.0
-one_way_collision = true
 
 [node name="MovingPlatform4" parent="." instance=ExtResource( 11 )]
 position = Vector2( 7653.96, -292.383 )
@@ -304,8 +301,8 @@ cycle = 3.0
 
 [node name="MovingPlatform7" parent="." instance=ExtResource( 11 )]
 position = Vector2( 10766.3, 86.2859 )
-motion = Vector2( -300, 100 )
-cycle = 3.0
+motion = Vector2( 300, 100 )
+cycle = 5.0
 
 [node name="MovingPlatform8" parent="." instance=ExtResource( 11 )]
 position = Vector2( 17272.3, 974.236 )
@@ -317,6 +314,11 @@ one_way_collision = true
 position = Vector2( 14680.4, 369.418 )
 motion = Vector2( 400, 0 )
 cycle = 4.0
+
+[node name="MovingPlatform16" parent="." instance=ExtResource( 11 )]
+position = Vector2( 12043.7, 98.4887 )
+motion = Vector2( 400, 200 )
+cycle = 7.0
 
 [node name="MovingPlatform12" parent="." instance=ExtResource( 11 )]
 position = Vector2( 15525.7, 56.8864 )
@@ -351,6 +353,7 @@ one_way_collision = true
 [node name="House" parent="." instance=ExtResource( 13 )]
 position = Vector2( 6155.84, 146.854 )
 scale = Vector2( 0.13, 0.13 )
+full_collide = true
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 7691.7, -1242.63 )
@@ -427,14 +430,15 @@ position = Vector2( 13678.5, 305.047 )
 position = Vector2( 15607.1, 1220.57 )
 
 [node name="Ninja" parent="." instance=ExtResource( 17 )]
-editor/display_folded = true
-position = Vector2( 144.401, 494.381 )
+position = Vector2( 9092.33, -477.837 )
 z_index = 1
 
 [node name="Sprite" parent="Ninja" index="0"]
 position = Vector2( 33.4304, -21.825 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
+
+[editable path="Floor1"]
 
 [editable path="SpikeTrap31"]
 

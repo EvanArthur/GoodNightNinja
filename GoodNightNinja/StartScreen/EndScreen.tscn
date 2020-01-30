@@ -11,11 +11,11 @@
 size = 50
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 34
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 50
 font_data = ExtResource( 2 )
 
@@ -47,7 +47,7 @@ script = ExtResource( 3 )
 margin_top = 193.0
 margin_right = 784.0
 margin_bottom = 229.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 align = 1
 script = ExtResource( 5 )
 
@@ -56,7 +56,7 @@ margin_top = 233.0
 margin_right = 784.0
 margin_bottom = 310.0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Next Level"
 
 [node name="ReturnButton" type="MenuButton" parent="EndContainer"]
@@ -64,7 +64,7 @@ margin_top = 314.0
 margin_right = 784.0
 margin_bottom = 391.0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Return to Menu"
 
 [node name="Sprite" type="Sprite" parent="."]
