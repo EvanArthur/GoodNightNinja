@@ -1,24 +1,20 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://StartScreen/assets/fonts/design.graffiti.comicsansms.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://StartScreen/MenuOptions.gd" type="Script" id=2]
-[ext_resource path="res://GUI/assets/sky.png" type="Texture" id=3]
+[ext_resource path="res://StartScreen/MenuOptions.gd" type="Script" id=1]
+[ext_resource path="res://StartScreen/assets/fonts/design.graffiti.comicsansms.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://StartScreen/assets/temp.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 80
-font_data = ExtResource( 1 )
+size = 50
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 50
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=4]
 size = 30
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -29,86 +25,87 @@ custom_constants/margin_left = 120
 custom_constants/margin_bottom = 80
 
 [node name="MenuColumns" type="HBoxContainer" parent="."]
+editor/display_folded = true
 margin_left = 120.0
 margin_top = 10.0
-margin_right = 917.0
-margin_bottom = 525.0
+margin_right = 904.0
+margin_bottom = 520.0
 
 [node name="RightColumnOptions" type="VBoxContainer" parent="MenuColumns"]
-margin_right = 622.0
-margin_bottom = 515.0
-
-[node name="Title" type="Label" parent="MenuColumns/RightColumnOptions"]
-margin_right = 622.0
-margin_bottom = 113.0
-custom_fonts/font = SubResource( 1 )
-text = "Single Dad Ninja"
+margin_right = 261.0
+margin_bottom = 510.0
 
 [node name="MenuOptions" type="VBoxContainer" parent="MenuColumns/RightColumnOptions"]
-margin_top = 117.0
 margin_right = 261.0
-margin_bottom = 515.0
+margin_bottom = 428.0
 size_flags_horizontal = 0
 size_flags_vertical = 2
 custom_constants/separation = 30
 alignment = 1
-script = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="MenuColumns/RightColumnOptions/MenuOptions"]
+margin_right = 261.0
 
 [node name="PlayButton" type="MenuButton" parent="MenuColumns/RightColumnOptions/MenuOptions"]
+margin_top = 30.0
 margin_right = 261.0
-margin_bottom = 77.0
+margin_bottom = 107.0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Play"
 align = 0
 
 [node name="ContinueButton" type="MenuButton" parent="MenuColumns/RightColumnOptions/MenuOptions"]
-margin_top = 107.0
+margin_top = 137.0
 margin_right = 261.0
-margin_bottom = 184.0
+margin_bottom = 214.0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Continue"
 align = 0
 
 [node name="TutorialButton" type="MenuButton" parent="MenuColumns/RightColumnOptions/MenuOptions"]
-margin_top = 214.0
+margin_top = 244.0
 margin_right = 261.0
-margin_bottom = 291.0
+margin_bottom = 321.0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Tutorial"
 align = 0
 
 [node name="QuitButton" type="MenuButton" parent="MenuColumns/RightColumnOptions/MenuOptions"]
-margin_top = 321.0
+margin_top = 351.0
 margin_right = 261.0
-margin_bottom = 398.0
+margin_bottom = 428.0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Quit Game"
 align = 0
 
 [node name="LeftColumnOptions" type="VBoxContainer" parent="MenuColumns"]
-margin_left = 626.0
-margin_right = 797.0
-margin_bottom = 515.0
+margin_left = 265.0
+margin_right = 436.0
+margin_bottom = 510.0
 alignment = 2
 
 [node name="VersionNum" type="Label" parent="MenuColumns/LeftColumnOptions"]
-margin_top = 472.0
+margin_top = 467.0
 margin_right = 171.0
-margin_bottom = 515.0
-custom_fonts/font = SubResource( 4 )
+margin_bottom = 510.0
+custom_fonts/font = SubResource( 3 )
 text = "Version .102"
 align = 2
 valign = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 379.19, 438.366 )
-scale = Vector2( 0.33407, 0.33407 )
+position = Vector2( 510, 300 )
+scale = Vector2( 0.257442, 0.230957 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 [connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/PlayButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/ContinueButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="MenuColumns/RightColumnOptions/MenuOptions/TutorialButton" to="MenuColumns/RightColumnOptions/MenuOptions" method="_on_TutorialButton_pressed"]

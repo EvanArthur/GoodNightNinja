@@ -50,7 +50,3 @@ func _on_Level3_pressed():
 func _on_Level4_pressed():
 	Global.currentStage = 4
 	get_tree().change_scene("res://Levels/Level4.tscn")	
-	
-func _on_Level5_pressed():
-	Global.currentStage = 5
-	get_tree().change_scene("res://Levels/Level5.tscn")
