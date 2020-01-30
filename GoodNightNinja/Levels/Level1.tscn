@@ -2,11 +2,11 @@
 
 [ext_resource path="res://GUI/CanvasLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Buildings/TallBuilding.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Buildings/ApartmentBuilding.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Buildings/InsideBuilding.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/BasicEnemy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Buildings/InsideBuilding.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Traps/Floor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Traps/Floor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Buildings/ApartmentBuilding.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Pickups/StarPickup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Traps/SpikeTrap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Traps/MovingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Buildings/Dumpster.tscn" type="PackedScene" id=10]
@@ -23,7 +23,7 @@
 [ext_resource path="res://Buildings/Nursery.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Player/Ninja.tscn" type="PackedScene" id=22]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.2626, 989.165 )
 
 [node name="Level1" type="Node2D"]
@@ -40,31 +40,7 @@ position = Vector2( 5793.08, -83.6298 )
 scale = Vector2( 0.6, 0.6 )
 full_collide = true
 
-[node name="ApartmentBuilding" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3501.61, -30.9941 )
-scale = Vector2( 0.25, 0.25 )
-
-[node name="BasicEnemy" parent="ApartmentBuilding" instance=ExtResource( 4 )]
-position = Vector2( -1914.81, -1793.31 )
-scale = Vector2( 4, 4 )
-
-[node name="StarPickup" parent="ApartmentBuilding" instance=ExtResource( 5 )]
-position = Vector2( 1541.47, -2494.86 )
-scale = Vector2( 4, 4 )
-
-[node name="StarPickup2" parent="ApartmentBuilding" instance=ExtResource( 5 )]
-position = Vector2( 18273.6, 3403.98 )
-scale = Vector2( 4, 4 )
-
-[node name="ApartmentBuilding2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 7110, -15.471 )
-scale = Vector2( 0.25, 0.25 )
-
-[node name="StarPickup2" parent="ApartmentBuilding2" instance=ExtResource( 5 )]
-position = Vector2( 18273.6, 3403.98 )
-scale = Vector2( 4, 4 )
-
-[node name="InsideBuilding" parent="." instance=ExtResource( 6 )]
+[node name="InsideBuilding" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
 position = Vector2( 9982.07, 58.0481 )
 scale = Vector2( 1.7, 1.7 )
@@ -77,16 +53,7 @@ scale = Vector2( 0.588235, 0.588235 )
 position = Vector2( 112.9, 300.671 )
 scale = Vector2( 0.588235, 0.588235 )
 
-[node name="Floor" parent="." instance=ExtResource( 7 )]
-editor/display_folded = true
-position = Vector2( 1786.62, 623.571 )
-scale = Vector2( 12, 1 )
-z_index = 1
-
-[node name="CollisionShape2D" parent="Floor/StaticBody2D" index="0"]
-position = Vector2( 0, -5.9121 )
-
-[node name="Floor1" parent="." instance=ExtResource( 7 )]
+[node name="Floor1" parent="." instance=ExtResource( 5 )]
 editor/display_folded = true
 position = Vector2( 7010, 627.828 )
 scale = Vector2( 5.23, 1 )
@@ -95,17 +62,52 @@ z_index = 1
 [node name="CollisionShape2D" parent="Floor1/StaticBody2D" index="0"]
 position = Vector2( 0, -7.73693 )
 
-[node name="Floor2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 7029.6, 1402.43 )
-scale = Vector2( 7.25, 1 )
-z_index = 1
-
-[node name="Floor3" parent="." instance=ExtResource( 7 )]
+[node name="Floor3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 10901, 623.571 )
 scale = Vector2( 7, 1 )
 z_index = 1
 
-[node name="Floor4" parent="." instance=ExtResource( 7 )]
+[node name="ApartmentBuilding" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 3501.61, -30.9941 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="BasicEnemy" parent="ApartmentBuilding" instance=ExtResource( 4 )]
+position = Vector2( -1914.81, -1793.31 )
+scale = Vector2( 4, 4 )
+
+[node name="StarPickup" parent="ApartmentBuilding" instance=ExtResource( 7 )]
+position = Vector2( 1541.47, -2494.86 )
+scale = Vector2( 4, 4 )
+
+[node name="StarPickup2" parent="ApartmentBuilding" instance=ExtResource( 7 )]
+position = Vector2( 18273.6, 3403.98 )
+scale = Vector2( 4, 4 )
+
+[node name="ApartmentBuilding2" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 7110, -15.471 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="StarPickup2" parent="ApartmentBuilding2" instance=ExtResource( 7 )]
+position = Vector2( 18273.6, 3403.98 )
+scale = Vector2( 4, 4 )
+
+[node name="Floor" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
+position = Vector2( 1786.62, 623.571 )
+scale = Vector2( 12, 1 )
+z_index = 1
+
+[node name="CollisionShape2D" parent="Floor/StaticBody2D" index="0"]
+position = Vector2( 0, -5.9121 )
+
+[node name="Floor2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 7029.6, 1402.43 )
+scale = Vector2( 7.25, 1 )
+z_index = 1
+
+[node name="Floor4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 14780, 623.571 )
 scale = Vector2( 7, 1 )
 z_index = 1
@@ -221,7 +223,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Bounds2" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -231,7 +233,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds2"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Pipe" parent="." instance=ExtResource( 15 )]
 position = Vector2( 6310, 897.679 )
@@ -291,6 +293,6 @@ position = Vector2( -850, 510 )
 [connection signal="health_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_health_updated"]
 [connection signal="star_count_updated" from="Ninja" to="CanvasLayer" method="_on_Ninja_star_count_updated"]
 
-[editable path="Floor"]
-
 [editable path="Floor1"]
+
+[editable path="Floor"]

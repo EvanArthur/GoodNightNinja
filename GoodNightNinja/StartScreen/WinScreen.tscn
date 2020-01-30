@@ -5,7 +5,6 @@
 [ext_resource path="res://StartScreen/TimeLabel.gd" type="Script" id=3]
 [ext_resource path="res://GUI/assets/sky.png" type="Texture" id=4]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 2 )
